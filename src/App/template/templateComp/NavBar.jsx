@@ -188,7 +188,7 @@ function NavBar() {
                                     <>
                                     <Link to={CONFIG_PATHS.HOME_PATH} className={styles.linkHome} onClick={toggleMenuPanel}>
                                         <img src={imgHome} className={styles.imgMobile}/>
-                                        Home
+                                        Inicio
                                     </Link>
                                     <Link to={CONFIG_PATHS.ABOUT_US_PATH} onClick={toggleMenuPanel}>
                                         <img src='/iconsArbitra/links/info24.png' className={styles.imgMobile}/>
@@ -234,7 +234,7 @@ function NavBar() {
                                 ):(
                                     <Link to={CONFIG_PATHS.CAMPUS_PATH} onClick={toggleMenuPanel}>
                                         <img src='/iconsArbitra/links/home.png' className={styles.imgMobile}/>
-                                        Home
+                                        Inicio
                                     </Link>
                                 )}
                             </div>

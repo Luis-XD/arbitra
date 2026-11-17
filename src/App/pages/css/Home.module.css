@@ -154,10 +154,12 @@
   filter: var(--filter);
 }
 .cardListItem {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
+  text-align:left;
+  gap: 0.5rem;
+  font-size: 1rem;
+  
+  display: flex;
+  align-items: flex-start;
 }
 
 .cardListItem i {
@@ -269,7 +271,7 @@
 
 .featureIcon {
   width: 52px;
-  height: 52px;
+  height: 56px;
   object-fit: contain;
 }
 
@@ -362,7 +364,7 @@
    ========================================== */
 .ctaBanner {
   background: linear-gradient(135deg, #09090b 0%, #18181b 100%);
-  width: 87%;
+  width: 94%;
   min-height: 20rem;
   border:var(--border-2);
   border-radius: var(--border-radius);
@@ -506,6 +508,9 @@
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
+  .cardTitle{
+    font-size: 2rem;
+  }
   .featuresGrid {
     gap: 24px;
   }
