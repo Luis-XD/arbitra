@@ -96,7 +96,7 @@ function ProfessorAssign() {
     const isCurrentlyActive = professorToToggle?.status !== 0;
 
     return (
-        <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+        <div style={{ padding: '20px', maxWidth: '1000px', margin: '0 auto' }}>
             <h2 style={{ color: '#fff', marginBottom: '20px' }}>Gestión y asignación de Profesores</h2>
             
             {professors?.length > 0 ? (

@@ -68,8 +68,9 @@
 
 
 .cardContainer {
+    position: relative;
     border-radius: 1rem;
-    padding: 2rem;
+    width: 100%;
     height: 100%;
 
     display: flex;
@@ -79,9 +80,21 @@
     backdrop-filter: blur(10px);
 }
 
-.cardContainer:hover {
+.cardContainer:hover .whyCardImage{
     border-color: rgba(16, 185, 129, 0.6);
-    transform: translateY(-4px);
+    transition: ease-in-out all .3s;
+    transform: scale(1.1);
+}
+.contElm{
+    height: 100%;
+    z-index: 2;
+    padding: 0 2rem;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
 }
 
 .cardHeader {
@@ -107,7 +120,7 @@
 }
 
 .cardTitle {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: #FFFFFF;
     margin-bottom: 0.5rem;
@@ -136,10 +149,15 @@
     padding: 0;
 }
 
+.cardListItem > img{
+  width: 1.5rem;
+  filter: var(--filter);
+}
 .cardListItem {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: 1rem;
 }
 
 .cardListItem i {
@@ -147,11 +165,12 @@
 }
 
 .cardFooter {
+    width: 100%;
     padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .investmentLabel {
@@ -176,6 +195,7 @@
 
 .cardButton {
     padding: 0.5rem 1rem;
+    margin: 1rem 0;
     border-radius: 0.75rem;
     background-color: rgba(16, 24, 39, 0.8);
     color: #FFFFFF;
@@ -210,4 +230,295 @@
     100% {
         transform: translateX(100%);
     }
-} 
+}
+
+
+/* ==========================================
+   SECCIÓN 1: ICONOS DESTACADOS SUPERIORES
+   ========================================== */
+.featuresGrid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  padding: 2rem 0;
+  text-align: center;
+  color: #ffffff;
+}
+
+.featureItem {
+  gap: 1rem;
+  width: 14rem;
+  height: 10rem;
+  border-radius: var(--border-radius);
+  padding: 1rem 2rem;
+  border: var(--border-2);
+  background-color: var(--background-solid);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.featureItem:hover .featureIcon{
+  transition: all ease-in-out .3s;
+  filter:  drop-shadow(0px 0px 10px rgba(105, 150, 255, 0.6));
+  transform: scale(1.2);
+}
+
+.featureIcon {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.featureText {
+  user-select: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* ==========================================
+   SECCIÓN 2: POR QUÉ ELEGIR ARBITRA (CARDS)
+   ========================================== */
+.whyContainer {
+  padding: 30px 0;
+}
+
+.whyHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.whyIndicator {
+  width: 6px;
+  height: 32px;
+  background-color: #10b981;
+  border-radius: 4px;
+}
+
+.whyTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.whyCard {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+  max-height: 20rem;
+  height: 18rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.whyCardTitle {
+  background: rgba(24, 24, 27, 0.75);
+  backdrop-filter: blur(4px);
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  margin: 0;
+  z-index: 2;
+}
+
+.whyCardImage {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================
+   SECCIÓN 3: BANNER INFERIOR
+   ========================================== */
+.ctaBanner {
+  background: linear-gradient(135deg, #09090b 0%, #18181b 100%);
+  width: 87%;
+  min-height: 20rem;
+  border:var(--border-2);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+.contElmBanner{
+    z-index: 3;
+}
+.ctaContent {
+  width: auto;
+  height: 100%;
+  min-width: 280px;
+  z-index: 2;
+  margin-right: 2rem;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+.opacity{
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.ctaBanner:hover .ctaIcon{
+  transform: scale(1.1);
+}
+.ctaIcon {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  object-fit: contain;
+  transition: all ease-in-out .3s;
+}
+
+.ctaTitle {
+  font-size: 54px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 1.6rem 0 0;
+  text-transform: uppercase;
+  font-style: italic;
+  text-shadow: 0 0 0.8rem #000;
+
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.ctaTitle > span{
+    color: var(--color);
+}
+
+.ctaSubtitle {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  text-shadow: 0 0 0.6rem #000;
+}
+
+.ctaButton {
+  background-color: #10b981;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 18rem;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.contBtn{
+
+    z-index: 2;
+}
+.ctaButton:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+.ctaButtonIcon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+
+@media (max-width: 950px){
+
+  .ctaBanner{
+    display: flex;
+    justify-content: center;
+    background-color: red;
+  }
+  .ctaContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ctaTitle{
+    font-size: 40px;
+    margin: 0;
+  }
+  .ctaSubtitle{
+    font-size: 14px;
+  }
+  .contElmBanner{
+    width: 100%;
+    height: auto;
+    padding: 4rem 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+  .ctaIcon{
+    width: auto;
+    height: 100%;
+  }
+  .contBtn{
+    margin-top: 1rem;
+  }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .featuresGrid {
+    gap: 24px;
+  }
+  .ctaBanner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ctaContent {
+    flex-direction: column;
+  }
+  .ctaIcon {
+    width: auto;
+    height: 100%;
+  }
+}

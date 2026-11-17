@@ -1,0 +1,60 @@
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: var(--surface-secondary, #f8f9fa);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--text-secondary, #6c757d);
+}
+
+.value {
+  color: var(--text-primary, #212529);
+  font-weight: 500;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid var(--border-color, #dee2e6);
+  margin: 16px 0;
+}
+
+.pagoRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.deudaEnVivo {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-tertiary, #e9ecef);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 4px solid var(--bad, #dc3545);
+}
+
+.deudaLabel {
+  font-size: 0.8rem;
+  color: var(--text-secondary, #6c757d);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.deudaValor {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary, #212529);
+}

@@ -2,7 +2,7 @@
   min-height: 3rem;
   width: 100%;
   height: auto;
-  margin: 0 1rem;
+  margin: 0;
   padding: 0.8rem;
   font-size: 1rem;
   color: black;
@@ -20,8 +20,4 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-:global(body.dark) .showData {
-  border: 0.1rem solid #777777;
-  color: #000;
 }

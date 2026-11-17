@@ -1,0 +1,62 @@
+[
+ {
+  "id": "d1",
+  "nombre": "Raúl Benítez",
+  "especialidad": "Árbitro nacional de fútbol",
+  "cuit": "20-22345678-3",
+  "telefono": "11 46433012",
+  "email": "raúl@arbitra.edu.ar",
+  "valorHora": 9500,
+  "condicion": "Monotributista",
+  "estado": "Activo",
+  "ejemplo": true
+ },
+ {
+  "id": "d2",
+  "nombre": "Silvina Ortega",
+  "especialidad": "Árbitra de fútbol y básquet",
+  "cuit": "27-28456123-9",
+  "telefono": "11 43530829",
+  "email": "silvina@arbitra.edu.ar",
+  "valorHora": 11000,
+  "condicion": "Monotributista",
+  "estado": "Activo",
+  "ejemplo": true
+ },
+ {
+  "id": "d3",
+  "nombre": "Matías Ferreyra",
+  "especialidad": "Instructor de arbitraje infantil",
+  "cuit": "20-33987456-1",
+  "telefono": "11 47624039",
+  "email": "matías@arbitra.edu.ar",
+  "valorHora": 9000,
+  "condicion": "Monotributista",
+  "estado": "Activo",
+  "ejemplo": true
+ },
+ {
+  "id": "d4",
+  "nombre": "Lucía Paz",
+  "especialidad": "Árbitra de vóley y asistente de fútbol",
+  "cuit": "27-35123987-4",
+  "telefono": "11 41810111",
+  "email": "lucía@arbitra.edu.ar",
+  "valorHora": 12500,
+  "condicion": "Monotributista",
+  "estado": "Activo",
+  "ejemplo": true
+ },
+ {
+  "id": "d5",
+  "nombre": "Gustavo Ríos",
+  "especialidad": "Árbitro de futsal y preparador físico",
+  "cuit": "20-25678912-7",
+  "telefono": "11 42215279",
+  "email": "gustavo@arbitra.edu.ar",
+  "valorHora": 11500,
+  "condicion": "Monotributista",
+  "estado": "Activo",
+  "ejemplo": true
+ }
+]

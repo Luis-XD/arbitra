@@ -1,0 +1,4382 @@
+[
+ {
+  "id": "i01",
+  "alumnoId": "a56",
+  "cursoId": "c6",
+  "fecha": "2026-02-17",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-02-17",
+    "importe": 15000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 4",
+    "vence": "2026-03-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 4",
+    "vence": "2026-04-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 4",
+    "vence": "2026-05-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 4",
+    "vence": "2026-06-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i02",
+  "alumnoId": "a20",
+  "cursoId": "c2",
+  "fecha": "2026-07-23",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-23",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 52000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 52000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i03",
+  "alumnoId": "a09",
+  "cursoId": "c1",
+  "fecha": "2026-06-28",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-06-28",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 8",
+    "vence": "2026-08-10",
+    "importe": 58000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 8",
+    "vence": "2026-09-10",
+    "importe": 58000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 8",
+    "vence": "2026-10-10",
+    "importe": 58000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 8",
+    "vence": "2026-11-10",
+    "importe": 58000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 8",
+    "vence": "2026-12-10",
+    "importe": 58000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 8",
+    "vence": "2027-01-10",
+    "importe": 58000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 8",
+    "vence": "2027-02-10",
+    "importe": 58000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 8",
+    "vence": "2027-03-10",
+    "importe": 58000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i04",
+  "alumnoId": "a19",
+  "cursoId": "c2",
+  "fecha": "2026-07-17",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-17",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 52000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 52000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i05",
+  "alumnoId": "a79",
+  "cursoId": "c7",
+  "fecha": "2026-03-20",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-03-20",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-04-10",
+    "importe": 56000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-05-10",
+    "importe": 56000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-06-10",
+    "importe": 56000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-07-10",
+    "importe": 56000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-08-10",
+    "importe": 56000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2026-09-10",
+    "importe": 56000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i06",
+  "alumnoId": "a05",
+  "cursoId": "c1",
+  "fecha": "2026-07-10",
+  "becaPct": 50,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-10",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 8",
+    "vence": "2026-08-10",
+    "importe": 29000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 8",
+    "vence": "2026-09-10",
+    "importe": 29000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 8",
+    "vence": "2026-10-10",
+    "importe": 29000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 8",
+    "vence": "2026-11-10",
+    "importe": 29000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 8",
+    "vence": "2026-12-10",
+    "importe": 29000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 8",
+    "vence": "2027-01-10",
+    "importe": 29000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 8",
+    "vence": "2027-02-10",
+    "importe": 29000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 8",
+    "vence": "2027-03-10",
+    "importe": 29000
+   }
+  ],
+  "obs": "Beca por convenio municipal",
+  "ejemplo": true
+ },
+ {
+  "id": "i07",
+  "alumnoId": "a27",
+  "cursoId": "c2",
+  "fecha": "2026-07-01",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-01",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 52000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 52000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i08",
+  "alumnoId": "a33",
+  "cursoId": "c3",
+  "fecha": "2026-08-18",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-08-18",
+    "importe": 30000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 5",
+    "vence": "2026-09-10",
+    "importe": 62000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 5",
+    "vence": "2026-10-10",
+    "importe": 62000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 5",
+    "vence": "2026-11-10",
+    "importe": 62000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 5",
+    "vence": "2026-12-10",
+    "importe": 62000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 5",
+    "vence": "2027-01-10",
+    "importe": 62000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i09",
+  "alumnoId": "a10",
+  "cursoId": "c1",
+  "fecha": "2026-06-30",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-06-30",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 8",
+    "vence": "2026-08-10",
+    "importe": 58000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 8",
+    "vence": "2026-09-10",
+    "importe": 58000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 8",
+    "vence": "2026-10-10",
+    "importe": 58000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 8",
+    "vence": "2026-11-10",
+    "importe": 58000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 8",
+    "vence": "2026-12-10",
+    "importe": 58000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 8",
+    "vence": "2027-01-10",
+    "importe": 58000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 8",
+    "vence": "2027-02-10",
+    "importe": 58000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 8",
+    "vence": "2027-03-10",
+    "importe": 58000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i10",
+  "alumnoId": "a62",
+  "cursoId": "c6",
+  "fecha": "2026-01-25",
+  "becaPct": 10,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-01-25",
+    "importe": 15000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 4",
+    "vence": "2026-03-10",
+    "importe": 46800
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 4",
+    "vence": "2026-04-10",
+    "importe": 46800
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 4",
+    "vence": "2026-05-10",
+    "importe": 46800
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 4",
+    "vence": "2026-06-10",
+    "importe": 46800
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i11",
+  "alumnoId": "a50",
+  "cursoId": "c5",
+  "fecha": "2026-10-16",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-16",
+    "importe": 35000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 10",
+    "vence": "2026-11-10",
+    "importe": 60000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 10",
+    "vence": "2026-12-10",
+    "importe": 60000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 10",
+    "vence": "2027-01-10",
+    "importe": 60000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 10",
+    "vence": "2027-02-10",
+    "importe": 60000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 10",
+    "vence": "2027-03-10",
+    "importe": 60000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 10",
+    "vence": "2027-04-10",
+    "importe": 60000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 10",
+    "vence": "2027-05-10",
+    "importe": 60000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 10",
+    "vence": "2027-06-10",
+    "importe": 60000
+   },
+   {
+    "n": 9,
+    "concepto": "Cuota 9 de 10",
+    "vence": "2027-07-10",
+    "importe": 60000
+   },
+   {
+    "n": 10,
+    "concepto": "Cuota 10 de 10",
+    "vence": "2027-08-10",
+    "importe": 60000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i12",
+  "alumnoId": "a54",
+  "cursoId": "c5",
+  "fecha": "2026-10-11",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-11",
+    "importe": 35000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 10",
+    "vence": "2026-11-10",
+    "importe": 60000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 10",
+    "vence": "2026-12-10",
+    "importe": 60000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 10",
+    "vence": "2027-01-10",
+    "importe": 60000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 10",
+    "vence": "2027-02-10",
+    "importe": 60000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 10",
+    "vence": "2027-03-10",
+    "importe": 60000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 10",
+    "vence": "2027-04-10",
+    "importe": 60000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 10",
+    "vence": "2027-05-10",
+    "importe": 60000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 10",
+    "vence": "2027-06-10",
+    "importe": 60000
+   },
+   {
+    "n": 9,
+    "concepto": "Cuota 9 de 10",
+    "vence": "2027-07-10",
+    "importe": 60000
+   },
+   {
+    "n": 10,
+    "concepto": "Cuota 10 de 10",
+    "vence": "2027-08-10",
+    "importe": 60000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i13",
+  "alumnoId": "a63",
+  "cursoId": "c6",
+  "fecha": "2026-02-11",
+  "becaPct": 20,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-02-11",
+    "importe": 15000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 4",
+    "vence": "2026-03-10",
+    "importe": 41600
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 4",
+    "vence": "2026-04-10",
+    "importe": 41600
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 4",
+    "vence": "2026-05-10",
+    "importe": 41600
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 4",
+    "vence": "2026-06-10",
+    "importe": 41600
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i14",
+  "alumnoId": "a66",
+  "cursoId": "c6",
+  "fecha": "2026-02-03",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-02-03",
+    "importe": 15000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 4",
+    "vence": "2026-03-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 4",
+    "vence": "2026-04-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 4",
+    "vence": "2026-05-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 4",
+    "vence": "2026-06-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i15",
+  "alumnoId": "a08",
+  "cursoId": "c1",
+  "fecha": "2026-07-13",
+  "becaPct": 10,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-13",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 8",
+    "vence": "2026-08-10",
+    "importe": 52200
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 8",
+    "vence": "2026-09-10",
+    "importe": 52200
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 8",
+    "vence": "2026-10-10",
+    "importe": 52200
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 8",
+    "vence": "2026-11-10",
+    "importe": 52200
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 8",
+    "vence": "2026-12-10",
+    "importe": 52200
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 8",
+    "vence": "2027-01-10",
+    "importe": 52200
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 8",
+    "vence": "2027-02-10",
+    "importe": 52200
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 8",
+    "vence": "2027-03-10",
+    "importe": 52200
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i16",
+  "alumnoId": "a44",
+  "cursoId": "c4",
+  "fecha": "2026-10-09",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-09",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-11-10",
+    "importe": 50000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-12-10",
+    "importe": 50000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2027-01-10",
+    "importe": 50000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2027-02-10",
+    "importe": 50000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2027-03-10",
+    "importe": 50000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-04-10",
+    "importe": 50000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i17",
+  "alumnoId": "a28",
+  "cursoId": "c3",
+  "fecha": "2026-08-14",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-08-14",
+    "importe": 30000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 5",
+    "vence": "2026-09-10",
+    "importe": 62000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 5",
+    "vence": "2026-10-10",
+    "importe": 62000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 5",
+    "vence": "2026-11-10",
+    "importe": 62000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 5",
+    "vence": "2026-12-10",
+    "importe": 62000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 5",
+    "vence": "2027-01-10",
+    "importe": 62000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i18",
+  "alumnoId": "a11",
+  "cursoId": "c1",
+  "fecha": "2026-06-27",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-06-27",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 8",
+    "vence": "2026-08-10",
+    "importe": 58000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 8",
+    "vence": "2026-09-10",
+    "importe": 58000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 8",
+    "vence": "2026-10-10",
+    "importe": 58000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 8",
+    "vence": "2026-11-10",
+    "importe": 58000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 8",
+    "vence": "2026-12-10",
+    "importe": 58000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 8",
+    "vence": "2027-01-10",
+    "importe": 58000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 8",
+    "vence": "2027-02-10",
+    "importe": 58000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 8",
+    "vence": "2027-03-10",
+    "importe": 58000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i19",
+  "alumnoId": "a35",
+  "cursoId": "c3",
+  "fecha": "2026-08-20",
+  "becaPct": 10,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-08-20",
+    "importe": 30000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 5",
+    "vence": "2026-09-10",
+    "importe": 55800
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 5",
+    "vence": "2026-10-10",
+    "importe": 55800
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 5",
+    "vence": "2026-11-10",
+    "importe": 55800
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 5",
+    "vence": "2026-12-10",
+    "importe": 55800
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 5",
+    "vence": "2027-01-10",
+    "importe": 55800
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i20",
+  "alumnoId": "a42",
+  "cursoId": "c4",
+  "fecha": "2026-10-19",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-19",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-11-10",
+    "importe": 50000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-12-10",
+    "importe": 50000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2027-01-10",
+    "importe": 50000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2027-02-10",
+    "importe": 50000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2027-03-10",
+    "importe": 50000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-04-10",
+    "importe": 50000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i21",
+  "alumnoId": "a16",
+  "cursoId": "c2",
+  "fecha": "2026-07-29",
+  "becaPct": 20,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-29",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 41600
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 41600
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 41600
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 41600
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 41600
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 41600
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i22",
+  "alumnoId": "a40",
+  "cursoId": "c4",
+  "fecha": "2026-10-21",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-21",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-11-10",
+    "importe": 50000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-12-10",
+    "importe": 50000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2027-01-10",
+    "importe": 50000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2027-02-10",
+    "importe": 50000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2027-03-10",
+    "importe": 50000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-04-10",
+    "importe": 50000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i23",
+  "alumnoId": "a37",
+  "cursoId": "c3",
+  "fecha": "2026-07-31",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-31",
+    "importe": 30000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 5",
+    "vence": "2026-09-10",
+    "importe": 62000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 5",
+    "vence": "2026-10-10",
+    "importe": 62000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 5",
+    "vence": "2026-11-10",
+    "importe": 62000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 5",
+    "vence": "2026-12-10",
+    "importe": 62000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 5",
+    "vence": "2027-01-10",
+    "importe": 62000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i24",
+  "alumnoId": "a04",
+  "cursoId": "c1",
+  "fecha": "2026-07-05",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-05",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 8",
+    "vence": "2026-08-10",
+    "importe": 58000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 8",
+    "vence": "2026-09-10",
+    "importe": 58000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 8",
+    "vence": "2026-10-10",
+    "importe": 58000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 8",
+    "vence": "2026-11-10",
+    "importe": 58000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 8",
+    "vence": "2026-12-10",
+    "importe": 58000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 8",
+    "vence": "2027-01-10",
+    "importe": 58000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 8",
+    "vence": "2027-02-10",
+    "importe": 58000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 8",
+    "vence": "2027-03-10",
+    "importe": 58000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i25",
+  "alumnoId": "a36",
+  "cursoId": "c3",
+  "fecha": "2026-08-04",
+  "becaPct": 20,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-08-04",
+    "importe": 30000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 5",
+    "vence": "2026-09-10",
+    "importe": 49600
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 5",
+    "vence": "2026-10-10",
+    "importe": 49600
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 5",
+    "vence": "2026-11-10",
+    "importe": 49600
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 5",
+    "vence": "2026-12-10",
+    "importe": 49600
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 5",
+    "vence": "2027-01-10",
+    "importe": 49600
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i26",
+  "alumnoId": "a03",
+  "cursoId": "c1",
+  "fecha": "2026-07-09",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-09",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 8",
+    "vence": "2026-08-10",
+    "importe": 58000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 8",
+    "vence": "2026-09-10",
+    "importe": 58000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 8",
+    "vence": "2026-10-10",
+    "importe": 58000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 8",
+    "vence": "2026-11-10",
+    "importe": 58000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 8",
+    "vence": "2026-12-10",
+    "importe": 58000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 8",
+    "vence": "2027-01-10",
+    "importe": 58000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 8",
+    "vence": "2027-02-10",
+    "importe": 58000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 8",
+    "vence": "2027-03-10",
+    "importe": 58000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i27",
+  "alumnoId": "a58",
+  "cursoId": "c6",
+  "fecha": "2026-01-21",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-01-21",
+    "importe": 15000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 4",
+    "vence": "2026-03-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 4",
+    "vence": "2026-04-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 4",
+    "vence": "2026-05-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 4",
+    "vence": "2026-06-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i28",
+  "alumnoId": "a26",
+  "cursoId": "c2",
+  "fecha": "2026-07-06",
+  "becaPct": 20,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-06",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 41600
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 41600
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 41600
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 41600
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 41600
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 41600
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i29",
+  "alumnoId": "a77",
+  "cursoId": "c7",
+  "fecha": "2026-03-16",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-03-16",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-04-10",
+    "importe": 56000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-05-10",
+    "importe": 56000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-06-10",
+    "importe": 56000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-07-10",
+    "importe": 56000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-08-10",
+    "importe": 56000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2026-09-10",
+    "importe": 56000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i30",
+  "alumnoId": "a21",
+  "cursoId": "c2",
+  "fecha": "2026-07-24",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-24",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 52000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 52000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i31",
+  "alumnoId": "a30",
+  "cursoId": "c3",
+  "fecha": "2026-08-23",
+  "becaPct": 20,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-08-23",
+    "importe": 30000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 5",
+    "vence": "2026-09-10",
+    "importe": 49600
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 5",
+    "vence": "2026-10-10",
+    "importe": 49600
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 5",
+    "vence": "2026-11-10",
+    "importe": 49600
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 5",
+    "vence": "2026-12-10",
+    "importe": 49600
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 5",
+    "vence": "2027-01-10",
+    "importe": 49600
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i32",
+  "alumnoId": "a59",
+  "cursoId": "c6",
+  "fecha": "2026-02-05",
+  "becaPct": 50,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-02-05",
+    "importe": 15000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 4",
+    "vence": "2026-03-10",
+    "importe": 26000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 4",
+    "vence": "2026-04-10",
+    "importe": 26000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 4",
+    "vence": "2026-05-10",
+    "importe": 26000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 4",
+    "vence": "2026-06-10",
+    "importe": 26000
+   }
+  ],
+  "obs": "Beca por convenio municipal",
+  "ejemplo": true
+ },
+ {
+  "id": "i33",
+  "alumnoId": "a01",
+  "cursoId": "c1",
+  "fecha": "2026-07-10",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-10",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 8",
+    "vence": "2026-08-10",
+    "importe": 58000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 8",
+    "vence": "2026-09-10",
+    "importe": 58000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 8",
+    "vence": "2026-10-10",
+    "importe": 58000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 8",
+    "vence": "2026-11-10",
+    "importe": 58000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 8",
+    "vence": "2026-12-10",
+    "importe": 58000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 8",
+    "vence": "2027-01-10",
+    "importe": 58000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 8",
+    "vence": "2027-02-10",
+    "importe": 58000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 8",
+    "vence": "2027-03-10",
+    "importe": 58000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i34",
+  "alumnoId": "a38",
+  "cursoId": "c3",
+  "fecha": "2026-08-25",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-08-25",
+    "importe": 30000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 5",
+    "vence": "2026-09-10",
+    "importe": 62000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 5",
+    "vence": "2026-10-10",
+    "importe": 62000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 5",
+    "vence": "2026-11-10",
+    "importe": 62000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 5",
+    "vence": "2026-12-10",
+    "importe": 62000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 5",
+    "vence": "2027-01-10",
+    "importe": 62000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i35",
+  "alumnoId": "a14",
+  "cursoId": "c2",
+  "fecha": "2026-07-09",
+  "becaPct": 50,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-09",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 26000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 26000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 26000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 26000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 26000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 26000
+   }
+  ],
+  "obs": "Beca por convenio municipal",
+  "ejemplo": true
+ },
+ {
+  "id": "i36",
+  "alumnoId": "a73",
+  "cursoId": "c7",
+  "fecha": "2026-03-16",
+  "becaPct": 20,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-03-16",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-04-10",
+    "importe": 44800
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-05-10",
+    "importe": 44800
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-06-10",
+    "importe": 44800
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-07-10",
+    "importe": 44800
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-08-10",
+    "importe": 44800
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2026-09-10",
+    "importe": 44800
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i37",
+  "alumnoId": "a49",
+  "cursoId": "c5",
+  "fecha": "2026-10-21",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-21",
+    "importe": 35000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 10",
+    "vence": "2026-11-10",
+    "importe": 60000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 10",
+    "vence": "2026-12-10",
+    "importe": 60000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 10",
+    "vence": "2027-01-10",
+    "importe": 60000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 10",
+    "vence": "2027-02-10",
+    "importe": 60000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 10",
+    "vence": "2027-03-10",
+    "importe": 60000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 10",
+    "vence": "2027-04-10",
+    "importe": 60000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 10",
+    "vence": "2027-05-10",
+    "importe": 60000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 10",
+    "vence": "2027-06-10",
+    "importe": 60000
+   },
+   {
+    "n": 9,
+    "concepto": "Cuota 9 de 10",
+    "vence": "2027-07-10",
+    "importe": 60000
+   },
+   {
+    "n": 10,
+    "concepto": "Cuota 10 de 10",
+    "vence": "2027-08-10",
+    "importe": 60000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i38",
+  "alumnoId": "a53",
+  "cursoId": "c5",
+  "fecha": "2026-10-19",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-19",
+    "importe": 35000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 10",
+    "vence": "2026-11-10",
+    "importe": 60000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 10",
+    "vence": "2026-12-10",
+    "importe": 60000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 10",
+    "vence": "2027-01-10",
+    "importe": 60000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 10",
+    "vence": "2027-02-10",
+    "importe": 60000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 10",
+    "vence": "2027-03-10",
+    "importe": 60000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 10",
+    "vence": "2027-04-10",
+    "importe": 60000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 10",
+    "vence": "2027-05-10",
+    "importe": 60000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 10",
+    "vence": "2027-06-10",
+    "importe": 60000
+   },
+   {
+    "n": 9,
+    "concepto": "Cuota 9 de 10",
+    "vence": "2027-07-10",
+    "importe": 60000
+   },
+   {
+    "n": 10,
+    "concepto": "Cuota 10 de 10",
+    "vence": "2027-08-10",
+    "importe": 60000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i39",
+  "alumnoId": "a41",
+  "cursoId": "c4",
+  "fecha": "2026-10-19",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-19",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-11-10",
+    "importe": 50000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-12-10",
+    "importe": 50000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2027-01-10",
+    "importe": 50000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2027-02-10",
+    "importe": 50000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2027-03-10",
+    "importe": 50000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-04-10",
+    "importe": 50000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i40",
+  "alumnoId": "a07",
+  "cursoId": "c1",
+  "fecha": "2026-07-21",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-21",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 8",
+    "vence": "2026-08-10",
+    "importe": 58000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 8",
+    "vence": "2026-09-10",
+    "importe": 58000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 8",
+    "vence": "2026-10-10",
+    "importe": 58000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 8",
+    "vence": "2026-11-10",
+    "importe": 58000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 8",
+    "vence": "2026-12-10",
+    "importe": 58000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 8",
+    "vence": "2027-01-10",
+    "importe": 58000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 8",
+    "vence": "2027-02-10",
+    "importe": 58000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 8",
+    "vence": "2027-03-10",
+    "importe": 58000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i41",
+  "alumnoId": "a61",
+  "cursoId": "c6",
+  "fecha": "2026-02-10",
+  "becaPct": 50,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-02-10",
+    "importe": 15000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 4",
+    "vence": "2026-03-10",
+    "importe": 26000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 4",
+    "vence": "2026-04-10",
+    "importe": 26000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 4",
+    "vence": "2026-05-10",
+    "importe": 26000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 4",
+    "vence": "2026-06-10",
+    "importe": 26000
+   }
+  ],
+  "obs": "Beca por convenio municipal",
+  "ejemplo": true
+ },
+ {
+  "id": "i42",
+  "alumnoId": "a06",
+  "cursoId": "c1",
+  "fecha": "2026-07-01",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-01",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 8",
+    "vence": "2026-08-10",
+    "importe": 58000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 8",
+    "vence": "2026-09-10",
+    "importe": 58000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 8",
+    "vence": "2026-10-10",
+    "importe": 58000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 8",
+    "vence": "2026-11-10",
+    "importe": 58000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 8",
+    "vence": "2026-12-10",
+    "importe": 58000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 8",
+    "vence": "2027-01-10",
+    "importe": 58000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 8",
+    "vence": "2027-02-10",
+    "importe": 58000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 8",
+    "vence": "2027-03-10",
+    "importe": 58000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i43",
+  "alumnoId": "a24",
+  "cursoId": "c2",
+  "fecha": "2026-07-01",
+  "becaPct": 10,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-01",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 46800
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 46800
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 46800
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 46800
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 46800
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 46800
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i44",
+  "alumnoId": "a72",
+  "cursoId": "c7",
+  "fecha": "2026-03-18",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-03-18",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-04-10",
+    "importe": 56000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-05-10",
+    "importe": 56000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-06-10",
+    "importe": 56000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-07-10",
+    "importe": 56000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-08-10",
+    "importe": 56000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2026-09-10",
+    "importe": 56000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i45",
+  "alumnoId": "a75",
+  "cursoId": "c7",
+  "fecha": "2026-03-06",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-03-06",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-04-10",
+    "importe": 56000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-05-10",
+    "importe": 56000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-06-10",
+    "importe": 56000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-07-10",
+    "importe": 56000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-08-10",
+    "importe": 56000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2026-09-10",
+    "importe": 56000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i46",
+  "alumnoId": "a57",
+  "cursoId": "c6",
+  "fecha": "2026-01-30",
+  "becaPct": 50,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-01-30",
+    "importe": 15000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 4",
+    "vence": "2026-03-10",
+    "importe": 26000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 4",
+    "vence": "2026-04-10",
+    "importe": 26000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 4",
+    "vence": "2026-05-10",
+    "importe": 26000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 4",
+    "vence": "2026-06-10",
+    "importe": 26000
+   }
+  ],
+  "obs": "Beca por convenio municipal",
+  "ejemplo": true
+ },
+ {
+  "id": "i47",
+  "alumnoId": "a78",
+  "cursoId": "c7",
+  "fecha": "2026-03-13",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-03-13",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-04-10",
+    "importe": 56000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-05-10",
+    "importe": 56000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-06-10",
+    "importe": 56000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-07-10",
+    "importe": 56000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-08-10",
+    "importe": 56000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2026-09-10",
+    "importe": 56000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i48",
+  "alumnoId": "a45",
+  "cursoId": "c4",
+  "fecha": "2026-10-11",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-11",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-11-10",
+    "importe": 50000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-12-10",
+    "importe": 50000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2027-01-10",
+    "importe": 50000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2027-02-10",
+    "importe": 50000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2027-03-10",
+    "importe": 50000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-04-10",
+    "importe": 50000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i49",
+  "alumnoId": "a60",
+  "cursoId": "c6",
+  "fecha": "2026-01-29",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-01-29",
+    "importe": 15000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 4",
+    "vence": "2026-03-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 4",
+    "vence": "2026-04-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 4",
+    "vence": "2026-05-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 4",
+    "vence": "2026-06-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i50",
+  "alumnoId": "a17",
+  "cursoId": "c2",
+  "fecha": "2026-07-19",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-19",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 52000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 52000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i51",
+  "alumnoId": "a70",
+  "cursoId": "c7",
+  "fecha": "2026-02-28",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-02-28",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-04-10",
+    "importe": 56000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-05-10",
+    "importe": 56000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-06-10",
+    "importe": 56000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-07-10",
+    "importe": 56000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-08-10",
+    "importe": 56000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2026-09-10",
+    "importe": 56000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i52",
+  "alumnoId": "a18",
+  "cursoId": "c2",
+  "fecha": "2026-07-23",
+  "becaPct": 20,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-23",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 41600
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 41600
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 41600
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 41600
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 41600
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 41600
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i53",
+  "alumnoId": "a51",
+  "cursoId": "c5",
+  "fecha": "2026-10-18",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-18",
+    "importe": 35000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 10",
+    "vence": "2026-11-10",
+    "importe": 60000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 10",
+    "vence": "2026-12-10",
+    "importe": 60000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 10",
+    "vence": "2027-01-10",
+    "importe": 60000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 10",
+    "vence": "2027-02-10",
+    "importe": 60000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 10",
+    "vence": "2027-03-10",
+    "importe": 60000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 10",
+    "vence": "2027-04-10",
+    "importe": 60000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 10",
+    "vence": "2027-05-10",
+    "importe": 60000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 10",
+    "vence": "2027-06-10",
+    "importe": 60000
+   },
+   {
+    "n": 9,
+    "concepto": "Cuota 9 de 10",
+    "vence": "2027-07-10",
+    "importe": 60000
+   },
+   {
+    "n": 10,
+    "concepto": "Cuota 10 de 10",
+    "vence": "2027-08-10",
+    "importe": 60000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i54",
+  "alumnoId": "a55",
+  "cursoId": "c6",
+  "fecha": "2026-02-15",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-02-15",
+    "importe": 15000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 4",
+    "vence": "2026-03-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 4",
+    "vence": "2026-04-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 4",
+    "vence": "2026-05-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 4",
+    "vence": "2026-06-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i55",
+  "alumnoId": "a02",
+  "cursoId": "c1",
+  "fecha": "2026-07-06",
+  "becaPct": 50,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-06",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 8",
+    "vence": "2026-08-10",
+    "importe": 29000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 8",
+    "vence": "2026-09-10",
+    "importe": 29000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 8",
+    "vence": "2026-10-10",
+    "importe": 29000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 8",
+    "vence": "2026-11-10",
+    "importe": 29000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 8",
+    "vence": "2026-12-10",
+    "importe": 29000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 8",
+    "vence": "2027-01-10",
+    "importe": 29000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 8",
+    "vence": "2027-02-10",
+    "importe": 29000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 8",
+    "vence": "2027-03-10",
+    "importe": 29000
+   }
+  ],
+  "obs": "Beca por convenio municipal",
+  "ejemplo": true
+ },
+ {
+  "id": "i56",
+  "alumnoId": "a74",
+  "cursoId": "c7",
+  "fecha": "2026-03-12",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-03-12",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-04-10",
+    "importe": 56000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-05-10",
+    "importe": 56000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-06-10",
+    "importe": 56000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-07-10",
+    "importe": 56000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-08-10",
+    "importe": 56000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2026-09-10",
+    "importe": 56000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i57",
+  "alumnoId": "a23",
+  "cursoId": "c2",
+  "fecha": "2026-07-14",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-14",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 52000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 52000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i58",
+  "alumnoId": "a32",
+  "cursoId": "c3",
+  "fecha": "2026-08-19",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-08-19",
+    "importe": 30000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 5",
+    "vence": "2026-09-10",
+    "importe": 62000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 5",
+    "vence": "2026-10-10",
+    "importe": 62000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 5",
+    "vence": "2026-11-10",
+    "importe": 62000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 5",
+    "vence": "2026-12-10",
+    "importe": 62000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 5",
+    "vence": "2027-01-10",
+    "importe": 62000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i59",
+  "alumnoId": "a76",
+  "cursoId": "c7",
+  "fecha": "2026-03-15",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-03-15",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-04-10",
+    "importe": 56000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-05-10",
+    "importe": 56000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-06-10",
+    "importe": 56000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-07-10",
+    "importe": 56000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-08-10",
+    "importe": 56000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2026-09-10",
+    "importe": 56000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i60",
+  "alumnoId": "a13",
+  "cursoId": "c1",
+  "fecha": "2026-07-05",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-05",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 8",
+    "vence": "2026-08-10",
+    "importe": 58000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 8",
+    "vence": "2026-09-10",
+    "importe": 58000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 8",
+    "vence": "2026-10-10",
+    "importe": 58000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 8",
+    "vence": "2026-11-10",
+    "importe": 58000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 8",
+    "vence": "2026-12-10",
+    "importe": 58000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 8",
+    "vence": "2027-01-10",
+    "importe": 58000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 8",
+    "vence": "2027-02-10",
+    "importe": 58000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 8",
+    "vence": "2027-03-10",
+    "importe": 58000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i61",
+  "alumnoId": "a15",
+  "cursoId": "c2",
+  "fecha": "2026-07-15",
+  "becaPct": 0,
+  "estado": "Baja",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-15",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 52000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 52000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i62",
+  "alumnoId": "a64",
+  "cursoId": "c6",
+  "fecha": "2026-02-09",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-02-09",
+    "importe": 15000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 4",
+    "vence": "2026-03-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 4",
+    "vence": "2026-04-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 4",
+    "vence": "2026-05-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 4",
+    "vence": "2026-06-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i63",
+  "alumnoId": "a48",
+  "cursoId": "c5",
+  "fecha": "2026-10-22",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-22",
+    "importe": 35000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 10",
+    "vence": "2026-11-10",
+    "importe": 60000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 10",
+    "vence": "2026-12-10",
+    "importe": 60000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 10",
+    "vence": "2027-01-10",
+    "importe": 60000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 10",
+    "vence": "2027-02-10",
+    "importe": 60000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 10",
+    "vence": "2027-03-10",
+    "importe": 60000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 10",
+    "vence": "2027-04-10",
+    "importe": 60000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 10",
+    "vence": "2027-05-10",
+    "importe": 60000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 10",
+    "vence": "2027-06-10",
+    "importe": 60000
+   },
+   {
+    "n": 9,
+    "concepto": "Cuota 9 de 10",
+    "vence": "2027-07-10",
+    "importe": 60000
+   },
+   {
+    "n": 10,
+    "concepto": "Cuota 10 de 10",
+    "vence": "2027-08-10",
+    "importe": 60000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i64",
+  "alumnoId": "a52",
+  "cursoId": "c5",
+  "fecha": "2026-10-24",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-24",
+    "importe": 35000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 10",
+    "vence": "2026-11-10",
+    "importe": 60000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 10",
+    "vence": "2026-12-10",
+    "importe": 60000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 10",
+    "vence": "2027-01-10",
+    "importe": 60000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 10",
+    "vence": "2027-02-10",
+    "importe": 60000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 10",
+    "vence": "2027-03-10",
+    "importe": 60000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 10",
+    "vence": "2027-04-10",
+    "importe": 60000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 10",
+    "vence": "2027-05-10",
+    "importe": 60000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 10",
+    "vence": "2027-06-10",
+    "importe": 60000
+   },
+   {
+    "n": 9,
+    "concepto": "Cuota 9 de 10",
+    "vence": "2027-07-10",
+    "importe": 60000
+   },
+   {
+    "n": 10,
+    "concepto": "Cuota 10 de 10",
+    "vence": "2027-08-10",
+    "importe": 60000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i65",
+  "alumnoId": "a31",
+  "cursoId": "c3",
+  "fecha": "2026-08-22",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-08-22",
+    "importe": 30000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 5",
+    "vence": "2026-09-10",
+    "importe": 62000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 5",
+    "vence": "2026-10-10",
+    "importe": 62000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 5",
+    "vence": "2026-11-10",
+    "importe": 62000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 5",
+    "vence": "2026-12-10",
+    "importe": 62000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 5",
+    "vence": "2027-01-10",
+    "importe": 62000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i66",
+  "alumnoId": "a25",
+  "cursoId": "c2",
+  "fecha": "2026-07-21",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-21",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 52000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 52000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i67",
+  "alumnoId": "a71",
+  "cursoId": "c7",
+  "fecha": "2026-03-17",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-03-17",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-04-10",
+    "importe": 56000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-05-10",
+    "importe": 56000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-06-10",
+    "importe": 56000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-07-10",
+    "importe": 56000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-08-10",
+    "importe": 56000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2026-09-10",
+    "importe": 56000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i68",
+  "alumnoId": "a43",
+  "cursoId": "c4",
+  "fecha": "2026-10-22",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-22",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-11-10",
+    "importe": 50000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-12-10",
+    "importe": 50000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2027-01-10",
+    "importe": 50000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2027-02-10",
+    "importe": 50000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2027-03-10",
+    "importe": 50000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-04-10",
+    "importe": 50000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i69",
+  "alumnoId": "a65",
+  "cursoId": "c6",
+  "fecha": "2026-02-03",
+  "becaPct": 20,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-02-03",
+    "importe": 15000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 4",
+    "vence": "2026-03-10",
+    "importe": 41600
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 4",
+    "vence": "2026-04-10",
+    "importe": 41600
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 4",
+    "vence": "2026-05-10",
+    "importe": 41600
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 4",
+    "vence": "2026-06-10",
+    "importe": 41600
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i70",
+  "alumnoId": "a69",
+  "cursoId": "c7",
+  "fecha": "2026-03-20",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-03-20",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-04-10",
+    "importe": 56000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-05-10",
+    "importe": 56000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-06-10",
+    "importe": 56000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-07-10",
+    "importe": 56000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-08-10",
+    "importe": 56000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2026-09-10",
+    "importe": 56000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i71",
+  "alumnoId": "a29",
+  "cursoId": "c3",
+  "fecha": "2026-08-03",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-08-03",
+    "importe": 30000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 5",
+    "vence": "2026-09-10",
+    "importe": 62000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 5",
+    "vence": "2026-10-10",
+    "importe": 62000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 5",
+    "vence": "2026-11-10",
+    "importe": 62000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 5",
+    "vence": "2026-12-10",
+    "importe": 62000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 5",
+    "vence": "2027-01-10",
+    "importe": 62000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i72",
+  "alumnoId": "a46",
+  "cursoId": "c4",
+  "fecha": "2026-10-16",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-16",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-11-10",
+    "importe": 50000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-12-10",
+    "importe": 50000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2027-01-10",
+    "importe": 50000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2027-02-10",
+    "importe": 50000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2027-03-10",
+    "importe": 50000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-04-10",
+    "importe": 50000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i73",
+  "alumnoId": "a22",
+  "cursoId": "c2",
+  "fecha": "2026-07-22",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-22",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-08-10",
+    "importe": 52000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-09-10",
+    "importe": 52000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-10-10",
+    "importe": 52000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-11-10",
+    "importe": 52000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-12-10",
+    "importe": 52000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-01-10",
+    "importe": 52000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i74",
+  "alumnoId": "a47",
+  "cursoId": "c4",
+  "fecha": "2026-10-12",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-12",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-11-10",
+    "importe": 50000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-12-10",
+    "importe": 50000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2027-01-10",
+    "importe": 50000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2027-02-10",
+    "importe": 50000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2027-03-10",
+    "importe": 50000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-04-10",
+    "importe": 50000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i75",
+  "alumnoId": "a67",
+  "cursoId": "c7",
+  "fecha": "2026-03-18",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-03-18",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-04-10",
+    "importe": 56000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-05-10",
+    "importe": 56000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-06-10",
+    "importe": 56000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-07-10",
+    "importe": 56000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-08-10",
+    "importe": 56000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2026-09-10",
+    "importe": 56000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i76",
+  "alumnoId": "a34",
+  "cursoId": "c3",
+  "fecha": "2026-08-21",
+  "becaPct": 20,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-08-21",
+    "importe": 30000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 5",
+    "vence": "2026-09-10",
+    "importe": 49600
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 5",
+    "vence": "2026-10-10",
+    "importe": 49600
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 5",
+    "vence": "2026-11-10",
+    "importe": 49600
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 5",
+    "vence": "2026-12-10",
+    "importe": 49600
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 5",
+    "vence": "2027-01-10",
+    "importe": 49600
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i77",
+  "alumnoId": "a12",
+  "cursoId": "c1",
+  "fecha": "2026-07-09",
+  "becaPct": 50,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-07-09",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 8",
+    "vence": "2026-08-10",
+    "importe": 29000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 8",
+    "vence": "2026-09-10",
+    "importe": 29000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 8",
+    "vence": "2026-10-10",
+    "importe": 29000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 8",
+    "vence": "2026-11-10",
+    "importe": 29000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 8",
+    "vence": "2026-12-10",
+    "importe": 29000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 8",
+    "vence": "2027-01-10",
+    "importe": 29000
+   },
+   {
+    "n": 7,
+    "concepto": "Cuota 7 de 8",
+    "vence": "2027-02-10",
+    "importe": 29000
+   },
+   {
+    "n": 8,
+    "concepto": "Cuota 8 de 8",
+    "vence": "2027-03-10",
+    "importe": 29000
+   }
+  ],
+  "obs": "Beca por convenio municipal",
+  "ejemplo": true
+ },
+ {
+  "id": "i78",
+  "alumnoId": "a39",
+  "cursoId": "c4",
+  "fecha": "2026-10-09",
+  "becaPct": 0,
+  "estado": "Activa",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-10-09",
+    "importe": 25000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-11-10",
+    "importe": 50000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-12-10",
+    "importe": 50000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2027-01-10",
+    "importe": 50000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2027-02-10",
+    "importe": 50000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2027-03-10",
+    "importe": 50000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2027-04-10",
+    "importe": 50000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ },
+ {
+  "id": "i79",
+  "alumnoId": "a68",
+  "cursoId": "c7",
+  "fecha": "2026-03-25",
+  "becaPct": 0,
+  "estado": "Finalizada",
+  "cuotas": [
+   {
+    "n": 0,
+    "concepto": "Matrícula",
+    "vence": "2026-03-25",
+    "importe": 20000
+   },
+   {
+    "n": 1,
+    "concepto": "Cuota 1 de 6",
+    "vence": "2026-04-10",
+    "importe": 56000
+   },
+   {
+    "n": 2,
+    "concepto": "Cuota 2 de 6",
+    "vence": "2026-05-10",
+    "importe": 56000
+   },
+   {
+    "n": 3,
+    "concepto": "Cuota 3 de 6",
+    "vence": "2026-06-10",
+    "importe": 56000
+   },
+   {
+    "n": 4,
+    "concepto": "Cuota 4 de 6",
+    "vence": "2026-07-10",
+    "importe": 56000
+   },
+   {
+    "n": 5,
+    "concepto": "Cuota 5 de 6",
+    "vence": "2026-08-10",
+    "importe": 56000
+   },
+   {
+    "n": 6,
+    "concepto": "Cuota 6 de 6",
+    "vence": "2026-09-10",
+    "importe": 56000
+   }
+  ],
+  "obs": "",
+  "ejemplo": true
+ }
+]

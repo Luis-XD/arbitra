@@ -1,0 +1,5 @@
+.app { display: grid; grid-template-columns: 232px minmax(0, 1fr); min-height: 100%; }
+.main { min-width: 0; padding-block: 22px 60px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+.loading { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+@media (max-width: 760px) { .app { grid-template-columns: minmax(0, 1fr); } }

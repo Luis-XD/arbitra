@@ -1,0 +1,5 @@
+.nota { width: 68px; text-align: right; border: 1px solid var(--line); background: var(--bg); color: var(--fg); border-radius: 4px; padding: 4px 6px; font-family: var(--f-mono); }
+.nota:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.dirty { border-color: var(--mark); background: var(--mark-soft); }
+.quitar { border: 0; background: transparent; color: var(--muted); cursor: pointer; margin-left: 4px; padding: 0 4px; border-radius: 4px; }
+.quitar:hover { background: var(--surface-2); color: var(--bad); }

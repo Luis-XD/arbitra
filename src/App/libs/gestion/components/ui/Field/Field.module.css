@@ -1,0 +1,15 @@
+.field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.full { grid-column: 1 / -1; }
+.label { font-size: 12px; font-weight: 600; color: var(--muted); }
+.control {
+  border: 1px solid var(--line); background: var(--bg); color: var(--fg);
+  border-radius: 6px; padding: 8px 10px; width: 100%; min-width: 0; font: inherit;
+}
+.control:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.control:disabled { opacity: .65; }
+.textarea { min-height: 70px; resize: vertical; }
+.hint { font-size: 11.5px; color: var(--muted); }
+.error { font-size: 12px; color: var(--bad); }
+.check { display: flex; gap: 8px; align-items: center; font-size: 13px; cursor: pointer; }
+.check input { width: 17px; height: 17px; accent-color: var(--accent); }
+.file { font: inherit; font-size: 13px; color: var(--fg); }

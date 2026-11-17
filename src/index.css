@@ -1,7 +1,14 @@
 @font-face {
-  font-family: 'Parkinsans';
-  src: url('/tipography/Parkinsans-VariableFont_wght.ttf') format('truetype');
-  font-weight: normal;
+  font-family: 'Montserrat';
+  src: url('/tipography/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal; /* o 400 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/tipography/Montserrat-Bold.ttf') format('truetype');
+  font-weight: bold; /* o 700 */
   font-style: normal;
 }
 
@@ -36,13 +43,14 @@
 
   --border: 0.1rem solid #ccc;
   --border-2: 0.1rem solid rgba(16, 185, 129, 0.5);
-  --border-3: 0.1rem solid rgb(16, 185, 129);
+  --border-3: 0.2rem solid rgb(16, 185, 129);
   --border-dark: 0.1rem solid #141c31;
   --border-radius: 2.5rem;
   --border-radius-slim: 1.5rem;
   
   --text-shadow: 0 0 1rem #ffffff;
   --text-shadow-2: 0 0 0.2rem #7c7c7c;
+  --text-shadow-3: 0 0 0.4rem #080808;
   --text-shadow-strong: 0.1rem 0.1rem 0.3rem #000000;
 
   --box-shadow-inset:  inset 0 -0.3em 0.7em rgba(65, 65, 65, 0.4);
@@ -55,9 +63,10 @@
 
   
   --background: rgba(19, 27, 46, 0.7);
-  --background-solid:#101625; /*azul claro*/
-  --background-solid-2: #090D16;
+  --background-solid:#0e1422; /*azul claro #131b2e*/
+  --background-solid-2: #0a101b;
   --background-solid-3: #10B981;
+  --background-solid-4: #0a0f1a;
   --background-dark: rgba(51, 51, 51, 0.8);
   --background-dark-2: rgba(0, 0, 0, 0.8);
   --background-color: rgba(255, 255, 255, 1);
@@ -73,6 +82,8 @@
 
   --backdrop-filter: blur(0.8rem);
   --backdrop-filter-2: blur(1.5rem);
+
+  --filter: invert(50%) sepia(80%) saturate(500%) hue-rotate(100deg) brightness(97%) contrast(92%);
 
   --color-titles: #0973B3;
 }
@@ -95,49 +106,10 @@
   display: none;
 }
 
-/*dark*/
-body.dark{
-  --color-bg: #fff;
-    --color-bg-alt: #2a2a2a;
-    --color-text: #f1f1f1;
-    --color-primary: #1e90ff;
-    --color-primary-text: #fff;
-    --color-border: #444;
-}
-body.dark body,
-body.dark #root,
-body.dark main,
-body.dark nav menu,
-body.dark section,
-body.dark{
-  background-color: #1d1d1d;
-}
-
-
-body.dark p,
-body.dark a,
-body.dark h2,
-body.dark h4{
-  color: white;
-}
-body.dark #imgMenuButtonPanel{
-  filter: invert(0%);
-}
-
-
-
-body .buttonPanel{
-  background-color: white;
-}
-body #imgMenuButtonPanel{
-  filter: invert(100%);
-}
-
-/*dark*/
-
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
   overflow-x: hidden; /* Evita desplazamiento lateral */
   background-color: var(--background);
 
@@ -145,6 +117,13 @@ body {
   justify-content: center;
   align-items: center;
 }
+body .buttonPanel{
+  background-color: white;
+}
+body #imgMenuButtonPanel{
+  filter: invert(100%);
+}
+
 a{
   text-decoration: none;
   color: #161616;
@@ -231,10 +210,10 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active {
     /* El truco del box-shadow reemplaza el fondo celeste nativo por el color oscuro que prefieras (ej: #27272a) */
-    -webkit-box-shadow: 0 0 0 30px var(--background-solid) inset !important;
+    -webkit-box-shadow: 0 0 0 30px #ccc inset !important;
     
     /* Fuerza el color de la letra para que sea blanco y se pueda leer */
-    -webkit-text-fill-color: #ffffff !important;
+    -webkit-text-fill-color: #000 !important;
     
     /* Opcional: asegura que la transición del color sea fluida */
     transition: background-color 5000s ease-in-out 0s;

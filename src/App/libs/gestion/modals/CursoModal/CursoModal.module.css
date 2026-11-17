@@ -1,0 +1,4 @@
+.bloque { min-width: 0; }
+.debe { color: var(--bad); }
+.pos { width: 30px; }
+.acciones { display: flex; gap: 6px; justify-content: flex-end; white-space: nowrap; }

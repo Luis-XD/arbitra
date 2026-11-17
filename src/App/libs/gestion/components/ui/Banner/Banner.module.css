@@ -1,0 +1,1 @@
+.banner { background: var(--mark-soft); border: 1px solid var(--mark); border-radius: var(--r); padding: 10px 14px; font-size: 13px; display: flex; gap: 10px; justify-content: space-between; align-items: center; flex-wrap: wrap; }

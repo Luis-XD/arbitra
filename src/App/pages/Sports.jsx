@@ -26,9 +26,9 @@ function Sports() {
         .then(res => res.json())
         .then(data => {
             if (data.success) {
-                // Filtramos por seguridad en el cliente los que tengan sport_status === 1 (o Number(sport_status) === 1)
+                // Filtramos estrictamente que tanto el deporte como la disciplina estén en 1
                 const cursosActivos = (data.result || []).filter(
-                    item => Number(item.sport_status) === 1 || item.sport_status === undefined
+                    item => Number(item.sport_status) === 1 && Number(item.status) === 1
                 );
                 setDisciplines(cursosActivos);
             } else {
@@ -77,14 +77,15 @@ function Sports() {
                     disciplines.map(discipline => (
                         <div 
                             key={discipline.id_discip} 
-                            onClick={() => setSelectedDiscipline(discipline)} 
+                            //onClick={() => setSelectedDiscipline(discipline)} 
                             style={{ cursor: 'pointer' }}
                         >
                             <Card 
                                 cardTitle={discipline.name_discip} 
-                                ubication='disciplines'
+                                ubication='disciplines/cards/'
                                 descriptionCard={discipline.descript_discip}
                                 imgCard={discipline.img_discip}
+                                link={`${CONFIG_PATHS.SPORTS_PATH}/disciplina/${discipline.id_discip}`}
                             />
                         </div>
                     ))

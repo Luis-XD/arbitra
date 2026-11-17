@@ -1,13 +1,18 @@
 /* Contenedor principal con ancho máximo estable y responsive */
 .container {
-  max-width: 950px;
-  width: 100%;
-  margin: 30px auto;
-  padding: 30px;
+  max-width: 72rem;
+  width: auto;
+  margin: 0 auto;
+  padding: 2rem 0;
   background: #ffffff;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .title {
@@ -25,23 +30,40 @@
 
 /* Grilla de dos columnas responsiva que evita saltos bruscos de ancho */
 .gridContainer {
+  /*
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: start;*/
+  width: 90%;
   gap: 30px;
-  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .formColumn, .listColumn {
+  min-width: 26rem;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 }
 
 .listColumn {
   background: #ccc;
   border: 1px solid #e0e0e0;
   padding: 20px;
+  height: auto;
   border-radius: var(--border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.listColumn > .sportsListScroll {
+  gap: 0.5rem;
+  max-height: 32rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .formGroup {
@@ -116,6 +138,7 @@
   padding: 1rem;
   border-radius: var(--border-radius-slim);
   background-color: #28a745;
+  color: #fff;
   font-size: 0.9rem;
   font-weight: bold;
 }
@@ -134,16 +157,6 @@
   margin-bottom: 15px;
 }
 
-.sportsListScroll {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  min-height: 380px;
-  max-height: 430px;
-  overflow-y: auto;
-  padding-right: 4px;
-}
-
 .emptyText {
   font-size: 0.9rem;
   color: #888;
@@ -153,30 +166,32 @@
 
 .sportCard {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   padding: 12px;
   border-radius: 6px;
   box-sizing: border-box;
 }
 
 .activeCard {
-  background: #e2f0d9;
+  background: #c8f0af;
   border: 1px solid #c3e6cb;
 }
 
 .inactiveCard {
-  background: #fff3cd;
-  border: 1px solid #ffeeba;
+  background: #ffe6db;
+  border: 1px solid #ffe6db;
 }
 
 .sportName {
+  width: 50%;
   font-weight: bold;
   font-size: 0.95rem;
   color: #333;
 }
 
 .statusBadge {
+  width: 4.6rem;
   font-size: 0.75rem;
   margin-top: 2px;
 }
@@ -190,7 +205,7 @@
 }
 
 .enableBtn {
-  background: #28a745;
+  width: 7.4rem;
   color: #fff;
   border: none;
   padding: 6px 12px;
@@ -199,14 +214,15 @@
   font-size: 0.8rem;
   font-weight: bold;
   transition: background 0.2s;
+  background: #28a745;
 }
 
 .enableBtn:hover {
   background: #218838;
 }
 
-.disableBtn{
-  background: #ff0707;
+.disableBtn {
+  width: 7.4rem;
   color: #fff;
   border: none;
   padding: 6px 12px;
@@ -215,18 +231,206 @@
   font-size: 0.8rem;
   font-weight: bold;
   transition: background 0.2s;
+  background: #ff0707;
 }
 
+/* Nuevas clases añadidas para reemplazar los estilos inline */
+.registeredDisciplinesBox {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+}
+
+.registeredTitle {
+  font-size: 12px;
+  font-weight: bold;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.registeredList {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: #333;
+}
+
+.fileInputWrapper {
+  margin-top: 12px;
+}
+
+.newSportContainer {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #eef6fc;
+  border-radius: 6px;
+  border: 1px solid #bce8f1;
+}
+
+.newSportLabel {
+  color: #31708f;
+}
+
+.newSportDescription {
+  font-size: 11px;
+  color: #31708f;
+  margin: 4px 0 8px 0;
+}
+
+.submitBtnClass {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.sportHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sportHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.disciplinesToggleSection {
+  margin-top: 8px;
+  border-top: 1px dashed #ddd;
+  padding-top: 6px;
+}
+
+.disciplinesClickableHeader {
+  cursor: pointer;
+  font-size: 12px;
+  color: #0066cc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.disciplinesHeaderText {
+  width: 70%;
+  color: #000;
+}
+
+.expandBadge {
+  font-size: 10px;
+  background: #333;
+  padding: 2px 6px;
+  border-radius: 4px;
+  width: 4.8rem;
+  text-align: center;
+}
+
+.expandedDisciplinesContent {
+  margin-top: 8px;
+  padding: 8px;
+  background: #fafafa;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.expandedHelpMsg {
+  font-size: 11px;
+  color: #666;
+  margin: 0 0 6px 0;
+}
+
+.disciplineRowsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.disciplineSingleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.disciplineItemNameActive {
+  font-size: 12px;
+  color: #333;
+}
+
+.disciplineItemNameInactive {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.disciplineStatusContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.disciplineStatusIndicatorActive {
+  font-size: 11px;
+  color: #5cb85c;
+}
+
+.disciplineStatusIndicatorInactive {
+  font-size: 11px;
+  color: #d9534f;
+}
+
+.disciplineActionButton {
+  font-size: 11px;
+  padding: 2px 6px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+}
+.contBtn{
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+hr{
+  display: none;
+}
 /* Media Queries para Responsive (pantallas medianas y móviles) */
+@media (max-width:1280px){
+  .container {
+    padding: 15px;
+    margin: 15px;
+  }
+}
+@media (max-width:955px){
+  hr{
+    width: 100%;
+    display: flex;
+  }
+  .container {
+    width: 100%;
+  }
+  .gridContainer {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .gridContainer > .formColumn,
+  .gridContainer > .listColumn{
+    width: 100%;
+  }
+}
 @media (max-width: 768px) {
   .gridContainer {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-  
-  .container {
-    padding: 15px;
-    margin: 15px;
-    width: auto;
   }
 }

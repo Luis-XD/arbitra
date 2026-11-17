@@ -1,0 +1,59 @@
+.form {
+    padding: 0.4rem 1.6rem;
+    color: #fff;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.title {
+    color: #f00;
+    margin-bottom: 16px;
+}
+
+.description {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+}
+
+.examTitleHighlight {
+    display: block;
+    color: #f00;
+    margin-top: 4px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background: #27272a;
+    border: 1px solid #3f3f46;
+    color: #ccc;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 10px;
+}
+
+.cancelBtn {
+    flex: 1;
+    padding: 10px;
+    background: #3f3f46;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.deleteBtn {
+    flex: 1;
+    padding: 10px;
+    background: #ef4444;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}

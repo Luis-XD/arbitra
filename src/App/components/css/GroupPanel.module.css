@@ -1,51 +1,49 @@
 .groupPanel{
-    user-select: none;
     width: 100%;
     height: auto;
     margin: 0.5rem 0;
+    padding-bottom: 1rem;
     border-radius: 1rem;
     overflow: hidden;
+    background-color: var(--background-solid-2);
+    
 
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
 }
-.groupPanel > p{
+.groupPanel > .titleGroupPanel{
     width: 100%;
     height: auto;
     padding: 0.6rem;
     color: white;
-    background-color:#2b2b2b;
+    background-color:#1d1d1d;
 
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-:global(body.dark) .groupPanel > p{
-    background-color: #333;
+.groupPanel > span{
+    padding: 1rem;
 }
 .groupPanel > a{
     width: 100%;
     height: auto;
     padding: 0.6rem;
-    background-color: #a1a1a1;
+    color: #fff;
+    border-left: 0.2rem solid transparent;
 
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
-:global(body.dark) .groupPanel > a{
-    color: #000;
-}
+
 .groupPanel > a:hover{
     color: #fff;
-    background-color: var(--background-color-btn-hover);
     transition: all ease-in-out .3s;
-}
-.groupPanel > a:hover img{
-    transition: all ease-in-out .3s;
-    transform: rotate(60deg);
+    border-left: var(--border-3);
+    background: rgba(16, 185, 129, 0.1);
 }
 .groupPanel > a > img{
     width: 1.5rem;

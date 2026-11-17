@@ -12,13 +12,12 @@ nav, .navbar{
     align-items: flex-end;
 }
 .navVisible{
-    background: var(--background);
+    background: var(--background-solid-2);
     box-shadow: 0 0 0.1rem #ddd;
-    backdrop-filter: var(--backdrop-filter-2);
 }
 .contNavbarContent{
     width: 100dvw;
-    height: 5rem;
+    height: 4rem;
     background: transparent;
 
     display: flex;
@@ -31,7 +30,7 @@ nav, .navbar{
 .contNavbarContent > .navbarContent{
     position: relative;
     width: 60%;
-    height: 5rem;
+    height: 4rem;
 
     display: flex;
     justify-content: center;
@@ -61,7 +60,7 @@ nav, .navbar{
 
 .contNavbarContent > .navbarContent > .navbarLinks,
 .contNavbarContent > .navbarContent > .navbarLinks > .elmPanel{
-    height: auto;
+    height: 100%;
 }
  
 .contNavbarContent > .navbarContent > .navbarLinks > .elmPanel{
@@ -69,7 +68,7 @@ nav, .navbar{
 }
 .contNavbarContent > .navbarContent > .navbarLinks > .navbarLinksGroup{
     width: auto;
-    height: auto;
+    height: 100%;
 
     display: flex;
     justify-content: flex-end;
@@ -82,15 +81,17 @@ nav, .navbar{
 .contNavbarContent > .navbarContent > .navbarLinks > .elmPanel > a,
 .contNavbarContent > .navbarContent > .navbarLinks > .linkCont > .imgProfilePanel{
     min-width: 6rem;
-    height: 3rem;
+    height: auto;
     cursor: pointer;
     color:rgb(209 213 219);
     text-decoration: none;
     font-size: 0.9rem;
     padding: 0 0.5rem;
     margin: 0 0.3rem;
-    transition: all ease-in-out .3s;
+    padding: 0.8rem 1rem;
+    border-radius: var(--border-radius-slim);
     border: 0.1rem solid transparent;
+    transition: all ease-in-out .3s;
 
     display: flex;
     justify-content: center;
@@ -119,12 +120,26 @@ nav, .navbar{
     font-size: 1.5rem;
     padding-left: 0.5rem;
 }
+
+
 .navbarContent > .navbarLinks > .navbarLinksGroup > a:hover,
-.navbarContent > .navbarLinks > .elmPanel > a:hover{
-    border-bottom: var(--border-3);
+.navbarContent > .navbarLinks > .elmPanel > a:hover,
+.navbarContent > .navbarLinks > .navbarLinksGroup > a.inscription{
+    border: var(--border-2);
     background: rgba(16, 185, 129, 0.1);
 }
-
+.navbarContent > .navbarLinks > .navbarLinksGroup > a.inscription p{
+    transition: all ease-in-out .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbarContent > .navbarLinks > .navbarLinksGroup > a.inscription:hover p{
+    transform: translateX(0.4rem);
+}
+.inscription > p > img{
+    filter: var(--filter);
+}
 .navbarContent > .navbarLinks > a > .navbarLogo{
     width: auto;
     height: 100%;
@@ -266,8 +281,7 @@ span{
 .menuButton > .contWellcome{
     position: relative;
     cursor: pointer;
-    width: 4rem;
-    height: 4rem;
+    min-width: 3rem;
     padding: 0.2rem 0;
     overflow: hidden;
     border-radius: 1rem 1rem 0 0;
@@ -279,6 +293,7 @@ span{
     
 }
 .menuButton > .contWellcome > div > div > img{
+    width: 100%;
     height: 3rem;
 }
 .wellcomeActive {
@@ -333,11 +348,12 @@ span{
    ========================================================================== */
 .menuProfile{
     position: relative;
-    width: 4rem;
-    height: 4rem;
-    margin-left: 1rem;
+    width: 3.4rem;
+    height: 3.4rem;
+    margin: 0.3rem 0;
     border-radius: 100%;
-    transition: width ease-in-out .1s, border-radius ease-in-out .3s;
+    margin-right: 1rem;
+    transition: width ease-in-out .1s, border-radius ease-in-out .2s;
 
     display: flex;
     justify-content: center;
@@ -347,14 +363,14 @@ span{
 }
 .menuProfileActive {
     width: 12rem !important;
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out .1s;
 }
 
 
 .menuProfile > .menuProfileButton{
     width: 100%;
-    height: 4rem;
-    margin-bottom: 1rem;
+    height: 3.4rem;
+    padding: 0 1rem;
     border-radius: var(--border-radius);
     border: var(--border);
     background-color: #fff;
@@ -376,6 +392,7 @@ span{
     cursor: pointer;
     color: #fff;
     border-radius: 0 0 1rem 1rem;
+    box-shadow: var(--box-shadow-strong);
     backdrop-filter: var(--backdrop-filter-2);
 }
 .ulMenuProfile > li{
@@ -501,7 +518,11 @@ span{
 .contNavbarContent > .navbarContent > .navbarLinks > .linkHome{
     display: none;
 }
-
+@media (max-width: 1420px){
+    .contNavbarContent > .navbarContent{
+        width: 90%;
+    }
+}
 
 @media (max-width: 1280px){
     nav, .navbar{
@@ -521,6 +542,10 @@ span{
     }
     .contNavbarContent > .navbarContent > .navbarLinks > .navbarLinksGroup > .linkHome{
         display: flex;
+    }
+    .navbarContent > .navbarLinks > .navbarLinksGroup > a.inscription{
+        border: 0;
+        background: transparent;
     }
     .contNavbarContent > .navbarContent > .contNavbarMenu{
         display: flex !important;
@@ -577,17 +602,15 @@ span{
     }
     .navbarMenu,
     .contNavbarContent > .navbarContent > .navbarLinks > .navbarLogoLink,
-    .contNavbarContent > .menuProfile{
+    .contNavbarContent > .navbarContent > .menuProfile{
         display: none;
     }
 
     .contNavbarContent > .navbarContent > .navbarLinks > .navbarLinksGroup > a:hover,
     .contNavbarContent > .navbarContent > .navbarLinks > .elmPanel > a:hover{
         border-radius: 0;
-        color: #fff;
+        color: #fff;        
         
-        border-bottom:0.1rem solid transparent;
-        background-color: rgba(255, 255, 255, 0.2);
         transition: all ease-in-out .2s;
     }
 
@@ -681,11 +704,12 @@ span{
         padding: 0.6rem 0 0.6rem 1.5rem;
         color: #fff;
         border-left: 0.2rem solid transparent;
+        border-radius: 0;
 
         display: flex;
         justify-content: flex-start;
     }
-    .contNavbarContent > .menuProfile{
+    .contNavbarContent > .navbarContent > .menuProfile{
         display: none;
     }
     .contNavbarContent > .navbarContent > .navbarMenuMobile{
@@ -728,6 +752,11 @@ span{
         visibility: hidden;
         opacity: 0;
     }
+
+
+    .contNavbarContent > .navbarContent > .navbarLinks > .elmPanel > div{
+        margin-left: 0;
+    }
 }
 
 
@@ -761,10 +790,17 @@ span{
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05rem;
-    color: #9ca3af;
+    color: var(--color);
     padding-left: 1.5rem;
-    margin-bottom: 0.3rem;
+    padding: 0.4rem;
     font-weight: bold;
+    height: 2.6rem;
+    border: var(--border-2);
+    background-color: #3E434E;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .adminSectionMobile > a {
@@ -787,4 +823,7 @@ span{
 .adminSectionMobile > a:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border-left: 0.2rem solid var(--color);
+}
+.adminSectionMobile > span{
+    padding: 1rem;
 }

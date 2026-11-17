@@ -1,0 +1,4 @@
+.grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.preview { min-width: 0; position: sticky; top: 0; }
+.ayuda { margin: 0; color: var(--muted); font-size: 12px; grid-column: 1 / -1; }
+@media (max-width: 860px) { .grid { grid-template-columns: minmax(0, 1fr); } .preview { position: static; } }

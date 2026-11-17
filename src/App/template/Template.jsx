@@ -5,6 +5,7 @@ import Main from './templateComp/Main'
 import Footer from './templateComp/Footer'
 import Loader from '../components/Loader'
 import GoTopButton from '../components/GoTopButton'
+import WhatsAppButton from '../components/WhatsAppButton'
 
 function Template({separator=false}) {
   const [isLoading, setIsLoading] = useState(true)
@@ -38,6 +39,7 @@ function Template({separator=false}) {
         ):(
           <>
             <NavBar/>
+            <WhatsAppButton />
             <GoTopButton />
               <Main separator={separator}>
                 <Outlet />

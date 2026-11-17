@@ -3,9 +3,7 @@
     height: 35rem;
     min-width: 10rem;
     padding: 2rem;
-    border: var(--border);
     border-radius: var(--border-radius);
-    background: #222222;
 
     display: flex;
     justify-content: flex-start;
@@ -32,7 +30,7 @@
 }
 .cont > .contExam > .contHeaders > .headerExam > span{
     width: 100%;
-    color: #ccc;
+    color: #000;
 }
 .cont > .contExam > .contHeaders > .headerExam > h2{
     width: 100%;
@@ -43,6 +41,7 @@
     top: 0;
     right: 0;
     padding: 0.5rem;
+    color: white;
     border-radius: var(--border-radius);
     background-color: rgb(110, 85, 2);
 
@@ -50,7 +49,9 @@
     justify-content: flex-start;
     align-items: center;
 }
-
+.cont > .contExam > .contTimer > span{
+    color: white;
+}
 
 
 .contExam > .contGralAnsw{
@@ -67,7 +68,7 @@
 }
 .contExam > .contGralAnsw > .contNumAnsw > span{
     width: 100%;
-    color: #ccc;
+    color: #333;
 }
 
 .contExam > .contGralAnsw > h2{

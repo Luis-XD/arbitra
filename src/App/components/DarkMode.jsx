@@ -3,7 +3,7 @@ import styles from './css/DarkMode.module.css'
 import { useEffect, useContext } from 'react'
 import { UserContext } from './UserProvider'
 import { useTheme } from './ThemeContext'
-import MoonIcon from "/icons/moon.png"
+import MoonIcon from "/iconsArbitra/moon.png"
 
 function DarkMode({float = false}) {
     const { user } = useContext(UserContext)

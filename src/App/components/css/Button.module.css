@@ -3,7 +3,7 @@
 .button3,
 .buttonHome{
     cursor: pointer;
-    max-width: 24rem;
+    max-width: 30rem;
     width: auto;
     min-width: 10rem;
     min-height: 3rem;
@@ -28,6 +28,11 @@
     background-color: var(--background-color-btn-hover);
 }
 
+.buttonHome > svg{
+    width: 1.2rem;
+    margin-right: 0.2rem;
+}
+
 .button2{
     color: var(--color);
     border: 0.1rem solid #10B981;
@@ -38,6 +43,10 @@
     border: var(--border);
     background-color: var(--background-solid-3);
 }
+
+
+
+
 
 .button3{
     color: #10B981;

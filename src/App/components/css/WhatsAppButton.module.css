@@ -1,4 +1,5 @@
-.buttonWp{
+.buttonWp,
+.buttonWp2{
     position: fixed;
     bottom: 5.4rem;
     right: 1.7rem;
@@ -10,13 +11,35 @@
     z-index: 1000;
     cursor: pointer;
     transition: transform 0.3s ease;
-    background-color: #25D366;
+    background-color: #25d366;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+.buttonWp2{
+    position: relative;
+    width: auto;
+    max-width: 14rem;
+    max-height: 4rem;
+    border-radius: var(--border-radius);
+    bottom: 0;
+    right: 0;
+    padding: 0 0.4rem 0 0.4rem;
+    background-color: #25D366;
+}
+.buttonWp2 > p{
+    margin-left: 0.4rem;
+    font-weight: bolder;
+    color: #333;
+}
+.buttonWp2:hover{
+    transition: all ease-in-out .3s;
+    background-color: #075e54;
+}
+.buttonWp2:hover > p{
+    color: white;
+}
 @media (max-width: 768px) {
     .buttonWp{
         bottom: 4.5rem;

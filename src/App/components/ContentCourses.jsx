@@ -13,25 +13,34 @@ function ContentCourses() {
     useEffect(() => {
         if (!id) return
 
-        fetch(`${CONFIG_BACKEND.API_DIR}/showMyMatters?id=${id}`, {
-            method: 'GET',
-            credentials: 'include'
-        })
-            .then(res => res.json())
-            .then(data => {
+        async function fetchMatters() {
+            try {
+                const res = await fetch(`${CONFIG_BACKEND.API_DIR}/showMyMatters?id=${id}`, {
+                    method: 'GET',
+                    credentials: 'include'
+                })
+                
+                const text = await res.text()
+                if (!text || text.trim() === '') {
+                    console.error("El endpoint showMyMatters devolvió una respuesta vacía.")
+                    return
+                }
+
+                const data = JSON.parse(text)
                 if (data.success) {
                     setDiscipline(data.discipline)
-                    setMatters(data.result)
+                    setMatters(data.result || [])
                 } else {
                     console.error('El backend reportó un error: ', data.error)
                 }
-            })
-            .catch(error => {
-                console.error('Error de red en el fetch: ', error)
-            })
-            .finally(() => {
+            } catch (error) {
+                console.error('Error de red o parseo: ', error)
+            } finally {
                 setCargando(false)
-            })
+            }
+        }
+
+        fetchMatters()
     }, [id])
 
     return ( 
@@ -44,6 +53,7 @@ function ContentCourses() {
                         ) : matters?.length > 0 ? (
                                 matters.map(matter => (
                                 <Card 
+                                    data={matter.percentage}
                                     key={matter.id_matter}
                                     link={`/campus/${CONFIG_PATHS.CAMPUS_MY_COURSES_PATH}/detalles/${matter.id_matter}`}
                                     className={styles.matterCard}

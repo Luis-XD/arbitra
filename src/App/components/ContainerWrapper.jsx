@@ -3,6 +3,10 @@ import styles from './css/ContainerWrapper.module.css';
 function ContainerWrapper({ children, images }) {
     return (
         <section className={styles.fullWidthSection}>
+            {/* Contenido interior (tus tarjetas, títulos, etc.) */}
+            <div className={styles.innerContainer}>
+                {children}
+            </div>
             {/* Contenedor de las imágenes de fondo en bucle full screen */}
             <div className={styles.bgSliderContainer}>
                 <div className={styles.opacityOverlay}></div>
@@ -12,15 +16,6 @@ function ContainerWrapper({ children, images }) {
                     alt="bgSlide"
                     className={styles.bgSlide}
                 />
-                {/*
-                images.map((img, index) => (
-                ))
-                */}
-            </div>
-
-            {/* Contenido interior (tus tarjetas, títulos, etc.) */}
-            <div className={styles.innerContainer}>
-                {children}
             </div>
         </section>
     )

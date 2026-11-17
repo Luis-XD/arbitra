@@ -6,7 +6,7 @@ import Container from '../../components/Container'
 import { UserContext } from '../../components/UserProvider'
 import ImgProfile from '../../components/ImgProfile'
 import Loader from '../../components/Loader'
-import pencil from '/icons/utilities/pencil.png'
+import pencil from '/iconsArbitra/utilities/pencil.png'
 import { CONFIG_PATHS } from '../../config/config'
 import RightTopButton from '../../components/RightTopButton'
 
@@ -21,16 +21,6 @@ function Profile() {
             loadUser()
         }
     }, [location.state])
-
-    if (!user){
-        const fn = ()=>{
-            <Loader />
-            setTimeout(() => {
-                navigate(CONFIG_PATHS.LOGIN_PATH, { state: { updated: true } })
-            }, 2000)
-        }
-        return fn()
-    }
 
     if (user.roleId === 1) {
         nameRol="Administradora"
@@ -64,12 +54,16 @@ function Profile() {
                                 </div>
                             </div>
                             
-                            <RightTopButton locationElm={CONFIG_PATHS.PROFILE_EDIT_PATH} typeElm='expand' text="Editar" imgElm={pencil}/>
+                            <RightTopButton locationElm={CONFIG_PATHS.CAMPUS_PROFILE_EDIT_PATH} typeElm='expand' text="Editar" imgElm={pencil}/>
                         </div>                        
                         <div className={styles.dataProfile}>
                             <div className={styles.contElm}>
                                 <p className={styles.titleElm}>Email :</p>
                                 <p className={styles.valueElm}>{user?.email}</p>
+                            </div>
+                            <div className={styles.contElm}>
+                                <p className={styles.titleElm}>D.N.I. :</p>
+                                <p className={styles.valueElm}>{user?.dni}</p>
                             </div>
                             <div className={styles.contElm}>
                                 <p className={styles.titleElm}>Sobre mi :</p>

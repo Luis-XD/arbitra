@@ -85,14 +85,56 @@ function ManageStudents() {
         } catch (error) {
             console.error("Error de red:", error);
         }
-    };
+    }
+    const handleExportExcel = async () => {
+        try {
+            const res = await fetch(`${CONFIG_BACKEND.API_DIR}/exportStudentsExcel`, {
+                method: 'GET',
+                credentials: 'include'
+            });
+
+            if (!res.ok) throw new Error("Error al descargar");
+
+            const blob = await res.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Alumnos_Registrados_${new Date().toISOString().slice(0, 10)}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(url);
+        } catch (error) {
+            alert("Ocurrió un error al exportar la lista de alumnos.");
+        }
+    }
 
     const isCurrentlyActive = studentToToggle?.status !== 0;
     const studentFullName = `${studentToToggle?.names || ''} ${studentToToggle?.last_names || ''}`.trim();
 
     return (
         <div className={styles.container}>
-            <h2>Gestión de Alumnos</h2>
+            <h2>
+                Gestión de Alumnos
+                <button
+                    onClick={handleExportExcel}
+                    style={{
+                        width:'14rem',
+                        padding: '8px 16px',
+                        background: '#16a34a',
+                        color: '#fff',
+                        border: 'none',
+                        borderRadius: '6px',
+                        fontWeight: 'bold',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '6px'
+                    }}
+                >
+                    📊 Exportar Alumnos a Excel
+                </button>
+            </h2>
             
             {/* Buscador local */}
             <div className={styles.searchContainer}>
@@ -147,7 +189,7 @@ function ManageStudents() {
                 >
                     <div className={styles.modalContent}>
                         <p className={styles.modalInstruction}>
-                            Para confirmar la acción, escribe el nombre exacto y completo: <strong className={styles.modalTargetName}>{studentFullName}</strong>
+                            Para confirmar la acción, escribe el nombre exacto y completo: <br /><strong className={styles.modalTargetName}>{studentFullName}</strong>
                         </p>
                         
                         <input 

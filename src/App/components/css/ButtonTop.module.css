@@ -1,39 +1,36 @@
 .buttonTop,
 .buttonTopExpand{
+    min-width: 3rem;
     cursor: pointer;
     color: white;
     border: var(--border);
     border-radius: var(--border-radius);
     transition: all ease-in-out .3s;
+    background: white;
+    padding: 0.3rem;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-:global(body.dark) .buttonTop,
-:global(body.dark) .buttonTopExpand{
-    background-color: white;
-}
 .buttonTopExpand{
-    padding: 0.3rem;
     box-shadow: var(--box-shadow-inset);
-    background: white;
 
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
+.buttonTop > img{
+    position: absolute;
+}
 .buttonTop > img,
 .buttonTopExpand > img{
-    padding-left: 0.3rem;
     filter: invert(100%);
 }
+.buttonTop:hover,
 .buttonTopExpand:hover{
     transition: all ease-in-out .3s;
     box-shadow: var(--box-shadow-inset-hover);
-}
-:global(body.dark) .buttonTopExpand:hover{
-    box-shadow: var(--box-shadow-inset-hover-dark);
 }
 .buttonTop > .textButton,
 .buttonTopExpand > .textButton {
@@ -41,7 +38,7 @@
     height: 2rem;
     font-size: 0.9rem;
     color: #000;
-    margin: 0 0.4rem 0 0.2rem;
+    margin: 0 0.4rem 0 0;
     transition: all ease-in-out .8s;
 
     display: flex;

@@ -1,13 +1,12 @@
 .container {
-    padding: 1.5rem;
-    max-width: 1400px;
+    max-width: 72rem;
+    width: 100%;
     margin: 0 auto;
     color: #fff;
-    width: 100%;
-    box-sizing: border-box;
 }
 
-.container h2 {
+.container > h2 {
+    color: #fff;
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     border-bottom: 2px solid #333;
@@ -31,18 +30,19 @@
    ANIMACIÓN DE BRILLO / PULSACIÓN (GLOW PULSE)
    ========================================== */
 .pulseHighlight {
-    border-color: #3b82f6; /* Borde azul brillante */
+    border-color: #3b82f6;
     animation: pulseGlow 1.4s ease-in-out;
 }
 
 @keyframes pulseGlow {
     0% {
         border-color: #3b82f6;
-        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7), 0 4px 6px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.8), 0 40px 60px rgba(0, 0, 0, 0.3);
     }
     50% {
         border-color: #60a5fa;
-        box-shadow: 0 0 15px 4px rgba(59, 130, 246, 0.5), 0 4px 6px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 15px 4px rgba(59, 130, 246, 0.5), 0 40px 60px rgba(0, 0, 0, 0.3);
+        background: var(--background-solid-3);
     }
     100% {
         border-color: transparent;
@@ -82,21 +82,63 @@
     overflow-x: auto;
 }
 
+.cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .listContainer h3 {
     color: #000;
-    margin-bottom: 1rem;
+    margin: 0;
     font-size: 1.4rem;
 }
-.gridRow{
+
+.gridRow {
     color: #000;
+}
+
+.gridRow > .colCode {
+    min-width: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.gridRow > .colCode > button {
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    padding: 0.1rem;
+    border-radius: 0.2rem;
+    background-color: #333;
+}
+
+.gridHeader > div,
+.gridRow > div {
+    padding: 0 0.4rem;
+    border-right: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.gridRow > .colId {
+    border-left: 1px solid #333;
 }
 
 /* ==========================================
    ESCRITORIO / TABLETS (Desde 768px hacia arriba)
+   Unificamos las 8 columnas exactas aquí
    ========================================== */
 @media (min-width: 768px) {
     .gridHeader {
-        background-color: var(--background-solid);
+        background-color: var(--background-solid, #1e293b);
         color: #ccc;
         font-weight: 600;
         border-radius: 4px 4px 0 0;
@@ -105,11 +147,10 @@
 
     .gridHeader, .gridRow {
         display: grid;
-        grid-template-columns: 80px 2fr 1fr 1.5fr 1fr 1fr 110px;
+        grid-template-columns: 0.6fr 1.8fr 1fr 0.7fr 1fr 0.8fr 0.7fr 0.7fr;
         border-bottom: 1px solid #333;
         align-items: center;
-        gap: 10px;
-        padding: 0.75rem 1rem;
+        padding: 0.5rem 1rem;
     }
 
     .gridHeader > .gridRow:hover {
@@ -118,9 +159,9 @@
 }
 
 /* ==========================================
-   DISPOSITIVOS MÓVILES / GAMA BAJA (Hasta 767px)
+   DISPOSITIVOS MÓVILES (Hasta 767px)
    ========================================== */
-@media (max-width: 480px) {
+@media (max-width: 767px) {
     .container {
         padding: 1rem 0.5rem;
     }
@@ -131,19 +172,26 @@
 
     .gridBody {
         display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         gap: 1rem;
+        /* Espacio general a los costados de todo el listado si lo deseas */
+        padding: 0 0.5rem; 
     }
 
     .gridRow {
+        width: 18rem;
         display: flex;
         flex-direction: column;
-        border-radius: var(--border-radius-slim);
+        border-radius: 8px;
         padding: 1rem;
         gap: 0.5rem;
         border: 1px solid #333;
         color: white;
-        background: var(--background-solid);
+        background: var(--background-solid, #1e293b);
+        
+        /* AQUÍ ESTABLECES EL ESPACIO A LA DERECHA E IZQUIERDA DE CADA TARJETA */
+        margin: 0 0.75rem 1rem 0.75rem; 
+        box-sizing: border-box;
     }
 
     .gridRow > div {
@@ -152,7 +200,9 @@
         align-items: center;
         font-size: 0.95rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        padding-bottom: 0.35rem;
+        padding: 0.35rem 0.5rem; /* Respiro horizontal interno en cada línea de la tarjeta */
+        border-right: none;
+        border-left: none;
     }
 
     .gridRow > div:last-child {
@@ -179,4 +229,16 @@
     border-radius: 4px;
     color: #4da6ff;
     font-family: monospace;
+}
+.container {
+    animation: fadeIn 0.25s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

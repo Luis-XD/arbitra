@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { useOutletContext } from 'react-router-dom'
 import styles from './css/ManageCommissions.module.css'
 import Button from '../../../components/Button'
 import ContFormInput from '../../../components/ContFormInput'
@@ -6,61 +7,81 @@ import Loader from '../../../components/Loader'
 import { CONFIG_BACKEND } from '../../../config/config'
 
 function ManageCommissions() {
-    const [commissions, setCommissions] = useState([])
-    const [cargando, setCargando] = useState(true)
-    const [form, setForm] = useState({ id: null, name: '', shift: 'Mañana', status: 'active' })
-    const [isEditing, setIsEditing] = useState(false)
-    const [isAnimating, setIsAnimating] = useState(false) // 👈 Estado para la animación
+    // 💡 Mantenemos disciplines y refreshCampusData del layout padre
+    const { disciplines, refreshCampusData } = useOutletContext();
     
-    const formRef = useRef(null) // 👈 Referencia al formulario de arriba
+    // 🔄 Convertimos las comisiones y la carga en estados locales para refrescar al entrar
+    const [commissions, setCommissions] = useState([]);
+    const [cargandoLocal, setCargandoLocal] = useState(true);
+    
+    const [copiedId, setCopiedId] = useState(null);
+    const [searchTerm, setSearchTerm] = useState('');
+    
+    const [form, setForm] = useState({ id: null, id_discipline: '', name: '', shift: 'Mañana', status: 'active' })
+    const [isEditing, setIsEditing] = useState(false)
+    const [isAnimating, setIsAnimating] = useState(false)
 
+    const formRef = useRef(null)
+
+    // 🔄 Función para buscar las comisiones frescas directamente de la BD
     const fetchCommissions = async () => {
+        setCargandoLocal(true);
         try {
             const res = await fetch(`${CONFIG_BACKEND.API_DIR}/getCommissions`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: { 'Accept': 'application/json' }
-            })
-            const data = await res.json()
+            });
+            const data = await res.json();
             if (data.success) {
-                setCommissions(data.result)
+                setCommissions(data.result || []);
             }
         } catch (error) {
-            console.error("Error al cargar comisiones:", error)
+            console.error("Error al cargar comisiones:", error);
         } finally {
-            setCargando(false)
+            setCargandoLocal(false);
         }
-    }
+    };
 
+    // 🚀 Se ejecuta automáticamente cada vez que el usuario navega a esta pestaña
     useEffect(() => {
-        fetchCommissions()
-    }, [])
+        fetchCommissions();
+    }, []);
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
 
     const handleEditClick = (comm) => {
-        setForm({ id: comm.id, name: comm.name, shift: comm.shift, status: comm.status || 'active' })
+        setForm({ 
+            id: comm.id_commissions, 
+            id_discipline: comm.id_discipline || comm.id_discip || '', 
+            name: comm.name, 
+            shift: comm.shift, 
+            status: comm.status || 'active' 
+        })
         setIsEditing(true)
         window.scrollTo({ top: 0, behavior: 'smooth' })
 
-        // 👈 Activamos la animación de vibración y borde
         setIsAnimating(false)
         setTimeout(() => {
             setIsAnimating(true)
-        }, 100); // Pequeño delay para asegurar que termine el scroll
+        }, 100)
     }
 
     const handleCancelEdit = () => {
-        setForm({ id: null, name: '', shift: 'Mañana', status: 'active' })
+        setForm({ id: null, id_discipline: '', name: '', shift: 'Mañana', status: 'active' })
         setIsEditing(false)
         setIsAnimating(false)
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        setCargando(true)
+
+        if (!form.id_discipline) {
+            alert("Debes seleccionar una disciplina obligatoriamente antes de crear o editar la comisión.")
+            return
+        }
 
         const endpoint = isEditing ? `${CONFIG_BACKEND.API_DIR}/updateCommission` : `${CONFIG_BACKEND.API_DIR}/createCommission`;
 
@@ -76,30 +97,73 @@ function ManageCommissions() {
             if (data.success) {
                 alert(isEditing ? "Comisión actualizada con éxito." : `Comisión creada con éxito. Código: ${data.code}`)
                 handleCancelEdit()
-                fetchCommissions()
+                // Refrescamos los datos locales y globales tras guardar
+                await fetchCommissions();
+                if (refreshCampusData) await refreshCampusData();
             } else {
                 alert(data.error || "Ocurrió un error")
             }
         } catch (error) {
             console.error(error)
             alert("Error de red al procesar la solicitud")
-        } finally {
-            setCargando(false)
         }
     }
 
-    if (cargando && commissions.length === 0) return <Loader />
+    const handleCopy = (code, id) => {
+        navigator.clipboard.writeText(code);
+        setCopiedId(id);
+        setTimeout(() => setCopiedId(null), 2000);
+    }
+
+    const filteredCommissions = commissions.filter(comm => {
+        const query = searchTerm.toLowerCase();
+        const commName = (comm.name || '').toLowerCase();
+        const discName = (comm.name_discip || comm.discipline_name || '').toLowerCase(); 
+        
+        return commName.includes(query) || discName.includes(query);
+    })
+
+    if (cargandoLocal && commissions.length === 0) {
+        return <div style={{ color: '#fff', textAlign: 'center', padding: '50px' }}>...</div>;
+    }
 
     return (
         <div className={styles.container}>
-            <h2>{isEditing ? 'Editar Comisión' : 'Gestión de Comisiones'}</h2>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom:'1rem' }}>
+                <h2>{isEditing ? 'Editar Comisión' : 'Gestión de Comisiones'}</h2>
+                <button 
+                    type="button" 
+                    onClick={fetchCommissions}
+                    style={{ width:'16rem',height:'2.6rem', background: '#10b981', border: '1px solid #065f46', color: '#000', padding: '6px 12px', borderRadius: '2.5rem', cursor: 'pointer', fontSize: '14px' }}
+                    title="Actualizar lista manualmente"
+                >
+                    🔄 Actualizar lista manualmente
+                </button>
+            </div>
             
-            {/* Formulario de Creación / Edición con referencia y clase condicional */}
             <form 
                 ref={formRef}
                 onSubmit={handleSubmit} 
                 className={`${styles.form} ${isAnimating ? styles.pulseHighlight : ''}`}
             >
+                <ContFormInput nameElm="Disciplina / Materia:">
+                    <select 
+                        name="id_discipline" 
+                        value={form.id_discipline} 
+                        onChange={handleChange} 
+                        required
+                    >
+                        <option value="">-- Disciplinas activas --</option>
+                        {disciplines && disciplines
+                            .filter(disc => Number(disc.status) === 1)
+                            .map(disc => (
+                                <option key={disc.id_discip} value={disc.id_discip}>
+                                    {disc.name_discip}
+                                </option>
+                            ))}
+                    </select>
+                </ContFormInput>
+
                 <ContFormInput nameElm="Nombre de la Comisión:">
                     <input 
                         type="text" 
@@ -133,19 +197,37 @@ function ManageCommissions() {
                         {isEditing ? 'Guardar Cambios' : 'Crear Comisión y Generar Código'}
                     </Button>
                     {isEditing && (
-                        <button type="button" onClick={handleCancelEdit} className={styles.cancelButton}>
+                        <Button type="button" styleBtn={2} onClick={handleCancelEdit} className={styles.cancelButton}>
                             Cancelar
-                        </button>
+                        </Button>
                     )}
                 </div>
             </form>
 
-            {/* Listado de Comisiones Existentes */}
             <div className={styles.listContainer}>
-                <h3>Comisiones Registradas</h3>
+                <div className={styles.cont}>
+                    <h3 style={{ margin: 0 }}>Comisiones Registradas</h3>
+                    <input 
+                        type="text"
+                        placeholder="🔍 Buscar comisión o disciplina..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        style={{
+                            padding: '8px 12px',
+                            borderRadius: '6px',
+                            border: '1px solid #4b5563',
+                            background: '#1f2937',
+                            color: '#fff',
+                            outline: 'none',
+                            width: '260px',
+                            fontSize: '14px'
+                        }}
+                    />
+                </div>
                 
-                <div className={styles.gridHeader}>
+                <div className={styles.gridHeader} style={{ gridTemplateColumns: '0.6fr 1.6fr 1fr 0.7fr 1fr 0.8fr 0.7fr 1fr' }}>
                     <div className={styles.colId}>ID</div>
+                    <div className={styles.colDiscipline}>Disciplina</div>
                     <div className={styles.colName}>Nombre</div>
                     <div className={styles.colShift}>Turno</div>
                     <div className={styles.colCode}>Código</div>
@@ -155,33 +237,48 @@ function ManageCommissions() {
                 </div>
 
                 <div className={styles.gridBody}>
-                    {cargando ? (
+                    {cargandoLocal ? (
                         <div style={{ padding: '20px', textAlign: 'center' }}>
                             <Loader />
                         </div>
-                    ) : commissions.length > 0 ? (
-                            commissions.map(comm => (
-                                <div key={comm.id} className={styles.gridRow}>
-                                    <div className={styles.colId} data-label="ID">{comm.id}</div>
-                                    <div className={styles.colName} data-label="Nombre">{comm.name}</div>
-                                    <div className={styles.colShift} data-label="Turno">{comm.shift}</div>
-                                    <div className={styles.colCode} data-label="Código"><code>{comm.code}</code></div>
-                                    <div className={styles.colStudents} data-label="Alumnos">{comm.total_students}</div>
-                                    <div className={styles.colStatus} data-label="Estado">{comm.status}</div>
-                                    <div className={styles.colAction} data-label="Acción">
-                                        <button 
-                                            type="button" 
-                                            onClick={() => handleEditClick(comm)}
-                                            style={{ padding: '5px 10px', background: '#3b82f6', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
-                                        >
-                                            Editar
-                                        </button>
-                                    </div>
+                    ) : filteredCommissions.length > 0 ? (
+                        filteredCommissions.map(comm => (
+                            <div key={comm.id_commissions} className={styles.gridRow} style={{ gridTemplateColumns: '0.6fr 1.6fr 1fr 0.7fr 1fr 0.8fr 0.7fr 1fr' }}>
+                                <div className={styles.colId} data-label="ID">{comm.id_commissions}</div>
+                                <div className={styles.colDiscipline} data-label="Disciplina">
+                                    {comm.name_discip || comm.discipline_name || 'Sin asignar'}
                                 </div>
-                            ))
-                        ) : (
-                            <div className={styles.emptyMessage}>No hay comisiones creadas.</div>
-                        )}
+                                <div className={styles.colName} data-label="Nombre">{comm.name}</div>
+                                <div className={styles.colShift} data-label="Turno">{comm.shift}</div>
+                                <div className={styles.colCode} data-label="Código">
+                                    <code>{comm.code || 'N/A'}</code>
+                                    {comm.code && (
+                                        <button 
+                                            type="button"
+                                            onClick={() => handleCopy(comm.code, comm.id_commissions)}
+                                            className={styles.copyBtn}
+                                            title='Copiar código'
+                                        >
+                                            {copiedId === comm.id_commissions ? "✅" : "📋"}
+                                        </button>
+                                    )}
+                                </div>
+                                <div className={styles.colStudents} data-label="Alumnos">{comm.total_students}</div>
+                                <div className={styles.colStatus} data-label="Estado">{comm.status}</div>
+                                <div className={styles.colAction} data-label="Acción" style={{ display: 'flex', gap: '5px' }}>
+                                    <button 
+                                        type="button" 
+                                        onClick={() => handleEditClick(comm)}
+                                        style={{ padding: '5px 8px', background: '#3b82f6', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}
+                                    >
+                                        Editar
+                                    </button>
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        <div className={styles.emptyMessage}>No se encontraron comisiones que coincidan con la búsqueda.</div>
+                    )}
                 </div>
             </div>
         </div>

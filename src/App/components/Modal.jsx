@@ -1,6 +1,6 @@
 import styles from './css/Modal.module.css'
 import { createPortal } from 'react-dom'
-import imgClose from '/icons/utilities/close.png'
+import imgClose from '/iconsArbitra/utilities/close.png'
 
 function Modal({titleElm, onClickElm, children, formats=""}) {
     const modal = ( 

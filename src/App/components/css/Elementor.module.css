@@ -1,23 +1,27 @@
 .elementor{
-    max-width: 30rem;
+    max-width: 24rem;
     min-width: 20rem;
     width: 100%;
     height: 24rem;
     margin: 0.5rem 1rem;
-    background: var(--background-solid);
     border: 1px solid rgba(16, 185, 129, 0.2);
-    border-radius: var(--border-radius-slim);
+    border-radius: var(--border-radius);
     color: #000;
     text-align: center;
     overflow: hidden;
+    background: var(--background-solid-2);
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+.elementor:hover{
+    background-color: var(--background-solid-3);
+}
 @media (max-width:966px){
     .elementor{
-        width: 50vw;
+        max-width: 16rem;
+        min-width: 10rem;
     }
 }

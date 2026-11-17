@@ -1,10 +1,20 @@
 .container {
     padding: 20px;
-    max-width: 800px;
+    max-width: 1024px;
     margin: 0 auto;
     color: #fff;
 }
-
+.container > h2{
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container > h2 > button{
+    margin-top: 1rem;
+}
 .searchContainer {
     margin: 20px 0;
 }
@@ -78,11 +88,14 @@
 .modalContent {
     padding: 10px 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 15px;
 }
 
 .modalInstruction {
+    width: 100%;
     margin: 0;
     font-size: 14px;
     color: #000;
@@ -93,6 +106,7 @@
 }
 
 .modalInput {
+    width: 60%;
     padding: 10px;
     border-radius: 6px;
     border: 1px solid #4b5563;

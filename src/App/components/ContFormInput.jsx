@@ -1,6 +1,6 @@
 import styles from './css/ContFormInput.module.css'
 
-function ContFormInput({ nameElm, titleElm = "", iconElm = "", children, className = "" }) {
+function ContFormInput({ nameElm, titleElm = "", iconElm = "", children, className = "", iconRoute="" }) {
     const iconAlert = iconElm ? iconElm : null
 
     return ( 
@@ -10,7 +10,8 @@ function ContFormInput({ nameElm, titleElm = "", iconElm = "", children, classNa
                     {nameElm}
                     {iconAlert && (
                         <span>{iconAlert}</span>
-                    )}   
+                    )}
+                    {iconRoute && <img src={iconRoute} title='Nueva ventana'/>}
                 </p>
                 {children}
             </label>

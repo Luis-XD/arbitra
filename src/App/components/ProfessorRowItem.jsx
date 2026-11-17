@@ -70,7 +70,7 @@ function ProfessorRowItem({ professor, onOpenModal, onDisable }) {
                         onClick={() => onOpenModal(professor)}
                         className={styles.assignButton}
                     >
-                        Asignar materias y comisión
+                        Asignar materias
                     </button>
                 )}
 

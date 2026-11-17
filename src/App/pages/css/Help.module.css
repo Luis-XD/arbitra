@@ -1,6 +1,7 @@
 .cont{
     width: 90%;
     height: auto;
+    max-width: 68rem;
 
     display: flex;
     flex-direction: column;
@@ -8,13 +9,13 @@
     align-items: flex-start;
 }
 .cont > h2{
+    color: white;
     text-transform: uppercase;
 }
 .cont > .contAnws{
-    width: 80%;
+    width: 100%;
     height: auto;
-    margin: 0.5rem;
-    padding: 1rem;    
+    margin: 0 0 2rem 1rem;
 
     display: flex;
     justify-content: flex-start;
@@ -25,15 +26,21 @@
     color: var(--color);
     padding: 1rem 0 0.5rem 0;
     border-bottom: 0.1rem solid #333;
-    text-align: center;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 .cont > .contAnws > p{
+    width: 96%;
+    height: auto;
     padding-top: 0.5rem;
     font-size: 1.2rem;
     line-height: 2rem;
     color: rgb(219, 216, 216);
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }

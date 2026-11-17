@@ -1,0 +1,89 @@
+.cardListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.dataCard {
+  background-color: #1a1a1e;
+  border: 1px solid #2a2a30;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cardHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #25252b;
+  padding-bottom: 0.5rem;
+}
+
+.cursoTitle {
+  font-weight: 600;
+  color: #f1f1f5;
+  font-size: 0.95rem;
+}
+
+.cursoBadge {
+  font-size: 0.7rem;
+  background-color: #25252b;
+  color: #a1a1aa;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.cardGridMetrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.75rem;
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.metricLabel {
+  font-size: 0.7rem;
+  color: #8d8d99;
+  text-transform: uppercase;
+}
+
+.metricValue {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e1e1e6;
+}
+
+.rowCard {
+  background-color: #1a1a1e;
+  border: 1px solid #2a2a30;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rowMainText {
+  font-weight: 500;
+  color: #e1e1e6;
+}
+
+.rowMetricsGroup {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: #a1a1aa;
+}
+
+.highlightBadge {
+  color: #00b37e;
+  font-weight: 600;
+}

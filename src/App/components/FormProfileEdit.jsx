@@ -1,14 +1,14 @@
 import styles from './css/Form.module.css'
 import { useState, useContext, useEffect } from 'react'
 import { UserContext } from './UserProvider'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Button from './Button'
 import LeftTopButton from './LeftTopButton'
 import Loader from './Loader'
 import ContFormInput from './ContFormInput'
 import ShowData from './ShowData'
 import { CONFIG_BACKEND, CONFIG_PATHS } from '../config/config'
-import userDefault from '/icons/utilities/user_128.png'
+import userDefault from '/iconsArbitra/utilities/user_128.png'
 import TopButtons from './TopButtons'
 
 function FormProfileEdit() {
@@ -21,6 +21,7 @@ function FormProfileEdit() {
     const [form, setForm] = useState({
         names: user?.names || '',
         lastNames:  user?.lastNames || '',
+        dni:  user?.dni || '',
         sex:  user?.sex || '',
         birthday:  user?.birthday || '',
         aboutMe:  user?.aboutMe || ''
@@ -49,6 +50,7 @@ function FormProfileEdit() {
         const formData = new FormData()
         formData.append('names', form.names)
         formData.append('lastNames', form.lastNames)
+        formData.append('dni', form.dni)
         formData.append('sex', form.sex)
         formData.append('birthday', form.birthday)
         formData.append('imgProfile', selectedImage)
@@ -71,7 +73,9 @@ function FormProfileEdit() {
                 alertContainer.classList.add("success")
                 setMessage("✅ ¡"+data.message+"!")
                 await loadUser()
-                navigate(CONFIG_PATHS.PROFILE_PATH)
+                setTimeout(() => {
+                    navigate(CONFIG_PATHS.CAMPUS_PATH+"/"+CONFIG_PATHS.CAMPUS_PROFILE_PATH)
+                }, 3000);
             }else{
                 alertContainer.classList.add("error")
                 setMessage("❌ ¡"+data.error+"!")
@@ -108,7 +112,7 @@ function FormProfileEdit() {
                 <form className={styles.form} id='formUpdate' onSubmit={handleSubmit}>
                     <div className={styles.alertContainer} id="alertContainer">{message}</div>
                     <TopButtons>
-                        <LeftTopButton typeElm='expand' text="Perfil" locationElm={CONFIG_PATHS.PROFILE_PATH}/>
+                        <LeftTopButton typeElm='expand' text="Perfil" locationElm="/campus/perfil"/>
                     </TopButtons>
                     
                     <div className={styles.contElmsForm}>
@@ -121,8 +125,18 @@ function FormProfileEdit() {
                             <input type="text" name="lastNames" placeholder={user?.lastNames} id="apellidos" onChange={handleChange}/>
                         </ContFormInput>
 
+                        <ContFormInput nameElm="DNI">
+                            <input type="text" name="dni" placeholder={user?.dni} id="dni" onChange={handleChange}/>
+                        </ContFormInput>
+
                         <ContFormInput nameElm="Email:" iconElm="?" titleElm='No se puede cambiar este valor'>
                             <ShowData>{user?.email}</ShowData>
+                        </ContFormInput>
+
+                        <ContFormInput nameElm="Contraseña:" iconRoute='/iconsArbitra/links/external-link.png'>
+                            <Link to={`${CONFIG_PATHS.CAMPUS_PATH}/${CONFIG_PATHS.CAMPUS_CONFIG_PASSW}`}>
+                                <ShowData>Cambiar mi contraseña</ShowData>
+                            </Link>
                         </ContFormInput>
 
                         <ContFormInput nameElm="Sexo">
@@ -158,6 +172,7 @@ function FormProfileEdit() {
                             typeBtn="submit"
                             altName="Guardar cambios"
                             title="Guardar cambios"
+                            styleBtn={2}
                             id="guadarCambios"
                             disabled={cargando}
                         >

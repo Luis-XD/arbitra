@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import ContentCourses from "../../../components/ContentCourses"
 import LeftTopButton from "../../../components/LeftTopButton"
-import RightTopButton from "../../../components/RightTopButton"
 import TopButtons from "../../../components/TopButtons"
 import { UserContext } from "../../../components/UserProvider"
 

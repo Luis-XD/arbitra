@@ -1,0 +1,53 @@
+.disciplinesContainer {
+  display: flex;
+  flex-direction: column;
+}
+.flush{
+    width: 100%;
+}
+
+.disciplineRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #25252b;
+}
+
+.disciplineRow:last-child {
+  border-bottom: none;
+}
+
+.disciplineInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.disciplineName {
+  font-weight: 500;
+  color: #e1e1e6;
+}
+
+.badgeActive {
+  font-size: 0.65rem;
+  background-color: rgba(0, 179, 126, 0.15);
+  color: #00b37e;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.badgeInactive {
+  font-size: 0.65rem;
+  background-color: rgba(247, 90, 104, 0.15);
+  color: #f75a68;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.disciplinePrice {
+  font-family: monospace;
+  font-weight: 600;
+  color: #f1f1f5;
+}
+@media (max-width: 980px) { .columns, .equal { grid-template-columns: minmax(0, 1fr); } }

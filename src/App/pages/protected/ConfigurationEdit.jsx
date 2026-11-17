@@ -1,4 +1,3 @@
-import Section from '../../components/Section'
 import FormConfigEdit from '../../components/FormConfigEdit'
 import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -9,21 +8,17 @@ function ConfigurationEdit() {
     const { user } = useContext(UserContext)
     const navigate = useNavigate()
     
-    useEffect(()=>{
-        if (user.roleId !== 1) {
-            navigate(CONFIG_PATHS.CAMPUS_PATH)
+    useEffect(() => {
+        if (user && user.roleId !== 1) {
+            navigate(CONFIG_PATHS.CAMPUS_PATH, { replace: true })
         }
-    },[])
+    }, [user, navigate])
 
     return ( 
         <>
-            <Section>
-                {(user && (user.roleId === 1)) ? (
-                    <FormConfigEdit />
-                ): null}
-            </Section>
+            { user.roleId === 1 && <FormConfigEdit /> }
         </>
-     )
+    )
 }
 
 export default ConfigurationEdit

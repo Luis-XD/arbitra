@@ -1,0 +1,318 @@
+[
+ {
+  "id": "p01",
+  "nombre": "Ailén Correa",
+  "telefono": "11 5285-8753",
+  "email": "",
+  "cursoId": "c4",
+  "origen": "Instagram",
+  "etapa": "Nuevo",
+  "proximoContacto": "2026-10-29",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-09-30",
+    "texto": "Consulta ingresada por Instagram."
+   }
+  ],
+  "creado": "2026-09-30",
+  "ejemplo": true
+ },
+ {
+  "id": "p02",
+  "nombre": "Marcos Villalba",
+  "telefono": "11 6141-1957",
+  "email": "",
+  "cursoId": "c5",
+  "origen": "Facebook",
+  "etapa": "Nuevo",
+  "proximoContacto": "2026-10-30",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-10-11",
+    "texto": "Consulta ingresada por Facebook."
+   }
+  ],
+  "creado": "2026-10-11",
+  "ejemplo": true
+ },
+ {
+  "id": "p03",
+  "nombre": "Paula Benítez",
+  "telefono": "11 6854-3366",
+  "email": "",
+  "cursoId": "c4",
+  "origen": "Sitio web",
+  "etapa": "Contactado",
+  "proximoContacto": "2026-10-27",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-10-11",
+    "texto": "Consulta ingresada por Sitio web."
+   },
+   {
+    "fecha": "2026-10-27",
+    "texto": "Le envié el programa por WhatsApp."
+   }
+  ],
+  "creado": "2026-10-11",
+  "ejemplo": true
+ },
+ {
+  "id": "p04",
+  "nombre": "Joaquín Sánchez",
+  "telefono": "11 5504-9162",
+  "email": "",
+  "cursoId": "c5",
+  "origen": "Referido",
+  "etapa": "Contactado",
+  "proximoContacto": "2026-10-31",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-10-04",
+    "texto": "Consulta ingresada por Referido."
+   },
+   {
+    "fecha": "2026-10-27",
+    "texto": "Llamó por recomendación de un egresado."
+   }
+  ],
+  "creado": "2026-10-04",
+  "ejemplo": true
+ },
+ {
+  "id": "p05",
+  "nombre": "Carla Núñez",
+  "telefono": "11 6767-1108",
+  "email": "",
+  "cursoId": "c1",
+  "origen": "Volante / vía pública",
+  "etapa": "Interesado",
+  "proximoContacto": "2026-10-28",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-10-21",
+    "texto": "Consulta ingresada por Volante / vía pública."
+   },
+   {
+    "fecha": "2026-10-26",
+    "texto": "Consulta por becas."
+   },
+   {
+    "fecha": "2026-10-26",
+    "texto": "Pidió volver a llamar con valores actualizados."
+   }
+  ],
+  "creado": "2026-10-21",
+  "ejemplo": true
+ },
+ {
+  "id": "p06",
+  "nombre": "Diego Paredes",
+  "telefono": "11 5958-9152",
+  "email": "",
+  "cursoId": "c4",
+  "origen": "Instagram",
+  "etapa": "Interesado",
+  "proximoContacto": "2026-11-01",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-10-21",
+    "texto": "Consulta ingresada por Instagram."
+   },
+   {
+    "fecha": "2026-10-27",
+    "texto": "Trabaja de día, le sirve la modalidad virtual."
+   }
+  ],
+  "creado": "2026-10-21",
+  "ejemplo": true
+ },
+ {
+  "id": "p07",
+  "nombre": "Natalia Godoy",
+  "telefono": "11 6721-8631",
+  "email": "",
+  "cursoId": "c5",
+  "origen": "WhatsApp",
+  "etapa": "Entrevista",
+  "proximoContacto": "2026-10-30",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-10-05",
+    "texto": "Consulta ingresada por WhatsApp."
+   },
+   {
+    "fecha": "2026-10-27",
+    "texto": "Coordinamos que venga a una clase de prueba el jueves."
+   }
+  ],
+  "creado": "2026-10-05",
+  "ejemplo": true
+ },
+ {
+  "id": "p08",
+  "nombre": "Hernán Sotelo",
+  "telefono": "11 5857-2235",
+  "email": "",
+  "cursoId": "c3",
+  "origen": "Instagram",
+  "etapa": "Entrevista",
+  "proximoContacto": "2026-10-29",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-10-15",
+    "texto": "Consulta ingresada por Instagram."
+   },
+   {
+    "fecha": "2026-10-27",
+    "texto": "Viene a ver una práctica en cancha el sábado."
+   }
+  ],
+  "creado": "2026-10-15",
+  "ejemplo": true
+ },
+ {
+  "id": "p09",
+  "nombre": "Antonella Ríos",
+  "telefono": "11 5738-1467",
+  "email": "",
+  "cursoId": "c4",
+  "origen": "Feria / evento",
+  "etapa": "Contactado",
+  "proximoContacto": "2026-11-03",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-10-21",
+    "texto": "Consulta ingresada por Feria / evento."
+   },
+   {
+    "fecha": "2026-10-26",
+    "texto": "Datos tomados en la Expo Empleo."
+   }
+  ],
+  "creado": "2026-10-21",
+  "ejemplo": true
+ },
+ {
+  "id": "p10",
+  "nombre": "Sebastián Figueroa",
+  "telefono": "11 5093-6414",
+  "email": "",
+  "cursoId": "c5",
+  "origen": "Facebook",
+  "etapa": "Perdido",
+  "proximoContacto": "",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-10-26",
+    "texto": "Consulta ingresada por Facebook."
+   },
+   {
+    "fecha": "2026-10-26",
+    "texto": "No respondió tres intentos."
+   }
+  ],
+  "creado": "2026-10-26",
+  "motivoPerdida": "No respondió",
+  "ejemplo": true
+ },
+ {
+  "id": "p11",
+  "nombre": "Milagros Duarte",
+  "telefono": "11 6045-8932",
+  "email": "",
+  "cursoId": "c1",
+  "origen": "Sitio web",
+  "etapa": "Perdido",
+  "proximoContacto": "",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-10-01",
+    "texto": "Consulta ingresada por Sitio web."
+   },
+   {
+    "fecha": "2026-10-28",
+    "texto": "El horario no le sirve."
+   }
+  ],
+  "creado": "2026-10-01",
+  "motivoPerdida": "Horario no compatible",
+  "ejemplo": true
+ },
+ {
+  "id": "p12",
+  "nombre": "Luciano Arce",
+  "telefono": "11 5069-4495",
+  "email": "",
+  "cursoId": "c4",
+  "origen": "Instagram",
+  "etapa": "Inscripto",
+  "proximoContacto": "",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-10-11",
+    "texto": "Consulta ingresada por Instagram."
+   },
+   {
+    "fecha": "2026-10-28",
+    "texto": "Se inscribió en Arbitraje de Vóley."
+   }
+  ],
+  "creado": "2026-10-11",
+  "ejemplo": true
+ },
+ {
+  "id": "p13",
+  "nombre": "Belén Toledo",
+  "telefono": "11 5851-3079",
+  "email": "",
+  "cursoId": "c5",
+  "origen": "Referido",
+  "etapa": "Nuevo",
+  "proximoContacto": "2026-10-29",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-10-04",
+    "texto": "Consulta ingresada por Referido."
+   }
+  ],
+  "creado": "2026-10-04",
+  "ejemplo": true
+ },
+ {
+  "id": "p14",
+  "nombre": "Ramiro Cáceres",
+  "telefono": "11 6764-6999",
+  "email": "",
+  "cursoId": "c2",
+  "origen": "Sitio web",
+  "etapa": "Interesado",
+  "proximoContacto": "2026-10-26",
+  "notas": "",
+  "historial": [
+   {
+    "fecha": "2026-10-16",
+    "texto": "Consulta ingresada por Sitio web."
+   },
+   {
+    "fecha": "2026-10-28",
+    "texto": "Pide plan de pagos en más cuotas."
+   }
+  ],
+  "creado": "2026-10-16",
+  "ejemplo": true
+ }
+]

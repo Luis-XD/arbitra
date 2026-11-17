@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { CONFIG_BACKEND } from '../config/config';
+import styles from './css/FormCreateExam.module.css';
 
 const FormCreateExam = ({ courseId, onExamSaved, onCancel }) => {
     const [examData, setExamData] = useState({
@@ -93,12 +94,12 @@ const FormCreateExam = ({ courseId, onExamSaved, onCancel }) => {
     };
 
     return (
-        <div style={{ padding: '20px', background: '#1d1d1d', color: '#fff', borderRadius: '8px', maxWidth: '700px', maxHeight: '85vh', overflowY: 'auto' }}>
-            <h2 style={{ fontSize: '20px', fontWeight: 'bold', marginBottom: '20px', color: 'white' }}>Crear Nuevo Examen</h2>
+        <div className={styles.container}>
+            <h2 className={styles.title}>Crear Nuevo Examen</h2>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-                <div style={{ background: '#27272a', padding: '15px', borderRadius: '6px', marginBottom: '15px' }}>
-                    <label style={{ display: 'block', fontSize: '14px', marginBottom: '5px' }}>Título del Examen</label>
+                <div className={styles.examCard}>
+                    <label className={styles.label}>Título del Examen</label>
                     <input
                         type="text"
                         name="title_exam"
@@ -106,41 +107,41 @@ const FormCreateExam = ({ courseId, onExamSaved, onCancel }) => {
                         onChange={handleExamChange}
                         required
                         placeholder="Ej: Examen Parcial - Mes 2"
-                        style={{ width: '100%', padding: '8px', background: '#18181b', color: '#fff', border: '1px solid #3f3f46', borderRadius: '4px' }}
+                        className={styles.input}
                     />
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px', marginTop: '10px' }}>
+                    <div className={styles.gridContainer}>
                         <div>
-                            <label style={{ display: 'block', fontSize: '12px', marginBottom: '5px' }}>Límite (min)</label>
+                            <label className={styles.smallLabel}>Límite (min)</label>
                             <input
                                 type="number"
                                 name="time_limit"
                                 value={examData.time_limit}
                                 onChange={handleExamChange}
                                 required
-                                style={{ width: '100%', padding: '8px', background: '#18181b', color: '#fff', border: '1px solid #3f3f46', borderRadius: '4px' }}
+                                className={styles.input}
                             />
                         </div>
                         <div>
-                            <label style={{ display: 'block', fontSize: '12px', marginBottom: '5px' }}>Inicio</label>
+                            <label className={styles.smallLabel}>Inicio</label>
                             <input
                                 type="datetime-local"
                                 name="start_time"
                                 value={examData.start_time}
                                 onChange={handleExamChange}
                                 required
-                                style={{ width: '100%', padding: '8px', background: '#18181b', color: '#fff', border: '1px solid #3f3f46', borderRadius: '4px', fontSize: '12px' }}
+                                className={styles.datetimeInput}
                             />
                         </div>
                         <div>
-                            <label style={{ display: 'block', fontSize: '12px', marginBottom: '5px' }}>Cierre Global</label>
+                            <label className={styles.smallLabel}>Cierre Global</label>
                             <input
                                 type="datetime-local"
                                 name="end_time"
                                 value={examData.end_time}
                                 onChange={handleExamChange}
                                 required
-                                style={{ width: '100%', padding: '8px', background: '#18181b', color: '#fff', border: '1px solid #3f3f46', borderRadius: '4px', fontSize: '12px' }}
+                                className={styles.datetimeInput}
                             />
                         </div>
                     </div>
@@ -148,29 +149,29 @@ const FormCreateExam = ({ courseId, onExamSaved, onCancel }) => {
 
                 {/* Preguntas */}
                 <div className="space-y-4">
-                    <h3 style={{ fontSize: '16px', fontWeight: 'bold' }}>Preguntas</h3>
+                    <h3 className={styles.subtitle}>Preguntas</h3>
                     {questions.map((q, qIndex) => (
-                        <div key={qIndex} style={{ background: '#27272a', padding: '15px', borderRadius: '6px', marginBottom: '10px' }}>
-                            <label style={{ display: 'block', fontSize: '13px', marginBottom: '5px' }}>Pregunta {qIndex + 1}</label>
+                        <div key={qIndex} className={styles.questionCard}>
+                            <label className={styles.questionLabel}>Pregunta {qIndex + 1}</label>
                             <input
                                 type="text"
                                 value={q.question_text}
                                 onChange={(e) => handleQuestionChange(qIndex, e.target.value)}
                                 required
                                 placeholder="Escribe la pregunta..."
-                                style={{ width: '100%', padding: '8px', background: '#18181b', color: '#fff', border: '1px solid #3f3f46', borderRadius: '4px', marginBottom: '10px' }}
+                                className={styles.questionInput}
                             />
 
-                            <div style={{ marginLeft: '10px' }}>
-                                <span style={{ fontSize: '11px', color: '#a1a1aa' }}>Opciones (selecciona el punto de la correcta):</span>
+                            <div className={styles.optionsContainer}>
+                                <span className={styles.optionsHint}>Opciones (selecciona el punto de la correcta):</span>
                                 {q.options.map((opt, oIndex) => (
-                                    <div key={oIndex} style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '6px' }}>
+                                    <div key={oIndex} className={styles.optionRow}>
                                         <input
                                             type="radio"
                                             name={`correct_${qIndex}`}
                                             checked={opt.is_correct === 1}
                                             onChange={() => handleCorrectOptionChange(qIndex, oIndex)}
-                                            style={{ cursor: 'pointer' }}
+                                            className={styles.radioInput}
                                         />
                                         <input
                                             type="text"
@@ -178,14 +179,14 @@ const FormCreateExam = ({ courseId, onExamSaved, onCancel }) => {
                                             onChange={(e) => handleOptionChange(qIndex, oIndex, e.target.value)}
                                             required
                                             placeholder={`Opción ${oIndex + 1}`}
-                                            style={{ flex: 1, padding: '6px', background: '#18181b', color: '#fff', border: '1px solid #3f3f46', borderRadius: '4px', fontSize: '13px' }}
+                                            className={styles.optionInput}
                                         />
                                     </div>
                                 ))}
                                 <button
                                     type="button"
                                     onClick={() => addOption(qIndex)}
-                                    style={{ fontSize: '12px', color: '#60a5fa', background: 'none', border: 'none', cursor: 'pointer', marginTop: '6px' }}
+                                    className={styles.addOptionBtn}
                                 >
                                     + Agregar otra opción
                                 </button>
@@ -196,23 +197,23 @@ const FormCreateExam = ({ courseId, onExamSaved, onCancel }) => {
                     <button
                         type="button"
                         onClick={addQuestion}
-                        style={{ width: '100%', padding: '8px', background: 'transparent', border: '2px dashed #4f46e5', color: '#818cf8', borderRadius: '6px', cursor: 'pointer', fontWeight: 'bold' }}
+                        className={styles.addQuestionBtn}
                     >
                         + Agregar otra pregunta
                     </button>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px', marginTop: '20px', borderTop: '1px solid #27272a', paddingTop: '15px' }}>
+                <div className={styles.footerActions}>
                     <button
                         type="button"
                         onClick={onCancel}
-                        style={{ padding: '8px 15px', background: '#3f3f46', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer' }}
+                        className={styles.cancelBtn}
                     >
                         Cancelar
                     </button>
                     <button
                         type="submit"
-                        style={{ padding: '8px 20px', background: '#10b981', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold' }}
+                        className={styles.submitBtn}
                     >
                         Guardar Examen
                     </button>

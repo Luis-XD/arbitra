@@ -4,41 +4,13 @@ import { UserContext } from '../../../components/UserProvider'
 import Card from '../../../components/Card'
 import TopButtons from "../../../components/TopButtons"
 import LeftTopButton from "../../../components/LeftTopButton"
+import { useNavigate } from "react-router-dom"
 
 function MyCourses() {
     const [cargando, setCargando] = useState(false)
     const [inscript, setInscript] = useState([])
     const { user } = useContext(UserContext)
-    
-    const getSportIcon = (sportName, courseName) => {
-        // Normalizamos el texto del curso y del deporte para limpiar acentos y mayúsculas
-        const course = (courseName || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        const sport = (sportName || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        
-        // 1. Si el nombre del curso o del deporte pertenece al fútbol, usamos siempre el icono de fútbol
-        if (course.includes('futbol') || course.includes('futsal') || sport.includes('futbol')) {
-            return '/icons/links/sports/football.png'
-        }
-        
-        // 2. Evaluamos el resto de los deportes (cubriendo 'basket', 'basquet' y 'basketball')
-        if (course.includes('basket') || course.includes('basquet') || sport.includes('basket')) {
-            return '/icons/links/sports/basketball.png' // Cámbialo a '/icons/links/sports/basketball.png' si tu archivo se llama así
-        }
-        if (course.includes('rugby') || sport.includes('rugby')) {
-            return '/icons/links/sports/rugbyBall.png'
-        }
-        if (course.includes('voley') || sport.includes('voley')) {
-            return '/icons/links/sports/voleyball.png'
-        }
-        if (course.includes('hockey') || sport.includes('hockey')) {
-            return '/icons/links/sports/hockey.png'
-        }
-        if (course.includes('handball') || sport.includes('handball')) {
-            return '/icons/links/sports/handball.png'
-        }
-        
-        return '/icons/links/sports/football.png' // Icono por defecto
-    }
+    const navigate = useNavigate();
 
     const consult = async () => {
         if (!user) {
@@ -59,10 +31,10 @@ function MyCourses() {
             if (data && data.success) {
                 setInscript(data.result)
             } else {
+                navigate('/campus', { replace: true });
                 setInscript([])
             }
         } catch (error) {
-            console.log("❌ Error " + error)
             setInscript([])
         } finally {
             setCargando(false)
@@ -84,17 +56,18 @@ function MyCourses() {
                 )}
             </TopButtons>
             
-            <h2 style={{marginTop:'1rem'}}>Estás inscrito en:</h2>
+            <h2 style={{marginTop:'1rem', color:'white'}}>Estás inscrito en:</h2>
                 {inscript?.length > 0 ? (
                     inscript.map(inscp => (
                         <Card 
                             key={inscp.id_inscript}
                             cardTitle={inscp.title_course}
                             link={`/campus/mis-cursos/${inscp.id_course}`}
-                            imgSrc={getSportIcon(inscp.name_sport, inscp.title_course)} 
+                            ubication="disciplines/cards"
+                            imgCard={inscp.img_discip}
                         />
                     ))
-                ) : (<span>Ningún curso inscrito</span>)}
+                ) : (<span style={{margin:'2rem 0'}}>Ningún curso inscrito</span>)}
             </>
     )
 }

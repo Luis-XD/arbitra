@@ -1,0 +1,2 @@
+.page { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.debe { color: var(--bad); }

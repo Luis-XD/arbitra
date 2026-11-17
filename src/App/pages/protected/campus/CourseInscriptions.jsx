@@ -109,6 +109,7 @@ function CourseInscriptions() {
                             <Button 
                                 type="submit" 
                                 disabled={submitting}
+                                styleBtn={2}
                                 style={{ padding: '8px 15px', cursor: 'pointer' }}
                             >
                                 {submitting ? 'Inscribiendo...' : 'Registrarme'}
@@ -130,7 +131,7 @@ function CourseInscriptions() {
                 >
                     <Card 
                         cardTitle={discipline.name_discip} 
-                        ubication='disciplines'
+                        ubication='disciplines/cards'
                         descriptionCard={discipline.descript_discip}
                         imgCard={discipline.img_discip}
                     />

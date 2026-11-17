@@ -30,9 +30,7 @@ function MattersListProfessor() {
             const data = await response.json()
             if (data.success) {
                 setProfessor(data.result)
-            } else {
-                console.log(data.message)
-            }
+            } 
         } catch (errorCatch) {
             if (import.meta.env.DEV) { console.error(errorCatch.message) }
         } finally {
@@ -99,7 +97,7 @@ function MattersListProfessor() {
                             {disciplineMatters.map(matt => (
                                 <Card
                                     key={matt.id_matter}
-                                    ubication='disciplines'
+                                    ubication='disciplines/cards'
                                     cardTitle={matt.name_matter}
                                     imgCard={matt.img_discip}
                                     link={`detalles/${matt.id_matter}`}

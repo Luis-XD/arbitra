@@ -1,5 +1,3 @@
-import Block from "../components/Block";
-import Container from "../components/Container";
 import ContainerMax from "../components/ContainerMax";
 import Publication from "../components/Publication";
 

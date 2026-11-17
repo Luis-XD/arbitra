@@ -1,9 +1,10 @@
 .containerCustom {
-  max-width: 900px;
   margin: 40px auto;
   padding: 30px;
 }
-
+.containerCustom > h2{
+  color: #fff;
+}
 .subtitleText {
   color: #666;
   margin-bottom: 30px;
@@ -22,6 +23,7 @@
 
 .cardBlock {
   min-width: 20rem;
+  max-width: 30rem;
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: var(--border-radius);
@@ -45,17 +47,19 @@
 .tokenRow {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
 .tokenBox {
-  background: #eee;
+  width: 28rem;
   padding: 8px;
   border-radius: 5px;
   word-break: break-all;
   font-family: monospace;
   flex: 1;
   font-size: 12px;
+  background: #adadad;
 }
 
 .visibilityBtn {

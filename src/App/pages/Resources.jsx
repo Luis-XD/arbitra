@@ -8,7 +8,7 @@ import styles from './css/Resources.module.css'
 import stylesButton from '../components/css/Button.module.css'
 import Modal from '../components/Modal'
 import FormResources from '../components/FormResources'
-import imgUpload from '/icons/links/upload.png'
+import imgUpload from '/iconsArbitra/links/upload.png'
 import { UserContext } from '../components/UserProvider'
 
 function Resources() {
@@ -85,7 +85,7 @@ function Resources() {
                     resources.map(resource => (
                         <Elementor key={resource.idResource}>
                             <p className={styles.titleResource}>{resource.titleResource}</p>
-                            <img src={`src/App/assets/icons/files/${resource.extResource ?? resource.ext_resource}.png`} alt={resource.extResource} className={styles.iconResource} />
+                            <img src={`src/App/assets/iconsArbitra/files/${resource.extResource ?? resource.ext_resource}.png`} alt={resource.extResource} className={styles.iconResource} />
                             <p className={styles.descriptionResource}>{resource.descriptionResource}</p>
                             <div className={styles.groupData}>
                                 <p className={styles.dataSize}>

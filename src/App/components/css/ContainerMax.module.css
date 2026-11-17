@@ -63,8 +63,6 @@
 @media (max-width: 1280px){
     .containerMax{
         flex-direction: column;
-        border-radius: var(--border-radius);
-        background: var(--background-solid);
     }
     .containerMax > .contElemnt{
         flex-direction: column;

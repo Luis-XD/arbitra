@@ -17,9 +17,7 @@
     align-content: flex-start;
     flex-wrap: wrap;
 }
-:global(body.dark) .panelCampus > .panelContainer{
-    background-color: #1D1D1D;
-}
+
 .panelCampus > .panelContainer > h2{
     width: 100%;
     height: auto;
@@ -29,7 +27,7 @@
 .panelCampus > .panelContainer > p{
     color: #fff;
 }
-:global(body.dark) .panelCampus > .panelContainer > h2,
+
 .panelCampus > .panelContainer > p{
     color: #fff;
 }

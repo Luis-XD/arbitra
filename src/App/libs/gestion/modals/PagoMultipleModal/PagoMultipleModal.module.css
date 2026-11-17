@@ -1,0 +1,2 @@
+.recargo { width: 96px; text-align: right; border: 1px solid var(--line); background: var(--bg); color: var(--fg); border-radius: 4px; padding: 4px 6px; font-family: var(--f-mono); }
+.ayuda { margin: 0; color: var(--muted); font-size: 12.5px; }

@@ -1,7 +1,16 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . index.html [L]
+  RewriteBase /
+
+  # 1. Si la petición empieza con /api, NO la toques (que la resuelva el .htaccess de /api)
+  RewriteCond %{REQUEST_URI} ^/api [NC]
+  RewriteRule ^ - [L]
+
+  # 2. Si el archivo o carpeta existe físicamente (assets, imágenes, etc.), servirlo
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 3. Cualquier otra ruta (ej. /acerca-de) enviarla al index.html de React
+  RewriteRule ^ index.html [L]
 </IfModule>

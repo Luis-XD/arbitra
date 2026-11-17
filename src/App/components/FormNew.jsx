@@ -6,7 +6,7 @@ import Button from './Button'
 import Loader from './Loader'
 import ContFormInput from './ContFormInput'
 import { CONFIG_BACKEND, CONFIG_PATHS } from '../config/config'
-import userDefault from '/icons/utilities/user_128.png'
+import userDefault from '/iconsArbitra/utilities/user_128.png'
 
 function FormNew() {
     const { user, loadUser } = useContext(UserContext)

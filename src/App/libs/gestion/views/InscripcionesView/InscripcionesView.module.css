@@ -1,0 +1,120 @@
+.containerList {
+    width: 100%;
+    padding: 1rem;
+}
+
+.gridCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.cardItem {
+  background-color: #1a1a1e;
+  border: 1px solid #2a2a30;
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.cardItem:hover {
+  border-color: #00b37e;
+  transform: translateY(-2px);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #25252b;
+  padding-bottom: 0.75rem;
+  gap: 0.5rem;
+}
+
+.alumnoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.nombreAlumno {
+  font-weight: 600;
+  color: #f1f1f5;
+  font-size: 1rem;
+}
+
+.dniSub {
+  font-size: 0.75rem;
+  color: #8d8d99;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.label {
+  color: #8d8d99;
+}
+
+.valueText {
+  color: #e1e1e6;
+  font-weight: 500;
+}
+
+.valueMono {
+  font-family: monospace;
+  color: #e1e1e6;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  background-color: #121214;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #202024;
+}
+
+.metricBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: center;
+}
+
+.metricLabel {
+  font-size: 0.65rem;
+  color: #8d8d99;
+  text-transform: uppercase;
+}
+
+.metricValue {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f1f1f5;
+  font-family: monospace;
+}
+
+.debe {
+  color: #f75a68 !important;
+}
+
+.emptyWrapper {
+  padding: 2rem 0;
+  text-align: center;
+}

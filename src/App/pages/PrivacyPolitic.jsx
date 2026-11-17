@@ -21,7 +21,7 @@ function PrivacyPolitic() {
     <>
       <Publication titlePub="Políticas de privacidad" typeElm='img' nameAsset="banner_privacy_politic.webp">
         <Section>
-          <Container>
+          <Container hiddenStyle={true}>
             <div className={styles.contTitle}>
               <h2>
                 Escuela de árbitros

@@ -89,7 +89,7 @@
 }
 .contContTable > .contTable > .table > .resultG{
     padding: 0.2rem;
-    background-color: rgb(204, 204, 204);
+    /*background-color: rgb(204, 204, 204);*/
 
     display: flex;
     justify-content: center;

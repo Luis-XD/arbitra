@@ -1,0 +1,2 @@
+.bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; min-width: 0; }
+.between { justify-content: space-between; }

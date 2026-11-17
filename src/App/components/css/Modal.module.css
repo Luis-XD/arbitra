@@ -56,12 +56,13 @@
 .modal > .groupModal > .container{
     width: auto;
     height: auto;
-    min-width: 24rem;
+    min-width: 20rem;
     max-width: 50dvw;
     min-height: 10rem;
     max-height: 90dvh;
     border-radius: var(--border-radius);
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     background-color: white;
 
     display: flex;
@@ -72,8 +73,9 @@
 .modal > .groupModal > .container > h2{
     max-width: 90%;
     color: #000;
+    margin-top: 1rem;
     padding: 0.2rem 0;
-    font-size: 2rem;
+    font-size: 1.4rem;
     text-align: center;
 }
 
@@ -101,8 +103,7 @@
     justify-content: center;
     align-items: center;
 }
-
-@media (max-width:400px){
+@media (max-width:1000px){
     .modal > .groupModal > .container{
         max-width: 80dvw;
         min-width: 7rem;

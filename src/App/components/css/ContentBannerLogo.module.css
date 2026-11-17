@@ -1,0 +1,46 @@
+.container{
+    width: auto;
+    height: auto;
+    margin-top: 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.container > .contImg{
+    width: auto;
+    height: 100%;
+}
+.container > .contImg > img{
+    width: 8rem;
+}
+
+
+.container > .contText{
+    width: auto;
+    height: 100%;
+    padding: 0 0 0.2rem 0.4rem;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.container > .contText > h2{
+    font-size: 4.8rem;
+    letter-spacing: 0rem;
+}
+.container > .contText > p{
+    font-size: 1.4rem;
+}
+
+@media(max-width:569px){
+    .container > .contText{
+        display: none;
+    }
+    .container > .contImg > img{
+        width: 12rem;
+    }
+}

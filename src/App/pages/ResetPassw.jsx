@@ -28,20 +28,20 @@ export default function ResetPassword() {
 
     const checkTokenValidity = async () => {
       try {
+        // Petición por POST enviando el token en el body de forma segura
         const res = await fetch(`${CONFIG_BACKEND.API_DIR}/validateToken`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ token })
+          body: JSON.stringify({ token }) // <- Aquí viaja seguro por POST
         })
         const data = await res.json()
 
         if (!data.success) {
-          // Si el token expiró o no es válido, redirige de inmediato
           navigate(CONFIG_PATHS.EXPIRED_PATH || "/tiempo-expirado")
         }
       } catch (error) {
         console.error("Error al validar el token", error)
-      } finally {
+      }  finally {
         setValidating(false)
       }
     }

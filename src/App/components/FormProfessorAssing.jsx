@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import styles from './css/FormProfessorAssing.module.css'
 import { CONFIG_BACKEND } from '../config/config'
 import ContFormInput from './ContFormInput'
@@ -152,6 +153,10 @@ function FormProfessorAssing({ professor, onSuccess }) {
 
     if (cargando && sports.length === 0) return <Loader />
 
+    // Variable para verificar si hay materias disponibles tras haber seleccionado una disciplina
+    const hasMatters = mattersList.length > 0;
+    const isDisciplineSelected = Boolean(selectedDiscipline);
+
     return (
         <div className="contForm">
             <form onSubmit={handleSubmit} className={`form form2 ${styles.formCustom}`}>
@@ -160,7 +165,7 @@ function FormProfessorAssing({ professor, onSuccess }) {
                     Asignación para: {professor.name_professor || 'Profesor'}
                 </h3>
 
-                <div className="contElmsForm" style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '15px' }}>
+                <div className={styles.contElmsForm}>
                     
                     {/* Selector de Deporte */}
                     <div style={{ width: '100%' }}>
@@ -217,7 +222,7 @@ function FormProfessorAssing({ professor, onSuccess }) {
                     {/* Listado de Materias con Checkboxes */}
                     <div className={styles.mattersSection}>
                         <label className={styles.mattersLabel}>Materias Correspondientes:</label>
-                        {mattersList.length > 0 ? (
+                        {hasMatters ? (
                             <div className={styles.mattersListContainer}>
                                 {mattersList.map(matter => {
                                     const matterId = String(matter.id_matter || matter.id).trim()
@@ -242,17 +247,32 @@ function FormProfessorAssing({ professor, onSuccess }) {
                             </div>
                         ) : (
                             <p className={styles.emptyMatters}>
-                                {selectedDiscipline ? 'No hay materias cargadas para esta disciplina.' : 'Seleccione una disciplina para ver sus materias.'}
+                                {isDisciplineSelected ? 'No hay materias cargadas para esta disciplina.' : 'Seleccione una disciplina para ver sus materias.'}
                             </p>
                         )}
                     </div>
 
-                    {/* Botón de envío usando tu clase global */}
-                    <div className="contBtns" style={{ width: '100%', marginTop: '10px' }}>
-                        <button type="submit" className="submitBtn" disabled={cargando}>
-                            {cargando ? 'Guardando...' : 'Guardar Cambios'}
-                        </button>
-                    </div>
+                    {/* Lógica condicional: Si hay disciplina seleccionada y NO hay materias, se muestra el enlace y se oculta/deshabilita el botón */}
+                    {isDisciplineSelected && !hasMatters ? (
+                        <div style={{ width: '90%', margin: 'auto', textAlign: 'center', padding: '10px', background: 'rgba(239, 68, 68, 0.1)', borderRadius: '1.5rem', border: '1px solid rgba(239, 68, 68, 0.3)' }}>
+                            <p style={{ margin: '0 0 8px 0', fontSize: '13px', color: '#f87171' }}>
+                                No hay materias de esta disciplina (o del deporte asociado) disponibles.
+                            </p>
+                            <Link 
+                                to="/campus/gestion-materias" 
+                                style={{ color: '#60a5fa', textDecoration: 'underline', fontSize: '14px', fontWeight: '500' }}
+                            >
+                                Ir a gestión de materias
+                            </Link>
+                        </div>
+                    ) : (
+                        /* Botón de envío normal */
+                        <div className="contBtns" style={{ width: '100%', marginTop: '10px', display:'flex', justifyContent:'center' }}>
+                            <Button type="submit" styleBtn={2} className="submitBtn" disabled={cargando || (isDisciplineSelected && !hasMatters)}>
+                                {cargando ? 'Guardando...' : 'Guardar Cambios'}
+                            </Button>
+                        </div>
+                    )}
 
                 </div>
             </form>

@@ -1,79 +1,60 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styles from './css/Form.module.css';
 import Button from './Button';
 import ContFormInput from './ContFormInput';
 import Loader from './Loader';
 import { CONFIG_BACKEND } from '../config/config';
 
-function FormCreateMatter() {
-    const navigate = useNavigate();
+function FormCreateMatter({ onSuccess }) {
     const [cargando, setCargando] = useState(false);
     const [sports, setSports] = useState([]);
     const [disciplines, setDisciplines] = useState([]);
-    const [errorMessage, setErrorMessage] = useState(''); // Estado para mostrar el error arriba del form
+    const [errorMessage, setErrorMessage] = useState('');
     
     const [form, setForm] = useState({
         id_sport: '',
         id_discip: '',
         name_matter: '',
         descript_matter: '',
+        total_classes: '',
         id_group: '0'
     });
 
-    // 1. Cargar la lista de deportes al montar el componente
     useEffect(() => {
         fetch(`${CONFIG_BACKEND.API_DIR}/loadSports`, { method: 'POST', credentials: 'include' })
             .then(res => res.json())
             .then(data => {
-                if (data.success) {
-                    setSports(data.result || data.deportes || []);
-                }
+                if (data.success) setSports(data.result || data.deportes || []);
             })
             .catch(err => console.error("Error al cargar deportes:", err));
     }, []);
 
-    // 2. Cargar dinámicamente las disciplinas cada vez que cambie el deporte seleccionado
     useEffect(() => {
         if (!form.id_sport) {
             setDisciplines([]);
             return;
         }
-
         fetch(`${CONFIG_BACKEND.API_DIR}/loadDisciplines?value=${form.id_sport}`, { method: 'GET', credentials: 'include' })
             .then(res => res.json())
             .then(data => {
-                if (data.success) {
-                    setDisciplines(data.result || data.disciplinas || []);
-                } else {
-                    setDisciplines([]);
-                }
+                if (data.success) setDisciplines(data.result || data.disciplinas || []);
             })
-            .catch(err => {
-                console.error("Error al cargar disciplinas:", err);
-                setDisciplines([]);
-            });
+            .catch(err => console.error("Error al cargar disciplinas:", err));
     }, [form.id_sport]);
 
-    // Manejar cambios en los inputs y selects
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setForm(prev => {
-            const updated = { ...prev, [name]: value };
-            // Si cambia el deporte, reseteamos la disciplina seleccionada
-            if (name === 'id_sport') {
-                updated.id_discip = '';
-            }
-            return updated;
-        });
-        // Limpiamos el error al escribir o modificar campos
-        if (errorMessage) setErrorMessage('');
+        setForm(prev => ({
+            ...prev,
+            [name]: value,
+            ...(name === 'id_sport' ? { id_discip: '' } : {})
+        }));
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setCargando(true);
-        setErrorMessage(''); // Limpiar errores previos
+        setErrorMessage('');
 
         try {
             const response = await fetch(`${CONFIG_BACKEND.API_DIR}/createMatter`, {
@@ -82,94 +63,53 @@ function FormCreateMatter() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(form)
             });
-            const data = await response.json();
+            const data = await response.json();console.log("Datos enviados al backend:", form)
 
             if (data.success) {
-                // Vaciar formulario por completo
-                setForm({
-                    id_sport: '',
-                    id_discip: '',
-                    name_matter: '',
-                    descript_matter: '',
-                    id_group: '0'
-                });
-                setDisciplines([]);
-
-                alert(data.message || "Materia creada con éxito");
-                navigate('/campus/gestion-materias');
+                if (typeof onSuccess === 'function') onSuccess();
             } else {
                 setErrorMessage(data.error || "No se pudo crear la materia");
             }
         } catch (error) {
-            setErrorMessage("Error de conexión al crear la materia");
-            console.error(error);
+            setErrorMessage("Error de conexión");
         } finally {
             setCargando(false);
         }
     };
 
     return (
-        <div className={styles.contForm}>
+        <div className={styles.contForm} style={{ width: '100%', maxWidth: '500px' }}>
             <form className={styles.form} onSubmit={handleSubmit}>
-                <h2>Crear Nueva Materia</h2>
-
-                {/* Cartel de error en la parte superior si ocurre un fallo */}
-                {errorMessage && (
-                    <div style={{ background: '#f8d7da', color: '#721c24', padding: '10px', borderRadius: '4px', marginBottom: '15px', border: '1px solid #f5c6cb', fontSize: '14px', textAlign: 'center' }}>
-                        {errorMessage}
-                    </div>
-                )}
+                {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
 
                 <ContFormInput nameElm="Deporte :">
                     <select name="id_sport" value={form.id_sport} onChange={handleChange} required>
                         <option value="">Seleccione un deporte</option>
-                        {sports.map(sport => (
-                            <option key={sport.id_sport || sport.id} value={sport.id_sport || sport.id}>
-                                {sport.name_sport || sport.nombre}
-                            </option>
-                        ))}
+                        {sports.map(s => <option key={s.id_sport || s.id} value={s.id_sport || s.id}>{s.name_sport || s.nombre}</option>)}
                     </select>
                 </ContFormInput>
 
                 <ContFormInput nameElm="Disciplina :">
-                    <select 
-                        name="id_discip" 
-                        value={form.id_discip} 
-                        onChange={handleChange} 
-                        required
-                        disabled={!form.id_sport}
-                    >
+                    <select name="id_discip" value={form.id_discip} onChange={handleChange} required disabled={!form.id_sport}>
                         <option value="">Seleccione una disciplina</option>
-                        {disciplines.map(discip => (
-                            <option key={discip.id_discip || discip.id} value={discip.id_discip || discip.id}>
-                                {discip.name_discip || discip.nombre}
-                            </option>
-                        ))}
+                        {disciplines.map(d => <option key={d.id_discip || d.id} value={d.id_discip || d.id}>{d.name_discip || d.nombre}</option>)}
                     </select>
                 </ContFormInput>
 
                 <ContFormInput nameElm="Nombre de la Materia :">
-                    <input 
-                        type="text" 
-                        name="name_matter" 
-                        value={form.name_matter} 
-                        onChange={handleChange} 
-                        placeholder="Ej: Reglas de Juego Avanzadas" 
-                        required 
-                    />
+                    <input type="text" name="name_matter" value={form.name_matter} onChange={handleChange} placeholder="Ej: Reglas de Juego" required />
+                </ContFormInput>
+
+                <ContFormInput nameElm="Cantidad Total de Clases (100%) :">
+                    <input type="number" name="total_classes" value={form.total_classes} onChange={handleChange} placeholder="Ej: 10" min="1" required />
                 </ContFormInput>
 
                 <ContFormInput nameElm="Descripción :">
-                    <textarea 
-                        name="descript_matter" 
-                        value={form.descript_matter} 
-                        onChange={handleChange} 
-                        placeholder="Descripción de la materia..."
-                    />
+                    <textarea name="descript_matter" value={form.descript_matter} onChange={handleChange} placeholder="Descripción..." />
                 </ContFormInput>
 
                 <ContFormInput>
-                    <Button typeBtn='submit' disabled={cargando}>
+                    <Button typeBtn='submit' disabled={cargando} styleBtn={2}>
                         {cargando ? <Loader mini={true} /> : "Guardar Materia"}
                     </Button>
                 </ContFormInput>

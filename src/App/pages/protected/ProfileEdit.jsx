@@ -1,11 +1,10 @@
 import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Section from '../../components/Section'
 import FormProfileEdit from '../../components/FormProfileEdit'
 import { UserContext } from '../../components/UserProvider'
 import { CONFIG_PATHS } from '../../config/config'
 
-function Register() {
+function ProfileEdit() {
     const { user } = useContext(UserContext)
     const navigate = useNavigate()
 
@@ -15,11 +14,7 @@ function Register() {
         }
     },[])
 
-    return ( 
-        <Section>
-            <FormProfileEdit/>
-        </Section>
-     )
+    return ( <FormProfileEdit/> )
 }
 
-export default Register
+export default ProfileEdit

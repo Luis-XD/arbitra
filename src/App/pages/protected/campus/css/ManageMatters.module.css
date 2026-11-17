@@ -1,0 +1,249 @@
+/* Contenedor principal de la vista de gestión */
+.manageContainer {
+    padding: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: inherit;
+    color: #1e293b;
+}
+
+.manageContainer h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Barra superior: Buscador y Botón de Crear */
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.searchInput {
+    padding: 10px 14px;
+    width: 320px;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #fff;
+}
+
+.searchInput:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.createButton {
+    padding: 10px 18px;
+    background-color: #10b981;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.2s, transform 0.1s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.createButton:hover {
+    background-color: #059669;
+}
+
+.createButton:active {
+    transform: scale(0.98);
+}
+
+/* Alerta de error */
+.errorMessage {
+    background-color: #fef2f2;
+    color: #991b1b;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #fecaca;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Contenedor del loader */
+.loaderContainer {
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* Estructura en Grilla Uniforme */
+.listContainer {
+    background: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    overflow-x: auto; /* Permite scroll horizontal fluido en móviles muy pequeños */
+    font-size: 14px;
+}
+
+/* Definición de la grilla unificada para Cabecera y Filas */
+.listHeader, .matterRow {
+    display: grid;
+    grid-template-columns: 70px minmax(180px, 2fr) 130px 160px;
+    align-items: center;
+    padding: 14px 16px;
+    gap: 12px;
+}
+
+.listHeader {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.listBody {
+    display: flex;
+    flex-direction: column;
+}
+
+.matterRow {
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+    transition: background-color 0.2s;
+}
+
+.matterRow:last-child {
+    border-bottom: none;
+}
+
+.matterRow:hover {
+    background-color: #f8fafc;
+}
+
+/* Columnas individuales (ya no usan flex, heredan la grilla) */
+.colId {
+    font-weight: 600;
+    color: #64748b;
+}
+
+.colName {
+    word-break: break-word;
+    font-weight: 500;
+}
+
+.colClasses {
+    text-align: left;
+}
+
+.colActions {
+    display: flex;
+    justify-content: center;
+}
+
+/* Badge para el total de clases */
+.classesBadge {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-block;
+}
+
+/* Botones de acción */
+.actionButtons {
+    display: flex;
+    gap: 8px;
+}
+
+.editBtn {
+    padding: 6px 12px;
+    background-color: #3b82f6;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.editBtn:hover {
+    background-color: #2563eb;
+}
+
+.deleteBtn {
+    padding: 6px 12px;
+    background-color: #ef4444;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.deleteBtn:hover {
+    background-color: #dc2626;
+}
+
+/* Estado cuando no hay resultados */
+.noResults {
+    text-align: center;
+    padding: 30px;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Ajustes responsivos para móviles */
+@media (max-width: 768px) {
+    .listHeader {
+        display: none; /* Oculta la cabecera tradicional en pantallas chicas */
+    }
+
+    .matterRow {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 16px;
+    }
+
+    .colActions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .actionButtons {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+
+    .editBtn, .deleteBtn {
+        flex: 1;
+        padding: 8px;
+        text-align: center;
+    }
+}
+.manageContainer {
+    animation: fadeIn 0.25s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

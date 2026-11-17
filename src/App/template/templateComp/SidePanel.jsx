@@ -1,17 +1,20 @@
 import styles from './css/SidePanel.module.css'
-import arrowLeft from '/icons/utilities/arrowLeft.png'
-import close from '/icons/responsive/close.png'
+import arrowLeft from '/iconsArbitra/utilities/arrowLeft.png'
+import close from '/iconsArbitra/responsive/close.png'
 import GroupPanel from '../../components/GroupPanel'
 import { CONFIG_BACKEND, CONFIG_PATHS } from '../../config/config'
 import { UserContext } from '../../components/UserProvider'
 import { useState, useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import imgProfessors from '/icons/links/professors.png'
-import imgCourses from '/icons/links/courses.png'
-import imgStudents from '/icons/links/students.png'
-import imgTokens from '/icons/links/tokens.png'
-import imgSports from '/icons/links/sports.png'
-import imgCommissions from '/icons/links/commissions.png'
+import imgProfessors from '/iconsArbitra/links/professors.png'
+import imgCourses from '/iconsArbitra/links/courses.png'
+import imgStudents from '/iconsArbitra/links/students.png'
+import imgTokens from '/iconsArbitra/links/tokens.png'
+import imgManage from '/iconsArbitra/links/manage.png'
+import imgDownload from '/iconsArbitra/links/download.png'
+import imgSports from '/iconsArbitra/links/sports.png'
+import imgAvailableCourses from '/iconsArbitra/links/available_courses.png'
+import imgCommissions from '/iconsArbitra/links/commissions.png'
 import classBtn from '../../components/css/Button.module.css'
 
 function SidePanel() {
@@ -25,41 +28,14 @@ function SidePanel() {
     function toggleMenuPanel(){
         setTogglePanel(!togglePanel)
     }
-    const handleVideoUploaded = ({ videoId, title }) => {
-        console.log('Video subido con éxito:', videoId, title);
-        // Aquí puedes guardar únicamente el `videoId` en tu base de datos MySQL vía PHP
-    };
 
-    // Función para seleccionar dinámicamente el icono según el deporte de la BD
-    // Función mejorada que evalúa tanto el deporte como el nombre del curso
-    const getSportIcon = (sportName, courseName) => {
-        // Normalizamos el texto del curso y del deporte para limpiar acentos y mayúsculas
-        const course = (courseName || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        const sport = (sportName || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-        
-        // 1. Si el nombre del curso o del deporte pertenece al fútbol, usamos siempre el icono de fútbol
-        if (course.includes('futbol') || course.includes('futsal') || sport.includes('futbol')) {
-            return '/icons/links/sports/football.png'
+    // Retorna la URL del icono utilizando la propiedad 'img_discip' enviada por el backend desde la BD
+    const getSportIcon = (imgDiscip) => {
+        if (imgDiscip) {
+            return `${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/icons/${imgDiscip}`
         }
-        
-        // 2. Evaluamos el resto de los deportes (cubriendo 'basket', 'basquet' y 'basketball')
-        if (course.includes('basket') || course.includes('basquet') || sport.includes('basket')) {
-            return '/icons/links/sports/basketball.png' // Cámbialo a '/icons/links/sports/basketball.png' si tu archivo se llama así
-        }
-        if (course.includes('rugby') || sport.includes('rugby')) {
-            return '/icons/links/sports/rugbyBall.png'
-        }
-        if (course.includes('voley') || sport.includes('voley')) {
-            return '/icons/links/sports/voleyball.png'
-        }
-        if (course.includes('hockey') || sport.includes('hockey')) {
-            return '/icons/links/sports/hockey.png'
-        }
-        if (course.includes('handball') || sport.includes('handball')) {
-            return '/icons/links/sports/handball.png'
-        }
-        
-        return '/icons/links/sports/football.png' // Icono por defecto
+        // Icono por defecto en la carpeta assets si el registro en BD es NULL o vacío
+        return `${CONFIG_BACKEND.API_DIR}/assets/icons/sports/default.png`
     }
 
     const consult = async () => {
@@ -148,31 +124,90 @@ function SidePanel() {
                     <div className={styles.panelSection}>
                         <Link to={CONFIG_PATHS.CAMPUS_MANAGE_CAMPUS_PATH} className={classBtn.button3}>
                         <img src={imgTokens} className={styles.imgMobile}/>
-                            Tokens
+                            Asignar tokens
+                        </Link>
+                    </div>
+                    <div className={styles.panelSection}>
+                        <Link to={CONFIG_PATHS.CAMPUS_MANAGE_DOWNLOAD_FILE_PATH} className={classBtn.button3}>
+                        <img src={imgDownload} className={styles.imgMobile}/>
+                            Descarga de archivos
+                        </Link>
+                    </div>
+                    <div className={styles.panelSection}>
+                        <Link to={CONFIG_PATHS.CAMPUS_MANAGE_GENERAL_PATH} className={classBtn.button3}>
+                        <img src={imgManage} className={styles.imgMobile}/>
+                            Gestión
                         </Link>
                     </div>
                     </>
                 ) : user && (user.roleId === 2) ? (
-                    <Link to={CONFIG_PATHS.CAMPUS_COURSES_LIST_PROFESSOR_PATH} className={classBtn.button}>Cursos habilitados</Link>
+                    <div className={styles.panelSection}>
+                        <Link to={CONFIG_PATHS.CAMPUS_COURSES_LIST_PROFESSOR_PATH} className={classBtn.button3}>
+                        <img src={imgAvailableCourses} className={styles.imgMobile}/>
+                            Cursos habilitados
+                        </Link>
+                    </div>
                 ):(
                     <GroupPanel titleElm='Cursos inscriptos'>
                         {inscript?.length > 0 ? (
-                            inscript.map(inscp => (
+                            <>
+                            <Link to={CONFIG_PATHS.CAMPUS_COURSE_INSCRIPTIONS}>
+                                <img 
+                                    src="/iconsArbitra/links/inscription.png" 
+                                    alt="Inscribirme a más cursos" 
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src = `${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/icons/default.png`;
+                                    }}
+                                />&nbsp;
+                                Inscribirme a cursos
+                            </Link>
+                            <Link to={CONFIG_PATHS.CAMPUS_MY_COURSES_PATH}>
+                                <img 
+                                    src="/iconsArbitra/links/see-courses.png" 
+                                    alt="Mis cursos" 
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src = `${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/icons/default.png`;
+                                    }}
+                                />&nbsp;
+                                Ver mis cursos
+                            </Link>
+                            {inscript.map(inscp => (
                                 <Link 
                                     key={inscp.id_inscript}
                                     to={`/campus/mis-cursos/${inscp.id_course}`}
                                     title={inscp.title_course}
                                 >
                                     <img 
-                                        src={getSportIcon(inscp.name_sport, inscp.title_course)} 
-                                        alt="Sport Icon" 
+                                        src={getSportIcon(inscp.icon_discip)} 
+                                        alt={inscp.name_sport || "Disciplina"} 
                                         style={{ objectFit: 'contain' }} 
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = `${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/icons/default.png`;
+                                        }}
                                     />&nbsp;
                                     {inscp.title_course}
                                 </Link>
-                            ))
-                        ) : (<span>Ningún curso inscrito</span>)}
-                        <Link to={CONFIG_PATHS.CAMPUS_COURSE_INSCRIPTIONS}>Inscribirme a más cursos</Link>
+                            ))}
+                            </>
+                        ) : (
+                            <>
+                            <span>Ningún curso inscrito</span>
+                            <Link to={CONFIG_PATHS.CAMPUS_COURSE_INSCRIPTIONS}>
+                                <img 
+                                    src="/iconsArbitra/links/inscription.png" 
+                                    alt="Inscribirme a más cursos" 
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src = `${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/icons/default.png`;
+                                    }}
+                                />&nbsp;
+                                Inscribirme
+                            </Link>
+                            </>
+                        )}
                     </GroupPanel>
                 )}
             </div>

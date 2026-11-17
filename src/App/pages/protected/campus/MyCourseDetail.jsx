@@ -1,17 +1,19 @@
-import { useParams, useLocation, useNavigate, Link } from "react-router-dom"
+import { useParams, useNavigate, Link } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
 import { CONFIG_BACKEND, CONFIG_PATHS } from "../../../config/config" 
 import styles from './css/MyCourseDetail.module.css'
 import TopButtons from "../../../components/TopButtons"
 import LeftTopButton from "../../../components/LeftTopButton"
 import RightTopButton from "../../../components/RightTopButton"
-import plus from '/icons/utilities/plus.png'
+import plus from '/iconsArbitra/utilities/plus.png'
 import Modal from "../../../components/Modal"
 import FormEditClassDetail from "../../../components/FormEditClassDetail"
 import FormCreateExam from "../../../components/FormCreateExam"
 import FormDeleteExam from "../../../components/FormDeleteExam"
 import { UserContext } from '../../../components/UserProvider'
 import CommentBox from "../../../components/CommentBox"
+import Button from "../../../components/Button"
+import ModalCertificate from "../../../components/ModalCertificate"
 
 function MyCourseDetail() {
     const { user } = useContext(UserContext)
@@ -19,6 +21,7 @@ function MyCourseDetail() {
     const [tabs, setTabs] = useState([]) 
     const [activeTabId, setActiveTabId] = useState(null) 
     const [blocks, setBlocks] = useState([]) 
+    const [showCertificateModal, setShowCertificateModal] = useState(false);
     
     // Estados para controlar el modal de CREAR PESTAÑA
     const [showTabModal, setShowTabModal] = useState(false)
@@ -45,19 +48,58 @@ function MyCourseDetail() {
     const [loading, setLoading] = useState(true)
     const [loadingBlocks, setLoadingBlocks] = useState(false);
     const { id } = useParams() // ID del curso actual (id_matter)
-    const location = useLocation()
     const [loactionValue, setLoactionValue] = useState(null)
     const [exams, setExams] = useState([])
     const [examTabActive, setExamTabActive] = useState(0)
     const [examToDelete, setExamToDelete] = useState(null);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [completedTabs, setCompletedTabs] = useState({});
     const navigate = useNavigate()
+    const [commissionsList, setCommissionsList] = useState([]);
+
+    useEffect(() => {
+        const fetchAllCommissions = async () => {
+            try {
+                // Usamos el endpoint general /getCommissions que ya sabemos que responde correctamente en tu sistema
+                const res = await fetch(`${CONFIG_BACKEND.API_DIR}/getCommissions`, {
+                    method: 'GET',
+                    credentials: 'include'
+                });
+                
+                const textResponse = await res.text();
+                if (textResponse && textResponse.trim() !== "") {
+                    const data = JSON.parse(textResponse);
+                    if (data.success) {
+                        setCommissionsList(data.result || []);
+                    }
+                }
+            } catch (error) {
+                console.error("Error al cargar comisiones para el filtro:", error);
+            }
+        };
+        fetchAllCommissions();
+    }, []);
 
     useEffect(()=>{
         if (user.roleId === 1) {
             navigate(CONFIG_PATHS.CAMPUS_PATH)
         }
     },[])
+
+ 
+    const getCommissionBadge = (idCommission) => {
+        if (!idCommission || idCommission == 0) {
+            return <span style={{ background: '#3b82f6', color: '#000', padding: '2px 8px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold' }}>🌐 General (Todas las comisiones)</span>;
+        }
+        const found = commissionsList.find(c => c.id_commissions == idCommission);
+        return found ? (
+            <span style={{ background: '#3b82f6', color: '#000', padding: '2px 8px', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold' }}>
+                🎓 Comisión: {found.name} ({found.shift})
+            </span>
+        ) : (
+            <span style={{ background: '#3b82f6', color: '#000', padding: '2px 8px', borderRadius: '4px', fontSize: '11px' }}>🎓 Comisión específica (#{idCommission})</span>
+        );
+    };
 
     const loadExams = async (courseId) => {
         try {
@@ -112,20 +154,24 @@ function MyCourseDetail() {
     const loadCourseAndTabs = async () => {
         setLoading(true)
         try {
-            const resCourse = await fetch(`${CONFIG_BACKEND.API_DIR}/courseDetail?id=${id}`, {
+            const resCourse = await fetch(`${CONFIG_BACKEND.API_DIR}/courseDetails?id=${id}`, {
                 method: 'GET',
                 credentials: 'include'
             })
             if (resCourse.ok) {
                 const dataCourse = await resCourse.json()
+                // 🔒 SI EL BACKEND DICE QUE NO HAY ACCESO O NO ES EXITOSO
                 if (dataCourse && dataCourse.success) {
                     setCourse(dataCourse.result)
                     setExamTabActive(dataCourse.result.exam_tab_active ?? 0)
                 } else {
-                    setCourse(null) // 👈 Si la API dice que no existe
+                    // Redirigir de inmediato al campus si no estás inscrito
+                    navigate(CONFIG_PATHS.CAMPUS_PATH, { replace: true })
+                    return
                 }
             } else {
-                setCourse(null) // 👈 Si la respuesta HTTP falla
+                navigate(CONFIG_PATHS.CAMPUS_PATH, { replace: true })
+                return
             }
 
             const resTabs = await fetch(`${CONFIG_BACKEND.API_DIR}/getTabs?id_matter=${id}`, {
@@ -137,33 +183,36 @@ function MyCourseDetail() {
             if (textTabs && textTabs.trim() !== "") {
                 const dataTabs = JSON.parse(textTabs);
                 if (dataTabs && dataTabs.success && dataTabs.tabs.length > 0) {
-                    setTabs(dataTabs.tabs);
+                    const fetchedTabs = dataTabs.tabs;
+                    setTabs(fetchedTabs);
 
-                    const allTabsWithExam = [
-                        ...dataTabs.tabs,
-                        { id_tabs: 'exam_tab_special', title_tabs: '📝 Exámenes', active: examTabActive }
-                    ];
+                    // 🚀 NUEVO: Construir el objeto inicial de clases completadas según el backend
+                    const initialCompleted = {};
+                    fetchedTabs.forEach(tab => {
+                        // Verifica si tu backend devuelve 'completed' o 'is_completed' con valor 1 o true
+                        if (tab.completed == 1 || tab.completed === true || tab.is_completed == 1) {
+                            initialCompleted[tab.id_tabs] = true;
+                        }
+                    });
+                    setCompletedTabs(initialCompleted);
 
-                    const availableForUser = user?.roleId === 3 
-                        ? allTabsWithExam.filter(tab => tab.active == 1) 
-                        : allTabsWithExam;
-
-                    if (availableForUser.length > 0) {
-                        setActiveTabId(availableForUser[0].id_tabs); 
-                    } else {
-                        setActiveTabId(null);
+                    // Seleccionar la primera pestaña activa por defecto
+                    const userRole = user?.roleId ?? 3;
+                    const firstTab = userRole === 3 
+                        ? (fetchedTabs.find(t => t.active == 1) || fetchedTabs[0]) 
+                        : fetchedTabs[0];
+                        
+                    if (firstTab) {
+                        setActiveTabId(firstTab.id_tabs);
                     }
                 } else {
                     setTabs([]);
                     setActiveTabId('exam_tab_special');
                 }
-            } else {
-                setTabs([]);
-                setActiveTabId('exam_tab_special');
             }
         } catch (error) {
             if (import.meta.env.DEV) console.error('Error: ', error)
-            setTabs([]);
+            navigate(CONFIG_PATHS.CAMPUS_PATH, { replace: true })
         } finally {
             setLoading(false)
         }
@@ -207,6 +256,7 @@ function MyCourseDetail() {
         const formData = new FormData()
         formData.append('id_matter', id)
         formData.append('tab_name', newTabName)
+        // 👇 Forzamos que siempre se envíe como activa (1) o usamos el estado controlable por el checkbox
         formData.append('active', isTabActive ? 1 : 0)
 
         try {
@@ -224,9 +274,12 @@ function MyCourseDetail() {
                     active: isTabActive ? 1 : 0
                 }
                 setTabs([...tabs, newTab])
-                setActiveTabId(data.id_tabs)
+                
+                // 🚀 AQUÍ SE ACTIVA POR DEFECTO EN LA VISTA AL CREARLA
+                setActiveTabId(data.id_tabs) 
+                
                 setNewTabName("")
-                setIsTabActive(true)
+                setIsTabActive(true) // Resetea el checkbox para la próxima vez
                 setShowTabModal(false)
             } else {
                 alert("Error al crear la pestaña: " + data.message)
@@ -286,6 +339,35 @@ function MyCourseDetail() {
             console.error("Error de red:", error);
         }
     };
+    // Función para que el profesor filtre los bloques según la comisión seleccionada
+    const fetchBlocksForCommission = async (commissionId) => {
+        setLoadingBlocks(true)
+        try {
+            let url = `${CONFIG_BACKEND.API_DIR}/getClassDetails?id_tabs=${activeTabId}`;
+            if (commissionId) {
+                url += `&id_commission=${commissionId}`;
+            }
+
+            const res = await fetch(url, {
+                method: 'GET',
+                credentials: 'include'
+            })
+            const textResponse = await res.text()
+            if (textResponse && textResponse.trim() !== "") {
+                const dataBlocks = JSON.parse(textResponse)
+                if (dataBlocks && dataBlocks.success) {
+                    setBlocks(dataBlocks.blocks || [])
+                }
+            } else {
+                setBlocks([])
+            }
+        } catch (error) {
+            console.error("Error al filtrar bloques por comisión:", error)
+            setBlocks([])
+        } finally {
+            setLoadingBlocks(false)
+        }
+    }
 
     useEffect(() => {
         if (!course) return
@@ -328,6 +410,25 @@ function MyCourseDetail() {
         navigate(`/campus/exam/take/${exam.id_exam}`);
     }
 
+    const marcarClaseCompletada = async (idTab) => {
+        try {
+            const res = await fetch(`${CONFIG_BACKEND.API_DIR}/completeClass`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                credentials: 'include',
+                body: JSON.stringify({ id_class: idTab }) // Recuerda que enviamos el id_class que PHP procesa
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                // Cambia el estado local de esta pestaña específica a true
+                setCompletedTabs(prev => ({ ...prev, [idTab]: true }));
+            }
+        } catch (error) {
+            console.error("Error al registrar el avance", error);
+        }
+    };
+
     // 1. Si está cargando, mostramos únicamente el mensaje o spinner de carga
     if (loading) {
         return <div style={{ color: '#fff', textAlign: 'center', padding: '50px' }}>...</div>;
@@ -338,7 +439,7 @@ function MyCourseDetail() {
         return (
             <div className={styles.notFoundContainer} style={{ padding: '40px', textAlign: 'center', color: '#fff' }}>
                 <h2>Curso no encontrado</h2>
-                <p>El curso que buscas no existe o no tienes acceso a él.</p>
+                <p>El curso que buscas no existe, se eliminó o no tienes acceso a él.</p>
                 <Link to="/campus" style={{ color: '#60a5fa', textDecoration: 'underline' }}>Volver al campus</Link>
             </div>
         );
@@ -346,11 +447,26 @@ function MyCourseDetail() {
 
     return (
         <>
+        {/* MODAL PARA SOLICITAR CERTIFICADO */}
+        {showCertificateModal && course && (
+            <ModalCertificate 
+                disciplina={{ 
+                    id_discipline: course.id_discip, 
+                    name_discip: course.name_discip 
+                }} 
+                alumnoDefault={{ 
+                    id: user?.id, 
+                    nombreCompleto: `${user?.names || ''} ${user?.lastname || ''}`.trim(), 
+                    dni: user?.dni || '' 
+                }} 
+                onClose={() => setShowCertificateModal(false)} 
+            />
+        )}
         {/* MODAL PARA CREAR NUEVA PESTAÑA */}
         {showTabModal && (
             <Modal id="modalTab" onClickElm={() => setShowTabModal(false)}>
-                <form onSubmit={handleSaveNewTab} style={{ padding: '20px', background: '#1d1d1d', color: '#fff', borderRadius: '8px' }}>
-                    <h3 style={{color:'white'}}>Crear nueva pestaña</h3>
+                <form onSubmit={handleSaveNewTab} style={{ padding: '20px',color: '#000', borderRadius: '8px' }}>
+                    <h3>Crear nueva pestaña</h3>
                     <input 
                         type="text" 
                         placeholder="Nombre de la pestaña (ej. Unidad 1)" 
@@ -370,10 +486,11 @@ function MyCourseDetail() {
                         />
                         <label htmlFor="activeTabCheck" style={{ cursor: 'pointer' }}>Visible / Activa para los alumnos</label>
                     </div>
-
-                    <button type="submit" style={{ padding: '10px 20px', background: '#4f46e5', color: '#fff', border: 'none', cursor: 'pointer' }}>
-                        Guardar pestaña
-                    </button>
+                    <div style={{width:'100%', display:'flex', justifyContent:'center'}}>
+                        <Button type="submit" styleBtn={2} style={{margin:'0 auto', width:'100%'}}>
+                            Guardar pestaña
+                        </Button>
+                    </div>
                 </form>
             </Modal>
         )}
@@ -400,12 +517,6 @@ function MyCourseDetail() {
                         <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: '#000' }}>
                             📊 Auditoría: {selectedExamTitle}
                         </h3>
-                        <button 
-                            onClick={() => setShowExamDetailsModal(false)}
-                            style={{ background: 'transparent', border: 'none', color: '#a1a1aa', fontSize: '18px', cursor: 'pointer', fontWeight: 'bold' }}
-                        >
-                            ✕
-                        </button>
                     </div>
 
                     {loadingDetails ? (
@@ -416,7 +527,7 @@ function MyCourseDetail() {
                         <div style={{ overflowX: 'auto' }}>
                             <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '14px' }}>
                                 <thead>
-                                    <tr style={{ borderBottom: '1px solid #27272a', color: '#a1a1aa' }}>
+                                    <tr style={{ borderBottom: '1px solid #27272a', color: '#333' }}>
                                         <th style={{ padding: '10px' }}>Estudiante</th>
                                         <th style={{ padding: '10px' }}>Correo</th>
                                         <th style={{ padding: '10px' }}>Puntaje</th>
@@ -427,21 +538,21 @@ function MyCourseDetail() {
                                 <tbody>
                                     {examAttemptsDetail.map((att) => (
                                         <tr key={att.id_attempt} style={{ borderBottom: '1px solid #27272a' }}>
-                                            <td style={{ padding: '12px', fontWeight: '500' }}>{att.name} {att.lastname}</td>
-                                            <td style={{ padding: '12px', color: '#a1a1aa' }}>{att.email}</td>
-                                            <td style={{ padding: '12px', fontWeight: 'bold', color: '#34d399' }}>{att.score} / 10</td>
+                                            <td style={{ padding: '12px', fontWeight: '500' }}>{att.names} {att.lastname}</td>
+                                            <td style={{ padding: '12px', color: '#000' }}>{att.email}</td>
+                                            <td style={{ padding: '12px', fontWeight: 'bold', color: '#0d6d4a' }}>{att.score} / 10</td>
                                             <td style={{ padding: '12px' }}>
                                                 {att.tab_switches > 0 ? (
                                                     <span style={{ background: 'rgba(239, 68, 68, 0.2)', color: '#f87171', border: '1px solid rgba(239, 68, 68, 0.4)', padding: '4px 10px', borderRadius: '12px', fontSize: '12px', fontWeight: 'bold' }}>
                                                         ⚠️ {att.tab_switches} {att.tab_switches == 1 ? 'vez' : 'veces'}
                                                     </span>
                                                 ) : (
-                                                    <span style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#34d399', padding: '4px 10px', borderRadius: '12px', fontSize: '12px' }}>
+                                                    <span style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#0d6d4a', padding: '4px 10px', borderRadius: '12px', fontSize: '12px' }}>
                                                         0 (Limpio)
                                                     </span>
                                                 )}
                                             </td>
-                                            <td style={{ padding: '12px', textTransform: 'capitalize', color: '#d4d4d8' }}>{att.status}</td>
+                                            <td style={{ padding: '12px', textTransform: 'capitalize', color: '#0d6d4a' }}>{att.status}</td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -491,18 +602,56 @@ function MyCourseDetail() {
         {/* --- BOTONES SUPERIORES --- */}
         <TopButtons>
             <LeftTopButton locationElm={loactionValue} text={course.name_discip} typeElm="expand" />
+           {/* Selector visible solo para profesores */}
+            {user?.roleId === 2 && (
+                <>
+                <div className="commission-switcher" style={{ display: 'flex', alignItems: 'center', color: '#fff' }}>
+                    <label style={{ width:'14rem', backgroundColor:'#27272a',border:'0.1rem solid #3f3f46', padding:'0.4rem 0.2rem 0.4rem 0.6rem', borderRadius:'0.8rem 0 0 0.8rem' }}>Filtrar contenido: </label>
+                    <select 
+                        onChange={(e) => fetchBlocksForCommission(e.target.value)}
+                        style={{ padding: '6px 10px', background: '#27272a', color: '#fff', border: '1px solid #3f3f46', borderRadius: '0 0.8rem 0.8rem 0', cursor: 'pointer' }}
+                    >
+                        <option value="">Ver todo (General + Comisiones)</option>
+                        {commissionsList.map(comm => (
+                            <option key={comm.id_commissions} value={comm.id_commissions}>
+                                {comm.name} ({comm.shift}) - {comm.name_discip || comm.discipline_name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                </>
+            )}
             {user && (user.roleId === 1 || user.roleId === 2) && (
                 <div style={{ display: 'flex', gap: '10px' }}>
                     <RightTopButton 
                         onClick={() => setShowTabModal(true)} 
-                        text="Agregar pestaña" 
+                        text="Pestaña" 
                         typeElm="expand" 
                         imgElm={plus} 
                     />
                 </div>
             )}
+            {user?.roleId === 3 && (
+                <div style={{ margin: '15px 0' }}>
+                    <button 
+                        onClick={() => setShowCertificateModal(true)}
+                        style={{ 
+                            padding: '10px 20px', 
+                            background: '#4f46e5', 
+                            color: '#fff', 
+                            border: 'none', 
+                            borderRadius: '6px', 
+                            cursor: 'pointer', 
+                            fontWeight: 'bold' 
+                        }}
+                    >
+                        🎓 Solicitar certificado de la disciplina
+                    </button>
+                </div>
+            )}
         </TopButtons>
-        
+
+        {course && <h2 style={{marginTop:'1rem', color:'#10b981'}}>{course.name_matter}</h2>}
         <p className={styles.routes}>
             {course && (
                 <>
@@ -511,11 +660,8 @@ function MyCourseDetail() {
                     {course.name_matter ? ` | Materia: ${course.name_matter}` : ''}
                 </>
             )}
-            <br /><br />
-            Estás en: <span> {location.pathname} </span>
         </p>
-        {course && <h2>{course.title_course}</h2>}
-
+        
         {/* --- BARRA DE PESTAÑAS (TABS) --- */}
         {visibleTabs.length === 0 ? (
             <div style={{ margin: '20px 0', textAlign: 'center' }}>
@@ -555,6 +701,42 @@ function MyCourseDetail() {
         {visibleTabs.length > 0 && activeTabId && (
             <div className={styles.classContentContainer}>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
+                    {/* BOTÓN SOLO PARA ALUMNOS (roleId === 3) */}
+                    {user?.roleId === 3 && activeTabId !== 'exam_tab_special' && (
+                        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '15px' }}>
+                            {completedTabs[activeTabId] ? (
+                                <button
+                                    disabled
+                                    style={{
+                                        padding: '8px 16px',
+                                        background: '#065f46',
+                                        color: '#a7f3d0',
+                                        border: '1px solid #10b981',
+                                        borderRadius: '6px',
+                                        fontWeight: 'bold',
+                                        cursor: 'default'
+                                    }}
+                                >
+                                    ✅ Clase completada
+                                </button>
+                            ) : (
+                                <button 
+                                    onClick={() => marcarClaseCompletada(activeTabId)}
+                                    style={{
+                                        padding: '8px 16px',
+                                        background: '#10b981',
+                                        color: '#fff',
+                                        border: 'none',
+                                        borderRadius: '6px',
+                                        cursor: 'pointer',
+                                        fontWeight: 'bold'
+                                    }}
+                                >
+                                    Marcar clase como completada
+                                </button>
+                            )}
+                        </div>
+                    )}
                     {user && (user.roleId === 1 || user.roleId === 2) && (
                         <div style={{ display: 'flex', gap: '10px' }}>
                             {/* Botón de Mostrar / Ocultar unificado */}
@@ -606,7 +788,7 @@ function MyCourseDetail() {
                             ) : (
                                 <button 
                                     onClick={fnShowContainerForm}
-                                    style={{ padding: '8px 15px', background: blocks.length > 0 ? '#4f46e5' : '#10b981', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
+                                    style={{ padding: '8px 15px', background: blocks.length > 0 ? '#4F46E5' : '#0b9164', color: '#fff', border: 'none', borderRadius: '5px', cursor: 'pointer' }}
                                 >
                                     {blocks.length > 0 ? '✏️ Editar contenido' : '+ Agregar contenido'}
                                 </button>
@@ -723,13 +905,15 @@ function MyCourseDetail() {
                             }
                             return { type: 'document', icon: '📁', label: 'Ver archivo adjunto' };
                         };
-
                         const fileInfo = block.content_type === 'file' ? getFileDetails(block.content_value) : null;
                         const rawFileName = block.content_value ? block.content_value.split('/').pop() : '';
                         const originalFileName = rawFileName.includes('_') ? rawFileName.substring(rawFileName.indexOf('_') + 1) : rawFileName;
 
                         return (
                             <div key={block.id_content_blocks || index} className={styles.blockItem} style={{ background: '#18181b', padding: '15px', borderRadius: '8px', marginBottom: '15px' }}>
+                                <div style={{ marginBottom: '8px' }}>
+                                    {getCommissionBadge(block.id_commission)}
+                                </div>
                             {block.content_type === 'text' && <p>{block.content_value}</p>}
                             {block.content_type === 'textarea' && <div className={styles.textAreaContent}>{block.content_value}</div>}
                             
@@ -769,7 +953,7 @@ function MyCourseDetail() {
                                         <div style={{ textAlign: 'center' }}>
                                             <p style={{ fontSize: '13px', color: '#9ca3af', marginTop: '8px', padding:'1rem' }}>🖼️ {originalFileName}</p>
                                             <img 
-                                                src={`${CONFIG_BACKEND.API_DIR}/${block.content_value}`} 
+                                                src={`${CONFIG_BACKEND.API_DIR}/src/assets/${block.content_value}`} 
                                                 alt="Contenido" 
                                                 style={{ maxWidth: '100%', maxHeight: '400px', borderRadius: '6px', objectFit: 'contain' }} 
                                             />
@@ -778,7 +962,7 @@ function MyCourseDetail() {
 
                                     {fileInfo.type === 'document' && (
                                         <a 
-                                            href={`${CONFIG_BACKEND.API_DIR}/${block.content_value}`} 
+                                            href={`${CONFIG_BACKEND.API_DIR}/src/assets/${block.content_value}`} 
                                             target="_blank" 
                                             rel="noopener noreferrer"
                                             style={{ color: '#60a5fa', fontWeight: 'bold', textDecoration: 'none', display: 'block', fontSize: '15px' }}

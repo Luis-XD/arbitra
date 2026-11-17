@@ -1,0 +1,8 @@
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 9px 10px; cursor: grab; display: flex; flex-direction: column; gap: 4px; }
+.card:hover { border-color: var(--accent); }
+.card:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.name { font-weight: 600; }
+.meta { font-size: 12px; color: var(--muted); display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.origen { display: inline-block; padding: 1px 7px; border-radius: 20px; background: var(--surface-2); font-size: 11px; font-weight: 600; }
+.due { font-size: 11.5px; }
+.late { color: var(--bad); font-weight: 600; }

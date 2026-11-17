@@ -1,0 +1,3 @@
+.lista { min-width: 0; }
+.check { width: 28px; }
+.check input { width: 17px; height: 17px; accent-color: var(--accent); }

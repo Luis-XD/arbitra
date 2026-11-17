@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import imgTop from '/icons/utilities/up.png'
+import imgTop from '/iconsArbitra/utilities/up.png'
 import styles from './css/GoTopButton.module.css'
 
 function GoTopButton() {

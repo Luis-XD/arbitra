@@ -1,0 +1,202 @@
+import styles from './css/SidePanel.module.css'
+import arrowLeft from '/iconsArbitra/utilities/arrowLeft.png'
+import close from '/iconsArbitra/responsive/close.png'
+import GroupPanel from '../../components/GroupPanel'
+import { CONFIG_BACKEND, CONFIG_PATHS } from '../../config/config'
+import { UserContext } from '../../components/UserProvider'
+import { useState, useContext, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import imgProfessors from '/iconsArbitra/links/professors.png'
+import imgCourses from '/iconsArbitra/links/courses.png'
+import imgStudents from '/iconsArbitra/links/students.png'
+import imgTokens from '/iconsArbitra/links/tokens.png'
+import imgSports from '/iconsArbitra/links/sports.png'
+import imgPassw from '/iconsArbitra/links/key.png'
+import imgAvailableCourses from '/iconsArbitra/links/available_courses.png'
+import imgCommissions from '/iconsArbitra/links/commissions.png'
+import classBtn from '../../components/css/Button.module.css'
+
+function SidePanel() {
+    const [cargando, setCargando] = useState(false)
+    const [inscript, setInscript] = useState([])
+    const { user } = useContext(UserContext)
+    
+    // Inicia abierto en desktop (> 1280px) y cerrado en tablets/móviles (<= 1280px)
+    const [togglePanel, setTogglePanel] = useState(() => window.innerWidth > 1280)
+
+    function toggleMenuPanel(){
+        setTogglePanel(!togglePanel)
+    }
+    const handleVideoUploaded = ({ videoId, title }) => {
+        console.log('Video subido con éxito:', videoId, title);
+        // Aquí puedes guardar únicamente el `videoId` en tu base de datos MySQL vía PHP
+    };
+
+    // Función para seleccionar dinámicamente el icono según el deporte de la BD
+    // Función mejorada que evalúa tanto el deporte como el nombre del curso
+    const getSportIcon = (sportName, courseName) => {
+        // Normalizamos el texto del curso y del deporte para limpiar acentos y mayúsculas
+        const course = (courseName || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        const sport = (sportName || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        
+        // 1. Si el nombre del curso o del deporte pertenece al fútbol, usamos siempre el icono de fútbol
+        if (course.includes('futbol') || course.includes('futsal') || sport.includes('futbol')) {
+            return '/iconsArbitra/links/sports/futbol.png'
+        }
+        
+        // 2. Evaluamos el resto de los deportes (cubriendo 'basket', 'basquet' y 'basketball')
+        if (course.includes('basket') || course.includes('basquet') || sport.includes('basket')) {
+            return '/iconsArbitra/links/sports/basketball.png' // Cámbialo a '/iconsArbitra/links/sports/basketball.png' si tu archivo se llama así
+        }
+        if (course.includes('rugby') || sport.includes('rugby')) {
+            return '/iconsArbitra/links/sports/rugbyBall.png'
+        }
+        if (course.includes('voley') || sport.includes('voley')) {
+            return '/iconsArbitra/links/sports/voleyball.png'
+        }
+        if (course.includes('hockey') || sport.includes('hockey')) {
+            return '/iconsArbitra/links/sports/hockey.png'
+        }
+        if (course.includes('handball') || sport.includes('handball')) {
+            return '/iconsArbitra/links/sports/handball.png'
+        }
+        
+        return '/iconsArbitra/links/sports/futbol.png' // Icono por defecto
+    }
+
+    const consult = async () => {
+        if (!user) {
+            setInscript([])
+            setCargando(false)
+            return
+        }
+
+        try {
+            const response = await fetch(`${CONFIG_BACKEND.API_DIR}/inscriptions`, {
+                method: 'POST',
+                credentials: 'include'
+            })
+            if (!response.ok) {
+                throw new Error('Network response was not ok')
+            }
+            const data = await response.json()
+            if (data && data.success) {
+                setInscript(data.result)
+            } else {
+                setInscript([])
+            }
+        } catch (error) {
+            console.log("❌ Error " + error)
+            setInscript([])
+        } finally {
+            setCargando(false)
+        }
+    }
+
+    useEffect(() => {
+        consult()
+
+        const handleInscriptionChange = () => {
+            consult()
+        }
+
+        window.addEventListener('inscriptionUpdated', handleInscriptionChange)
+
+        return () => {
+            window.removeEventListener('inscriptionUpdated', handleInscriptionChange)
+        }
+    }, [user])
+
+    return ( 
+        <>
+            <div className={`${styles.sidePanel} ${togglePanel ? styles.panelOpen : styles.panelClosed}`}>
+                <div className={styles.buttonPanel} alt='buttonPanel' onClick={toggleMenuPanel}>
+                    <img src={togglePanel ? close : arrowLeft} className={styles.imgMenuButtonPanel} alt="Menu Toggle"/>
+                </div>
+                <h2>Campus</h2>
+                {user && (user.roleId === 1) ? (
+                    <>
+                    <h3>Gestionar:</h3>
+                    <div className={styles.panelSection}>
+                        <Link to={CONFIG_PATHS.CAMPUS_MANAGE_SPORTS_AND_DISCIPLINES_PATH} className={classBtn.button3}>
+                            <img src={imgSports} className={styles.imgMobile}/>
+                            Deportes y disciplinas
+                        </Link>
+                    </div>
+                    <div className={styles.panelSection}>
+                        <Link to={CONFIG_PATHS.CAMPUS_MANAGE_COMISSIONS_PATH} className={classBtn.button3}>
+                            <img src={imgCommissions} className={styles.imgMobile}/>
+                            Comisiones
+                        </Link>
+                    </div>
+                    <div className={styles.panelSection}>
+                        <Link to={CONFIG_PATHS.CAMPUS_MANAGE_PROFESSORS_PATH} className={classBtn.button3}>
+                            <img src={imgProfessors} className={styles.imgMobile}/>
+                            Profesores
+                        </Link>
+                    </div>
+                    <div className={styles.panelSection}>
+                        <Link to={CONFIG_PATHS.CAMPUS_MANAGE_STUDENTS_PATH} className={classBtn.button3}>
+                            <img src={imgStudents} className={styles.imgMobile}/>
+                            Alumnos
+                        </Link>
+                    </div>
+                    <div className={styles.panelSection}>
+                        <Link to={CONFIG_PATHS.CAMPUS_MANAGE_MATTERS_PATH} className={classBtn.button3}>
+                            <img src={imgCourses} className={styles.imgMobile}/>
+                            Materias
+                        </Link>
+                    </div>
+                    <div className={styles.panelSection}>
+                        <Link to={CONFIG_PATHS.CAMPUS_MANAGE_CAMPUS_PATH} className={classBtn.button3}>
+                        <img src={imgTokens} className={styles.imgMobile}/>
+                            Tokens
+                        </Link>
+                    </div>
+                    <div className={styles.panelSection}>
+                        <Link to={CONFIG_PATHS.CAMPUS_MANAGE_GENERAL_PATH} className={classBtn.button3}>
+                        <img src={imgTokens} className={styles.imgMobile}/>
+                            Configuraciones
+                        </Link>
+                    </div>
+                    </>
+                ) : user && (user.roleId === 2) ? (
+                    <div className={styles.panelSection}>
+                        <Link to={CONFIG_PATHS.CAMPUS_COURSES_LIST_PROFESSOR_PATH} className={classBtn.button3}>
+                        <img src={imgAvailableCourses} className={styles.imgMobile}/>
+                            Cursos habilitados
+                        </Link>
+                    </div>
+                ):(
+                    <GroupPanel titleElm='Cursos inscriptos'>
+                        {inscript?.length > 0 ? (
+                            inscript.map(inscp => (
+                                <Link 
+                                    key={inscp.id_inscript}
+                                    to={`/campus/mis-cursos/${inscp.id_course}`}
+                                    title={inscp.title_course}
+                                >
+                                    <img 
+                                        src={getSportIcon(inscp.name_sport, inscp.title_course)} 
+                                        alt="Sport Icon" 
+                                        style={{ objectFit: 'contain' }} 
+                                    />&nbsp;
+                                    {inscp.title_course}
+                                </Link>
+                            ))
+                        ) : (<span>Ningún curso inscrito</span>)}
+                        <Link to={CONFIG_PATHS.CAMPUS_COURSE_INSCRIPTIONS}>Inscribirme a más cursos</Link>
+                    </GroupPanel>
+                )}
+                    <div className={styles.panelSection}>
+                        <Link to={CONFIG_PATHS.CAMPUS_MANAGE_PASSWORD_PATH} className={classBtn.button3}>
+                        <img src={imgPassw} className={styles.imgMobile}/>
+                            Contraseña
+                        </Link>
+                    </div>
+            </div>
+        </>
+     )
+}
+
+export default SidePanel

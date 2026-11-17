@@ -6,7 +6,7 @@ import Publication from '../components/Publication'
 import LeftTopButton from '../components/LeftTopButton'
 import Container from '../components/Container'
 import Loader from '../components/Loader'
-import pencil from '/icons/utilities/pencil.png'
+import pencil from '/iconsArbitra/utilities/pencil.png'
 import RightTopButton from '../components/RightTopButton'
 import { UserContext } from '../../App/components/UserProvider'
 import TopButtons from '../components/TopButtons'
@@ -70,16 +70,16 @@ function DisciplineDetail() {
             {discipline && (
                 <Publication 
                     titlePub={discipline.name_discip}
-                    nameAsset={discipline.img_discip ? discipline.img_discip : null}
+                    nameAsset={discipline.img_banner? discipline.img_banner : null}
                     typeElm="img"
-                    locationPub='disciplines'
+                    locationPub='disciplines/banners'
                 >
                     <CenterContainer>
                         <TopButtons>
                             <LeftTopButton
                                 locationElm={CONFIG_PATHS.SPORTS_PATH}
                                 typeElm='expand'
-                                text="Volver"
+                                text="Deportes"
                             />
 
                         {user && user.roleId === 1 && (
@@ -93,8 +93,8 @@ function DisciplineDetail() {
                         </TopButtons>
                     </CenterContainer>
 
-                    <Container widthElm="max" hiddenStyle={true}>
-                        <p>{discipline.name_discip}</p>
+                    <Container hiddenStyle={true}>
+                        <p>{discipline.descript_discip}</p>
                     </Container>
                 </Publication>
             )}

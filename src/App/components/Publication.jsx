@@ -4,13 +4,8 @@ import Video from '../components/Video'
 import bannerDefault from '/images/banner_default.jpg'
 import { CONFIG_BACKEND } from '../config/config'
 import ContentTextLand from './ContentTextLand'
-import CardTilted from './CardTilted'
-
-import futbol from '/images/others/futbol.png'
-import basket from '/images/others/basket.png'
-import voley from '/images/others/voley.png'
-import rugby from '/images/others/rugby.png'
 import ContainerWrapper from './ContainerWrapper'
+import ContentBannerLogo from './ContentBannerLogo'
 
 function Publication({home=false, titlePub, nameAsset="", type="", typeElm="", locationPub="", locationAlt= "", children}) {
   let mediaSrc
@@ -39,31 +34,7 @@ function Publication({home=false, titlePub, nameAsset="", type="", typeElm="", l
               <div className={styles.contTotal}>
                 <div className={styles.degrade}></div>
                 <ContainerWrapper images={['/images/others/img1.png']}>
-                {/*
-                      <ContentTextLand />
-                      <div className={styles.cont}>
-                        <CardTilted 
-                          title='Fútbol'
-                          subtitle='Tácticas VAR / Reglas FIFA'
-                          imgSrc={futbol}
-                        />
-                        <CardTilted 
-                          title='Básquet'
-                          subtitle='Sistema de Repetición Instantánea (IRS) / Reglas FIBA'
-                          imgSrc={basket}
-                        />
-                        <CardTilted 
-                          title='Voley'
-                          subtitle='Sistema de Desafío (Challenge System) / Reglas FIVB'
-                          imgSrc={voley}
-                        />
-                        <CardTilted 
-                          title='Rugby'
-                          subtitle='Oficial de Partido de Televisión (TMO) / Reglas World Rugby'
-                          imgSrc={rugby}
-                        />
-                      </div>
-                     */}
+                      <ContentBannerLogo />
                 </ContainerWrapper>
               </div>                        
             ) : typeElm === "img" ? (

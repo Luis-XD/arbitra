@@ -1,0 +1,2 @@
+.page { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.kanban { display: grid; grid-template-columns: repeat(7, minmax(200px, 1fr)); gap: 10px; overflow-x: auto; padding-bottom: 6px; }

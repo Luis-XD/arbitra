@@ -21,14 +21,17 @@
 .containerMax{padding: 1.5rem 1rem;}
 
 .hiddenStyle{
+    width: 100%;
     border: none;
     border-radius: none;
     box-shadow: none;
     backdrop-filter: none;
+    padding: 0;
+    background-color: transparent;
 
     display: flex;
-
 }
+
 .container > h2{
     width: 90%;
     font-size: 2rem;
@@ -39,10 +42,15 @@
 .container > p{
     width: 90%;
     text-align: center;
-    margin: 15px 0;
+    margin: 1rem 0;
     color: #333;
     font-size:1.4rem;
     line-height: 2rem;
+}
+.hiddenStyle > p{
+    color: #fff;
+    text-align: left;
+    margin: 0;
 }
 @media (max-width:650px){
     .container{

@@ -1,5 +1,5 @@
 .formCustom {
-    width: 38rem !important; /* Ajuste específico de ancho para este formulario */
+    width: auto; /* Ajuste específico de ancho para este formulario */
     max-height: 85vh;
 }
 
@@ -47,6 +47,8 @@
     max-height: 180px;
     min-height: 80px;
     overflow-y: auto;
+    padding: 1rem 2rem;
+    overflow-x: hidden;
     width: 100%;
     box-sizing: border-box;
     display: flex;

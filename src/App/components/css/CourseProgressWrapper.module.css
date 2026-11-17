@@ -1,0 +1,61 @@
+.container {
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+}
+
+.progressHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Imagen circular con mínimo 24px asegurados */
+.circularImage {
+    width: 32px;  /* Mayor a 24px, ideal para visualización moderna */
+    height: 32px;
+    min-width: 24px;
+    min-height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.progressText {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.progressBarBackground {
+    width: 100%;
+    height: 8px;
+    background-color: #f3f4f6;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progressBarFill {
+    height: 100%;
+    background-color: #4f46e5;
+    transition: width 0.4s ease-in-out;
+    border-radius: 4px;
+}
+
+.content {
+    width: 100%;
+}

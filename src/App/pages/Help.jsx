@@ -8,7 +8,6 @@ function Help() {
       <Section>
         <div className={styles.cont}>
           <h2>Ayuda y soporte técnico</h2>
-          <br />
           <div className={styles.contAnws}>
             <h3>¿Cómo me inscribo a los cursos?</h3>
             <p>Debes tener el codigo de matricula para poder inscribirte.</p>
@@ -20,6 +19,11 @@ function Help() {
           <div className={styles.contAnws}>
             <h3>¿Cómo recupero mi contraseña o edito mi perfil?</h3>
             <p>Para recuperar tu contraseña debes ir a la sección de login y en la parte inferior del formulario exite un link que te enviará a  la sección de recuperación de contraseña. Recuerda que el link que te habilita a cambiar tu contraseña solo es vigente por 30 minutos desde que se envió la solicitud.</p>
+          </div>
+          <div className={styles.contAnws}>
+            <h3>Mails de contacto</h3>
+            <p>Aulas: aula@arbitra.ar</p>
+            <p>Administración: administracion@arbitra.ar</p>
           </div>
         </div>
       </Section>

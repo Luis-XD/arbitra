@@ -1,0 +1,47 @@
+/* Tokens de diseño. Se definen en la raíz del módulo (no en :root) para no
+   afectar al resto del proyecto. Modo claro por defecto; modo oscuro según el
+   sistema o con la prop tema="dark". */
+.root {
+  --bg: #f3f5f4; --surface: #ffffff; --surface-2: #eaeeec; --line: #d5dcd9; --fg: #18211f; --muted: #5b6965;
+  --accent: #0d5a63; --accent-ink: #ffffff; --accent-soft: #d8eaeb; --mark: #c98a12; --mark-soft: #f6e9cc;
+  --ok: #2c7a4b; --ok-soft: #dcefe2; --warn: #a86a00; --warn-soft: #f7ead0; --bad: #b23a32; --bad-soft: #f6dcd9;
+  --side: #0d0f0f; --side-fg: #e4e7e6; --side-muted: #8e9694; --side-active: #232828;
+  --wa: #1d8a4c; --wa-soft: #dcf1e4; --logo-ink: invert(.86);
+  --f-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --f-body: 'IBM Plex Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --r: 8px; --shadow: 0 1px 2px rgba(17, 41, 44, .06), 0 4px 16px rgba(17, 41, 44, .06);
+
+  background: var(--bg); color: var(--fg);
+  font-family: var(--f-body); font-size: 14px; line-height: 1.45;
+  min-height: 100%;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  .root:not([data-theme='light']) {
+    --bg: #0f1716; --surface: #16201f; --surface-2: #1c2928; --line: #2b3b39; --fg: #e3ebe9; --muted: #93a5a1;
+    --accent: #4fb3bd; --accent-ink: #06191b; --accent-soft: #173b3f; --mark: #e3aa3e; --mark-soft: #3a2e15;
+    --ok: #5cc489; --ok-soft: #173326; --warn: #e3aa3e; --warn-soft: #3a2e15; --bad: #ec7a70; --bad-soft: #3d1d1a;
+    --side: #070808; --side-fg: #e4e7e6; --side-muted: #848c8a; --side-active: #1c2121;
+    --wa: #4cc38a; --wa-soft: #163325; --logo-ink: none;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
+    color-scheme: dark;
+  }
+}
+.root[data-theme='dark'] {
+  --bg: #0f1716; --surface: #16201f; --surface-2: #1c2928; --line: #2b3b39; --fg: #e3ebe9; --muted: #93a5a1;
+  --accent: #4fb3bd; --accent-ink: #06191b; --accent-soft: #173b3f; --mark: #e3aa3e; --mark-soft: #3a2e15;
+  --ok: #5cc489; --ok-soft: #173326; --warn: #e3aa3e; --warn-soft: #3a2e15; --bad: #ec7a70; --bad-soft: #3d1d1a;
+  --side: #070808; --side-fg: #e4e7e6; --side-muted: #848c8a; --side-active: #1c2121;
+  --wa: #4cc38a; --wa-soft: #163325; --logo-ink: none;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 16px rgba(0, 0, 0, .25);
+  color-scheme: dark;
+}
+
+.root *, .root *::before, .root *::after { box-sizing: border-box; }
+.root img { max-width: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .root * { transition: none !important; animation: none !important; }
+}

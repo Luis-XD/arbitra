@@ -96,7 +96,7 @@ function FormForgetPassw() {
                             {loading ? <Loader mini={true}/> : "Recuperar"}
                         </Button>
                     </ContFormInput>
-                    <p className={styles.smallText}>Ya tengo una cuenta, ir a<Link to='/login'>inicio de sesión</Link> o <Link to='/registro'>registrarme</Link></p>
+                    <p className={styles.smallText}>Ir a: <Link to='/login'>inicio de sesión</Link> o <Link to='/registro'>registrarme</Link></p>
                 </form>
             </div>
         </>
