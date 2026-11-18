@@ -35,6 +35,8 @@ function FormManageSports() {
     d => Number(d.deporte_id) === Number(selectedSport)
   );
 
+  const [dir, setDir] = useState('');
+
   // Sincronizar icono y previsualizaciones al seleccionar disciplina existente
   useEffect(() => {
     if (modoAccionDisciplina === 'existente' && selectedExistingDiscipline) {
@@ -63,6 +65,7 @@ function FormManageSports() {
         setDeportes(data.deportes || []);
         setDisciplinas(data.disciplinas || []);
         setAvailableIcons(data.availableIcons || []);
+        setDir(data.dir);
       }
     } catch (err) {
       console.error('Error cargando datos:', err);
@@ -219,6 +222,7 @@ function FormManageSports() {
           
           <div className={styles.formGroup}>
             <label className={styles.label}>Deporte Existente</label>
+            <p className={styles.dirText}>{dir}</p>
             <select 
               className={styles.select}
               value={selectedSport} 
@@ -260,8 +264,8 @@ function FormManageSports() {
           <div className={`${styles.disciplineBox} ${(!selectedSport || esInactivo) ? styles.disabledBox : ''}`}>
             
             {selectedSport && !esInactivo && (
-              <div style={{ marginBottom: '12px', display: 'flex', gap: '15px' }}>
-                <label style={{ cursor: 'pointer', fontSize: '13px' }}>
+              <div className={styles.radioGroupWrapper}>
+                <label className={styles.radioLabel}>
                   <input 
                     type="radio" 
                     name="modoDisciplina" 
@@ -270,7 +274,7 @@ function FormManageSports() {
                   />{' '}
                   Crear nueva disciplina <br /> (Asignar nueva disciplina)
                 </label>
-                <label style={{ cursor: 'pointer', fontSize: '13px' }}>
+                <label className={styles.radioLabel}>
                   <input 
                     type="radio" 
                     name="modoDisciplina" 
@@ -318,39 +322,32 @@ function FormManageSports() {
             )}
 
             {/* SELECCIÓN DE ICONO CON VENTANA FLOTANTE (MODAL) */}
-            <div className={styles.formGroup} style={{ marginTop: '15px' }}>
+            <div className={`${styles.formGroup} ${styles.iconSectionGroup}`}>
               <label className={`${styles.label} ${(!selectedSport || esInactivo) ? styles.disabledLabel : ''}`}>
                 Icono para el SidePanel:
               </label>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '5px' }}>
+              <div className={styles.iconActionsRow}>
                 <button
                   type="button"
                   onClick={() => setShowIconModal(true)}
                   disabled={!selectedSport || esInactivo}
-                  style={{
-                    padding: '8px 12px',
-                    background: '#2b3a4a',
-                    color: '#fff',
-                    border: 'none',
-                    borderRadius: '6px',
-                    cursor: (!selectedSport || esInactivo) ? 'not-allowed' : 'pointer'
-                  }}
+                  className={`${styles.openIconModalBtn} ${(!selectedSport || esInactivo) ? styles.openIconModalBtnDisabled : ''}`}
                 >
                   {iconDiscip ? `Cambiar Icono (${iconDiscip})` : '🖼️ Seleccionar Icono de la Galería'}
                 </button>
 
                 {iconDiscip && (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <div className={styles.selectedIconWrapper}>
                     <img 
                       src={`${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/icons/${iconDiscip}`} 
                       alt="Icono seleccionado" 
-                      style={{ width: 'auto', height: '100%',borderRadius:'100%', objectFit: 'contain', background:'#131b2e', padding:'0.2rem'}}
+                      className={styles.selectedIconPreview}
                       onError={(e) => { e.target.style.display = 'none'; }}
                     />
                     <button 
                       type="button" 
                       onClick={() => setIconDiscip('')}
-                      style={{ background: '#FF0707', fontWeight:'bold', padding:'0.4rem', borderRadius: '0.5rem', border:'none', color: '#fff', cursor: 'pointer', fontSize: '14px' }}
+                      className={styles.removeIconBtn}
                       title="Quitar icono"
                     >
                       ❌ Eliminar
@@ -362,46 +359,22 @@ function FormManageSports() {
 
             {/* VENTANA FLOTANTE (MODAL) DE ICONOS */}
             {showIconModal && (
-              <div style={{
-                position: 'fixed',
-                top: 0, left: 0, width: '100vw', height: '100vh',
-                backgroundColor: 'rgba(0,0,0,0.6)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                zIndex: 1000
-              }}>
-                <div style={{
-                  background: '#fff',
-                  padding: '20px',
-                  borderRadius: '10px',
-                  width: '450px',
-                  maxHeight: '80vh',
-                  overflowY: 'auto',
-                  boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
-                  display:'flex',
-                  justifyContent:'center',
-                  flexDirection:'column'
-                }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
-                    <h4 style={{ margin: 0, color: '#333' }}>Selecciona un Icono PNG</h4>
+              <div className={styles.modalOverlay}>
+                <div className={styles.modalContent}>
+                  <div className={styles.modalHeader}>
+                    <h4 className={styles.modalTitle}>Selecciona un Icono PNG</h4>
                     <button 
                       type="button" 
                       onClick={() => setShowIconModal(false)}
-                      style={{ background: '#d9534f', color: '#fff', border: 'none', padding: '5px 10px', borderRadius: '4px', cursor: 'pointer' }}
+                      className={styles.modalCloseBtn}
                     >
                       ✕ Cerrar
                     </button>
                   </div>
 
-                  <div style={{
-                    gap: '10px',
-                    display:'flex',
-                    flexWrap:'wrap',
-                    justifyContent:'center'
-                  }}>
+                  <div className={styles.modalIconsGrid}>
                     {availableIcons.map((iconFile) => {
-                      const iconUrl = `${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/icons/${iconFile}`;
+                      const iconUrl = `/iconsArbitra/links/sports/${iconFile}`;
                       const isSelected = iconDiscip === iconFile;
 
                       return (
@@ -411,23 +384,15 @@ function FormManageSports() {
                             setIconDiscip(iconFile);
                             setShowIconModal(false);
                           }}
-                          style={{
-                            border: isSelected ? '2px solid #059c38' : '1px solid #ddd',
-                            borderRadius: '6px',
-                            padding: '8px',
-                            textAlign: 'center',
-                            width:'7.5rem',
-                            cursor: 'pointer',
-                            backgroundColor: isSelected ? '#059c38' : '#131b2e'
-                          }}
+                          className={`${styles.modalIconCard} ${isSelected ? styles.modalIconCardSelected : ''}`}
                         >
                           <img 
                             src={iconUrl} 
                             alt={iconFile} 
-                            style={{ width: '36px', height: '36px', objectFit: 'contain' }} 
+                            className={styles.modalIconImage}
                             onError={(e) => { e.target.style.display = 'none'; }}
                           />
-                          <span style={{ display: 'block', fontSize: '9px', marginTop: '5px', wordBreak: 'break-all', color: '#fff' }}>
+                          <span className={styles.modalIconName}>
                             {iconFile}
                           </span>
                         </div>
@@ -439,24 +404,24 @@ function FormManageSports() {
             )}
 
             {/* IMAGEN DE TARJETA CON PREVISUALIZACIÓN Y BOTÓN DE ELIMINAR */}
-            <div className={styles.fileInputWrapper} style={{ marginTop: '10px' }}>
+            <div className={`${styles.fileInputWrapper} ${styles.fileWrapperSpacing}`}>
               <label className={`${styles.label} ${(!selectedSport || esInactivo) ? styles.disabledLabel : ''}`}>
                 Imagen de Fondo para la Tarjeta (Pequeña)
               </label>
 
               {previewImgDiscip && (
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px', background: '#f8f9fa', padding: '5px', borderRadius: '4px', border: '1px solid #ddd' }}>
+                <div className={styles.previewBox}>
                   <img 
                     src={`${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/cards/${previewImgDiscip}`} 
                     alt="Tarjeta actual" 
-                    style={{ width: '50px', height: '35px', objectFit: 'cover', borderRadius: '4px' }}
+                    className={styles.previewCardImage}
                     onError={(e) => { e.target.style.display = 'none'; }}
                   />
-                  <span style={{ fontSize: '11px', color: '#555' }}>Actual: {previewImgDiscip}</span>
+                  <span className={styles.previewFileName}>Actual: {previewImgDiscip}</span>
                 </div>
               )}
 
-              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+              <div className={styles.fileInputRow}>
                 <input
                   id="inputFileCard"
                   type="file"
@@ -473,7 +438,7 @@ function FormManageSports() {
                       const inputElem = document.getElementById('inputFileCard');
                       if (inputElem) inputElem.value = '';
                     }}
-                    style={{ padding: '6px 10px', background: '#d9534f', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}
+                    className={styles.clearFileBtn}
                     title="Quitar archivo seleccionado"
                   >
                     🗑️ Quitar
@@ -483,24 +448,24 @@ function FormManageSports() {
             </div>
 
             {/* IMAGEN DE BANNER CON PREVISUALIZACIÓN Y BOTÓN DE ELIMINAR */}
-            <div className={styles.fileInputWrapper} style={{ marginTop: '10px' }}>
+            <div className={`${styles.fileInputWrapper} ${styles.fileWrapperSpacing}`}>
               <label className={`${styles.label} ${(!selectedSport || esInactivo) ? styles.disabledLabel : ''}`}>
                 Imagen de Banner para la Disciplina (Principal)
               </label>
 
               {previewImgBanner && (
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px', background: '#f8f9fa', padding: '5px', borderRadius: '4px', border: '1px solid #ddd' }}>
+                <div className={styles.previewBox}>
                   <img 
                     src={`${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/banners/${previewImgBanner}`} 
                     alt="Banner actual" 
-                    style={{ width: 'auto', height: '30px', objectFit: 'cover', borderRadius: '4px', overflow:'hidden' }}
+                    className={styles.previewBannerImage}
                     onError={(e) => { e.target.style.display = 'none'; }}
                   />
-                  <span style={{ fontSize: '11px', color: '#555' }}>Actual: {previewImgBanner}</span>
+                  <span className={styles.previewFileName}>Actual: {previewImgBanner}</span>
                 </div>
               )}
 
-              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+              <div className={styles.fileInputRow}>
                 <input
                   id="inputFileBanner"
                   type="file"
@@ -517,7 +482,7 @@ function FormManageSports() {
                       const inputElem = document.getElementById('inputFileBanner');
                       if (inputElem) inputElem.value = '';
                     }}
-                    style={{ padding: '6px 10px', background: '#d9534f', color: '#fff', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '12px' }}
+                    className={styles.clearFileBtn}
                     title="Quitar archivo seleccionado"
                   >
                     🗑️ Quitar
@@ -588,9 +553,9 @@ function FormManageSports() {
         <hr />
         {/* COLUMNA DERECHA: Listado de Deportes */}
         <div className={styles.listColumn}>
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <h3 className={styles.subtitle} style={{ margin: 0 }}>Listado de Deportes</h3>
-            <span style={{ fontSize: '14px', fontWeight: 'bold', color: '#059c38' }}>
+          <div className={styles.listHeaderWrapper}>
+            <h3 className={`${styles.subtitle} ${styles.listTitleReset}`}>Listado de Deportes</h3>
+            <span className={styles.activeCountBadge}>
               ({deportes.filter(d => Number(d.activo) === 1).length} activos)
             </span>
           </div>
@@ -652,7 +617,7 @@ function FormManageSports() {
                                   return (
                                     <div key={disc.id} className={styles.disciplineSingleRow}>
                                       <span className={isInactivo ? styles.disciplineItemNameInactive : styles.disciplineItemNameActive}>
-                                        • {disc.nombre}
+                                        - {disc.nombre}
                                       </span>
                                       <div className={styles.disciplineStatusContainer}>
                                         <span className={(isInactivo || isDiscInactivo) ? styles.disciplineStatusIndicatorInactive : styles.disciplineStatusIndicatorActive}>
@@ -662,12 +627,13 @@ function FormManageSports() {
                                           type="button"
                                           disabled={isInactivo}
                                           onClick={() => handleToggleEstadoDisciplina(disc.id, disc.activo)}
-                                          className={styles.disciplineActionButton}
-                                          style={{
-                                            cursor: isInactivo ? 'not-allowed' : 'pointer',
-                                            background: isInactivo ? '#e0e0e0' : (isDiscInactivo ? '#5cb85c' : '#d9534f'),
-                                            opacity: isInactivo ? 0.6 : 1
-                                          }}
+                                          className={`${styles.disciplineActionButton} ${
+                                            isInactivo 
+                                              ? styles.disciplineActionBtnBlocked 
+                                              : isDiscInactivo 
+                                                ? styles.disciplineActionBtnEnable 
+                                                : styles.disciplineActionBtnDisable
+                                          }`}
                                         >
                                           {isDiscInactivo ? 'Habilitar' : 'Deshabilitar'}
                                         </button>

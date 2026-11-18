@@ -3,7 +3,6 @@ import styles from './css/Publication.module.css'
 import Video from '../components/Video'
 import bannerDefault from '/images/banner_default.jpg'
 import { CONFIG_BACKEND } from '../config/config'
-import ContentTextLand from './ContentTextLand'
 import ContainerWrapper from './ContainerWrapper'
 import ContentBannerLogo from './ContentBannerLogo'
 

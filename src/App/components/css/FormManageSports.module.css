@@ -390,25 +390,265 @@
   border-radius: 3px;
   color: #fff;
 }
-.contBtn{
-  width: 100%;
 
+.contBtn {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-hr{
+
+hr {
   display: none;
 }
+
+/* Estilos extraídos de atributos style en línea */
+.dirText {
+  color: #000;
+}
+
+.radioGroupWrapper {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 15px;
+}
+
+.radioLabel {
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.iconSectionGroup {
+  margin-top: 15px;
+}
+
+.iconActionsRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.openIconModalBtn {
+  padding: 8px 12px;
+  background: #2b3a4a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.openIconModalBtnDisabled {
+  cursor: not-allowed;
+}
+
+.selectedIconWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.selectedIconPreview {
+  width: auto;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: contain;
+  background: #131b2e;
+  padding: 0.2rem;
+}
+
+.removeIconBtn {
+  background: #FF0707;
+  font-weight: bold;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 450px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modalTitle {
+  margin: 0;
+  color: #333;
+}
+
+.modalCloseBtn {
+  background: #d9534f;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modalIconsGrid {
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.modalIconCard {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+  width: 7.5rem;
+  cursor: pointer;
+  border: 0.3rem solid #fff;
+  background-color: #131b2e;
+}
+.modalIconCard:hover{
+  border: 0.3rem solid #059c38;
+}
+
+.modalIconCardSelected {
+  border: 0.3rem solid #059c38;
+  background-color: #059c38;
+}
+
+.modalIconImage {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+.modalIconName {
+  display: block;
+  font-size: 9px;
+  margin-top: 5px;
+  word-break: break-all;
+  color: #fff;
+}
+
+.fileWrapperSpacing {
+  margin-top: 10px;
+}
+
+.previewBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  background: #f8f9fa;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.previewCardImage {
+  width: 50px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.previewBannerImage {
+  width: auto;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.previewFileName {
+  font-size: 11px;
+  color: #555;
+}
+
+.fileInputRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.clearFileBtn {
+  padding: 6px 10px;
+  background: #d9534f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.listHeaderWrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.listTitleReset {
+  margin: 0;
+}
+
+.activeCountBadge {
+  font-size: 14px;
+  font-weight: bold;
+  color: #059c38;
+}
+
+.disciplineActionBtnBlocked {
+  cursor: not-allowed;
+  background: #e0e0e0;
+  opacity: 0.6;
+}
+
+.disciplineActionBtnEnable {
+  cursor: pointer;
+  background: #5cb85c;
+  opacity: 1;
+}
+
+.disciplineActionBtnDisable {
+  cursor: pointer;
+  background: #d9534f;
+  opacity: 1;
+}
+
 /* Media Queries para Responsive (pantallas medianas y móviles) */
-@media (max-width:1280px){
+@media (max-width: 1280px) {
   .container {
     padding: 15px;
     margin: 15px;
   }
 }
-@media (max-width:955px){
-  hr{
+
+@media (max-width: 955px) {
+  hr {
     width: 100%;
     display: flex;
   }
@@ -424,10 +664,11 @@ hr{
     flex-direction: column;
   }
   .gridContainer > .formColumn,
-  .gridContainer > .listColumn{
+  .gridContainer > .listColumn {
     width: 100%;
   }
 }
+
 @media (max-width: 768px) {
   .gridContainer {
     grid-template-columns: 1fr;

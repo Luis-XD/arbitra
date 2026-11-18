@@ -2,7 +2,7 @@ section, .section{
     position: relative;
     width: 100%;
     min-height: 5rem;
-    padding: 2rem 0;
+    /*padding: 2rem 0;*/
 
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@ section > .blurCircle,
     min-height: 35rem;
     margin-top: 0rem;
     z-index: 1;
-    background-color: var(--background-solid-2);
+    background-color: var(--background-solid-4);
 
     display: flex;
     align-items: center;
@@ -84,23 +84,23 @@ section > .blurCircle,
 
 .bgBlack{
     background-color: black;
-}
+}/*
 .sectionXtreme >.topXtreme,
 .sectionXtreme2 >.topXtreme{
     position: absolute;
     top: 0;
-    width: 100vw;
+    width: 100dvw;
     height: 3rem;
     z-index: 2;
-    border-radius: 3rem 3rem 0 0;
     border-top: 0.1rem solid #424242;
-    transform: translateY(-2rem);
-    background-color:var(--background-solid-2);
+    border-radius: 2rem;
+    transform: translateY(-1rem);
+    background-color:var(--background-solid-4);
 
     display: flex;
     justify-content: center;
     align-items: center;
-}
+}*/
 .sectionXtreme,
 .sectionXtreme2{
     position: relative;
@@ -110,7 +110,7 @@ section > .blurCircle,
     margin-top: 35rem;
     min-width: 23.4rem;
     min-height: 30rem;
-    background-color: var(--background-solid-2);
+    background-color: var(--background-solid-4);
     
     display: flex;
     justify-content: center;

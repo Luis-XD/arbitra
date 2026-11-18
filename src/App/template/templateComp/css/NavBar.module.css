@@ -518,13 +518,15 @@ span{
 .contNavbarContent > .navbarContent > .navbarLinks > .linkHome{
     display: none;
 }
-@media (max-width: 1420px){
+
+@media (max-width: 1550px){
     .contNavbarContent > .navbarContent{
         width: 90%;
     }
 }
 
-@media (max-width: 1280px){
+
+@media (max-width: 1024px){
     nav, .navbar{
         height: 4em;
         transition: all .3s ease;

@@ -1,0 +1,16 @@
+.sectionExpand{
+    width: 100%;
+    min-height: 18rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.sectionExpand > h2{
+    width: 90%;
+    color: #000;
+    font-size: 4rem;
+    font-style: italic;
+    margin: 1rem 0;
+}

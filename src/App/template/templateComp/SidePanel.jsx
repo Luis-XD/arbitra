@@ -32,10 +32,10 @@ function SidePanel() {
     // Retorna la URL del icono utilizando la propiedad 'img_discip' enviada por el backend desde la BD
     const getSportIcon = (imgDiscip) => {
         if (imgDiscip) {
-            return `${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/icons/${imgDiscip}`
+            return `/iconsArbitra/links/sports/${imgDiscip}`
         }
         // Icono por defecto en la carpeta assets si el registro en BD es NULL o vacío
-        return `${CONFIG_BACKEND.API_DIR}/assets/icons/sports/default.png`
+        return '/iconsArbitra/links/sports/default.png'
     }
 
     const consult = async () => {
