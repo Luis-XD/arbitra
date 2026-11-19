@@ -5,7 +5,7 @@ footer, .footer{
     color: black;
     z-index: 5;
     border-top: var(--border-2);
-    background-color: var(--background-solid-4);
+    background-color: var(--background-solid);
 
     display: flex;
     flex-wrap: wrap;

@@ -37,25 +37,25 @@ function Home_prueba() {
             <ContentBannerLogo />
             </ContainerWrapper>
           </SectionExpand>
-          <SectionExpand bgAssing='#000F16'>
+          <SectionExpand bgAssing='#0A101B'>
             <div className={styles.featuresGrid}>
               <div className={styles.featureItem}>
-                <img src="/iconsArbitra/utilities/graduation.png" alt="Formación" className={styles.featureIcon} />
+                <img src="/iconsArbitra/utilities/landingPage/01_formacion_especializada.svg" alt="Formación" className={styles.featureIcon} />
                 <span className={styles.featureText}>Formación especializada</span>
               </div>
               <span></span>
               <div className={styles.featureItem}>
-                <img src="/iconsArbitra/utilities/focus.png" alt="Enfoque" className={styles.featureIcon} />
+                <img src="/iconsArbitra/utilities/landingPage/02_enfoque_practico.svg" alt="Enfoque" className={styles.featureIcon} />
                 <span className={styles.featureText}>Enfoque práctico</span>
               </div>
               <span></span>
               <div className={styles.featureItem}>
-                <img src="/iconsArbitra/utilities/group.png" alt="Docentes" className={styles.featureIcon} />
+                <img src="/iconsArbitra/utilities/landingPage/03_docentes_experiencia.svg" alt="Docentes" className={styles.featureIcon} />
                 <span className={styles.featureText}>Docentes con experiencia</span>
               </div>
               <span></span>
               <div className={styles.featureItem}>
-                <img src="/iconsArbitra/utilities/certificate.png" alt="Certificación" className={styles.featureIcon} />
+                <img src="/iconsArbitra/utilities/landingPage/04_certificacion_cursada.svg" alt="Certificación" className={styles.featureIcon} />
                 <span className={styles.featureText}>Certificación de cursada</span>
               </div>
             </div>
@@ -65,10 +65,10 @@ function Home_prueba() {
               <Elementor>
                   <div className={styles.cardContainer}>
                     <div className={styles.contElm}>
-                      <h3 className={styles.cardTitle}>Árbitro de Fútbol 11</h3>
+                      <h3 className={styles.cardTitle}>Árbitro de campo <br />Fútbol 11</h3>
                       <ul className={styles.cardList}>
-                          <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/calendar.png'/> Duración: 6 meses</li>
-                          <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/signal.png'/>   Nivel: Inicial / Intermedio</li>
+                          <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/05_duracion.svg'/> Duración: 6 meses</li>
+                          <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/06_nivel.svg'/>   Nivel: Inicial / Intermedio</li>
                       </ul>
                       <div className={styles.cardFooter}>
                           {/* ---> CAMBIADO ÚNICAMENTE AQUÍ: De etiqueta <a> a <button> con onClick para abrir el modal <--- */}
@@ -86,10 +86,10 @@ function Home_prueba() {
                   <div className={styles.cardContainer}>
                     <div className={styles.contElm}>
                       <div>
-                          <h3 className={styles.cardTitle}>Árbitro de Fútbol 8 y 5</h3>
+                          <h3 className={styles.cardTitle}>Árbitro de <br />Fútbol 8 y 5</h3>
                           <ul className={styles.cardList}>
-                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/calendar.png'/> Duración: 4 meses</li>
-                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/signal.png'/>   Nivel: Inicial</li>
+                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/05_duracion.svg'/> Duración: 4 meses</li>
+                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/06_nivel.svg'/>   Nivel: Inicial</li>
                           </ul>
                       </div>
                       <div className={styles.cardFooter}>
@@ -108,10 +108,10 @@ function Home_prueba() {
                   <div className={styles.cardContainer}>
                     <div className={styles.contElm}>
                       <div>
-                          <h3 className={styles.cardTitle}>Árbitro de Futsal</h3>                        
+                          <h3 className={styles.cardTitle}>Árbitro de <br />Futsal</h3>                        
                           <ul className={styles.cardList}>
-                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/calendar.png'/> Duración: 3 meses</li>
-                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/signal.png'/>   Nivel: Inicial</li>
+                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/05_duracion.svg'/> Duración: 3 meses</li>
+                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/06_nivel.svg'/>   Nivel: Inicial</li>
                           </ul>
                       </div>
                       <div className={styles.cardFooter}>
@@ -130,10 +130,10 @@ function Home_prueba() {
                   <div className={styles.cardContainer}>
                     <div className={styles.contElm}>
                       <div>
-                          <h3 className={styles.cardTitle}>Árbitro de Futbol playa</h3>                        
+                          <h3 className={styles.cardTitle}>Árbitro de <br />Futbol playa</h3>                        
                           <ul className={styles.cardList}>
-                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/calendar.png'/> Duración: 3 meses</li>
-                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/signal.png'/>   Nivel: Inicial</li>
+                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/05_duracion.svg'/> Duración: 3 meses</li>
+                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/06_nivel.svg'/>   Nivel: Inicial</li>
                           </ul>
                       </div>
                       <div className={styles.cardFooter}>
@@ -147,28 +147,32 @@ function Home_prueba() {
                   </div>
               </Elementor>
           </SectionExpand>
-          <SectionExpand>
+          <SectionExpand bgAssing='#0A101B'>
             <div className={styles.contGroupElm}>
               <div className={styles.contTitle}>
-                <h2>¿Por qué elegir <br /><span>ARBITRA</span>?</h2>
+                <div className={styles.cont}>
+                  <img src="/iconsArbitra/utilities/landingPage/miscelanea_diagonal.svg"/>
+                  <h2>¿Por qué elegir</h2>
+                </div>
+                <span>ARBITRA?</span>
               </div>
               <div className={styles.featuresGridBenefit}>
                 <div className={styles.featureItem}>
-                  <img src="/iconsArbitra/utilities/graduation.svg" alt="Formación" className={styles.featureIcon} />
+                  <img src="/iconsArbitra/utilities/landingPage/07_contenidos_actualizados.svg" alt="Formación" className={styles.featureIcon} />
                   <span className={styles.featureText}>Contenido actualizado</span>
                 </div>
                 <span></span>
                 <div className={styles.featureItem}>
-                  <img src="/iconsArbitra/utilities/run.png" alt="Enfoque" className={styles.featureIcon} />
+                  <img src="/iconsArbitra/utilities/landingPage/08_preparacion_fisica_arbitral.svg" alt="Enfoque" className={styles.featureIcon} />
                   <span className={styles.featureText}>Preparación fisica y arbitral</span>
                 </div>
                 <span></span>
                 <div className={styles.featureItem}>
-                  <img src="/iconsArbitra/utilities/book.svg" alt="Docentes" className={styles.featureIcon} />
+                  <img src="/iconsArbitra/utilities/landingPage/09_reglamentacion.svg" alt="Docentes" className={styles.featureIcon} />
                   <span className={styles.featureText}>Reglamentación oficial (IFAB)</span>
                 </div>
                 <div className={styles.featureItem}>
-                  <img src="/iconsArbitra/utilities/increase.svg" alt="Docentes" className={styles.featureIcon} />
+                  <img src="/iconsArbitra/utilities/landingPage/10_desarrollo_competencias.svg" alt="Docentes" className={styles.featureIcon} />
                   
                   <span className={styles.featureText}>Desarrollo de competencias</span>
                 </div>
@@ -190,7 +194,7 @@ function Home_prueba() {
                 </div>
               </div>
               <div className={styles.opacity}></div>
-              <img src="/images/home/silvato.jpg" alt="Silbato" className={styles.ctaIcon} />
+              <img src="/images/home/silvato.png" alt="Silbato" className={styles.ctaIcon} />
             </div>
           </SectionExpand>
         </PublicationStd>

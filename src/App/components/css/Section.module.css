@@ -35,7 +35,7 @@ section > .blurCircle,
     min-height: 35rem;
     margin-top: 0rem;
     z-index: 1;
-    background-color: var(--background-solid-4);
+    background-color: var(--background-solid);
 
     display: flex;
     align-items: center;
@@ -84,7 +84,7 @@ section > .blurCircle,
 
 .bgBlack{
     background-color: black;
-}/*
+}
 .sectionXtreme >.topXtreme,
 .sectionXtreme2 >.topXtreme{
     position: absolute;
@@ -94,13 +94,13 @@ section > .blurCircle,
     z-index: 2;
     border-top: 0.1rem solid #424242;
     border-radius: 2rem;
-    transform: translateY(-1rem);
-    background-color:var(--background-solid-4);
+    transform: translateY(-1.2rem);
+    background-color:var(--background-solid);
 
     display: flex;
     justify-content: center;
     align-items: center;
-}*/
+}
 .sectionXtreme,
 .sectionXtreme2{
     position: relative;
@@ -110,7 +110,7 @@ section > .blurCircle,
     margin-top: 35rem;
     min-width: 23.4rem;
     min-height: 30rem;
-    background-color: var(--background-solid-4);
+    background-color: var(--background-solid);
     
     display: flex;
     justify-content: center;

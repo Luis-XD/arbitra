@@ -12,7 +12,8 @@ import imgStudents from '/iconsArbitra/links/students.png'
 import imgTokens from '/iconsArbitra/links/tokens.png'
 import imgManage from '/iconsArbitra/links/manage.png'
 import imgDownload from '/iconsArbitra/links/download.png'
-import imgSports from '/iconsArbitra/links/sports.png'
+import imgEdit from '/iconsArbitra/utilities/pencil.png'
+import imgCreate from '/iconsArbitra/utilities/plus.png'
 import imgAvailableCourses from '/iconsArbitra/links/available_courses.png'
 import imgCommissions from '/iconsArbitra/links/commissions.png'
 import classBtn from '../../components/css/Button.module.css'
@@ -93,8 +94,8 @@ function SidePanel() {
                     <h3>Gestionar:</h3>
                     <div className={styles.panelSection}>
                         <Link to={CONFIG_PATHS.CAMPUS_MANAGE_SPORTS_AND_DISCIPLINES_PATH} className={classBtn.button3}>
-                            <img src={imgSports} className={styles.imgMobile}/>
-                            Deportes y disciplinas
+                            <img src={imgCreate} className={styles.imgMobile}/>
+                            Crear deportes y disciplinas
                         </Link>
                     </div>
                     <div className={styles.panelSection}>
@@ -122,7 +123,7 @@ function SidePanel() {
                         </Link>
                     </div>
                     <div className={styles.panelSection}>
-                        <Link to={CONFIG_PATHS.CAMPUS_MANAGE_CAMPUS_PATH} className={classBtn.button3}>
+                        <Link to={CONFIG_PATHS.CAMPUS_MANAGE_TOKEN_PATH} className={classBtn.button3}>
                         <img src={imgTokens} className={styles.imgMobile}/>
                             Asignar tokens
                         </Link>

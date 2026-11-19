@@ -18,8 +18,22 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%; /* Normalmente 16px */
+}
+
 :root {
-  font-family: Inter, sans-serif;
+  /* Tipografías */
+  --font-heading: 'Barlow Condensed', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Tamaños responsive */
+  --text-h2: clamp(1.875rem, 4vw, 2.75rem);
+  --text-h3: clamp(1.5625rem, 2.5vw, 2rem);
+  --text-card: clamp(1.375rem, 2vw, 1.625rem);
+  --text-body: clamp(0.9375rem, 1.2vw, 1rem);
+  /**/
+
   --color-bg: #fff;
   --color-bg-alt: #f2f2f2;
   --color-text: #222;
@@ -61,12 +75,18 @@
   --box-shadow-strong: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
   --box-shadow-strong-top: 0 -0.1rem 1rem rgba(27, 27, 27, 0.4);
 
+
+    /* Paleta oficial ARBITRA */
+  --bg-main: #0A101B;
+  --bg-card: #0E1422;
+  --accent: #10B981;
+  --white: #FFFFFF;
+  /**/
   
   --background: rgba(19, 27, 46, 0.7);
-  --background-solid:#0e1422; /*azul claro #131b2e*/
-  --background-solid-2: #0a101b;
+  --background-solid: #0A101B; /*azul claro #131b2e*/
+  --background-solid-2: #0E1422;
   --background-solid-3: #10B981;
-  --background-solid-4: #000F16;
   --background-dark: rgba(51, 51, 51, 0.8);
   --background-dark-2: rgba(0, 0, 0, 0.8);
   --background-color: rgba(255, 255, 255, 1);
@@ -109,9 +129,12 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
   overflow-x: hidden; /* Evita desplazamiento lateral */
-  background-color: var(--background);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color:var(--background-solid);
+  color: var(--white);
 
   display: flex;
   justify-content: center;
@@ -217,4 +240,75 @@ input:-webkit-autofill:active {
     
     /* Opcional: asegura que la transición del color sea fluida */
     transition: background-color 5000s ease-in-out 0s;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.1;
+  margin: 0;
+}
+
+h2 {
+  font-size: var(--text-h2);
+  font-weight: 800;
+  font-style: italic;
+}
+
+h3 {
+  font-size: var(--text-h3);
+  font-weight: 700;
+}
+
+p {
+  font-size: var(--text-body);
+  line-height: 1.6;
+}
+
+
+
+
+
+
+.course-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-card);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.course-card__details {
+  font-size: 0.875rem;
+}
+
+.benefit__text {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.discipline__name {
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.btn-primary {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  background: var(--accent);
+  color: var(--bg-main);
+  border-radius: 9999px;
+}
+
+@media (max-width: 47.9375rem) {
+  .benefit__text {
+    font-size: 0.9375rem;
+  }
+
+  .discipline__name {
+    font-size: 0.75rem;
+  }
+
+  .btn-primary {
+    font-size: 0.9375rem;
+  }
 }

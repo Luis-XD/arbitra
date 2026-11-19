@@ -20,17 +20,20 @@
 .buttonWp2{
     position: relative;
     width: auto;
-    max-width: 14rem;
-    max-height: 4rem;
+    width: 18rem;
+    max-height:3.4rem;
     border-radius: var(--border-radius);
     bottom: 0;
     right: 0;
     padding: 0 0.4rem 0 0.4rem;
-    background-color: #25D366;
+    background-color: #0FF1AF;
+}
+.buttonWp2 > svg{
+    filter: invert(1);
 }
 .buttonWp2 > p{
     margin-left: 0.4rem;
-    font-weight: bolder;
+    font-weight: bold;
     color: #333;
 }
 .buttonWp2:hover{

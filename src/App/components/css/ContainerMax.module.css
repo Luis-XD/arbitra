@@ -88,8 +88,4 @@
         font-size: 0.7rem;
         line-height: 1.6rem;
     }
-
-    .containerMax > .contElemnt > .imgContainer > img{
-        width: 100%;
-    }
 }

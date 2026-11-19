@@ -11,8 +11,6 @@ import TemplateCampus           from './App/template/TemplateCampus'
 import './index.css'
 
 import Home                     from './App/pages/Home'
-import Home_prueba                     from './App/pages/Home_origin'
-
 
 import NotFound                 from './App/pages/NotFound'
 
@@ -70,7 +68,6 @@ const routes = [
     element: <Template separator={false} />,
     children: [
       { path: CONFIG_PATHS.HOME_PATH,                                       element: <PublicRoute>       <Home/>                       </PublicRoute> },
-      { path: "/home_prueba",                                       element: <PublicRoute>       <Home_prueba />               </PublicRoute> },
       { path: CONFIG_PATHS.SPORTS_PATH,                                     element: <PublicRoute>       <Sports/>                     </PublicRoute> },
       { path: CONFIG_PATHS.SPORTS_PATH+"/disciplina/:id_discipline",        element: <PublicRoute>       <DisciplineDetail/>           </PublicRoute> },
       { path: CONFIG_PATHS.FORMATION_PATH,                                  element: <PublicRoute>       <Formation/>                  </PublicRoute> },
@@ -119,7 +116,7 @@ const routes = [
           { path: "gestion-alumnos",                                        element: <ProtectedRoute>   <ManageStudents/>           </ProtectedRoute> },
           { path: "gestion-deportes-disciplinas",                           element: <ProtectedRoute>   <ManageSports/>             </ProtectedRoute> },
           { path: "gestion-materias",                                       element: <ProtectedRoute>   <ManageMatters/>            </ProtectedRoute> },
-          { path: "gestion-campus",                                         element: <ProtectedRoute>   <ManageCampus />            </ProtectedRoute> },
+          { path: "gestion-token",                                          element: <ProtectedRoute>   <ManageCampus />            </ProtectedRoute> },
           { path: "gestion-contraseña",                                     element: <ProtectedRoute>   <ManagePassword />          </ProtectedRoute> },
           { path: "gestion-descargar-archivos",                             element: <ProtectedRoute>   <ManageDownloadFile />      </ProtectedRoute> },
           { path: "gestion-general",                                        element: <ProtectedRoute>   <ManageGeneral />           </ProtectedRoute> },

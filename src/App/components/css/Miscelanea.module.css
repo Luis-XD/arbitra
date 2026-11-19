@@ -1,0 +1,6 @@
+.miscelaneaDiagonal {
+  width: 1rem;
+  height: 2rem;
+  transform:skewX(-15deg);
+  background: var(--background-solid-3);
+}

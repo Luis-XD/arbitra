@@ -165,7 +165,7 @@ function Home() {
               </div>
             </div>
             <div className={styles.opacity}></div>
-            <img src="/images/home/silvato.jpg" alt="Silbato" className={styles.ctaIcon} />
+            <img src="/images/home/silvato.png" alt="Silbato" className={styles.ctaIcon} />
           </div>
         </Section>
       </Publication>

@@ -48,7 +48,7 @@ export const CONFIG_PATHS = {
     CAMPUS_MANAGE_PROFESSORS_PATH: "gestion-profesores",
     CAMPUS_MANAGE_STUDENTS_PATH:"gestion-alumnos",
     CAMPUS_MANAGE_MATTERS_PATH:"gestion-materias",
-    CAMPUS_MANAGE_CAMPUS_PATH:"gestion-campus",
+    CAMPUS_MANAGE_TOKEN_PATH:"gestion-token",
     CAMPUS_MANAGE_PASSWORD_PATH:"gestion-contraseña",
     CAMPUS_MANAGE_DOWNLOAD_FILE_PATH:"gestion-descargar-archivos",
     CAMPUS_MANAGE_GENERAL_PATH:"gestion-general",

@@ -1,9 +1,7 @@
 .elementor{
-    max-width: 24rem;
-    min-width: 20rem;
-    width: 100%;
-    height: 24rem;
-    margin: 0.5rem 1rem;
+    width: 20dvw;
+    height: 20dvw;
+    margin: 1rem 1.4rem;
     border: 0.1rem solid #ccc;
     border-radius: var(--border-radius);
     color: #000;
@@ -18,6 +16,11 @@
 }
 .elementor:hover{
     background-color: var(--background-solid-3);
+}
+@media (max-width:1265px){
+    .elementor{
+        margin: 0.5rem;
+    }
 }
 @media (max-width:966px){
     .elementor{

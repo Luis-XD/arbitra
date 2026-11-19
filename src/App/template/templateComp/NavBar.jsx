@@ -313,42 +313,42 @@ function NavBar() {
                                             <div className={styles.adminSectionMobile}>
                                                 <span className={styles.adminTitleMobile}>Administración</span>
                                                 
-                                                <Link to="/campus/gestion-deportes-disciplinas" onClick={toggleMenuPanel}>
+                                                <Link to={`${CONFIG_PATHS.CAMPUS_PATH}/${CONFIG_PATHS.CAMPUS_MANAGE_SPORTS_AND_DISCIPLINES_PATH}`} onClick={toggleMenuPanel}>
                                                     <img src={imgSports} className={styles.imgMobile}/>
-                                                    Deportes y disciplinas
+                                                    Crear deportes y disciplinas
                                                 </Link>
 
-                                                <Link to="/campus/gestion-comisiones" onClick={toggleMenuPanel}>
+                                                <Link to={`${CONFIG_PATHS.CAMPUS_PATH}/${CONFIG_PATHS.CAMPUS_MANAGE_COMISSIONS_PATH}`} onClick={toggleMenuPanel}>
                                                     <img src={imgCommissions} className={styles.imgMobile}/>
                                                     Comisiones
                                                 </Link>
                                                 
-                                                <Link to="/campus/gestion-profesores" onClick={toggleMenuPanel}>
+                                                <Link to={`${CONFIG_PATHS.CAMPUS_PATH}/${CONFIG_PATHS.CAMPUS_MANAGE_PROFESSORS_PATH}`} onClick={toggleMenuPanel}>
                                                     <img src={imgProfessors} className={styles.imgMobile}/>
                                                     Profesores
                                                 </Link>
                                                 
-                                                <Link to="/campus/gestion-alumnos" onClick={toggleMenuPanel}>
+                                                <Link to={`${CONFIG_PATHS.CAMPUS_PATH}/${CONFIG_PATHS.CAMPUS_MANAGE_STUDENTS_PATH}`} onClick={toggleMenuPanel}>
                                                     <img src={imgStudents} className={styles.imgMobile}/>
                                                     Alumnos
                                                 </Link>
 
-                                                <Link to="/campus/gestion-materias" onClick={toggleMenuPanel}>
+                                                <Link to={`${CONFIG_PATHS.CAMPUS_PATH}/${CONFIG_PATHS.CAMPUS_MANAGE_MATTERS_PATH}`} onClick={toggleMenuPanel}>
                                                     <img src={imgCourses} className={styles.imgMobile}/>
                                                     Materias
                                                 </Link>
 
-                                                <Link to="/campus/gestion-campus" onClick={toggleMenuPanel}>
+                                                <Link to={`${CONFIG_PATHS.CAMPUS_PATH}/${CONFIG_PATHS.CAMPUS_MANAGE_TOKEN_PATH}`} onClick={toggleMenuPanel}>
                                                     <img src={imgTokens} className={styles.imgMobile}/>
                                                     Asignar tokens
                                                 </Link>
 
-                                                <Link to="/campus/gestion-descargar-archivos" onClick={toggleMenuPanel}>
+                                                <Link to={`${CONFIG_PATHS.CAMPUS_PATH}/${CONFIG_PATHS.CAMPUS_MANAGE_DOWNLOAD_FILE_PATH}`}  onClick={toggleMenuPanel}>
                                                     <img src={imgDownload} className={styles.imgMobile}/>
                                                     Descarga de archivos
                                                 </Link>
 
-                                                <Link to="/campus/gestion-general" onClick={toggleMenuPanel}>
+                                                <Link to={`${CONFIG_PATHS.CAMPUS_PATH}/${CONFIG_PATHS.CAMPUS_MANAGE_GENERAL_PATH}`} onClick={toggleMenuPanel}>
                                                     <img src={imgManage} className={styles.imgMobile}/>
                                                     Gestión
                                                 </Link>

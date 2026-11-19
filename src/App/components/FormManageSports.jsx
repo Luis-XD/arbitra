@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { CONFIG_BACKEND } from '../config/config';
 import styles from './css/FormManageSports.module.css';
 import Button from './Button';
+import EditDisciplineModal from './EditDisciplineModal';
 
 function FormManageSports() {
   const [deportes, setDeportes] = useState([]);
@@ -9,6 +10,7 @@ function FormManageSports() {
   const [availableIcons, setAvailableIcons] = useState([]); // Iconos escaneados del backend
   const [nuevoDeporte, setNuevoDeporte] = useState('');
   const [selectedSport, setSelectedSport] = useState('');
+  const [editingDiscipline, setEditingDiscipline] = useState(null);
   
   // Nuevos estados para gestionar disciplina existente, banner, icono y modo de acción
   const [modoAccionDisciplina, setModoAccionDisciplina] = useState('nueva'); // 'nueva' | 'existente'
@@ -263,65 +265,19 @@ function FormManageSports() {
 
           <div className={`${styles.disciplineBox} ${(!selectedSport || esInactivo) ? styles.disabledBox : ''}`}>
             
-            {selectedSport && !esInactivo && (
-              <div className={styles.radioGroupWrapper}>
-                <label className={styles.radioLabel}>
-                  <input 
-                    type="radio" 
-                    name="modoDisciplina" 
-                    checked={modoAccionDisciplina === 'nueva'} 
-                    onChange={() => { setModoAccionDisciplina('nueva'); setSelectedExistingDiscipline(''); }} 
-                  />{' '}
-                  Crear nueva disciplina <br /> (Asignar nueva disciplina)
-                </label>
-                <label className={styles.radioLabel}>
-                  <input 
-                    type="radio" 
-                    name="modoDisciplina" 
-                    checked={modoAccionDisciplina === 'existente'} 
-                    onChange={() => { setModoAccionDisciplina('existente'); setNuevaDisciplina(''); }} 
-                  />{' '}
-                  Elegir existente <br /> (Actualizar información)
-                </label>
-              </div>
-            )}
+            <label className={`${styles.label} ${(!selectedSport || esInactivo) ? styles.disabledLabel : ''}`}>
+              Nueva Disciplina para este Deporte
+            </label>
+            <input
+              type="text"
+              className={styles.input}
+              placeholder={!selectedSport ? "Seleccione un deporte primero..." : esInactivo ? "Deporte inactivo (no disponible)" : "Ej: Futsal, Táctica, etc."}
+              value={nuevaDisciplina}
+              onChange={(e) => setNuevaDisciplina(e.target.value)}
+              disabled={!selectedSport || esInactivo}
+            />
 
-            {modoAccionDisciplina === 'nueva' ? (
-              <>
-                <label className={`${styles.label} ${(!selectedSport || esInactivo) ? styles.disabledLabel : ''}`}>
-                  Nueva Disciplina para este Deporte
-                </label>
-                <input
-                  type="text"
-                  className={styles.input}
-                  placeholder={!selectedSport ? "Seleccione un deporte primero..." : esInactivo ? "Deporte inactivo (no disponible)" : "Ej: Futsal, Táctica, etc."}
-                  value={nuevaDisciplina}
-                  onChange={(e) => setNuevaDisciplina(e.target.value)}
-                  disabled={!selectedSport || esInactivo}
-                />
-              </>
-            ) : (
-              <>
-                <label className={`${styles.label} ${(!selectedSport || esInactivo) ? styles.disabledLabel : ''}`}>
-                  Seleccionar Disciplina Existente
-                </label>
-                <select
-                  className={styles.select}
-                  value={selectedExistingDiscipline}
-                  onChange={(e) => setSelectedExistingDiscipline(e.target.value)}
-                  disabled={!selectedSport || esInactivo}
-                >
-                  <option value="">-- Seleccionar Disciplina --</option>
-                  {disciplinasDelDeporteSeleccionado.map(disc => (
-                    <option key={disc.id} value={disc.id}>
-                      {disc.nombre}
-                    </option>
-                  ))}
-                </select>
-              </>
-            )}
-
-            {/* SELECCIÓN DE ICONO CON VENTANA FLOTANTE (MODAL) */}
+            {/* SELECCIÓN DE ICONO CON VENTANA FLOTANTE (MODAL) PARA LA NUEVA DISCIPLINA */}
             <div className={`${styles.formGroup} ${styles.iconSectionGroup}`}>
               <label className={`${styles.label} ${(!selectedSport || esInactivo) ? styles.disabledLabel : ''}`}>
                 Icono para el SidePanel:
@@ -409,18 +365,6 @@ function FormManageSports() {
                 Imagen de Fondo para la Tarjeta (Pequeña)
               </label>
 
-              {previewImgDiscip && (
-                <div className={styles.previewBox}>
-                  <img 
-                    src={`${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/cards/${previewImgDiscip}`} 
-                    alt="Tarjeta actual" 
-                    className={styles.previewCardImage}
-                    onError={(e) => { e.target.style.display = 'none'; }}
-                  />
-                  <span className={styles.previewFileName}>Actual: {previewImgDiscip}</span>
-                </div>
-              )}
-
               <div className={styles.fileInputRow}>
                 <input
                   id="inputFileCard"
@@ -453,18 +397,6 @@ function FormManageSports() {
                 Imagen de Banner para la Disciplina (Principal)
               </label>
 
-              {previewImgBanner && (
-                <div className={styles.previewBox}>
-                  <img 
-                    src={`${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/banners/${previewImgBanner}`} 
-                    alt="Banner actual" 
-                    className={styles.previewBannerImage}
-                    onError={(e) => { e.target.style.display = 'none'; }}
-                  />
-                  <span className={styles.previewFileName}>Actual: {previewImgBanner}</span>
-                </div>
-              )}
-
               <div className={styles.fileInputRow}>
                 <input
                   id="inputFileBanner"
@@ -494,7 +426,7 @@ function FormManageSports() {
             <div className={styles.warningMessageWrapper}>
               {esInactivo && (
                 <span className={styles.warningText}>
-                  ⚠️ Habilítalo en el listado de la derecha para poder agregar o modificar disciplinas.
+                  ⚠️ Habilítalo en el listado de la derecha para poder agregar disciplinas.
                 </span>
               )}
             </div>
@@ -587,6 +519,18 @@ function FormManageSports() {
                         >
                           {isInactivo ? 'Habilitar ✅' : 'Deshabilitar ❌'}
                         </button>
+
+                        {/* Si el deporte tiene una sola disciplina (ej. Basquetbol), editamos esa única disciplina directamente aquí */}
+                        {disciplinasDelDep.length === 1 && (
+                          <button
+                            type="button"
+                            onClick={() => setEditingDiscipline(disciplinasDelDep[0])}
+                            className={styles.disciplineActionButton}
+                            style={{ background: '#007bff', cursor: 'pointer' }}
+                          >
+                            ✏️ Editar
+                          </button>
+                        )}
                       </div>
                     </div>
 
@@ -606,44 +550,55 @@ function FormManageSports() {
                             </span>
                           </div>
 
-                          {isExpanded && (
-                            <div className={styles.expandedDisciplinesContent}>
-                              <p className={styles.expandedHelpMsg}>
-                                {isInactivo ? '⚠️ Deporte inactivo: disciplinas bloqueadas en cascada.' : 'Estado independiente de disciplinas:'}
-                              </p>
-                              <div className={styles.disciplineRowsList}>
-                                {disciplinasDelDep.map(disc => {
-                                  const isDiscInactivo = Number(disc.status) === 0 || Number(disc.activo) === 0;
-                                  return (
-                                    <div key={disc.id} className={styles.disciplineSingleRow}>
-                                      <span className={isInactivo ? styles.disciplineItemNameInactive : styles.disciplineItemNameActive}>
-                                        - {disc.nombre}
+                         {isExpanded && (
+                          <div className={styles.expandedDisciplinesContent}>
+                            <p className={styles.expandedHelpMsg}>
+                              {isInactivo ? '⚠️ Deporte inactivo: disciplinas bloqueadas en cascada.' : 'Estado independiente de disciplinas:'}
+                            </p>
+                            <div className={styles.disciplineRowsList}>
+                              {disciplinasDelDep.map(disc => {
+                                const isDiscInactivo = Number(disc.status) === 0 || Number(disc.activo) === 0;
+                                return (
+                                  <div key={disc.id} className={styles.disciplineSingleRow}>
+                                    <span className={isInactivo ? styles.disciplineItemNameInactive : styles.disciplineItemNameActive}>
+                                      - {disc.nombre}
+                                    </span>
+                                    <div className={styles.disciplineStatusContainer}>
+                                      <span className={(isInactivo || isDiscInactivo) ? styles.disciplineStatusIndicatorInactive : styles.disciplineStatusIndicatorActive}>
+                                        {isInactivo ? '🔴 Bloqueada' : isDiscInactivo ? 'Inactiva' : 'Activa'}
                                       </span>
-                                      <div className={styles.disciplineStatusContainer}>
-                                        <span className={(isInactivo || isDiscInactivo) ? styles.disciplineStatusIndicatorInactive : styles.disciplineStatusIndicatorActive}>
-                                          {isInactivo ? '🔴 Bloqueada' : isDiscInactivo ? 'Inactiva' : 'Activa'}
-                                        </span>
-                                        <button
-                                          type="button"
-                                          disabled={isInactivo}
-                                          onClick={() => handleToggleEstadoDisciplina(disc.id, disc.activo)}
-                                          className={`${styles.disciplineActionButton} ${
-                                            isInactivo 
-                                              ? styles.disciplineActionBtnBlocked 
-                                              : isDiscInactivo 
-                                                ? styles.disciplineActionBtnEnable 
-                                                : styles.disciplineActionBtnDisable
-                                          }`}
-                                        >
-                                          {isDiscInactivo ? 'Habilitar' : 'Deshabilitar'}
-                                        </button>
-                                      </div>
+
+                                      {/* Botón de editar exclusivo de cada disciplina */}
+                                      <button
+                                        type="button"
+                                        onClick={() => setEditingDiscipline(disc)}
+                                        className={styles.disciplineActionButton}
+                                        style={{ background: '#007bff', cursor: 'pointer' }}
+                                      >
+                                        ✏️ Editar
+                                      </button>
+
+                                      <button
+                                        type="button"
+                                        disabled={isInactivo}
+                                        onClick={() => handleToggleEstadoDisciplina(disc.id, disc.activo)}
+                                        className={`${styles.disciplineActionButton} ${
+                                          isInactivo 
+                                            ? styles.disciplineActionBtnBlocked 
+                                            : isDiscInactivo 
+                                              ? styles.disciplineActionBtnEnable 
+                                              : styles.disciplineActionBtnDisable
+                                        }`}
+                                      >
+                                        {isDiscInactivo ? 'Habilitar' : 'Deshabilitar'}
+                                      </button>
                                     </div>
-                                  );
-                                })}
-                              </div>
+                                  </div>
+                                );
+                              })}
                             </div>
-                          )}
+                          </div>
+                        )}
                         </div>
                       )
                     )}
@@ -655,6 +610,14 @@ function FormManageSports() {
         </div>
 
       </div>
+      {editingDiscipline && (
+        <EditDisciplineModal
+          discipline={editingDiscipline}
+          availableIcons={availableIcons}
+          onClose={() => setEditingDiscipline(null)}
+          onSuccess={fetchDeportes}
+        />
+      )}
     </div>
   );
 }
