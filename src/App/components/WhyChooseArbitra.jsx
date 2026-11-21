@@ -1,6 +1,35 @@
 import styles from "./css/WhyChooseArbitra.module.css";
 
 const icons = {
+  list: (
+    <>
+      <rect x="6" y="4" width="16" height="20" rx="2" />
+      <path d="M10 4h8v3h-8z" />
+      <path d="m10 12 1.5 1.5L14 11M17 12.5h2M10 17l1.5 1.5L14 16M17 17.5h2" />
+    </>
+  ),
+  run: (
+    <>
+      <circle cx="17.5" cy="5.5" r="2.2" />
+      <path d="M10.5 12l5-2.5 3.2 4.2-4.2 3.2 3.8 7" />
+      <path d="M15.5 9.5l-4.2 1.2-3 2.8" />
+      <path d="M14.5 16.2l-4.2 2.8-3.3 5" />
+    </>
+  ),
+  stock: (
+    <>
+      <path d="M6 22v-6M12 22v-9.5M18 22V9" />
+      <path d="M5.5 14.5l6.5-5.5 4.5 3 6-6" />
+      <path d="M18.5 6H22v3.5" />
+    </>
+  ),
+  book: (
+    <>
+      <path d="M14 7.5c0-1.5-2.5-2.5-5.5-2.5H4v14h4.5c3 0 5.5 1 5.5 2.5" />
+      <path d="M14 7.5c0-1.5 2.5-2.5 5.5-2.5H24v14h-4.5c-3 0-5.5 1-5.5 2.5" />
+      <path d="M14 7.5v14" />
+    </>
+  ),
   paid: (
     <>
       <ellipse cx="12" cy="6" rx="8" ry="3" />
@@ -56,11 +85,15 @@ function BenefitIcon({ name }) {
 }
 
 const benefits = [
+  { key: "list", title: "Contenido actualizado" },
+  { key: "run", title: "Preparación física y arbitral" },
+  { key: "book", title: "Reglamentación oficial (IFAB)" },
+  { key: "stock", title: "Desarrollo de competencias" },
   { key: "paid", title: "Prácticas rentadas", note: "Según modalidad" },
   { key: "shirt", title: "Equipo incluido", note: "Según modalidad" },
   { key: "shield", title: "Seguro personal", note: "Según modalidad" },
   { key: "field", title: "Prácticas en canchas", note: "Según modalidad" },
-  { key: "laptop", title: "4 modalidades", note: "Según modalidad"},
+  { key: "laptop", title: "4 modalidades", note: "Según modalidad" },
   { key: "certificate", title: "Certificado" },
 ];
 

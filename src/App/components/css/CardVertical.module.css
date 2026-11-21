@@ -1,6 +1,7 @@
 .course {
   width: 20%;
-  min-height: 44rem;
+  min-width: 24rem;
+  min-height: 45rem;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--border-radius);
@@ -42,7 +43,6 @@
 }
 
 .courseBody p {
-  flex: 1;
   margin-bottom: 0;
 }
 
@@ -71,6 +71,7 @@
 }
 
 .courseList {
+  min-height: 15.5rem;
   list-style: disc;
   padding-left: 1.25rem;
   margin: 0.75rem 0 0;

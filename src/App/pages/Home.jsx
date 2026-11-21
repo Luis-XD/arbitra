@@ -91,7 +91,7 @@ function Home() {
             items={MODALIDADES_ARBITRAJE.presencial.items}
             accent="ambar"
             sale={MODALIDADES_ARBITRAJE.presencial.investment}
-            to="/deportes/disciplina/playa"
+            to="/contacto"
           />
           <CardVertical
             nameImg="arbitra_futbol_playa.svg"
@@ -101,7 +101,7 @@ function Home() {
             items={MODALIDADES_ARBITRAJE.distanciaPresencial.items}
             accent="turquoise"
             sale={MODALIDADES_ARBITRAJE.distanciaPresencial.investment}
-            to="/deportes/disciplina/playa"
+            to="/contacto"
           />
           <CardVertical
             nameImg="arbitra_futbol_playa.svg"
@@ -111,7 +111,7 @@ function Home() {
             items={MODALIDADES_ARBITRAJE.distanciaIntensiva.items}
             accent="purple"
             sale={MODALIDADES_ARBITRAJE.distanciaIntensiva.investment}
-            to="/deportes/disciplina/playa"
+            to="/contacto"
           />
           <CardVertical
             nameImg="arbitra_futbol_playa.svg"
@@ -121,7 +121,7 @@ function Home() {
             items={MODALIDADES_ARBITRAJE.online.items}
             accent="green"
             sale={MODALIDADES_ARBITRAJE.online.investment}
-            to="/deportes/disciplina/playa"
+            to="/contacto"
           />
         </SectionExpand>
         <SectionExpand bgAssing="#0f1520">
