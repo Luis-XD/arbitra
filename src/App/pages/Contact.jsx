@@ -1,25 +1,25 @@
-import { useState } from "react";
-import PageHero from "../components/PageHero";
-import styles from "./css/Contact.module.css";
-import { CONFIG_BACKEND } from "../config/config";
+import { useState } from "react"
+import PageHero from "../components/PageHero"
+import styles from "./css/Contact.module.css"
+import { CONFIG_BACKEND } from "../config/config"
 
 const INITIAL_FORM = {
   name: "",
   email: "",
   program: "",
   message: "",
-  website: "", // campo trampa (honeypot) oculto para bots
+  website: "",
 };
 
 function Contact() {
-  const [formData, setFormData] = useState(INITIAL_FORM);
-  const [status, setStatus] = useState({ type: "", text: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState(INITIAL_FORM)
+  const [status, setStatus] = useState({ type: "", text: "" })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
 
   const submit = async (e) => {
     e.preventDefault();
@@ -79,7 +79,7 @@ function Contact() {
     } finally {
       setIsSubmitting(false);
     }
-  };
+  }
 
   return (
     <>

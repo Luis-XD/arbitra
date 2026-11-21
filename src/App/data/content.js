@@ -23,60 +23,6 @@ export const faqs = [
  ['¿Cómo accedo al Campus Virtual?','El acceso se habilita a los estudiantes mediante las credenciales proporcionadas por la institución.'],
  ['¿Cuál es la modalidad de evaluación?','Las evaluaciones y condiciones de aprobación se detallan en el programa de cada formación.']
 ];
-export const ARBITRA_FOOTER_SUGERIDO = {
-  brandTitle: "ARBITRA®",
-  brandSubtitle:
-    "Centro de Formación Profesional en arbitraje de todos los deportes",
-  columns: [
-    {
-      title: "INSTITUCIONAL",
-      links: [
-        { label: "Quiénes somos", href: "/quienes-somos" },
-        { label: "Oferta de cursos", href: "/cursos" },
-        { label: "Contacto", href: "/contacto" },
-        { label: "Accesibilidad", href: "/accesibilidad" },
-      ],
-    },
-    {
-      title: "LEGAL",
-      links: [
-        { label: "Aviso legal", href: "/aviso-legal" },
-        { label: "Política de privacidad", href: "/politica-de-privacidad" },
-        { label: "Política de cookies", href: "/politica-de-cookies" },
-        { label: "Configurar cookies", action: "configure-cookies" },
-        { label: "Términos de uso", href: "/terminos-de-uso" },
-        { label: "Condiciones de inscripción", href: "/condiciones-inscripcion" },
-        {
-          label: "Cancelaciones, bajas y devoluciones",
-          href: "/cancelaciones-bajas-devoluciones",
-        },
-        { label: "Propiedad intelectual", href: "/propiedad-intelectual" },
-        { label: "Convivencia", href: "/convivencia" },
-        { label: "Seguridad de prácticas", href: "/seguridad-practicas" },
-      ],
-    },
-    {
-      title: "ATENCIÓN AL ALUMNO",
-      links: [
-        { label: "Consultas y reclamos", href: "/consultas-reclamos" },
-        { label: "BOTÓN DE ARREPENTIMIENTO", href: "/boton-arrepentimiento" },
-        { label: "BOTÓN DE BAJA DE SERVICIO", href: "/boton-baja-servicio" },
-      ],
-    },
-  ],
-  provider: {
-    name: "ARBITRA",
-    status: "marca en tramite",
-    owner: "ALEJANDRA DOMINGUEZ",
-    taxId: "27220808217",
-    location: "PALERMO CABA",
-    schedule: "10 A 18",
-    email: "ARBITRACFP@GMAIL.COM",
-    phone: "5491155792122",
-    copyright:
-      "2026 ARBITRA® sobre sus contenidos originales. Todos los derechos reservados, sin perjuicio de usos legalmente permitidos. Queda prohibida la reproducción parcial y/o total del contenido fuera del espacio de la formacion.",
-  },
-};
 
 export const ARBITRA_LEGAL_SECTIONS = [
   {
@@ -167,3 +113,76 @@ export const ARBITRA_LEGAL_SECTIONS = [
     ],
   },
 ];
+
+export const MODALIDADES_ARBITRAJE = {
+  presencial: {
+    nameImg: "presencial.jpg",
+    mode: "Modalidad",
+    title: "Presencial",
+    descrip: "Formación integral en cancha. Inversión: $570.000.",
+    to: "/contacto",
+    items: [
+      { id: 1, text: "24 clases teóricas (48 horas)" },
+      { id: 2, text: "4 prácticas de campo (12 horas)" },
+      { id: 3, text: "3 meses de Seguro Personal" },
+      { id: 4, text: "3 meses de Membresía en FECHA LISTA" },
+      { id: 5, text: "Membresía Vitalicia a la Comunidad ARBITRA®" },
+      { id: 6, text: "10 prácticas rentadas en torneos" },
+      { id: 7, text: "Kit Arbitral (remera, short, medias, tarjetas y silbato)" },
+      { id: 8, text: "Instructor Certificado" },
+    ],
+    investment: "ARS $570.000"
+  },
+  distanciaPresencial: {
+    nameImg: "distancia-presencial.jpg",
+    mode: "Modalidad",
+    title: "Distancia + Presencial",
+    descrip: "Teoría online y prácticas en campo. Inversión: $480.000.",
+    to: "/contacto",
+    items: [
+      { id: 1, text: "24 clases teóricas (48 horas)" },
+      { id: 2, text: "4 prácticas de campo (12 horas)" },
+      { id: 3, text: "3 meses de Seguro Personal" },
+      { id: 4, text: "3 meses de Membresía en FECHA LISTA" },
+      { id: 5, text: "Membresía Vitalicia a la Comunidad ARBITRA®" },
+      { id: 6, text: "10 prácticas rentadas en torneos" },
+      { id: 7, text: "Kit Arbitral (remera, short, medias, tarjetas y silbato)" },
+      { id: 8, text: "Instructor Certificado" },
+    ],
+    investment: "ARS $480.000"
+  },
+  distanciaIntensiva: {
+    nameImg: "distancia-intensiva.jpg",
+    mode: "Modalidad",
+    title: "Distancia + Intensiva",
+    descrip: "Teoría online y práctica intensiva. Inversión: $480.000.",
+    to: "/contacto",
+    items: [
+      { id: 1, text: "24 clases teóricas (48 horas)" },
+      { id: 2, text: "2 jornadas intensivas de práctica (12 horas)" },
+      { id: 3, text: "3 meses de Seguro Personal" },
+      { id: 4, text: "3 meses de Membresía en FECHA LISTA" },
+      { id: 5, text: "Membresía Vitalicia a la Comunidad ARBITRA®" },
+      { id: 6, text: "10 prácticas rentadas en torneos" },
+      { id: 7, text: "Kit Arbitral (remera, short, medias, tarjetas y silbato)" },
+      { id: 8, text: "Instructor Certificado" },
+    ],
+    investment: "ARS $480.000"
+  },
+  online: {
+    nameImg: "100-online.jpg",
+    mode: "Modalidad",
+    title: "100% Online",
+    descrip: "Formación flexible, desde donde estés. Inversión: $249.000.",
+    to: "/contacto",
+    items: [
+      { id: 1, text: "24 clases teóricas (48 horas) (online en vivo o grabadas)" },
+      { id: 2, text: "4 actividades prácticas supervisadas por video (12 horas)" },
+      { id: 3, text: "Material descargable y campus virtual" },
+      { id: 4, text: "Membresía Vitalicia a la Comunidad ARBITRA®" },
+      { id: 5, text: "Instructor Certificado" },
+      { id: 6, text: "Certificado digital con QR verificable" },
+    ],
+    investment: "ARS $249.000"
+  },
+};
