@@ -40,7 +40,7 @@ function DisciplineDetail() {
 
     return (
         <>
-        <PageHero title="Formación" image= {`${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/banners/${discipline.img_banner? discipline.img_banner : ""}`} />
+        <PageHero title="Formación" image= {`${discipline.img_banner} ? ${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/banners/${discipline.img_banner} : "/assets/course.jpg"}`} />
         <section className="section light">
             <div className="container">
                 <TopButtons>

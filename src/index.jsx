@@ -77,6 +77,7 @@ const routes = [
       { path: CONFIG_PATHS.FORGET_PASSW_PATH,                               element: <PublicRoute>       <ForgetPassw/>                </PublicRoute> },
       { path: CONFIG_PATHS.RESET_PASSW,                                     element: <PublicRoute>       <ResetPassw/>                 </PublicRoute> },
       { path: CONFIG_PATHS.TOKEN_EXPIRED_PATH,                              element: <PublicRoute>       <TokenExpired/>               </PublicRoute> },
+      { path: CONFIG_PATHS.REGISTER_PATH,                                   element: <PublicRoute>       <Register/>                   </PublicRoute> },
       //Publico y privado
       { path: CONFIG_PATHS.SUCCESS_PATH,                                    element: <Success />                                                      },
       { path: CONFIG_PATHS.WHO_WE_ARE_PATH,                                 element: <WhoWeAre/>                                                      },
@@ -86,7 +87,6 @@ const routes = [
       { path: CONFIG_PATHS.CONTACT_PATH,                                    element: <Contact />                                                      },
       //CONTACT_PATH
       { path: "*",                                                          element: <NotFound/>                                                      },
-      { path: CONFIG_PATHS.REGISTER_PATH,                                   element: <PublicRoute>        <Register/>               </PublicRoute>    },
     ]
   },
   {  
