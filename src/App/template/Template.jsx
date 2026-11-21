@@ -7,7 +7,7 @@ import Loader from '../components/Loader'
 import GoTopButton from '../components/GoTopButton'
 import WhatsAppButton from '../components/WhatsAppButton'
 
-function Template({separator=false}) {
+function Template() {
   const [isLoading, setIsLoading] = useState(true)
   const loadingRef = useRef(null)
   const location = useLocation()
@@ -41,7 +41,7 @@ function Template({separator=false}) {
             <NavBar/>
             <WhatsAppButton />
             <GoTopButton />
-              <Main separator={separator}>
+              <Main>
                 <Outlet />
               </Main>
             <Footer />

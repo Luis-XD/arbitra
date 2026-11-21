@@ -94,17 +94,15 @@ function FormLogin() {
                             required
                         />
                     </ContFormInput>
-                    <ContFormInput>
-                        <Button
-                            typeBtn='submit'
-                            altName='IniciarSesion'
-                            title="Iniciar sesión"
-                            styleBtn={2}
-                            disabled={cargando}
-                        >
-                            {cargando ? <Loader mini={true}/> : "Iniciar sesión"}
-                        </Button>
-                    </ContFormInput>
+                    <Button
+                        typeBtn='submit'
+                        altName='IniciarSesion'
+                        title="Iniciar sesión"
+                        styleBtn={2}
+                        disabled={cargando}
+                    >
+                        {cargando ? <Loader mini={true}/> : "Iniciar sesión"}
+                    </Button>
                     <p className={styles.smallText}>
                         <Link to='/ForgetPassw' title="Olvidé mi contraseña">Olvidé mi contraseña</Link>
                         |

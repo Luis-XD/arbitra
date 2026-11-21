@@ -1,7 +1,6 @@
 .contForm{
   width: 100%;
   height: auto;
-  margin-bottom: 2rem;
   overflow-x: hidden;
 
   display: flex;
@@ -20,7 +19,7 @@
 }
 .form > h2{
   font-size: 1.6rem;
-  color: #000;
+  color: #fff;
 }
 .contForm > .form {
   position: relative;
@@ -30,7 +29,6 @@
   color: var(--color-dark);
   padding: 0.8rem 1.6rem;
   border-radius: var(--border-radius);
-  background-color: #fff;
 
   display: flex;
   justify-content: center;
@@ -152,7 +150,7 @@
   font-size: 0.8rem;
   font-weight: bolder;
   padding-top: 0.5rem;
-  color: #000;
+  color: #fff;
 
   display: flex;
   justify-content: center;
@@ -162,7 +160,7 @@
   font-size: 100%;
   padding: 0 0.5rem 0 0.5rem;
   text-decoration: underline;
-  color: var(--background-color-btn-2);
+  color: #fff;
 }
 .contForm > .form > .smallText > a:hover {
   text-decoration: none;

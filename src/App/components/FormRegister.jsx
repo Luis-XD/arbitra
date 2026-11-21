@@ -167,14 +167,14 @@ function FormRegister() {
 						<TopButtons>
 							<LeftTopButton text="Login" locationElm={CONFIG_PATHS.LOGIN_PATH} typeElm='expand'/>
 						</TopButtons>
-						<h2 style={{color:'green', padding:'0.5rem'}}>{valueCampus}</h2>
+						<h2 style={{color:'#10b981', padding:'0.5rem'}}>{valueCampus}</h2>
 					</div>
 					</>
 				):(
 				<form className={styles.form} id='formRegister' onSubmit={campusStatus === '1' || campusStatus === '2' && handleSubmit} >
 					<div className={styles.alertContainer} id="alertContainer"></div>
 					<h2>Regístrate</h2>
-					<p style={{color:'green', padding:'0.5rem'}}>{valueCampus}</p>
+					<p style={{color:'#10b981', padding:'0.5rem'}}>{valueCampus}</p>
 					<ContFormInput nameElm="Nombre/s :">
 						<input type='text' name='names' value={form.names} id='name' placeholder="Nombres" onChange={handleChange} required />
 					</ContFormInput>
@@ -213,17 +213,15 @@ function FormRegister() {
 						<input type='password' name='token' value={form.token} id='token' placeholder="Lo proporciona administración" onChange={handleChange} autoComplete="off" required />
 					</ContFormInput>
 
-					<ContFormInput className={styles.btn}>
-						<Button
-							type='submit'
-							altName='Registrarme'
-							title="Restrarme"
-							styleBtn={1}
-							disabled={cargando}
-						>
-							{cargando ? <Loader mini={true}/> : "Registrarme"}
-						</Button>
-					</ContFormInput>
+					<Button
+						type='submit'
+						altName='Registrarme'
+						title="Restrarme"
+						styleBtn={1}
+						disabled={cargando}
+					>
+						{cargando ? <Loader mini={true}/> : "Registrarme"}
+					</Button>
 					<p className={styles.smallText}>Ya tengo una cuenta, ir a<Link to='/login'>inicio de sesión</Link></p>
 				</form>
 				)}

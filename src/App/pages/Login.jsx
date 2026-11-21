@@ -1,11 +1,20 @@
 import FormLogin from '../components/FormLogin'
-import Section from '../components/Section'
+import styles from './css/Login.module.css'
 
 function Login() {
     return ( 
-            <Section>
-                <FormLogin/>
-            </Section>
+           <section className={styles.page}>
+            <div className={`container ${styles.layout}`}>
+                <div className={styles.brand}>
+                <img src="/logo.png" alt="Logo ARBITRA" />
+                <h1>ARBITRA</h1>
+                <p>Centro de Formación Profesional</p>
+                </div>
+                <div className={styles.panel}>
+                    <FormLogin />
+                </div>
+            </div>
+        </section>
      )
 }
 

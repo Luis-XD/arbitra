@@ -20,11 +20,12 @@ export const CONFIG_PATHS = {
     ROOT_PATH: "/",
     HOME_PATH: "/",
     INDEX_PATH: "/index.php",
-    SPORTS_PATH: "/deportes",
-    ABOUT_US_PATH: "/acerca-de",
+    COURSES_PATH: "/cursos",
+    WHO_WE_ARE_PATH: "/quienes-somos",
     FORMATION_PATH: "/formacion",
     RESOURCES_PATH: "/recursos",
     CONTACT_PATH: "/contacto",
+    PROFESSORS_PATH: "/nuestros-profesores",
     PRIVACY_PATH: "/politica-de-privacidad",
     TOKEN_EXPIRED_PATH:"/tiempo-expirado",
     CERTIFICATES:"/public/certificados",
@@ -37,7 +38,7 @@ export const CONFIG_PATHS = {
     CONFIG_PASSW_PATH: "/passw",
     INSCRIPTION_PATH:"/inscribirse",
 
-    FAQ_PATH: "/faq",
+    FAQ_PATH: "/preguntas-frecuentes",
     SUCCESS_PATH: "/registro-exitoso",
     
     CAMPUS_PATH: "/campus",

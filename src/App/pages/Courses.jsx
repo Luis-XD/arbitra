@@ -1,12 +1,13 @@
 import { UserContext } from '../components/UserProvider'
 import { useState, useEffect, useContext } from 'react'
 import { CONFIG_BACKEND, CONFIG_PATHS } from '../config/config'
-import Publication from '../components/Publication'
 import Card from '../components/Card'
 import Modal from '../components/Modal'
 import { useNavigate } from 'react-router-dom'
+import PageHero from '../components/PageHero'
+import styles from './css/Courses.module.css'
 
-function Sports() {
+function Courses() {
     const [disciplines, setDisciplines] = useState([])
     const [loadingDisciplines, setLoadingDisciplines] = useState(true)
     const [selectedDiscipline, setSelectedDiscipline] = useState(null) // Estado para controlar el curso seleccionado en el modal
@@ -69,32 +70,47 @@ function Sports() {
                     </div>
                 </Modal>
             )}
-
-            <Publication titlePub="" typeElm='img' nameAsset="banner_courses.png">
-                {loadingDisciplines ? (
-                    <p>Cargando cursos...</p>
-                ) : disciplines.length > 0 ? (
-                    disciplines.map(discipline => (
-                        <div 
-                            key={discipline.id_discip} 
-                            //onClick={() => setSelectedDiscipline(discipline)} 
-                            style={{ cursor: 'pointer' }}
-                        >
-                            <Card 
-                                cardTitle={discipline.name_discip} 
-                                ubication='disciplines/cards/'
-                                descriptionCard={discipline.descript_discip}
-                                imgCard={discipline.img_discip}
-                                link={`${CONFIG_PATHS.SPORTS_PATH}/disciplina/${discipline.id_discip}`}
-                            />
+            <PageHero title="Cursos" image="/assets/course.jpg" />
+                <section className="section light">
+                    <div className="container">
+                        <div className="cursoTituloDestacado">
+                            <h2>
+                                <span className="slash"></span>Nuestras capacitaciones
+                            </h2>
                         </div>
-                    ))
-                ) : (
-                    <p>Estamos trabajando en nuevos cursos para ti.</p>
-                )}
-            </Publication>
+                        <p className="lead">
+                            Propuestas breves para seguir desarrollando conocimientos y
+                            herramientas en el ámbito arbitral. Consultá por fechas y
+                            disponibilidad.
+                        </p>
+                        <div className={styles.list}>
+                            {loadingDisciplines ? (
+                                <p>Cargando cursos...</p>
+                            ) : disciplines.length > 0 ? (
+                                disciplines.map(discipline => (
+                                    <div 
+                                        key={discipline.id_discip} 
+                                        //onClick={() => setSelectedDiscipline(discipline)} 
+                                        style={{ cursor: 'pointer' }}
+                                    >
+                                        <Card 
+                                            cardTitle={discipline.name_discip} 
+                                            ubication='disciplines/cards/'
+                                            descriptionCard={discipline.descript_discip}
+                                            imgCard={discipline.img_discip}
+                                            link={`${CONFIG_PATHS.COURSES_PATH}/disciplina/${discipline.id_discip}`}
+                                        />
+                                    </div>
+                                ))
+                            ) : (
+                                <p>Estamos trabajando en nuevos cursos para ti.</p>
+                            )}
+                        </div>
+                    </div>
+                </section>
+      
         </>
      )
 }
 
-export default Sports
+export default Courses

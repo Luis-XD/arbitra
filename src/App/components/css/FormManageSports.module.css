@@ -1,9 +1,8 @@
 /* Contenedor principal con ancho máximo estable y responsive */
 .container {
-  
   width: auto;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem ;
   background: #ffffff;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -24,7 +23,7 @@
 
 .subtitle {
   font-size: 1.1rem;
-  color: #333;
+  color: #fff;
   margin-bottom: 10px;
 }
 
@@ -48,8 +47,16 @@
   flex-direction: column;
 }
 
+.formColumn > .contFormEdit{
+  background: var(--background-solid-4);
+  color: #fff;
+  border-radius: 2.5rem;
+  padding: 1rem 1rem 0 1rem;
+}
+
 .listColumn {
-  background: #ccc;
+  background: var(--background-solid-4);
+  color: #fff;
   border: 1px solid #e0e0e0;
   padding: 20px;
   height: auto;
@@ -75,7 +82,7 @@
   display: block;
   margin-bottom: 6px;
   font-weight: bold;
-  color: #444;
+  color: #fff;
   font-size: 0.9rem;
 }
 
@@ -98,15 +105,15 @@
 /* Caja de disciplina con altura y diseño estables */
 .disciplineBox {
   margin-bottom: 15px;
-  padding: 12px;
-  background: #eef6fc;
-  border-radius: 6px;
-  border: 1px solid #d0e3f1;
+  padding: 1rem;
+  border-radius: var(--border-radius-slim);
+  border: 0.1rem solid #3f3f3f;
+  background: var(--background-solid-2);
   transition: all 0.2s ease;
 }
 
 .disabledBox {
-  background: #f1f1f1;
+  background: #ccc;
   border-color: #e2e2e2;
   opacity: 0.8;
 }
@@ -117,7 +124,8 @@
 
 /* Contenedor con altura reservada para evitar saltos al mostrar advertencias */
 .warningMessageWrapper {
-  min-height: 22px;
+  height: auto;
+  min-height: 0;
   margin-top: 5px;
 }
 
@@ -154,7 +162,7 @@
 /* Listado de deportes derecha */
 .listDescription {
   font-size: 0.85rem;
-  color: #666;
+  color: #ccc;
   margin-bottom: 15px;
 }
 
@@ -224,7 +232,8 @@
 }
 
 .disableBtn {
-  width: 7.4rem;
+  width: auto;
+  min-width: 7.4rem;
   color: #fff;
   border: none;
   padding: 6px 12px;
@@ -234,6 +243,9 @@
   font-weight: bold;
   transition: background 0.2s;
   background: #ff0707;
+
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 /* Nuevas clases añadidas para reemplazar los estilos inline */
@@ -267,9 +279,20 @@
 .newSportContainer {
   margin-top: 12px;
   padding: 10px;
+  color: #000;
   background-color: #eef6fc;
   border-radius: 6px;
   border: 1px solid #bce8f1;
+}
+.newSportContainer > label{
+  gap: 8px;
+  cursor: pointer; 
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
 }
 
 .newSportLabel {
@@ -395,6 +418,8 @@
 
 .contBtn {
   width: 100%;
+  margin-top: 1rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -403,6 +428,9 @@
 hr {
   display: none;
 }
+.formColumn > h3{
+  color: #000;
+ }
 
 /* Estilos extraídos de atributos style en línea */
 .dirText {
@@ -644,8 +672,8 @@ hr {
 /* Media Queries para Responsive (pantallas medianas y móviles) */
 @media (max-width: 1280px) {
   .container {
-    padding: 15px;
-    margin: 15px;
+    padding: 2rem 1rem;
+    margin: 1rem;
   }
 }
 

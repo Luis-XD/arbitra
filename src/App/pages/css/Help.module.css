@@ -1,46 +1,67 @@
-.cont{
-    width: 90%;
-    height: auto;
-    max-width: 68rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+.wrap {
+  max-width: 60rem;
 }
-.cont > h2{
-    color: white;
-    text-transform: uppercase;
+.items {
+  display: grid;
+  gap: 0.65rem;
+  margin: 2rem 0;
 }
-.cont > .contAnws{
-    width: 100%;
-    height: auto;
-    margin: 0 0 1rem 1rem;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
+.items article {
+  background: white;
+  border: 1px solid #c9d9df;
+  border-radius: 0.7rem;
+  overflow: hidden;
 }
-.cont > .contAnws > h3{
-    color: var(--color);
-    padding: 1rem 0 0.5rem 0;
-    border-bottom: 0.1rem solid #333;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.items button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 750;
+  color: #07131e;
+  cursor: pointer;
 }
-.cont > .contAnws > p{
-    width: 96%;
-    height: auto;
-    padding-top: 0.5rem;
-    font-size: 1rem;
-    line-height: 1.6rem;
-    color: rgb(219, 216, 216);
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+.items button svg {
+  color: #08bc86;
+  flex-shrink: 0;
+}
+.items p {
+  margin: 0;
+  padding: 0 1.2rem 1.2rem;
+  line-height: 1.7;
+  color: #53616b;
+}
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  background: #081b26;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1.3rem;
+}
+.cta > svg {
+  color: #10e5a5;
+  flex-shrink: 0;
+}
+.cta p {
+  margin: 0.3rem 0 0;
+  color: #bdd0d5;
+  font-size: 0.85rem;
+}
+.cta a {
+  margin-left: auto;
+}
+@media (max-width: 600px) {
+  .cta {
     flex-wrap: wrap;
+  }
+  .cta a {
+    margin-left: 0;
+  }
 }

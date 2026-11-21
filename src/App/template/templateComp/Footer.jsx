@@ -1,170 +1,69 @@
 import styles from './css/Footer.module.css'
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import LoadData from '../../components/LoadData'
-import mail from '/iconsArbitra/links/mail.png'
-import info from '/iconsArbitra/links/info.png'
-import privacy from '/iconsArbitra/links/privacy.png'
-import tiktok from '/iconsArbitra/social/tiktok.png'
-import facebook from '/iconsArbitra/social/facebook.png'
-import instagram from '/iconsArbitra/social/instagram.png'
-import { CONFIG_BACKEND, CONFIG_SOCIAL_NETWORK, CONFIG_PATHS } from '../../config/config'
+import { Link } from "react-router-dom";
+import { Mail, MapPin } from "lucide-react";
+import Brand from "../../components/Brand"
+import { CONFIG_PATHS } from '../../config/config';
 
 function Footer() {
-    const [configData, setConfigData]  = useState(null)
-    const [cargando, setCargando] = useState(false)
-    const [showModal, setShowModal] = useState(false)
-    const [formData, setFormData] = useState({ nombre: '', email: '', mensaje: '' })
-    const ROUTE = `${CONFIG_BACKEND.API_DIR}/config/getDataConfig`
-    const loadConfigData = LoadData(setCargando, setConfigData, 'GET', ROUTE)
-    
-    const handleSubmitForm = async (e) => {
-        e.preventDefault()
-
-        try {
-        // Reemplaza esta ruta con la ruta real de tu API/backend donde subiste el PHP
-        const response = await fetch(`${CONFIG_BACKEND.API_DIR}/contact/submitMail`, {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        });
-
-        const resultado = await response.json();
-
-        if (resultado.status === 'success') {
-            alert(`¡Gracias ${formData.nombre}! Tu consulta ha sido enviada correctamente.`);
-            setShowModal(false);
-            setFormData({ nombre: '', email: '', mensaje: '' });
-        } else {
-            alert('Hubo un error al enviar el mensaje. Inténtalo de nuevo.');
-        }
-        } catch (error) {
-        console.error('Error:', error);
-        alert('Error de conexión con el servidor.');
-        }
-    }
-    
-    useEffect(() => {
-        loadConfigData()
-    }, [])
-
     return ( 
         <>
             <footer className={styles.footer}>
-                <div className={styles.footerContent}>
-                    <div className={styles.group}>
-                        <p>Sobre nosotros:</p>
-                        <ul>
-                            <li>
-                                <Link to={CONFIG_PATHS.ABOUT_US_PATH}>
-                                    <img src={info} />
-                                    Quiénes somos
-                                </Link>
-                            </li>
-                        </ul>
+                <div className={`${styles.container} ${styles.grid}`}>
+                    <div>
+                        <Link to="/">
+                            <Brand large="true" />
+                        </Link>
+                        <p>Formación arbitral para quienes hacen avanzar el deporte.</p>
                     </div>
-                    
-                    <div className={styles.group}>
-                        <p>Privacidad:</p>
-                        <ul>
-                            <li>
-                                <Link to={CONFIG_PATHS.PRIVACY_PATH}>
-                                    <img src={privacy} />
-                                    Política de privacidad
-                                </Link>
-                            </li>
-                        </ul>
+                    <div>
+                        <h3>Institucional</h3>
+                        <Link to={CONFIG_PATHS.WHO_WE_ARE_PATH}>Quiénes somos</Link>
+                        <Link to={CONFIG_PATHS.PROFESSORS_PATH}>Nuestros profesores</Link>
                     </div>
-
-                    <div className={styles.group}>
-                        <p>Contacto:</p>
-                        <ul>
-                            <li>
-                                <button onClick={() => setShowModal(true)} >
-                                    <img src={mail} /> Email
-                                </button>
-                            </li>
-                        </ul>
+                    <div>
+                        <h3>Formación</h3>
+                        <Link to={CONFIG_PATHS.FORMATION_PATH}>Programas</Link>
+                        <Link to={CONFIG_PATHS.COURSES_PATH}>Cursos</Link>
+                        <Link to={CONFIG_PATHS.FAQ_PATH}>Preguntas frecuentes</Link>
                     </div>
-
-                    <div className={styles.group}>
-                        <p>Redes sociales:</p>
-                        <ul>
-                            <li>
-                                <Link to={CONFIG_SOCIAL_NETWORK.FB} target="_blank" className={styles.facebook}>
-                                    <img src={facebook} />
-                                </Link>
-                                <Link to={CONFIG_SOCIAL_NETWORK.TK} target="_blank" className={styles.tiktok}>
-                                    <img src={tiktok} />
-                                </Link>
-                                <Link to={CONFIG_SOCIAL_NETWORK.IG} target="_blank" className={styles.instagram}>
-                                    <img src={instagram} />
-                                </Link>
-                            </li>
-                        </ul>
+                    <div>
+                        <h3>Información</h3>
+                        <Link to={CONFIG_PATHS.PRIVACY_PATH}>Política de privacidad</Link>
+                        <Link to={CONFIG_PATHS.CAMPUS_PATH}>Campus Virtual</Link>
+                    </div>
+                    <div>
+                        <h3>Contacto</h3>
+                        <Link to={CONFIG_PATHS.CONTACT_PATH}>
+                            <Mail size={15} /> Escribinos
+                        </Link>
+                        <p>
+                            <MapPin size={15} /> Argentina
+                        </p>
+                        <div className={styles.social}>
+                            <span aria-label="Instagram">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                                </svg>
+                            </span>
+                            <span aria-label="Facebook">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                </svg>
+                            </span>
+                            <span aria-label="TikTok" className={styles.tiktok}>
+                                ♪
+                            </span>
+                        </div>
                     </div>
                 </div>
-                <p className={styles.copyright}>
-                    {configData ? `© ${configData.yearConfig}` : "2026"} ARBITRA. Argentina. Todos los derechos reservados.
-                </p>
-            {/* ---> AGREGADO: Bloque del modal al final del JSX <--- */}
-            {showModal && (
-                <div className={styles.modalOverlay}>
-                    <div className={styles.modalContent}>
-                    <button 
-                        onClick={() => setShowModal(false)}
-                        className={styles.modalCloseButton}
-                    >
-                        ✕
-                    </button>
-                    <h3 className={styles.modalTitle}>Envíanos tu consulta</h3>
-                    
-                    <form onSubmit={handleSubmitForm} className={styles.modalForm}>
-                        <div className={styles.formGroup}>
-                        <label className={styles.formLabel}>Nombre:</label>
-                        <input 
-                            type="text" 
-                            required
-                            value={formData.nombre}
-                            onChange={(e) => setFormData({...formData, nombre: e.target.value})}
-                            className={styles.formInput}
-                            placeholder="Tu nombre completo"
-                        />
-                        </div>
-                        <div className={styles.formGroup}>
-                        <label className={styles.formLabel}>Correo electrónico:</label>
-                        <input 
-                            type="email" 
-                            required
-                            value={formData.email}
-                            onChange={(e) => setFormData({...formData, email: e.target.value})}
-                            className={styles.formInput}
-                            placeholder="correo@ejemplo.com"
-                        />
-                        </div>
-                        <div className={styles.formGroup}>
-                        <label className={styles.formLabel}>Mensaje o Consulta:</label>
-                        <textarea 
-                            rows="4"
-                            required
-                            value={formData.mensaje}
-                            onChange={(e) => setFormData({...formData, mensaje: e.target.value})}
-                            className={`${styles.formInput} ${styles.formTextarea}`}
-                            placeholder="Escribe tu consulta..."
-                        />
-                        </div>
-                        <button 
-                        type="submit"
-                        className={styles.modalSubmitButton}
-                        >
-                        Enviar Consulta
-                        </button>
-                    </form>
-                    </div>
+                <div className={`${styles.container} ${styles.bottom}`}>
+                    © {new Date().getFullYear()} ARBITRA. Todos los derechos reservados.{" "}
+                    <span>
+                        Redes sociales: agregar enlaces oficiales antes de publicar.
+                    </span>
                 </div>
-            )}
             </footer>
         </>
      )

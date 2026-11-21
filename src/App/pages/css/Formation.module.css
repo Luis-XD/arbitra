@@ -1,0 +1,33 @@
+.details {
+  margin-top: 3rem;
+  display: grid;
+  gap: 1rem;
+}
+.details article {
+  background: white;
+  border: 1px solid #dce7e8;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  scroll-margin-top: 6rem;
+}
+.details h3 {
+  margin: 0 0 0.4rem;
+}
+.details p {
+  margin: 0.2rem 0;
+  color: #4c5a64;
+}
+.details small {
+  color: #0b9271;
+}
+
+@media (max-width: 650px) {
+  .details article {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

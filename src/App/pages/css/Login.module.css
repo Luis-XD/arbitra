@@ -1,19 +1,100 @@
-.contRelative{
-    position: relative;
-    width: 100%;
-    min-height: 5rem;
-    padding: 2rem 0;
+.page {
+  min-height: 75vh;
+  background:
+    radial-gradient(circle at 80% 90%, #08785b66, transparent 40%),
+    linear-gradient(#07121ad9, #07121af0),
+    url("/assets/futbol-11.png") center/cover;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
 }
-.contRelative > .blurCircle{
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    transform: -50%;
-    z-index: 0;
-    top: 0;
-    left: 30%;
-    backdrop-filter: blur(120px);
-    filter: blur(120px);
-    border-radius: 9999px;
-    background-color: rgb(16 185 129 / 0.1);
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+.brand {
+  text-align: center;
+}
+.brand img {
+  width: 15rem;
+  margin: auto;
+}
+.brand h1 {
+  margin: 10px 0 0;
+}
+.brand p {
+  font-size: 1.6rem;
+  color: white;
+}
+.panel {
+  border: 1px solid #10b981;
+  border-radius: 20px;
+  padding: 1rem;
+  background: #081620d9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.panel h2 {
+  text-align: center;
+  font-size: 1.8rem;
+}
+.panel label {
+  display: block;
+  font-size: 0.82rem;
+  margin: 14px 0 7px;
+}
+.field {
+  border: 1px solid #557078;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+}
+.field input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: white;
+  outline: 0;
+}
+.field button {
+  background: none;
+  border: 0;
+  color: white;
+}
+.panel form > .btn {
+  width: 100%;
+  margin-top: 20px;
+}
+.panel form > .btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.note {
+  font-size: 0.8rem;
+  color: #a9c4cb;
+  margin-top: 14px;
+}
+.panel p {
+  text-align: center;
+}
+.panel p a {
+  color: #10b981;
+}
+@media (max-width: 750px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .brand img {
+    width: 90px;
+  }
+  .panel {
+    padding: 22px;
+  }
 }

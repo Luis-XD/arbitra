@@ -37,8 +37,8 @@
     position: absolute;
     top: 0;
     inset: 0;
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
     object-fit: cover;
     opacity: 1; /* 0 */
     /*filter: brightness(0.6);*/
@@ -81,7 +81,7 @@
     100% { opacity: 0; }
 }
 
-@media (max-width:1265px){
+@media (max-width:1280px){
     .fullWidthSection{
         padding: 0;
     }

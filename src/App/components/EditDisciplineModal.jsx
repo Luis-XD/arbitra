@@ -21,7 +21,7 @@ function EditDisciplineModal({
   useEffect(() => {
     if (discipline) {
       setNombre(discipline.nombre || '');
-      setDescripcion(discipline.descripcion || discipline.desc_discip || '');
+      setDescripcion(discipline.descript_discip || discipline.descripcion || discipline.desc_discip || '');
       setIconDiscip(discipline.icon_discip || '');
     }
   }, [discipline]);

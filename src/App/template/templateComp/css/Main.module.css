@@ -18,15 +18,3 @@ main, .main{
     align-items: center;
     flex-direction: column;
 }
-
-.separator{
-    width: 100%;
-    height: auto;
-    margin-bottom: 6rem;
-    background-color: var(--background);
-}
-@media (max-width: 1280px){
-    .separator{
-        margin-bottom: 2rem;
-    }
-}

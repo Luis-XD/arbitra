@@ -85,17 +85,15 @@ function FormForgetPassw() {
                         />
                     </ContFormInput>
                     
-                    <ContFormInput className={styles.btn}>
-                        <Button
-                            typeBtn='submit'
-                            altName='Recuperar'
-                            title="Recuperar"
-                            styleBtn={1}
-                            disabled={loading}
-                        >
-                            {loading ? <Loader mini={true}/> : "Recuperar"}
-                        </Button>
-                    </ContFormInput>
+                    <Button
+                        typeBtn='submit'
+                        altName='Recuperar'
+                        title="Recuperar"
+                        styleBtn={1}
+                        disabled={loading}
+                    >
+                        {loading ? <Loader mini={true}/> : "Recuperar"}
+                    </Button>
                     <p className={styles.smallText}>Ir a: <Link to='/login'>inicio de sesión</Link> o <Link to='/registro'>registrarme</Link></p>
                 </form>
             </div>

@@ -17,7 +17,7 @@
 .elementor:hover{
     background-color: var(--background-solid-3);
 }
-@media (max-width:1265px){
+@media (max-width:1280px){
     .elementor{
         margin: 0.5rem;
     }

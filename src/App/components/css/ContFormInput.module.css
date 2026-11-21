@@ -3,7 +3,7 @@
   max-width: 100%; /* Evita desbordes en pantallas chicas */
   height: auto;
   margin: 0;
-  padding: 0.5rem 0.75rem; /* Padding interno equilibrado para móvil y escritorio */
+  padding: 0 0.75rem; /* Padding interno equilibrado para móvil y escritorio */
   font-size: 1rem;
   color: #000;
   border-radius: 0.5rem;   /* Bordes ligeramente redondeados para mejor estética */
@@ -30,7 +30,7 @@
   width: 100%;
   padding: 0.2rem 0;
   font-size: 0.95rem; /* Ligeramente más compacto para pantallas de gama baja */
-  color: #000;
+  color: #fff;
   text-align: left;
   
   display: flex;
@@ -42,7 +42,7 @@
 }
 .contFormInput > label > a{
   width: 100%;
-  height: auto;
+  height: auto; 
 }
 .contFormInput > label > .nameElm > span {
   cursor: pointer;
@@ -109,7 +109,7 @@
 /* Celulares muy pequeños / gama baja (hasta 480px) */
 @media (max-width: 480px) {
   .contFormInput {
-    padding: 0.4rem 0.5rem;
+    padding: 0 0.5rem;
   }
   .contFormInput > label > .nameElm {
     font-size: 0.9rem;
@@ -120,6 +120,6 @@
 @media (min-width: 768px) {
   .contFormInput {
     min-width: 22rem; /* Recupera el ancho mínimo cómodo solo en pantallas donde sobra espacio */
-    padding: 0.6rem 1rem;
+    padding: 0 1rem;
   }
 }

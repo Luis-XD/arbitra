@@ -20,7 +20,11 @@
   align-items: center;
   flex-direction: column;
 }
-
+.courseGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem;
+}
 .marqueeContainer{
   width: auto;
   padding: 2rem 0rem 2rem 0rem;
@@ -456,6 +460,7 @@
   z-index: 1;
   width: 100%;
   height: auto;
+  left: 0;
   overflow: hidden;
   object-fit: contain;
   transition: all ease-in-out .3s;
@@ -520,7 +525,7 @@
   object-fit: contain;
 }
 
-@media (max-width: 1265px){
+@media (max-width: 1280px){
   .opacity{
     width: 80%;
   }
@@ -600,4 +605,11 @@
     width: auto;
     height: 100%;
   }
+}
+
+@media (max-width:720px){
+  .courseGrid {
+    grid-template-columns: 1fr;
+  }
+
 }

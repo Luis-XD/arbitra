@@ -1,44 +1,43 @@
-.contTitle{
-    padding: 3rem;
+.wrap {
+  max-width: 60rem;
 }
-.contTitle > h2{
-    width: 100%;
-    text-align: center;
-    
-    display: flex;
-    justify-content: center;
+.notice {
+  background: #fff8e7;
+  border: 1px solid #e8d9a6;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  color: #655222;
+  margin: 1.5rem 0;
 }
-.contTitle > p{
-    text-align: justify;
+.item {
+  border: 1px solid #cfdee2;
+  border-radius: 0.7rem;
+  background: white;
+  margin: 0.6rem 0;
 }
-.contTitle > .contPrivacyDate{
-    width: 100%;
-    height: auto;
-
-    display: flex;
-    justify-content: end;
-    align-items: center;
+.item button {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.2rem;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 750;
 }
-.contTitle > .contPrivacyDate > .privacyDate{
-    font-size: 1rem;
-    text-align: center;
-    padding: 0.3rem 0.6rem;
-    border: var(--border);
-    border-radius: var(--border-radius);
+.item button svg {
+  color: #08bc86;
+  flex-shrink: 0;
 }
-
-@media (max-width:767.98px){
-    .contTitle{
-        padding: 1.8rem;
-    }
+.item button span {
+  flex: 1;
+  color: #000;
 }
-@media (max-width:464px){
-    .contTitle > h2{
-        font-size: 1.4rem;
-    }
-}
-@media (max-width:438px){
-    .contTitle > h2{
-        font-size: 1.2rem;
-    }
+.item p {
+  padding: 0 1.2rem 1rem;
+  color: #51606a;
+  line-height: 1.7;
+  margin: 0;
 }

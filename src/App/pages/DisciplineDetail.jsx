@@ -1,36 +1,18 @@
-import styles from '../components/css/Section.module.css'
 import {  useParams } from 'react-router-dom'
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useState } from 'react'
 import { CONFIG_BACKEND, CONFIG_PATHS } from '../config/config'
-import Publication from '../components/Publication'
 import LeftTopButton from '../components/LeftTopButton'
 import Container from '../components/Container'
 import Loader from '../components/Loader'
-import pencil from '/iconsArbitra/utilities/pencil.png'
-import RightTopButton from '../components/RightTopButton'
-import { UserContext } from '../../App/components/UserProvider'
 import TopButtons from '../components/TopButtons'
-import Modal from '../components/Modal'
-import FormDisciplineEdit from '../components/FormDisciplineEdit'
-import CenterContainer from '../components/CenterContainer'
+import PageHero from '../components/PageHero'
 
 function DisciplineDetail() {
-    const { user } = useContext(UserContext)
     const {id_discipline} = useParams()
     const [discipline, setDiscipline] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
-    const [showContainerForm, setShowContainerForm] = useState(false)
 
-    const fnCloseContainerForm = () => setShowContainerForm(false)
-
-    const fnShowContainerForm = () => {
-        setShowContainerForm(true)
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        })
-    }
 
     useEffect(()=>{
         if (!id_discipline) return
@@ -58,46 +40,34 @@ function DisciplineDetail() {
 
     return (
         <>
-        {showContainerForm && (
-            <Modal
-                id="containerFloat"
-                onClickElm={fnCloseContainerForm}
-                formats="jpg, jpeg, png y webp."
-            >
-                <FormDisciplineEdit/>
-            </Modal>
-        )}
-            {discipline && (
-                <Publication 
-                    titlePub={discipline.name_discip}
-                    nameAsset={discipline.img_banner? discipline.img_banner : null}
-                    typeElm="img"
-                    locationPub='disciplines/banners'
-                >
-                    <CenterContainer>
-                        <TopButtons>
-                            <LeftTopButton
-                                locationElm={CONFIG_PATHS.SPORTS_PATH}
-                                typeElm='expand'
-                                text="Deportes"
-                            />
-
-                        {user && user.roleId === 1 && (
-                            <RightTopButton
-                                onClick={()=>{fnShowContainerForm()}}
-                                typeElm='expand'
-                                text="Editar"
-                                imgElm={pencil}
-                            />
-                        )}
-                        </TopButtons>
-                    </CenterContainer>
-
-                    <Container hiddenStyle={true}>
-                        <p>{discipline.descript_discip}</p>
-                    </Container>
-                </Publication>
-            )}
+        <PageHero title="Formación" image= {`${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/banners/${discipline.img_banner? discipline.img_banner : ""}`} />
+        <section className="section light">
+            <div className="container">
+                <TopButtons>
+                    <LeftTopButton
+                        locationElm={CONFIG_PATHS.COURSES_PATH}
+                        typeElm='expand'
+                        text="Cursos"
+                    />
+                </TopButtons>
+                    <span style={{height:'2rem'}}></span>
+            <div className="sectionTitle">
+                <div className="cursoTituloDestacado">
+                    <h2>
+                        <span className="slash"></span>Nuestras capacitaciones
+                    </h2>
+                </div>
+                <p>
+                    Conocé nuestras propuestas de formación arbitral y consultá por
+                    los programas disponibles.
+                </p>
+            </div>
+            <Container hiddenStyle={true}>
+                <p>{discipline.descript_discip}</p>
+            </Container>
+                    
+            </div>
+        </section>
         </>
     )
 }

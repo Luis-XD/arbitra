@@ -190,7 +190,7 @@ function NavBar() {
                                         <img src={imgHome} className={styles.imgMobile}/>
                                         Inicio
                                     </Link>
-                                    <Link to={CONFIG_PATHS.ABOUT_US_PATH} onClick={toggleMenuPanel}>
+                                    <Link to={CONFIG_PATHS.WHO_WE_ARE_PATH} onClick={toggleMenuPanel}>
                                         <img src='/iconsArbitra/links/info24.png' className={styles.imgMobile}/>
                                         Quiénes somos
                                     </Link>
@@ -198,7 +198,7 @@ function NavBar() {
                                         <img src='/iconsArbitra/links/formation.png' className={styles.imgMobile}/>
                                         Formación
                                     </Link>
-                                    <Link to={CONFIG_PATHS.SPORTS_PATH} onClick={toggleMenuPanel}>
+                                    <Link to={CONFIG_PATHS.COURSES_PATH} onClick={toggleMenuPanel}>
                                         <img src='/iconsArbitra/links/courses.png' className={styles.imgMobile}/>
                                         Cursos
                                     </Link>

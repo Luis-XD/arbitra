@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
 import styles from './css/Home.module.css'
-import Elementor from '../components/Elementor'
 import LoadData from '../components/LoadData'
 import { CONFIG_BACKEND, CONFIG_PATHS } from '../config/config'
 import { Link, useNavigate } from 'react-router-dom'
@@ -10,6 +9,10 @@ import SectionExpand from '../components/SectionExpand'
 import ContainerWrapper from '../components/ContainerWrapper'
 import ContentBannerLogo from '../components/ContentBannerLogo'
 import PublicationStd from '../components/PublicationStd'
+import CourseCard from '../components/CourseCard'
+import TopTitle from '../components/TopTitle'
+import ContainerWrap from '../components/ContainerWrap'
+import WhyChooseArbitra from '../components/WhyChooseArbitra'
 
 function Home_prueba() {
   const [configData, setConfigData]  = useState(null)
@@ -34,150 +37,47 @@ function Home_prueba() {
         <PublicationStd>
           <SectionExpand>
             <ContainerWrapper images={['/images/others/img1.png']}>
-            <ContentBannerLogo />
+              <ContentBannerLogo />
             </ContainerWrapper>
           </SectionExpand>
-          <SectionExpand bgAssing='#0A101B'>
-            <div className={styles.featuresGrid}>
-              <div className={styles.featureItem}>
-                <img src="/iconsArbitra/utilities/landingPage/01_formacion_especializada.svg" alt="Formación" className={styles.featureIcon} />
-                <span className={styles.featureText}>Formación especializada</span>
+          <SectionExpand>
+            <ContainerWrap>
+              <TopTitle />
+              <div className={styles.courseGrid}>
+                <CourseCard 
+                  nameImg='arbitra_futbol_11.svg'
+                  sport='futbol'
+                  title='Árbitro de Campo · Fútbol 11'
+                  descrip='Formación orientada al arbitraje de encuentros de fútbol de once jugadores.'
+                  to='/deportes/disciplina/9'
+                />
+                <CourseCard 
+                  nameImg='arbitra_futbol_11.svg'
+                  sport='futbol'
+                  title='Árbitro de Campo · Fútbol 11'
+                  descrip='Formación orientada al arbitraje de encuentros de fútbol de once jugadores.'
+                  mailto='info@arbitra.com?subject=Consulta%20F%C3%BAtbol%2011'
+                />
+                <CourseCard 
+                  nameImg='arbitra_futbol_11.svg'
+                  sport='futbol'
+                  title='Árbitro de Campo · Fútbol 11'
+                  descrip='Formación orientada al arbitraje de encuentros de fútbol de once jugadores.'
+                  mailto='info@arbitra.com?subject=Consulta%20F%C3%BAtbol%2011'
+                />
+                <CourseCard 
+                  nameImg='arbitra_futbol_11.svg'
+                  sport='futbol'
+                  title='Árbitro de Campo · Fútbol 11'
+                  descrip='Formación orientada al arbitraje de encuentros de fútbol de once jugadores.'
+                  mailto='info@arbitra.com?subject=Consulta%20F%C3%BAtbol%2011'
+                />
               </div>
-              <span></span>
-              <div className={styles.featureItem}>
-                <img src="/iconsArbitra/utilities/landingPage/02_enfoque_practico.svg" alt="Enfoque" className={styles.featureIcon} />
-                <span className={styles.featureText}>Enfoque práctico</span>
-              </div>
-              <span></span>
-              <div className={styles.featureItem}>
-                <img src="/iconsArbitra/utilities/landingPage/03_docentes_experiencia.svg" alt="Docentes" className={styles.featureIcon} />
-                <span className={styles.featureText}>Docentes con experiencia</span>
-              </div>
-              <span></span>
-              <div className={styles.featureItem}>
-                <img src="/iconsArbitra/utilities/landingPage/04_certificacion_cursada.svg" alt="Certificación" className={styles.featureIcon} />
-                <span className={styles.featureText}>Certificación de cursada</span>
-              </div>
-            </div>
+            </ContainerWrap>
           </SectionExpand>
-          <SectionExpand bgAssing='#fff' pdgAssign='2rem 0 2rem 0' titleElm='Nuestras formaciones'>
-            {/* TARJETA 1: FÚTBOL 11 */}
-              <Elementor>
-                  <div className={styles.cardContainer}>
-                    <div className={styles.contElm}>
-                      <h3 className={styles.cardTitle}>Árbitro de campo <br />Fútbol 11</h3>
-                      <ul className={styles.cardList}>
-                          <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/05_duracion.svg'/> Duración: 6 meses</li>
-                          <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/06_nivel.svg'/>   Nivel: Inicial / Intermedio</li>
-                      </ul>
-                      <div className={styles.cardFooter}>
-                          {/* ---> CAMBIADO ÚNICAMENTE AQUÍ: De etiqueta <a> a <button> con onClick para abrir el modal <--- */}
-                          <Link to='/deportes/disciplina/9' className={styles.cardButton}>
-                              Ver Programa →
-                          </Link>
-                      </div>
-                    </div>
-                    <img src="/images/home/arbitra_futbol_11.svg" alt="Futsal" className={styles.whyCardImage} />
-                  </div>
-              </Elementor>
-
-              {/* TARJETA 1: FÚTBOL 8 y 5 */}
-              <Elementor>
-                  <div className={styles.cardContainer}>
-                    <div className={styles.contElm}>
-                      <div>
-                          <h3 className={styles.cardTitle}>Árbitro de <br />Fútbol 8 y 5</h3>
-                          <ul className={styles.cardList}>
-                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/05_duracion.svg'/> Duración: 4 meses</li>
-                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/06_nivel.svg'/>   Nivel: Inicial</li>
-                          </ul>
-                      </div>
-                      <div className={styles.cardFooter}>
-                          {/* ---> CAMBIADO ÚNICAMENTE AQUÍ: De etiqueta <a> a <button> con onClick para abrir el modal <--- */}
-                          <Link to='/deportes/disciplina/20' className={styles.cardButton}>
-                              Ver Programa →
-                          </Link>
-                      </div>
-                    </div>
-                  <img src="/images/home/arbitra_futbol_8_y_5.svg" alt="Futsal" className={styles.whyCardImage} />
-                  </div>
-              </Elementor>
-
-              {/* TARJETA 1: FUTSAL */}
-              <Elementor>
-                  <div className={styles.cardContainer}>
-                    <div className={styles.contElm}>
-                      <div>
-                          <h3 className={styles.cardTitle}>Árbitro de <br />Futsal</h3>                        
-                          <ul className={styles.cardList}>
-                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/05_duracion.svg'/> Duración: 3 meses</li>
-                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/06_nivel.svg'/>   Nivel: Inicial</li>
-                          </ul>
-                      </div>
-                      <div className={styles.cardFooter}>
-                          {/* ---> CAMBIADO ÚNICAMENTE AQUÍ: De etiqueta <a> a <button> con onClick para abrir el modal <--- */}
-                          <Link to='/deportes/disciplina/25' className={styles.cardButton}>
-                              Ver Programa →
-                          </Link>
-                      </div>
-                    </div>
-                  <img src="/images/home/arbitra_futsal.svg" alt="Futsal" className={styles.whyCardImage} />
-                  </div>
-              </Elementor>
-
-              {/* TARJETA 1: FÚTBOL PLAYA */}
-              <Elementor>
-                  <div className={styles.cardContainer}>
-                    <div className={styles.contElm}>
-                      <div>
-                          <h3 className={styles.cardTitle}>Árbitro de <br />Futbol playa</h3>                        
-                          <ul className={styles.cardList}>
-                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/05_duracion.svg'/> Duración: 3 meses</li>
-                              <li className={styles.cardListItem}><img src='/iconsArbitra/utilities/landingPage/06_nivel.svg'/>   Nivel: Inicial</li>
-                          </ul>
-                      </div>
-                      <div className={styles.cardFooter}>
-                          {/* ---> CAMBIADO ÚNICAMENTE AQUÍ: De etiqueta <a> a <button> con onClick para abrir el modal <--- */}
-                          <Link to='/deportes/disciplina/24' className={styles.cardButton}>
-                              Ver Programa →
-                          </Link>
-                      </div>
-                    </div>
-                  <img src="/images/home/arbitra_futbol_playa.svg" alt="Futsal" className={styles.whyCardImage} />
-                  </div>
-              </Elementor>
-          </SectionExpand>
+          
           <SectionExpand bgAssing='#0A101B'>
-            <div className={styles.contGroupElm}>
-              <div className={styles.contTitle}>
-                <div className={styles.cont}>
-                  <img src="/iconsArbitra/utilities/landingPage/miscelanea_diagonal.svg"/>
-                  <h2>¿Por qué elegir</h2>
-                </div>
-                <span>ARBITRA?</span>
-              </div>
-              <div className={styles.featuresGridBenefit}>
-                <div className={styles.featureItem}>
-                  <img src="/iconsArbitra/utilities/landingPage/07_contenidos_actualizados.svg" alt="Formación" className={styles.featureIcon} />
-                  <span className={styles.featureText}>Contenido actualizado</span>
-                </div>
-                <span></span>
-                <div className={styles.featureItem}>
-                  <img src="/iconsArbitra/utilities/landingPage/08_preparacion_fisica_arbitral.svg" alt="Enfoque" className={styles.featureIcon} />
-                  <span className={styles.featureText}>Preparación fisica y arbitral</span>
-                </div>
-                <span></span>
-                <div className={styles.featureItem}>
-                  <img src="/iconsArbitra/utilities/landingPage/09_reglamentacion.svg" alt="Docentes" className={styles.featureIcon} />
-                  <span className={styles.featureText}>Reglamentación oficial (IFAB)</span>
-                </div>
-                <div className={styles.featureItem}>
-                  <img src="/iconsArbitra/utilities/landingPage/10_desarrollo_competencias.svg" alt="Docentes" className={styles.featureIcon} />
-                  
-                  <span className={styles.featureText}>Desarrollo de competencias</span>
-                </div>
-              </div>
-            </div>
+            <WhyChooseArbitra />
           </SectionExpand>
           <SectionExpand bgAssing='#0f1520'>
             <div className={styles.ctaBanner}>

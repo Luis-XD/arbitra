@@ -5,6 +5,7 @@
     overflow: hidden;
     border: var(--border);
     border-radius: var(--border-radius);
+    transition: all ease-in-out .3s;
     background-color: var(--background-solid-2);
 
     display: flex;
@@ -29,9 +30,10 @@
     justify-content: center;
     align-items: center;
 }
-.contCard > a > .card:hover img{
-    transform: scale(1.05);
-    transition:all ease-in-out .3s;
+.contCard:hover{
+    transform: translateY(-0.5rem);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transition: all ease-in-out .3s;
 }
 
 .contCard > a > .card > img{
@@ -83,14 +85,4 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-}
-
-:global(body.dark) .contCard > a > .card > .cardContent{
-    background-color: #2b2b2b;
-}
-:global(body.dark) .contCard > a > .card > .cardContent > .cardTitle{
-    color: #fff;
-}
-:global(body.dark) .contCard > a > .card > .cardContent > .cardText{
-    color: #cecece;
 }

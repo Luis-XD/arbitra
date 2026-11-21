@@ -2,5 +2,8 @@
 .one { grid-template-columns: minmax(0, 1fr); }
 .section { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 14px; display: flex; flex-direction: column; gap: 4px; }
 .sectionTitle { font-size: 14.5px; }
+.sectionTitle >div > h2{
+    color: #000;
+}
 .sectionText { color: var(--muted); font-size: 13px; }
 @media (max-width: 760px) { .grid { grid-template-columns: minmax(0, 1fr); } }

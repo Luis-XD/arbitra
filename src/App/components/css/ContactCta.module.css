@@ -1,0 +1,38 @@
+.cta {
+  padding: 4.2rem 0;
+  border-top: 1px solid var(--line);
+  background: radial-gradient(circle at 90% 30%, #10b98122, transparent 35%);
+}
+
+.ctaInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cta h2 {
+  max-width: 40rem;
+}
+
+.cta p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 3.4rem 0;
+  }
+
+  .ctaInner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ctaInner :global(.button) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,47 @@
+.card {
+  border-radius: 1.1rem;
+  min-height: 18rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-shadow: 0 10px 25px #001b2640;
+}
+.content {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 1.15rem;
+  color: #fff;
+}
+.content h3 {
+  font-size: 1.25rem;
+  line-height: 1.12;
+  max-width: 12rem;
+  margin: 0 0 0.7rem;
+  font-weight: 800;
+}
+.content p {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.79rem;
+  margin: 0.3rem 0;
+}
+.content p svg {
+  color: #0de6a1;
+}
+.content a {
+  margin-left: auto;
+  background: #0de6a1;
+  color: #06141d;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+}
+.card:hover {
+  transform: translateY(-3px);
+  transition: transform 0.2s;
+}

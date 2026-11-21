@@ -1,0 +1,58 @@
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+.wrap > div p {
+  line-height: 1.8;
+  color: #4b5964;
+}
+.wrap form {
+  background: #fff;
+  border: 1px solid #dbe7e9;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+.wrap label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.4rem;
+}
+.wrap input,
+.wrap select,
+.wrap textarea {
+  padding: 0.8rem;
+  border: 1px solid #b7c9d0;
+  border-radius: 0.5rem;
+  font: inherit;
+  width: 100%;
+  background: white;
+  color: #000;
+}
+.wrap button {
+  border: 0;
+  height: 2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+.message {
+  color: #075d48;
+  background: #e5fbf3;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+form.contactForm{
+  background-color: #ccc;
+}
+.wrap label input{
+  width: 100%;
+}
+@media (max-width: 760px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

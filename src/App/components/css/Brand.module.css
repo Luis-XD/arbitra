@@ -1,0 +1,36 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 8.5rem;
+  height: 3.2rem;
+  overflow: hidden;
+}
+.brand img {
+  height: 7rem;
+  width: 7rem;
+  object-fit: contain;
+  max-width: none;
+  flex-shrink: 0;
+}
+.large {
+  width: 19rem;
+  height: 13rem;
+}
+.large img {
+  width: 20rem;
+  height: 20rem;
+}
+@media (max-width: 600px) {
+  .brand {
+    width: 7.5rem;
+  }
+  .large {
+    width: 15rem;
+    height: 11rem;
+  }
+  .large img {
+    width: 17rem;
+    height: 17rem;
+  }
+}

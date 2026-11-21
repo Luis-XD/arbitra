@@ -14,7 +14,7 @@ import Home                     from './App/pages/Home'
 
 import NotFound                 from './App/pages/NotFound'
 
-import AboutUs                  from './App/pages/AboutUs'
+import WhoWeAre                  from './App/pages/WhoWeAre'
 
 import Register                 from './App/pages/Register'
 import Login                    from './App/pages/Login'
@@ -35,7 +35,7 @@ import ConfigurationEdit        from './App/pages/protected/ConfigurationEdit'
 import PrivacyPolitic           from './App/pages/PrivacyPolitic'
 
 import { CONFIG_PATHS }         from './App/config/config'
-import Sports                   from './App/pages/Sports'
+import Courses                  from './App/pages/Courses'
 import Formation                from './App/pages/Formation'
 import DisciplineDetail         from './App/pages/DisciplineDetail'
 
@@ -61,15 +61,16 @@ import ManagePassword           from './App/pages/protected/campus/ManagePasswor
 import ManageDownloadFile       from './App/pages/protected/campus/ManageDownloadFile'
 import ManageGeneral            from './App/pages/protected/campus/ManageGeneral'
 import Inscription              from './App/pages/Inscription'
+import Contact                  from './App/pages/Contact'
 
 const routes = [
   {
     path: "/",
-    element: <Template separator={false} />,
+    element: <Template />,
     children: [
       { path: CONFIG_PATHS.HOME_PATH,                                       element: <PublicRoute>       <Home/>                       </PublicRoute> },
-      { path: CONFIG_PATHS.SPORTS_PATH,                                     element: <PublicRoute>       <Sports/>                     </PublicRoute> },
-      { path: CONFIG_PATHS.SPORTS_PATH+"/disciplina/:id_discipline",        element: <PublicRoute>       <DisciplineDetail/>           </PublicRoute> },
+      { path: CONFIG_PATHS.COURSES_PATH,                                    element: <PublicRoute>       <Courses/>                    </PublicRoute> },
+      { path: CONFIG_PATHS.COURSES_PATH+"/disciplina/:id_discipline",       element: <PublicRoute>       <DisciplineDetail/>           </PublicRoute> },
       { path: CONFIG_PATHS.FORMATION_PATH,                                  element: <PublicRoute>       <Formation/>                  </PublicRoute> },
       { path: CONFIG_PATHS.INSCRIPTION_PATH,                                element: <PublicRoute>       <Inscription />               </PublicRoute> },      
       { path: CONFIG_PATHS.LOGIN_PATH,                                      element: <PublicRoute>       <Login/>                      </PublicRoute> },
@@ -78,24 +79,19 @@ const routes = [
       { path: CONFIG_PATHS.TOKEN_EXPIRED_PATH,                              element: <PublicRoute>       <TokenExpired/>               </PublicRoute> },
       //Publico y privado
       { path: CONFIG_PATHS.SUCCESS_PATH,                                    element: <Success />                                                      },
-      { path: CONFIG_PATHS.ABOUT_US_PATH,                                   element: <AboutUs/>                                                       },
+      { path: CONFIG_PATHS.WHO_WE_ARE_PATH,                                 element: <WhoWeAre/>                                                      },
       { path: CONFIG_PATHS.PRIVACY_PATH,                                    element: <PrivacyPolitic/>                                                },
       { path: CONFIG_PATHS.CERTIFICATES,                                    element: <FAQ/>                                                           },
-      //
-      { path: "*",                                                          element: <NotFound/>                                                      }
-    ]
-  },
-  {
-    path: "/",
-    element: <Template separator={true} />,
-    children: [
-      { path: CONFIG_PATHS.REGISTER_PATH,                                   element: <PublicRoute>        <Register/>               </PublicRoute>    },
       { path: CONFIG_PATHS.FAQ_PATH,                                        element: <FAQ/>                                                           },
+      { path: CONFIG_PATHS.CONTACT_PATH,                                    element: <Contact />                                                      },
+      //CONTACT_PATH
+      { path: "*",                                                          element: <NotFound/>                                                      },
+      { path: CONFIG_PATHS.REGISTER_PATH,                                   element: <PublicRoute>        <Register/>               </PublicRoute>    },
     ]
   },
   {  
     path: "/",
-    element: <Template separator={false} />,
+    element: <Template />,
     children: [
       { path: "verificar-cuenta",                                           element: <PublicRoute>       <VerifyAccount/>           </PublicRoute>    },      
     ]
