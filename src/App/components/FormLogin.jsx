@@ -104,9 +104,9 @@ function FormLogin() {
                         {cargando ? <Loader mini={true}/> : "Iniciar sesión"}
                     </Button>
                     <p className={styles.smallText}>
-                        <Link to='/ForgetPassw' title="Olvidé mi contraseña">Olvidé mi contraseña</Link>
+                        <Link to={CONFIG_PATHS.FORGET_PASSW_PATH} title="Olvidé mi contraseña">Olvidé mi contraseña</Link>
                         |
-                        <Link to='/Registro' title="Me quiero registrar">Me quiero registrar</Link>
+                        <Link to={CONFIG_PATHS.REGISTER_PATH} title="Me quiero registrar">Me quiero registrar</Link>
                     </p>
                     
                 </form>

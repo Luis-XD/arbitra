@@ -51,28 +51,28 @@ function Home() {
                 sport="futbol"
                 title="Árbitro de Campo · Fútbol 11"
                 descrip="Formación orientada al arbitraje de encuentros de fútbol de once jugadores."
-                to="/deportes/disciplina/9"
+                to="/cursos/disciplina/9"
               />
               <CourseCard
                 nameImg="arbitra_futbol_8_y_5.svg"
                 sport="futbol"
                 title="Árbitro de · Fútbol 8 y 5"
                 descrip="Formación orientada al arbitraje de encuentros de fútbol de once jugadores."
-                to="/deportes/disciplina/8"
+                to="/cursos/disciplina/20"
               />
               <CourseCard
                 nameImg="arbitra_futsal.svg"
                 sport="futbol"
                 title="Árbitro de Futsal"
                 descrip="Formación orientada al arbitraje de encuentros de fútbol de once jugadores."
-                to="/deportes/disciplina/futsal"
+                to="/cursos/disciplina/21"
               />
               <CourseCard
                 nameImg="arbitra_futbol_playa.svg"
                 sport="futbol"
                 title="Árbitro de Futbol Playa"
                 descrip="Formación orientada al arbitraje de encuentros de fútbol de once jugadores."
-                to="/deportes/disciplina/playa"
+                to="/cursos/disciplina//24"
               />
             </div>
           </ContainerWrap>

@@ -42,18 +42,19 @@
   color: #10b981;
   margin-left: 0.4rem;
 }
+
+/* Flexbox: 6 por fila en escritorio y segunda fila centrada automáticamente */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: stretch;
+  row-gap: 1.5rem;
 }
 
-/* 4 ítems = 8 columnas -> (12 - 8) / 2 = 2 columnas de margen izquierdo -> arranca en columna 3 */
-.grid > .item:nth-child(7) {
-  grid-column-start: 3;
-}
 .item {
-  grid-column: span 2;
+  flex: 0 0 calc(100% / 6);
+  max-width: calc(100% / 6);
   min-width: 0;
   padding: 0.4rem 0.8rem;
   text-align: center;
@@ -63,6 +64,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .icon {
   width: 3.5rem;
   height: 3.5rem;
@@ -100,13 +102,21 @@
   position: absolute;
   left: 0;
 }
+
+@media (max-width: 700px) {
+  h2 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 @media (max-width: 70rem) {
   .container {
     grid-template-columns: 1fr;
   }
-  .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    row-gap: 2rem;
+  .item {
+    flex: 0 0 calc(100% / 3);
+    max-width: calc(100% / 3);
   }
   .item:nth-child(3n + 1) {
     border-left: 0;
@@ -115,15 +125,17 @@
     font-size: 1rem;
   }
 }
+
 @media (max-width: 40rem) {
   .section {
     padding: 2.5rem 1rem;
   }
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem 0;
   }
   .item {
+    flex: 0 0 50%;
+    max-width: 50%;
     padding: 0.5rem;
   }
   .item:nth-child(3n + 1) {
@@ -140,6 +152,7 @@
     font-size: 0.7rem;
   }
 }
+
 @media (prefers-reduced-motion: no-preference) {
   .item {
     transition: transform 0.2s ease;
