@@ -1,5 +1,5 @@
 .course {
-  width: 20%;
+  width: 20dvw;
   min-width: 24rem;
   min-height: 45rem;
   background: var(--panel);
@@ -58,6 +58,7 @@
 
 .noticeInline {
   font-size: 1.8rem;
+  color: var(--color);
 }
 
 .textLink {

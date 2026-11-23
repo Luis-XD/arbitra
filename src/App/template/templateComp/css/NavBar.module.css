@@ -91,7 +91,7 @@ nav, .navbar{
     padding: 0.8rem 1rem;
     border-radius: var(--border-radius-slim);
     border: 0.1rem solid transparent;
-    transition: all ease-in-out .3s;
+    transition: all ease-in-out .1s;
 
     display: flex;
     justify-content: center;
@@ -125,8 +125,7 @@ nav, .navbar{
 .navbarContent > .navbarLinks > .navbarLinksGroup > a:hover,
 .navbarContent > .navbarLinks > .elmPanel > a:hover,
 .navbarContent > .navbarLinks > .navbarLinksGroup > a.inscription{
-    border: var(--border-2);
-    background: rgba(16, 185, 129, 0.1);
+    color: var(--color);
 }
 .navbarContent > .navbarLinks > .navbarLinksGroup > a.inscription p{
     transition: all ease-in-out .3s;

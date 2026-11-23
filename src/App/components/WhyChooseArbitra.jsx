@@ -113,7 +113,7 @@ export default function WhyChooseArbitra() {
         </div>
         <div className={styles.grid}>
           {benefits.map((benefit) => (
-            <article className={styles.item} key={benefit.key}>
+            <article className={`${styles.item} ${ benefit.key === "list" && styles.itemInit}`} key={benefit.key}>
               <BenefitIcon name={benefit.key} />
               <h3>{benefit.title}</h3>
               {benefit.note && <p className={styles.note}>{benefit.note}</p>}

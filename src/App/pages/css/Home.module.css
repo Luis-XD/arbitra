@@ -549,7 +549,14 @@
     height: 100%;
   }
 }
-
+@media(max-width:1024px){
+  .contElmBanner{
+    margin-right: 2%;
+  }
+  .ctaIcon{
+    left: -20%;
+  }
+}
 @media (max-width: 950px){
 
   .ctaBanner{
