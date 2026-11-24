@@ -1,5 +1,6 @@
 .formationTop {
   width: 100%;
+  margin-bottom: 3rem;
 
   display: flex;
   align-items: flex-start;
@@ -8,10 +9,6 @@
 }
 
 .formationTop h2 {
-  margin-bottom: 0;
-}
-
-.formationTop p {
   margin-bottom: 0;
 }
 
@@ -33,7 +30,7 @@
   color: #00e5a2;
 }
 .subtitle {
-  margin: 14px 0 34px;
+  margin: 0;
   color: #d2e2e4;
   font-size: clamp(0.95rem, 1.25vw, 1.15rem);
 }
@@ -52,3 +49,14 @@
     gap: 0.85rem;
   }
 }
+@media (max-width: 450px) {
+  h2{
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .subtitle{
+    margin: 0;
+  }
+}
+

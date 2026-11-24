@@ -106,7 +106,7 @@ function Home() {
                     header="MODALIDADES DE FORMACIÓN"
                     wordOne="Elegí la modalidad que"
                     wordTwo="mejor se adapte a vos"
-                    subtitle="Conocé las opciones de cursada y elegí cómo querés formarte."
+                    paragraph="Conocé las opciones de cursada y elegí cómo querés formarte."
                   />
               }
             />

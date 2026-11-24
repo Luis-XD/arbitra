@@ -31,14 +31,16 @@ export default function CardVertical({
         </div>
       )}
       <div className={styles.courseBody}>
-        <div className={styles.heading}>
-          <span className={styles.modeSymbol} aria-hidden="true">{accent === "purple" ? "◷" : accent === "turquoise" ? "▣" : accent === "ambar" ? "♧" : "▤"}</span>
-          <div>
-            <span className={styles.courseTag}>{typeTitle}</span>
-            <h3 className={styles.courseTitle}>{title}</h3>
+        <div className={styles.contHeading}>
+          <div className={styles.heading}>
+            <span className={styles.modeSymbol} aria-hidden="true">{accent === "purple" ? "◷" : accent === "turquoise" ? "▣" : accent === "ambar" ? "♧" : "▤"}</span>
+            <div>
+              <span className={styles.courseTag}>{typeTitle}</span>
+              <h3 className={styles.courseTitle}>{title}</h3>
+            </div>
           </div>
+          {descrip && <p className={styles.description}>{descrip.replace(/\s*Inversión:\s*\$[\d.,]+\.?\s*$/i, "").trim()}</p>}
         </div>
-        {descrip && <p className={styles.description}>{descrip.replace(/\s*Inversión:\s*\$[\d.,]+\.?\s*$/i, "").trim()}</p>}
         {items.length > 0 && (
           <ul className={styles.courseList}>
             {items.map((item, i) => (

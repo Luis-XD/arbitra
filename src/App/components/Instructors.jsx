@@ -1,21 +1,21 @@
 import styles from "./css/Instructors.module.css";
 import { ArrowRight } from "lucide-react";
 import {INSTRUCTORS_DATA} from '../data/instructors'
+import TopTitle from "./TopTitle";
 
 function Instructors() {
   return (
     <section className={`section ${styles.darkBg}`}>
       <div className={`container ${styles.wrap}`}>
         <div className="sectionTitle">
-          <div className="cursoTituloDestacado">
-            <h2 className={styles.titleIntst}>
-              <span className="slash"></span>Nuestros instructores
-            </h2>
-          </div>
-          <p className="lead">
-            Conocé a los profesionales que lideran nuestras capacitaciones y
-            acompañan tu crecimiento.
-          </p>
+          
+          <TopTitle 
+            header="CONOCE A"
+            wordOne="Nuestros"
+            wordTwo="instructores"
+            paragraph="Conocé a los profesionales que lideran nuestras capacitaciones y
+            acompañan tu crecimiento."
+          />
         </div>
         <div className={styles.cont}>
             <div className={styles.grid}>

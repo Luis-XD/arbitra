@@ -9,10 +9,9 @@ function TopTitle({header="", wordOne="", wordTwo="", paragraph="", subtitle=""}
             <h2 id="formTitle">
               {wordOne} <span className="green">{wordTwo}</span>
             </h2>
-            <p>
+            <p className={styles.subtitle}>
               {paragraph}
             </p>
-            <span className={styles.subtitle}>{subtitle}</span>
         </div>
      );
 }

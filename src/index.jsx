@@ -73,10 +73,10 @@ const routes = [
       { path: CONFIG_PATHS.COURSES_PATH+"/disciplina/:id_discipline",       element: <PublicRoute>       <DisciplineDetail/>           </PublicRoute> },
       { path: CONFIG_PATHS.FORMATION_PATH,                                  element: <PublicRoute>       <Formation/>                  </PublicRoute> },
       { path: CONFIG_PATHS.INSCRIPTION_PATH,                                element: <PublicRoute>       <Inscription />               </PublicRoute> },      
-      { path: CONFIG_PATHS.LOGIN_PATH,                                      element: <PublicRoute>       <Login/>                      </PublicRoute> },
       { path: CONFIG_PATHS.FORGET_PASSW_PATH,                               element: <PublicRoute>       <ForgetPassw/>                </PublicRoute> },
       { path: CONFIG_PATHS.RESET_PASSW,                                     element: <PublicRoute>       <ResetPassw/>                 </PublicRoute> },
       { path: CONFIG_PATHS.TOKEN_EXPIRED_PATH,                              element: <PublicRoute>       <TokenExpired/>               </PublicRoute> },
+      { path: CONFIG_PATHS.LOGIN_PATH,                                      element: <PublicRoute>       <Login/>                      </PublicRoute> },
       { path: CONFIG_PATHS.REGISTER_PATH,                                   element: <PublicRoute>       <Register/>                   </PublicRoute> },
       //Publico y privado
       { path: CONFIG_PATHS.SUCCESS_PATH,                                    element: <Success />                                                      },

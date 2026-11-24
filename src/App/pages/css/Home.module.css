@@ -567,6 +567,7 @@
   .ctaBanner{
     display: flex;
     justify-content: center;
+    align-items: center;
   }
   .ctaContent{
     display: flex;
@@ -582,6 +583,7 @@
   }
   .contElmBanner{
     padding: 4rem 1.5rem;
+    margin-right: 0;
 
     display: flex;
     justify-content: space-between;
@@ -594,6 +596,10 @@
   }
   .contBtn{
     margin-top: 1rem;
+  }
+  .opacity{
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
   }
 }
 

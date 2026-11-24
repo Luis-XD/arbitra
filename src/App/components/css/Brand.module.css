@@ -29,10 +29,18 @@
   }
   .large {
     width: 15rem;
-    height: 11rem;
+    height: auto;
   }
   .large img {
     width: 17rem;
     height: 17rem;
+  }
+  .grid p{
+    font-size: 2rem;
+    height: auto;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }

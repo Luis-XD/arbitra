@@ -10,7 +10,6 @@ import { UserContext } from './UserProvider'
 import TopButtons from './TopButtons'
 
 function FormRegister() {
-	const [ipAddress, setIpAddress] = useState('')
 	const [cargando, setCargando] = useState(false)
 	const navigate = useNavigate()
 	const apiUrl = CONFIG_BACKEND.API_DIR
@@ -49,20 +48,6 @@ function FormRegister() {
         valueCampus = "⌛ Inscripciones cerradas, solo login"
     }
 
-	useEffect(() => {
-		const fetchIp = async () => {
-			try{
-				const response = await fetch("https://api.ipify.org?format=json")
-				const data = await response.json()
-				setIpAddress(data.ip)
-			} catch (error) {
-				if (import.meta.env.DEV) { console.error("Error fetching IP address:", error)}
-			}
-		}
-
-		fetchIp()
-	}, [])
-
 	const [form, setForm] = useState({
 		names: "",
 		lastNames: "",
@@ -70,7 +55,6 @@ function FormRegister() {
 		passw: "",
 		sex: "",
 		birthday: "",
-		ipAddress: "",
 		token: ""
 	})
 	
@@ -105,7 +89,6 @@ function FormRegister() {
 			passw: event.target.passw.value,
 			sex: event.target.sex.value,
 			birthday: event.target.birthday.value,
-			ipAddress: ipAddress,
 			token: event.target.token.value
 		}
 		alertContainer.style.padding="0.5em"
@@ -159,7 +142,7 @@ function FormRegister() {
 
 	return (
 		<>
-		{!campusStatus ? (''):(
+		{/*!campusStatus ? (''):(*/}
 			<div className={styles.contForm}>
 				{campusStatus === '0' || campusStatus === '3' ? (
 					<>
@@ -226,7 +209,7 @@ function FormRegister() {
 				</form>
 				)}
 			</div>
-		)}
+		{/*)}*/}
 		</>
 	)
 }
