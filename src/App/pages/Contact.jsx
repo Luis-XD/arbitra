@@ -2,6 +2,7 @@ import { useState } from "react"
 import PageHero from "../components/PageHero"
 import styles from "./css/Contact.module.css"
 import { CONFIG_BACKEND } from "../config/config"
+import TopTitle from "../components/TopTitle";
 
 const INITIAL_FORM = {
   name: "",
@@ -85,112 +86,109 @@ function Contact() {
     <>
       <PageHero title="Contacto e inscripciones" image="/assets/referee.jpg" />
       <section className="section light">
-        <div className={`container ${styles.wrap}`}>
-          <div className="sectionTitle">
-            <div className="cursoTituloDestacado">
-              <h2>
-                <span className="slash"></span>Nuestras capacitaciones
-              </h2>
-            </div>
-            <p>
-              Contanos qué disciplina te interesa y te orientaremos sobre las
-              propuestas disponibles.
-            </p>
-            <p>
-              La información sobre fechas, vacantes, modalidades y aranceles se
-              confirmará por los canales oficiales.
-            </p>
-          </div>
-
-          <form onSubmit={submit} className={styles.contactForm} noValidate>
-            {/* Honeypot anti-bots: no mostrar visualmente a humanos */}
-            <input
-              type="text"
-              name="website"
-              value={formData.website}
-              onChange={handleChange}
-              tabIndex={-1}
-              autoComplete="off"
-              aria-hidden="true"
-              style={{ display: "none" }}
-            />
-
-            <label>
-              Nombre y apellido
+        <div className="container">
+          <TopTitle 
+            header="CONSULTAS"
+            wordOne="Podés"
+            wordTwo="contactarnos"
+            dark={true}
+            paragraph={<>
+            Contanos qué disciplina te interesa y te orientaremos sobre las
+            propuestas disponibles. <br /> La información sobre fechas, vacantes, modalidades y aranceles se
+            confirmará por los canales oficiales.
+            </>}
+          />
+          <div className={styles.wrap}>
+            <form onSubmit={submit} className={styles.contactForm} noValidate>
+              {/* Honeypot anti-bots: no mostrar visualmente a humanos */}
               <input
-                required
                 type="text"
-                name="name"
-                value={formData.name}
+                name="website"
+                value={formData.website}
                 onChange={handleChange}
-                placeholder="Tu nombre"
-                maxLength={120}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ display: "none" }}
               />
-            </label>
 
-            <label>
-              Correo electrónico
-              <input
-                required
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="tu@email.com"
-                maxLength={160}
-              />
-            </label>
+              <label>
+                Nombre y apellido
+                <input
+                  required
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Tu nombre"
+                  maxLength={120}
+                />
+              </label>
 
-            <label>
-              Formación de interés
-              <select
-                required
-                name="program"
-                value={formData.program}
-                onChange={handleChange}
+              <label>
+                Correo electrónico
+                <input
+                  required
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="tu@email.com"
+                  maxLength={160}
+                />
+              </label>
+
+              <label>
+                Formación de interés
+                <select
+                  required
+                  name="program"
+                  value={formData.program}
+                  onChange={handleChange}
+                >
+                  <option value="" disabled>
+                    Seleccioná una opción
+                  </option>
+                  <option value="Fútbol 11">Fútbol 11</option>
+                  <option value="Fútbol 8 y 5">Fútbol 8 y 5</option>
+                  <option value="Futsal">Futsal</option>
+                  <option value="Fútbol playa">Fútbol playa</option>
+                  <option value="Otros cursos">Otros cursos</option>
+                </select>
+              </label>
+
+              <label>
+                Mensaje
+                <textarea
+                  required
+                  name="message"
+                  rows="4"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Tu consulta"
+                  maxLength={2500}
+                />
+              </label>
+
+              <button
+                className="button"
+                type="submit"
+                disabled={isSubmitting}
               >
-                <option value="" disabled>
-                  Seleccioná una opción
-                </option>
-                <option value="Fútbol 11">Fútbol 11</option>
-                <option value="Fútbol 8 y 5">Fútbol 8 y 5</option>
-                <option value="Futsal">Futsal</option>
-                <option value="Fútbol playa">Fútbol playa</option>
-                <option value="Otros cursos">Otros cursos</option>
-              </select>
-            </label>
+                {isSubmitting ? "Enviando..." : "Enviar consulta →"}
+              </button>
 
-            <label>
-              Mensaje
-              <textarea
-                required
-                name="message"
-                rows="4"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Tu consulta"
-                maxLength={2500}
-              />
-            </label>
-
-            <button
-              className="button"
-              type="submit"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Enviando..." : "Enviar consulta →"}
-            </button>
-
-            {status.text && (
-              <p
-                role="status"
-                className={styles.message}
-                data-status={status.type}
-              >
-                {status.text}
-              </p>
-            )}
-          </form>
+              {status.text && (
+                <p
+                  role="status"
+                  className={styles.message}
+                  data-status={status.type}
+                >
+                  {status.text}
+                </p>
+              )}
+            </form>
+          </div>
         </div>
       </section>
     </>

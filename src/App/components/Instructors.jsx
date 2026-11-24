@@ -2,6 +2,8 @@ import styles from "./css/Instructors.module.css";
 import { ArrowRight } from "lucide-react";
 import {INSTRUCTORS_DATA} from '../data/instructors'
 import TopTitle from "./TopTitle";
+import { Link } from "react-router-dom";
+import { CONFIG_PATHS } from "../config/config";
 
 function Instructors() {
   return (
@@ -37,11 +39,9 @@ function Instructors() {
                     <h3>{ins.name}</h3>
                     <h4>{ins.role}</h4>
                     <p>{ins.bio}</p>
-                    {ins.link && (
-                    <a href={ins.link} className={styles.btn}>
+                    <Link to={CONFIG_PATHS.US_INSTRUCTORS} className={styles.btn}>
                         Saber más <ArrowRight size={16} />
-                    </a>
-                    )}
+                    </Link>
                 </div>
                 </article>
             ))}

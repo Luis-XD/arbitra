@@ -86,4 +86,115 @@ export const ARBITRA_LEGAL_SECTIONS = [
       "ARBITRA® trabajará para facilitar el acceso a contenidos, inscripción, campus y reclamos, con canales de ajustes razonables: ARBITRACFP@GMAIL.COM. Las consultas generales, académicas y comerciales se atenderán mediante WHATSAPP INFORMADO DE 10 A 18HS. Las solicitudes y reclamos tendrán acuse y seguimiento; el alumno conserva el derecho de acudir a Defensa del Consumidor y a la justicia competente, sin imponer renuncias ni tribunales exclusivos contrarios a derecho.",
     ],
   },
+
+  // Política de bajas, cancelaciones, reprogramaciones y devoluciones
+  {
+    id: "bajas-ambito-de-aplicacion",
+    number: 11,
+    title: "Bajas y devoluciones — Ámbito de aplicación",
+    paragraphs: [
+      "La presente política resulta aplicable a las formaciones profesionales, cursos, capacitaciones, talleres, prácticas presenciales, tutorías y servicios educativos virtuales ofrecidos por ARBITRA.",
+      "Las condiciones particulares de cada formación serán informadas previamente a la inscripción y complementarán esta política, sin restringir los derechos reconocidos por la legislación vigente.",
+    ],
+  },
+  {
+    id: "bajas-derecho-de-arrepentimiento",
+    number: 12,
+    title: "Bajas y devoluciones — Derecho de arrepentimiento",
+    paragraphs: [
+      "En las contrataciones realizadas a distancia o fuera del establecimiento comercial, el alumno podrá ejercer el derecho de arrepentimiento dentro del plazo legal de diez (10) días corridos, conforme a la Ley 24.240 y al Código Civil y Comercial de la Nación, considerando las excepciones legalmente aplicables.",
+      "Cuando corresponda el ejercicio válido de este derecho, ARBITRA realizará la restitución de las prestaciones conforme a la normativa vigente, sin aplicar penalidades ni gastos administrativos.",
+      "La solicitud podrá efectuarse mediante el botón de arrepentimiento disponible en el sitio web o por los medios legalmente habilitados.",
+    ],
+  },
+  {
+    id: "baja-voluntaria-antes-del-inicio",
+    number: 13,
+    title: "Baja voluntaria antes del inicio",
+    paragraphs: [
+      "El alumno podrá solicitar la baja voluntaria de una formación en cualquier momento anterior a su inicio.",
+      "Cuando no se hayan brindado prestaciones ni entregado bienes que deban ser considerados en la liquidación, se reintegrará la totalidad del importe abonado.",
+      "Alternativamente, el alumno podrá optar por trasladar su inscripción a otra edición o formación, sujeto a disponibilidad y mediante aceptación expresa.",
+    ],
+  },
+  {
+    id: "baja-voluntaria-iniciada-la-formacion",
+    number: 14,
+    title: "Baja voluntaria una vez iniciada la formación",
+    paragraphs: [
+      "Cuando la formación hubiera comenzado y no corresponda un reintegro íntegro por aplicación del derecho de arrepentimiento u otra disposición legal, ARBITRA efectuará una liquidación individualizada de las prestaciones brindadas.",
+      "Podrán considerarse, cuando legalmente corresponda: clases teóricas efectivamente brindadas, prácticas realizadas, tutorías prestadas, materiales efectivamente suministrados, bienes entregados y servicios individualizados efectivamente prestados.",
+      "La sola habilitación del campus virtual no implicará automáticamente el consumo íntegro de la formación.",
+      "La liquidación será informada al alumno de manera detallada, clara y verificable.",
+      "No se aplicarán penalidades ni gastos administrativos derivados de la solicitud de baja.",
+    ],
+  },
+  {
+    id: "practicas-presenciales-y-talleres",
+    number: 15,
+    title: "Prácticas presenciales y talleres",
+    paragraphs: [
+      "A los efectos de facilitar la organización de las actividades, se solicita comunicar las cancelaciones de prácticas presenciales y talleres con una anticipación preferente de cuarenta y ocho (48) horas.",
+      "Este plazo constituye una pauta organizativa y no restringe los derechos legales del alumno ni genera automáticamente penalidades.",
+      "ARBITRA podrá ofrecer alternativas de reprogramación sujetas a disponibilidad.",
+    ],
+  },
+  {
+    id: "cancelaciones-por-parte-de-la-institucion",
+    number: 16,
+    title: "Cancelaciones por parte de la institución",
+    paragraphs: [
+      "Cuando ARBITRA deba cancelar una actividad, informará al alumno y ofrecerá las alternativas correspondientes de reprogramación, prestación equivalente o restitución de los importes que correspondan, respetando los derechos reconocidos por la legislación vigente.",
+      "El alumno no estará obligado a aceptar una prestación diferente de la contratada cuando tenga derecho a solicitar su reintegro.",
+    ],
+  },
+  {
+    id: "procedimiento-de-solicitud",
+    number: 17,
+    title: "Procedimiento de solicitud",
+    paragraphs: [
+      "Las solicitudes podrán realizarse mediante los canales habilitados en el sitio web, correo electrónico, WhatsApp institucional o el medio utilizado para la contratación, según corresponda.",
+      "ARBITRA registrará la fecha y hora de recepción y comunicará el código identificatorio de la solicitud dentro de las veinticuatro (24) horas, cuando resulte aplicable.",
+      "Asimismo, emitirá la constancia de rescisión dentro de los plazos legalmente establecidos.",
+      "Podrán solicitarse verificaciones razonables de identidad destinadas exclusivamente a garantizar la seguridad del alumno.",
+    ],
+  },
+  {
+    id: "reintegros",
+    number: 18,
+    title: "Reintegros",
+    paragraphs: [
+      "ARBITRA gestionará los reintegros ordinarios que correspondan dentro de un plazo máximo de cinco (5) días hábiles desde la recepción de la solicitud válida y de los datos indispensables para su procesamiento, sin perjuicio de los plazos de restitución que resulten exigibles conforme a la legislación vigente.",
+      "Preferentemente se utilizará el mismo medio de pago de la operación original.",
+      "Los tiempos de acreditación podrán variar según la entidad bancaria o plataforma de procesamiento de pagos.",
+      "El alumno recibirá el comprobante correspondiente.",
+    ],
+  },
+  {
+    id: "saldos-a-favor-y-cambios-de-edicion",
+    number: 19,
+    title: "Saldos a favor y cambios de edición",
+    paragraphs: [
+      "La acreditación de saldos a favor, transferencia de vacantes o cambio de edición constituirán alternativas voluntarias que requerirán la conformidad expresa del alumno.",
+      "No reemplazarán devoluciones legalmente exigibles sin su consentimiento.",
+    ],
+  },
+  {
+    id: "condiciones-particulares",
+    number: 20,
+    title: "Condiciones particulares",
+    paragraphs: [
+      "Cada formación podrá disponer de condiciones particulares relacionadas con su duración, modalidad, prestaciones, equipamiento, materiales y sistema de liquidación.",
+      "Dichas condiciones deberán ser informadas antes de la contratación y no podrán limitar los derechos irrenunciables del consumidor.",
+    ],
+  },
+  {
+    id: "legislacion-aplicable",
+    number: 21,
+    title: "Legislación aplicable",
+    paragraphs: [
+      "La presente política se interpretará conforme a la Ley Nacional 24.240 de Defensa del Consumidor, el Código Civil y Comercial de la Nación y las normas complementarias vigentes.",
+      "En caso de contradicción entre las condiciones institucionales y una disposición legal obligatoria, prevalecerá esta última.",
+    ],
+  },
 ];

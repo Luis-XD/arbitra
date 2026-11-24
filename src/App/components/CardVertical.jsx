@@ -2,10 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./css/CardVertical.module.css";
 
 const ACCENT_CLASSES = {
-  green: styles.accentGreen,
-  purple: styles.accentPurple,
-  turquoise: styles.accentTurquoise,
-  ambar: styles.accentAmbar,
+  green: styles.accentGreen
 };
 
 const BENEFIT_ICONS = ["▤", "◇", "⬡", "▣", "♧", "★", "♙", "✓"];

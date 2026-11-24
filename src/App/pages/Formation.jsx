@@ -11,7 +11,6 @@ import TopTitle from "../components/TopTitle";
 
 function Formation() {
     return ( <>
-    
       <PageHero title="Formación" image="/assets/banners/formacion_arbitral.png" />
       <section className="section light">
         <div className="container">

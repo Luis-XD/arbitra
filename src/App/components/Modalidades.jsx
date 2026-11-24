@@ -3,7 +3,7 @@ import { MODALIDADES_ARBITRAJE } from "../data/content";
 import styles from "./css/Modalidades.module.css";
 
 const accents = {
-  presencial: "green",
+  presencial: "ambar",
   distanciaPresencial: "turquoise",
   distanciaIntensiva: "purple",
   online: "green",

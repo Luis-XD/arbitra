@@ -43,7 +43,6 @@ function DisciplineDetail() {
 
     return (
         <>
-        {console.log(discipline)}
         <PageHero
             title={discipline.name_discip}
             image={

@@ -130,8 +130,7 @@
 }
 @media (max-width:1280px){
   .course{
-    max-width: 22rem;
-    gap: 1rem;
+    max-width: 16rem;
   }
 }
 @media (max-width:1024px){

@@ -8,15 +8,15 @@ import TopTitle from "../components/TopTitle"
 
 
 function UsInstructors() {
-    const [selectedInstructor, setSelectedInstructor] = useState(null);
+    const [selectedInstructor, setSelectedInstructor] = useState(null)
 
     useEffect(() => {
         if (!selectedInstructor) return
 
         const handleKeyDown = (event) => {
-        if (event.key === "Escape") {
-            setSelectedInstructor(null)
-        }
+            if (event.key === "Escape") {
+                setSelectedInstructor(null)
+            }
         }
 
         window.addEventListener("keydown", handleKeyDown)
@@ -24,6 +24,7 @@ function UsInstructors() {
     }, [selectedInstructor])
 
   const closeModal = () => setSelectedInstructor(null);
+
     return (<>
         <PageHero title="Instructores" image="/assets/banners/instructores-multidisciplinario.png" />
         <section className={`section ${styles.darkBg}`}>

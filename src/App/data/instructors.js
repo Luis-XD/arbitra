@@ -6,6 +6,5 @@ export const INSTRUCTORS_DATA = [
     category: "Fútbol",
     image: "/assets/instructors/daniel.png",
     bio: "Ex-árbitro e instructor con amplia trayectoria en formación y capacitación arbitral.",
-    link: "/nuestros-instructores-arbitra", 
   }
 ];

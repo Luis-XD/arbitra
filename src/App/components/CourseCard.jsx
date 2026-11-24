@@ -17,7 +17,7 @@ export default function CourseCard({ nameImg = "", sport = "", title = "", descr
         <div className={styles.courseBottom}>
           <span className={styles.noticeInline}>Programa y fechas: consultar</span>
           <Link className={styles.textLink} to={to} aria-label={`Consultar sobre ${title || sport}`}>
-            Consultar <span aria-hidden="true">↗</span>
+            Consultar <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>
