@@ -41,7 +41,7 @@ export const ARBITRA_LEGAL_SECTIONS = [
     paragraphs: [
       "En contrataciones a distancia alcanzadas, rige en principio el derecho de revocación de diez 10 días corridos, en las condiciones y excepciones legales aplicables. Una casilla de aceptación, el simple acceso al campus o el inicio programado del curso no significan automáticamente una renuncia válida. Las prestaciones efectivamente utilizadas o consumidas y demás circunstancias se evaluarán caso por caso conforme a la normativa vigente.",
       'Cuando la actividad esté alcanzada, la web mostrará de manera destacada y operativa los accesos "BOTÓN DE ARREPENTIMIENTO" y "BOTÓN DE BAJA DE SERVICIO". Se registrará cada gestión y se comunicará el código de identificación dentro de las 24 horas siguientes, con verificación razonable de identidad si correspondiera.',
-      'Fuera del arrepentimiento legal, los retiros voluntarios se resolverán según reglas específicas y razonables informadas antes de contratar: [POLÍTICA COMERCIAL DE CADA CURSO]. Si ARBITRA® cancela o incumple, se ofrecerán las soluciones legalmente pertinentes, incluida la restitución de importes cuando corresponda. No se establecen cláusulas de "sin devolución en ningún caso", renuncias a reclamos ni penalidades arbitrarias.',
+      'Fuera del arrepentimiento legal, los retiros voluntarios se resolverán según reglas específicas y razonables informadas antes de contratar: ALGUNO DE NUESTROS CURSOS HABILITADOS. Si ARBITRA® cancela o incumple, se ofrecerán las soluciones legalmente pertinentes, incluida la restitución de importes cuando corresponda. No se establecen cláusulas de "sin devolución en ningún caso", renuncias a reclamos ni penalidades arbitrarias.',
     ],
   },
   {

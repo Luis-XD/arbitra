@@ -1,4 +1,4 @@
-import styles from './css/Help.module.css'
+import styles from './css/FAQ.module.css'
 import { Plus, HelpCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";

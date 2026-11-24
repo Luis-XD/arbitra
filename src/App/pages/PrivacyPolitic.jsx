@@ -42,10 +42,6 @@ function PrivacyPolitic() {
             condiciones operativas y protección de datos personales.
           </p>
 
-          <div className={styles.notice}>
-            <code>[POLÍTICA COMERCIAL DE CADA CURSO]</code>
-          </div>
-
           {ARBITRA_LEGAL_SECTIONS.map((sec, i) => {
             const Icon = iconsBySectionId[sec.id] || ShieldCheck;
             const isOpen = active === i;
