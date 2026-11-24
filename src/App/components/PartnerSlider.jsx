@@ -33,11 +33,13 @@ function PartnerSlider({ items = PARTNERS_DATA }) {
 
       <article key={currentItem.id || currentIndex} className={styles.card}>
         <div className={styles.imageColumn}>
+          <a href="https://fechalista.netlify.app/" target="_blank">
           <img
             src={currentItem.image}
             alt={currentItem.subtitle || "PARTNER"}
             className={styles.partnerImage}
           />
+          </a>
         </div>
 
         <div className={styles.contentColumn}>

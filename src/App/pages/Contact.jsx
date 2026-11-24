@@ -42,7 +42,7 @@ function Contact() {
     setStatus({ type: "", text: "" });
 
     try {
-      const response = await fetch(`${CONFIG_BACKEND.API_DIR}/contact`, {
+      const response = await fetch(`${CONFIG_BACKEND.API_DIR}/contact`,{
         method: "POST",
         headers: {
           "Content-Type": "application/json",

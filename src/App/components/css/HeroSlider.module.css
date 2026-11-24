@@ -242,7 +242,6 @@
   }
   .active .brandContent {
     opacity: 1;
-    transform: translate(-50%, 0);
   }
   .brandLogo {
     display: block;
@@ -270,15 +269,11 @@
 }
 @media (max-width: 767px) {
   .slider {
-    
+    margin-top: -2rem;
     min-height: 480px;
   }
   .institutional .image {
     object-position: center bottom;
-  }
-  .brandContent {
-    top: 5%;
-    width: 76%;
   }
   .brandLogo {
     width: clamp(58px, 15vw, 100px);
