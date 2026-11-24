@@ -13,6 +13,16 @@
   width: auto;
   height: 100%;
 }
+.cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.users{
+  width: 8rem;
+  height: 8rem;
+}
 .intro {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;

@@ -1,5 +1,5 @@
 import styles from './css/Help.module.css'
-import { Plus, Minus, HelpCircle, ArrowRight } from "lucide-react";
+import { Plus, HelpCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
 import { faqs } from "../data/content";
@@ -18,18 +18,25 @@ function FAQ() {
             cursos, inscripciones y el funcionamiento del campus.
           </p>
           <div className={styles.items}>
-            {faqs.map(([q, a], i) => (
-              <article key={q}>
-                <button
-                  onClick={() => setActive(active === i ? -1 : i)}
-                  aria-expanded={active === i}
-                >
-                  {q}
-                  {active === i ? <Minus /> : <Plus />}
-                </button>
-                {active === i && <p>{a}</p>}
-              </article>
-            ))}
+            {faqs.map(([q, a], i) => {
+              const isOpen = active === i;
+              return (
+                <article key={q} className={isOpen ? styles.open : ""}>
+                  <button
+                    onClick={() => setActive(isOpen ? -1 : i)}
+                    aria-expanded={isOpen}
+                  >
+                    {q}
+                    <Plus className={styles.icon} aria-hidden="true" />
+                  </button>
+                  <div className={styles.panel}>
+                    <div className={styles.panelInner}>
+                      <p>{a}</p>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
           <div className={styles.cta}>
             <HelpCircle />

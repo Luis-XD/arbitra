@@ -1,7 +1,7 @@
 export const PARTNERS_DATA = [
   {
     id: 1,
-    eyebrow: "PARTNER",
+    eyebrow: "PARTNER - FUTBOL",
     image: "/assets/partners/logoPartner.png",
     logo: "/assets/partners/fecha-lista-logo.png",
     subtitle: "Conexiones que impulsan la formación arbitral.",

@@ -26,7 +26,9 @@ function WhoWeAre() {
         <div className={`container ${styles.intro}`}>
           <div>
             <span className="eyebrow">ARBITRA</span>
-            <h2>Centro de Formación Profesional</h2>
+            <h2>
+              <span className="slash"></span>Centro de Formación Profesional
+            </h2>
             <p>
               Somos un proyecto de formación profesional dedicado al arbitraje
               deportivo. Nuestro objetivo es acompañar el aprendizaje de reglas,
@@ -69,12 +71,18 @@ function WhoWeAre() {
       </section>
       <section className="section">
         <div className="container">
-          <Users color="#10B981" />
-          <h2>Nuestro enfoque</h2>
-          <p>
-            Buscamos conectar los fundamentos teóricos con la preparación para
-            situaciones reales del arbitraje deportivo.
-          </p>
+          <div className={styles.cont}>
+            <div>
+              <h2>
+                <span className="slash"></span>Nuestro enfoque
+              </h2>
+              <p>
+                Buscamos conectar los fundamentos teóricos con la preparación para
+                situaciones reales del arbitraje deportivo.
+              </p>
+            </div>
+          <Users color="#10B981" className={styles.users}/>
+          </div>
         </div>
       </section>
     </>

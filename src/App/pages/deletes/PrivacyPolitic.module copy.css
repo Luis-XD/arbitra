@@ -1,0 +1,43 @@
+.wrap {
+  max-width: 60rem;
+}
+.notice {
+  background: #fff8e7;
+  border: 1px solid #e8d9a6;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  color: #655222;
+  margin: 1.5rem 0;
+}
+.item {
+  border: 1px solid #cfdee2;
+  border-radius: 0.7rem;
+  background: white;
+  margin: 0.6rem 0;
+}
+.item button {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.2rem;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 750;
+}
+.item button svg {
+  color: #08bc86;
+  flex-shrink: 0;
+}
+.item button span {
+  flex: 1;
+  color: #000;
+}
+.item p {
+  padding: 0 1.2rem 1rem;
+  color: #51606a;
+  line-height: 1.7;
+  margin: 0;
+}

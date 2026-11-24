@@ -15,6 +15,7 @@ import Modalidades from "../components/Modalidades";
 import { HERO_SLIDES } from '../data/heroSlides';
 import HeroSlider from '../components/HeroSlider';
 import PartnerSlider from '../components/PartnerSlider';
+import Instructors from "../components/Instructors";
 
 function Home() {
   const [configData, setConfigData] = useState(null);
@@ -116,6 +117,10 @@ function Home() {
           <ContainerWrap>
             <PartnerSlider />
           </ContainerWrap>
+        </SectionExpand>
+
+        <SectionExpand>
+          <Instructors />
         </SectionExpand>
 
         <SectionExpand bgAssing="#0f1520">

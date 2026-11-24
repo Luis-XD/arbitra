@@ -1,0 +1,67 @@
+.wrap {
+  max-width: 60rem;
+}
+.items {
+  display: grid;
+  gap: 0.65rem;
+  margin: 2rem 0;
+}
+.items article {
+  background: white;
+  border: 1px solid #c9d9df;
+  border-radius: 0.7rem;
+  overflow: hidden;
+}
+.items button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 750;
+  color: #07131e;
+  cursor: pointer;
+}
+.items button svg {
+  color: #08bc86;
+  flex-shrink: 0;
+}
+.items p {
+  margin: 0;
+  padding: 0 1.2rem 1.2rem;
+  line-height: 1.7;
+  color: #53616b;
+}
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  background: #081b26;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1.3rem;
+}
+.cta > svg {
+  color: #10e5a5;
+  flex-shrink: 0;
+}
+.cta p {
+  margin: 0.3rem 0 0;
+  color: #bdd0d5;
+  font-size: 0.85rem;
+}
+.cta a {
+  margin-left: auto;
+}
+@media (max-width: 600px) {
+  .cta {
+    flex-wrap: wrap;
+  }
+  .cta a {
+    margin-left: 0;
+  }
+}

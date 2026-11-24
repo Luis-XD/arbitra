@@ -3,11 +3,6 @@ import PageHero from '../components/PageHero'
 import React, { useState } from "react";
 import {
   ShieldCheck,
-  Database,
-  Share2,
-  LockKeyhole,
-  UserRound,
-  RefreshCw,
   Building2,
   GraduationCap,
   CreditCard,
@@ -18,9 +13,8 @@ import {
   Users,
   LifeBuoy,
   Plus,
-  Minus,
 } from "lucide-react";
-import { ARBITRA_LEGAL_SECTIONS } from "../data/content";
+import { ARBITRA_LEGAL_SECTIONS } from "../data/legales";
 
 const iconsBySectionId = {
   identificacion: Building2,
@@ -33,43 +27,11 @@ const iconsBySectionId = {
   "propiedad-intelectual": Copyright,
   "convivencia-menores-imagen": Users,
   "accesibilidad-consultas-reclamos": LifeBuoy,
-};
-
-const sections = [
-  [
-    ShieldCheck,
-    "Información que recopilamos",
-    "La información que el usuario facilite voluntariamente mediante formularios o procesos de inscripción.",
-  ],
-  [
-    Database,
-    "Uso de la información",
-    "La información podrá utilizarse para responder consultas y gestionar servicios educativos, conforme a las finalidades informadas.",
-  ],
-  [
-    Share2,
-    "Compartición de datos",
-    "Las condiciones de comunicación de datos a terceros deben detallarse según los proveedores reales del sitio.",
-  ],
-  [
-    LockKeyhole,
-    "Seguridad de la información",
-    "Las medidas técnicas y organizativas deben documentarse de acuerdo con la implementación real.",
-  ],
-  [
-    UserRound,
-    "Tus derechos",
-    "Las personas usuarias pueden consultar sobre el acceso, actualización o eliminación de sus datos conforme a la legislación aplicable.",
-  ],
-  [
-    RefreshCw,
-    "Cambios en la política",
-    "Las actualizaciones de esta política deberán publicarse con su fecha de vigencia.",
-  ],
-];
+}
 
 function PrivacyPolitic() {
- const [active, setActive] = useState(-1);
+  const [active, setActive] = useState(-1);
+
   return (
     <>
       <PageHero title="Política de privacidad" image="/assets/campus.jpg" />
@@ -81,10 +43,7 @@ function PrivacyPolitic() {
           </p>
 
           <div className={styles.notice}>
-            <strong>Aviso previo a publicación:</strong> Revisar y completar los
-            campos pendientes como <code>[POLÍTICA COMERCIAL DE CADA CURSO]</code>{" "}
-            y <code>[INVENTARIO DE COOKIES Y PROVEEDORES]</code>, además de
-            verificar la validez legal de los textos antes de pasar a producción.
+            <code>[POLÍTICA COMERCIAL DE CADA CURSO]</code>
           </div>
 
           {ARBITRA_LEGAL_SECTIONS.map((sec, i) => {
@@ -92,7 +51,10 @@ function PrivacyPolitic() {
             const isOpen = active === i;
 
             return (
-              <article key={sec.id} className={styles.item}>
+              <article
+                key={sec.id}
+                className={`${styles.item} ${isOpen ? styles.open : ""}`}
+              >
                 <button
                   type="button"
                   onClick={() => setActive(isOpen ? -1 : i)}
@@ -102,23 +64,29 @@ function PrivacyPolitic() {
                   <span>
                     {sec.number}. {sec.title}
                   </span>
-                  {isOpen ? <Minus size={18} /> : <Plus size={18} />}
+                  <Plus
+                    size={18}
+                    className={styles.toggleIcon}
+                    aria-hidden="true"
+                  />
                 </button>
 
-                {isOpen && (
-                  <div className={styles.panel}>
-                    {sec.paragraphs.map((text, idx) => (
-                      <p key={idx}>{text}</p>
-                    ))}
+                <div className={styles.panel}>
+                  <div className={styles.panelInner}>
+                    <div className={styles.panelContent}>
+                      {sec.paragraphs.map((text, idx) => (
+                        <p key={idx}>{text}</p>
+                      ))}
+                    </div>
                   </div>
-                )}
+                </div>
               </article>
             );
           })}
         </div>
       </section>
     </>
-  )
+  );
 }
 
 export default PrivacyPolitic

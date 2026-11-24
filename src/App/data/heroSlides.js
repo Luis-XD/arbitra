@@ -2,7 +2,7 @@ export const HERO_SLIDES = [
   {
     id: 'institucional',
     variant: 'institutional',
-    image: '/images/others/img1.png',
+    image: '/assets/hero-arbitra.png',
     image2: '/logo.png',
     // true si /logo.png YA incluye «ARBITRA» y el subtítulo; false si solo contiene el símbolo «A».
     logoIncludesText: false,
@@ -13,7 +13,7 @@ export const HERO_SLIDES = [
   {
     id: 'formaciones',
     variant: 'editorial',
-    image: '/images/others/img2.png',
+    image: '/assets/wwa.png',
     imageAlt: 'Equipo de árbitros de diferentes disciplinas en un estadio',
     eyebrow: 'Centro de Formación Profesional',
     title: 'El deporte',
