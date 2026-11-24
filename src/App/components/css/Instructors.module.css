@@ -8,16 +8,16 @@
   gap: 1.5rem;
   margin-top: 2.5rem;
   grid-template-columns: 1fr; /* Una columna por defecto */
+  width: 100%;
 }
-.cont{
+.cont {
   width: 100%;
   height: auto;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.titleIntst{
+.titleIntst {
   color: white !important;
 }
 .wrap {
@@ -28,21 +28,8 @@
   box-sizing: border-box;
 }
 
-/* Ajuste responsive a 1152px */
-@media (max-width: 1280px) {
-  .wrap {
-    max-width: 92%;
-  }
-}
-/* Cuando haya más de un instructor, en pantallas grandes se acomodarán en columnas */
-@media (min-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
-  }
-}
-
 .card {
-  width: 60dvw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background: #0c1921; /* El color oscuro que usás en las tarjetas de formación */
@@ -51,6 +38,7 @@
   overflow: hidden;
   padding: 1.5rem;
   gap: 1.5rem;
+  box-sizing: border-box;
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -59,27 +47,13 @@
   transform: translateY(-4px);
 }
 
-@media (min-width: 650px) {
-  .card {
-    flex-direction: row; /* Horizontal como en tu referencia en pantallas medianas/grandes */
-    align-items: center;
-  }
-}
-
 .imageContainer {
   flex-shrink: 0;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 4 / 3;
   border-radius: 0.7rem;
   overflow: hidden;
   background: #15222b; /* Fallback para cuando cargue la imagen */
-}
-
-@media (min-width: 650px) {
-  .imageContainer {
-    width: 14rem; /* Ancho fijo para mantener la proporción a los lados */
-    height: 14rem;
-  }
 }
 
 .imageContainer img {
@@ -138,4 +112,45 @@
 
 .info a {
   align-self: flex-start; /* Evita que el botón se estire a todo el ancho */
+}
+
+/* Ajuste responsive */
+@media (max-width: 1280px) {
+  .wrap {
+    max-width: 92%;
+  }
+}
+
+/* A partir de 450px: tarjeta vertical con imagen arriba y texto abajo */
+@media (min-width: 450px) {
+  .card {
+    flex-direction: column;
+    max-width: 34rem;
+    margin-inline: auto;
+  }
+  .imageContainer {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Vista horizontal en pantallas más amplias */
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+    max-width: 60dvw;
+  }
+  .imageContainer {
+    width: 14rem;
+    height: 14rem;
+    aspect-ratio: auto;
+  }
+}
+
+/* Cuando haya más de un instructor, en pantallas grandes se acomodarán en columnas */
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  }
 }

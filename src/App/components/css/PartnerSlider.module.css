@@ -43,7 +43,9 @@
   display: flex;
   justify-content: center;
 }
-
+.imageColumn > .eyebrow{
+  display: none;
+}
 .partnerImage {
   width: auto;
   height: 100%;
@@ -199,6 +201,29 @@
 
   .imageColumn {
     min-height: 240px;
+    padding: 2rem 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .imageColumn > .eyebrow{
+    display: flex;
+  }
+  .imageColumn > .eyebrow::before{
+    content: '';
+    width: 0;
+    height: 0;
+  }
+  .imageColumn > a:hover .partnerImage{
+    filter: drop-shadow(0 0 12px #71FFD1);
+    transition: all ease-in-out .3s;
+  }
+  .partnerImage{
+    width: auto;
+    max-height: 14rem;
+    transition: all ease-in-out .3s;
   }
 
   .contentColumn {
