@@ -1,9 +1,10 @@
 .hero {
   padding-top: 4rem;
-  min-height: 24rem;
+  min-height: 26rem;
   background-color: #0a101b;
   background-size: cover;
   background-position: center;
+  background-position-y: 4rem;
 
   display: flex;
   align-items: center;
@@ -45,5 +46,6 @@
     margin-top: 4rem;
     min-height: 240px;
     padding: 50px 0;
+    background-position-y: 0;
   }
 }

@@ -8,46 +8,51 @@ const ACCENT_CLASSES = {
   ambar: styles.accentAmbar,
 };
 
+const BENEFIT_ICONS = ["▤", "◇", "⬡", "▣", "♧", "★", "♙", "✓"];
+
 export default function CardVertical({
   nameImg = "",
-  typeTitle = "",
+  typeTitle = "Modalidad",
   title = "",
   descrip = "",
   items = [],
-  accent = "",
-  sale="",
-  to,
+  accent = "green",
+  sale = "",
+  to = "/contacto",
 }) {
-  const imgRoute = "/images/home/";
-  const accentClass = ACCENT_CLASSES[accent] || "";
-
+  const accentClass = ACCENT_CLASSES[accent] || styles.accentGreen;
+  const imageSrc = nameImg ? `/images/home/${nameImg.replace(/^\/+/, "")}` : null;
   return (
     <article className={`${styles.course} ${accentClass}`}>
-      <img
-        className={styles.courseImage}
-        src={`${imgRoute}${nameImg}`}
-        alt={title || "imagen"}
-        loading="lazy"
-      />
+      {imageSrc && (
+        <div className={styles.imageWrap}>
+          <img className={styles.courseImage} src={imageSrc} alt={`Modalidad ${title}`} loading="lazy" />
+          <span className={styles.imageSlash} aria-hidden="true" />
+        </div>
+      )}
       <div className={styles.courseBody}>
-        <span className={styles.courseTag}>{typeTitle}</span>
-        <h3>{title}</h3>
-        <p>{descrip}</p>
-
+        <div className={styles.heading}>
+          <span className={styles.modeSymbol} aria-hidden="true">{accent === "purple" ? "◷" : accent === "turquoise" ? "▣" : accent === "ambar" ? "♧" : "▤"}</span>
+          <div>
+            <span className={styles.courseTag}>{typeTitle}</span>
+            <h3 className={styles.courseTitle}>{title}</h3>
+          </div>
+        </div>
+        {descrip && <p className={styles.description}>{descrip.replace(/\s*Inversión:\s*\$[\d.,]+\.?\s*$/i, "").trim()}</p>}
         {items.length > 0 && (
           <ul className={styles.courseList}>
             {items.map((item, i) => (
-              <li key={item.id ?? i}>{item.text}</li>
+              <li key={item.id ?? i}>
+                <span className={styles.benefitIcon} aria-hidden="true">{BENEFIT_ICONS[i % BENEFIT_ICONS.length]}</span>
+                <span>{item.text}</span>
+              </li>
             ))}
           </ul>
         )}
-
         <div className={styles.courseBottom}>
-          <span className={`${styles.noticeInline} ${accentClass}`}>
-            {sale}
-          </span>
-          <Link className={styles.textLink} to={to}>
-            Consultar ↗
+          <strong className={styles.noticeInline}>{sale}</strong>
+          <Link className={styles.textLink} to={to} aria-label={`Consultar por la modalidad ${title}`}>
+            Consultar <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>

@@ -5,8 +5,9 @@ export default function Brand({ large = false }) {
   return (
     <span className={`${styles.brand} ${large ? styles.large : ""}`}>
       <img
-        src="/assets/logo-oficial.png"
+        src="/assets/logo-oficial2.png"
         alt="ARBITRA — Centro de Formación Profesional"
+        className={styles.logoFooter} 
       />
     </span>
   );

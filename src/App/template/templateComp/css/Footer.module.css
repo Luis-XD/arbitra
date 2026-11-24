@@ -46,7 +46,7 @@
 
 .grid p {
   color: #9cabb5;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   line-height: 1.6;
   margin: 0.5rem 0 0;
 }
@@ -78,8 +78,13 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 0.75rem 1rem;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: #9cabb5;
+}
+.bottom > span{
+  font-weight: normal;
+  color: #9CABB5;
+  font-size: 0.8rem;
 }
 
 /* Mobile */

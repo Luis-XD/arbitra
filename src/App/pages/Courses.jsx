@@ -75,7 +75,7 @@ function Courses() {
                     <div className="container">
                         <div className="cursoTituloDestacado">
                             <h2>
-                                <span className="slash"></span>Nuestras capacitaciones
+                                <span className="slash"></span>Nuestras cursos habilitados
                             </h2>
                         </div>
                         <p className="lead">
@@ -95,7 +95,7 @@ function Courses() {
                                     >
                                         <Card 
                                             cardTitle={discipline.name_discip} 
-                                            ubication='disciplines/cards/'
+                                            ubication='disciplines/cards'
                                             descriptionCard={discipline.descript_discip}
                                             imgCard={discipline.img_discip}
                                             link={`${CONFIG_PATHS.COURSES_PATH}/disciplina/${discipline.id_discip}`}

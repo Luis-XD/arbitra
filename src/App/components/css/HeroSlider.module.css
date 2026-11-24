@@ -1,0 +1,325 @@
+.slider {
+  --hero-green: #10b981;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: calc(100dvh - 4rem); /*clamp(520px, 49vw, 790px)*/
+  margin-top: 4rem;
+  background: #0a101b;
+  overflow: hidden;
+  color: #fff;
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(7%);
+  transition:
+    opacity 1.1s ease,
+    transform 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 1.1s;
+  pointer-events: none;
+}
+.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  z-index: 1;
+  pointer-events: auto;
+}
+.visual {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.055) translateX(1.5%);
+  transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.active .image {
+  transform: scale(1) translateX(0);
+}
+/* El slide institucional NO recibe el degradado oscuro lateral. */
+.institutional .visual::after {
+  content: none;
+}
+/* Preservar la tira inferior de disciplinas del arte original. */
+.institutional .image {
+  object-position: center bottom;
+}
+.brandContent {
+  position: absolute;
+  z-index: 2;
+  top: 2rem; /*clamp(18px, 3.4vw, 55px);*/
+  left: 50%;
+  width: min(36vw, 340px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform: translate(-50%, -12px);
+  opacity: 0;
+  transition:
+    opacity 0.9s ease 0.2s,
+    transform 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+}
+.active .brandContent {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.brandLogo {
+  display: block;
+  width: clamp(65px, 8vw, 118px);
+  max-height: 140px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+.brandTitle {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.7vw, 2.9rem);
+  line-height: 1;
+  font-weight: 900;
+  font-style: normal;
+  text-shadow: 0 0 0.4rem #000;
+  letter-spacing: 0.01em;
+}
+.brandSubtitle {
+  margin: 0.3rem 0 0;
+  font-size: clamp(0.6rem, 1vw, 1.8rem);
+  line-height: 1.3;
+  text-shadow: 0 0 0.4rem #000;
+  color: #e8edf0;
+}
+.editorial .visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 13, 22, 0.92),
+      rgba(4, 13, 22, 0.72) 36%,
+      rgba(4, 13, 22, 0.1) 82%
+    ),
+    linear-gradient(0deg, rgba(4, 13, 22, 0.45), transparent 60%);
+}
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  width: min(calc(100% - 3rem), 1200px);
+  margin-inline: auto;
+  padding: 3rem 0 4rem;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(35px);
+  transition:
+    opacity 0.9s ease 0.25s,
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+.active .content {
+  opacity: 1;
+  transform: translateX(0);
+}
+.eyebrow {
+  color: var(--hero-green);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  font-weight: 800;
+}
+.title {
+  max-width: 780px;
+  margin: 1rem 0;
+  font-size: clamp(2.7rem, 5.4vw, 5.5rem);
+  font-style: italic;
+  font-weight: 900;
+  line-height: 0.99;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+.title span {
+  color: var(--hero-green);
+}
+.description {
+  max-width: 490px;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.5;
+  color: #e0e8eb;
+  margin: 1.25rem 0 1.7rem;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.95rem 1.5rem;
+  border-radius: 999px;
+  background: var(--hero-green);
+  color: #06141b;
+  text-decoration: none;
+  font-weight: bold;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+.cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+.cta:focus-visible,
+.dot:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+.cta > span{
+  color: #000;
+}
+.controls {
+  position: absolute;
+  z-index: 3;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  padding: 0;
+  border-radius: 999px;
+  background: #7c9b9e;
+  cursor: pointer;
+}
+.dotActive {
+  width: 35px;
+  background: var(--hero-green);
+}
+@media (max-width:1280px){
+  .slider{
+    height: 60dvh;
+  }
+  .slide{
+    background-color: #000;
+  }
+  .image{
+    width: 100%;
+  }
+  .brandContent {
+    position: relative;
+    z-index: 2;
+    top:0;
+    padding-top: 2rem;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,rgba(3, 39, 27, 0.4), rgba(3, 29, 37, 0.9));
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translate(-50%, -12px);
+    opacity: 0;
+    transition:
+      opacity 0.9s ease 0.2s,
+      transform 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+  }
+  .active .brandContent {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  .brandLogo {
+    display: block;
+    width:auto;
+    max-height: 140px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 6px;
+  }
+  .brandTitle {
+    margin: 0;
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: 0.01em;
+  }
+  .brandSubtitle {
+    margin: 0.3rem 0 0;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    color: #e8edf0;
+  }
+
+}
+@media (max-width: 767px) {
+  .slider {
+    
+    min-height: 480px;
+  }
+  .institutional .image {
+    object-position: center bottom;
+  }
+  .brandContent {
+    top: 5%;
+    width: 76%;
+  }
+  .brandLogo {
+    width: clamp(58px, 15vw, 100px);
+  }
+  .brandTitle {
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+  }
+  .brandSubtitle {
+    font-size: clamp(0.65rem, 2.5vw, 0.85rem);
+  }
+  .editorial .visual::after {
+    background: linear-gradient(
+      0deg,
+      #0a101b 0%,
+      rgba(10, 16, 27, 0.75) 35%,
+      rgba(10, 16, 27, 0.15) 80%
+    );
+  }
+  .content {
+    justify-content: flex-end;
+    width: calc(100% - 2.5rem);
+    padding-bottom: 4rem;
+  }
+  .title {
+    font-size: clamp(2.2rem, 9vw, 3.65rem);
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .cta {
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide,
+  .image,
+  .brandContent,
+  .content,
+  .cta {
+    transition: none;
+  }
+}

@@ -116,8 +116,8 @@ export const ARBITRA_LEGAL_SECTIONS = [
 
 export const MODALIDADES_ARBITRAJE = {
   presencial: {
-    nameImg: "presencial.jpg",
-    mode: "Modalidad",
+    nameImg: "../../images/home/presencial.png",
+    mode: "Modalidad 1",
     title: "Presencial",
     descrip: "Formación integral en cancha. Inversión: $570.000.",
     to: "/contacto",
@@ -134,8 +134,8 @@ export const MODALIDADES_ARBITRAJE = {
     investment: "ARS $570.000"
   },
   distanciaPresencial: {
-    nameImg: "distancia-presencial.jpg",
-    mode: "Modalidad",
+    nameImg: "../../images/home/distancia_presencial.png",
+    mode: "Modalidad 2",
     title: "Distancia + Presencial",
     descrip: "Teoría online y prácticas en campo. Inversión: $480.000.",
     to: "/contacto",
@@ -152,8 +152,8 @@ export const MODALIDADES_ARBITRAJE = {
     investment: "ARS $480.000"
   },
   distanciaIntensiva: {
-    nameImg: "distancia-intensiva.jpg",
-    mode: "Modalidad",
+    nameImg: "../../images/home/distancia_intensiva.png",
+    mode: "Modalidad 3",
     title: "Distancia + Intensiva",
     descrip: "Teoría online y práctica intensiva. Inversión: $480.000.",
     to: "/contacto",
@@ -170,8 +170,8 @@ export const MODALIDADES_ARBITRAJE = {
     investment: "ARS $480.000"
   },
   online: {
-    nameImg: "100-online.jpg",
-    mode: "Modalidad",
+    nameImg: "../../images/home/100_online.png",
+    mode: "Modalidad 4",
     title: "100% Online",
     descrip: "Formación flexible, desde donde estés. Inversión: $249.000.",
     to: "/contacto",

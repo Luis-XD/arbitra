@@ -20,7 +20,7 @@ function WhoWeAre() {
        <PageHero
         title="Quiénes somos"
         subtitle="Conocé la identidad, el propósito y la proyección de ARBITRA."
-        image="/assets/futbol-11.png"
+        image="/assets/wwa.png"
       />
       <section className="section light">
         <div className={`container ${styles.intro}`}>
@@ -40,7 +40,7 @@ function WhoWeAre() {
           </div>
           <div className={styles.photo}>
             <img
-              src="/assets/futbol-playa.png"
+              src="/logo_arbitra.png"
               alt="Balón de fútbol playa en su cancha"
             />
           </div>

@@ -78,7 +78,7 @@
   margin-bottom: 15px;
 }
 
-.label {
+.formGroup > .label {
   display: block;
   margin-bottom: 6px;
   font-weight: bold;
@@ -113,9 +113,12 @@
 }
 
 .disabledBox {
-  background: #ccc;
+  background-color: #ccc;
   border-color: #e2e2e2;
   opacity: 0.8;
+}
+.disabledBox > .formGroup > label{
+  color: #000;
 }
 
 .disabledLabel {

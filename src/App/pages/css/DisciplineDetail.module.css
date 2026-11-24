@@ -1,0 +1,12 @@
+.contDescript{
+    width: 100%;
+    height: auto;
+}
+.contDescript > h2{
+    color: #000;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+.contDescript > ul > li{
+    font-size: 1.2rem;
+}

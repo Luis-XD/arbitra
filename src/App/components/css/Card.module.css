@@ -40,8 +40,9 @@
     position: absolute;
     top: 0;
     z-index: 1;
-    width: 100%;
-    height: auto;
+    transform: scale(1.1);
+    width: auto;
+    height: 100%;
 }
 .contCard > a > .card > .cardContent{
     position: absolute;

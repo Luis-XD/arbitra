@@ -13,7 +13,7 @@ function Footer() {
                         <Link to="/">
                             <Brand large="true" />
                         </Link>
-                        <p>Formación arbitral para quienes hacen avanzar el deporte.</p>
+                        <p>Centro de Formación arbitral.</p>
                     </div>
                     <div>
                         <h3>Institucional</h3>
@@ -55,7 +55,7 @@ function Footer() {
                 <div className={`${styles.container} ${styles.bottom}`}>
                     © {new Date().getFullYear()} ARBITRA. Todos los derechos reservados.{" "}
                     <span>
-                        Redes sociales: agregar enlaces oficiales antes de publicar.
+                        Coordinacón académica: Alejandra Dominguez
                     </span>
                 </div>
             </footer>

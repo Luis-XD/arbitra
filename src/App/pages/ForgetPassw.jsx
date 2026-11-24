@@ -6,7 +6,7 @@ function ForgetPassw() {
         <section className={styles.page}>
             <div className={`container ${styles.layout}`}>
                 <div className={styles.brand}>
-                <img src="/logo.png" alt="Logo ARBITRA" />
+                <img src="/logo.png" alt="Logo ARBITRA"/>
                 <h1>ARBITRA</h1>
                 <p>Centro de Formación Profesional</p>
                 </div>

@@ -3,6 +3,8 @@
   gap: 1rem;
   margin-top: 2rem;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 .list article {
   display: grid;

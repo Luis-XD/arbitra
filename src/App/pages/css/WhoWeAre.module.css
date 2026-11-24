@@ -1,8 +1,17 @@
+.photo{
+  height: 20rem;
+  padding: 2rem;
+  border: var(--border-2);
+  border-radius: var(--border-radius);
+  background-color: var(--background-solid);
+
+  display: flex;
+  justify-content: center;
+}
 .photo img {
-  border-radius: 20px;
-  aspect-ratio: 4/3;
   object-fit: cover;
-  width: 100%;
+  width: auto;
+  height: 100%;
 }
 .intro {
   display: grid;

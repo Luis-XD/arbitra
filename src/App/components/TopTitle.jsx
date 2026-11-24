@@ -1,18 +1,18 @@
 import styles from './css/TopTitle.module.css'
 
-function TopTitle() {
+function TopTitle({header="", wordOne="", wordTwo="", paragraph="", subtitle=""}) {
     return ( 
         <div className={styles.formationTop}>
-          <div>
-            <div className="eyebrow">Oferta formativa</div>
+            <p className={styles.eyebrow}>
+              {header}
+            </p>
             <h2 id="formTitle">
-              Nuestras <span className="green">formaciones</span>
+              {wordOne} <span className="green">{wordTwo}</span>
             </h2>
-          </div>
-          <p>
-            Explorá las especialidades de arbitraje vinculadas al fútbol.
-            Consultá los programas, requisitos y próximas fechas de cursada.
-          </p>
+            <p>
+              {paragraph}
+            </p>
+            <span className={styles.subtitle}>{subtitle}</span>
         </div>
      );
 }

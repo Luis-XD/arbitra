@@ -20,10 +20,9 @@
   align-items: center;
   flex-direction: column;
 }
-.courseGrid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.4rem;
+.courseCont {
+  display: flex;
+  gap: 2rem;
 }
 .marqueeContainer{
   width: auto;
@@ -526,6 +525,12 @@
 }
 
 @media (max-width: 1280px){
+  .courseCont {
+  gap: 1rem;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap; 
+  }
   .opacity{
     width: 80%;
   }
@@ -615,8 +620,6 @@
 }
 
 @media (max-width:720px){
-  .courseGrid {
-    grid-template-columns: 1fr;
-  }
+
 
 }

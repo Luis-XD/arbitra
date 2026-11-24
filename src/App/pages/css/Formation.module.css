@@ -1,33 +1,121 @@
-.details {
-  margin-top: 3rem;
+.methodologyGrid {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.35rem;
 }
-.details article {
-  background: white;
+
+.methodCard {
+  background: #ffffff;
   border: 1px solid #dce7e8;
   border-radius: 1rem;
-  padding: 1.5rem;
+  padding: 1.5rem 1.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.methodCard:hover {
+  transform: translateY(-2px);
+  border-color: #0b9271;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.fullWidthCard {
+  grid-column: 1 / -1;
+}
+
+.cardTag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0b9271;
+}
+
+.methodCard h3 {
+  margin: 0.1rem 0 0.2rem;
+  font-size: 1.12rem;
+  color: #0f172a;
+}
+
+.methodCard p {
+  margin: 0;
+  color: #4c5a64;
+  line-height: 1.55;
+  font-size: 0.96rem;
+}
+
+.footnote {
+  margin: 0.95rem 0 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0b9271 !important;
+}
+
+.dynamicsBar {
+  margin-top: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #dce7e8;
+  border-radius: 1rem;
+  padding: 1.35rem 1.65rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  scroll-margin-top: 6rem;
-}
-.details h3 {
-  margin: 0 0 0.4rem;
-}
-.details p {
-  margin: 0.2rem 0;
-  color: #4c5a64;
-}
-.details small {
-  color: #0b9271;
 }
 
-@media (max-width: 650px) {
-  .details article {
-    align-items: flex-start;
+.dynamicsList {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.dynamicsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.dynamicsItem strong {
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.dynamicsItem span {
+  font-size: 0.88rem;
+  color: #4c5a64;
+}
+
+@media (max-width: 820px) {
+  .methodologyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .dynamicsBar {
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dynamicsList {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  .methodCard,
+  .dynamicsBar {
+    padding: 1.2rem 1.15rem;
+  }
+
+  .methodCard h3 {
+    font-size: 1.02rem;
+  }
+
+  .dynamicsBar :global(.button) {
+    width: 100%;
+    justify-content: center;
   }
 }

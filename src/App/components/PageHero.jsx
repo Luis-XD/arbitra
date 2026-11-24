@@ -1,6 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import styles from "./css/PageHero.module.css";
+import React from "react"
+import { Link } from "react-router-dom"
+import styles from "./css/PageHero.module.css"
+
 export default function PageHero({ title, subtitle, image }) {
   return (
     <section
@@ -8,7 +9,7 @@ export default function PageHero({ title, subtitle, image }) {
       style={
         image
           ? {
-              backgroundImage: `linear-gradient(90deg,#07121BEF,#07121B65),url("${image}")`,
+              backgroundImage: `linear-gradient(90deg,#07121BEF,#07121B65), url("${image}")`,
             }
           : {}
       }
@@ -24,5 +25,5 @@ export default function PageHero({ title, subtitle, image }) {
         </div>
       </div>
     </section>
-  );
+  )
 }

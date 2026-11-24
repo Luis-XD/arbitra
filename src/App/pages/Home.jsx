@@ -6,15 +6,15 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../components/UserProvider";
 import WhatsAppButton from "../components/WhatsAppButton";
 import SectionExpand from "../components/SectionExpand";
-import ContainerWrapper from "../components/ContainerWrapper";
-import ContentBannerLogo from "../components/ContentBannerLogo";
 import PublicationStd from "../components/PublicationStd";
 import CourseCard from "../components/CourseCard";
 import TopTitle from "../components/TopTitle";
 import ContainerWrap from "../components/ContainerWrap";
 import WhyChooseArbitra from "../components/WhyChooseArbitra";
-import { MODALIDADES_ARBITRAJE } from "../data/content";
-import CardVertical from "../components/CardVertical";
+import Modalidades from "../components/Modalidades";
+import { HERO_SLIDES } from '../data/heroSlides';
+import HeroSlider from '../components/HeroSlider';
+import PartnerSlider from '../components/PartnerSlider';
 
 function Home() {
   const [configData, setConfigData] = useState(null);
@@ -37,15 +37,20 @@ function Home() {
   return (
     <>
       <PublicationStd>
+        
         <SectionExpand>
-          <ContainerWrapper images={["/images/others/img1.png"]}>
-            <ContentBannerLogo />
-          </ContainerWrapper>
+          <HeroSlider slides={HERO_SLIDES} autoPlay interval={6500} />
         </SectionExpand>
+
         <SectionExpand>
           <ContainerWrap>
-            <TopTitle />
-            <div className={styles.courseGrid}>
+            <TopTitle 
+              header="OFERTA FORMATIVA"
+              wordOne="Nuestras"
+              wordTwo="formaciones"
+              paragraph="Explorá las especialidades de arbitraje de nuestras distintas disciplinas. Consultá los programas, requisitos y próximas fechas de cursada."
+            />
+            <div className={styles.courseCont}>
               <CourseCard
                 nameImg="arbitra_futbol_11.svg"
                 sport="futbol"
@@ -79,47 +84,40 @@ function Home() {
         </SectionExpand>
 
         <SectionExpand bgAssing="#0A101B">
-          <WhyChooseArbitra />
+          <ContainerWrap>
+            <WhyChooseArbitra
+              comp={
+                  <TopTitle 
+                    header="NUESTROS BENEFICIOS"
+                    wordOne="¿Por qué elegir"
+                    wordTwo="ARBITRA?"
+                  />
+                }
+            />
+          </ContainerWrap>
+        </SectionExpand>
+
+        <SectionExpand bgAssing="#06161f">
+          <ContainerWrap>
+            <Modalidades 
+              comp={
+                <TopTitle 
+                    header="MODALIDADES DE FORMACIÓN"
+                    wordOne="Elegí la modalidad que"
+                    wordTwo="mejor se adapte a vos"
+                    subtitle="Conocé las opciones de cursada y elegí cómo querés formarte."
+                  />
+              }
+            />
+          </ContainerWrap>
         </SectionExpand>
 
         <SectionExpand bgAssing="#0A101B">
-          <CardVertical
-            nameImg="arbitra_futbol_playa.svg"
-            typeTitle={MODALIDADES_ARBITRAJE.presencial.mode}
-            title={MODALIDADES_ARBITRAJE.presencial.title}
-            descrip="Formación orientada al arbitraje de encuentros de fútbol de once jugadores."
-            items={MODALIDADES_ARBITRAJE.presencial.items}
-            sale={MODALIDADES_ARBITRAJE.presencial.investment}
-            to="/contacto"
-          />
-          <CardVertical
-            nameImg="arbitra_futbol_playa.svg"
-            typeTitle={MODALIDADES_ARBITRAJE.distanciaPresencial.mode}
-            title={MODALIDADES_ARBITRAJE.distanciaPresencial.title}
-            descrip="Formación orientada al arbitraje de encuentros de fútbol de once jugadores."
-            items={MODALIDADES_ARBITRAJE.distanciaPresencial.items}
-            sale={MODALIDADES_ARBITRAJE.distanciaPresencial.investment}
-            to="/contacto"
-          />
-          <CardVertical
-            nameImg="arbitra_futbol_playa.svg"
-            typeTitle={MODALIDADES_ARBITRAJE.distanciaIntensiva.mode}
-            title={MODALIDADES_ARBITRAJE.distanciaIntensiva.title}
-            descrip="Formación orientada al arbitraje de encuentros de fútbol de once jugadores."
-            items={MODALIDADES_ARBITRAJE.distanciaIntensiva.items}
-            sale={MODALIDADES_ARBITRAJE.distanciaIntensiva.investment}
-            to="/contacto"
-          />
-          <CardVertical
-            nameImg="arbitra_futbol_playa.svg"
-            typeTitle={MODALIDADES_ARBITRAJE.online.mode}
-            title={MODALIDADES_ARBITRAJE.online.title}
-            descrip="Formación orientada al arbitraje de encuentros de fútbol de once jugadores."
-            items={MODALIDADES_ARBITRAJE.online.items}
-            sale={MODALIDADES_ARBITRAJE.online.investment}
-            to="/contacto"
-          />
+          <ContainerWrap>
+            <PartnerSlider />
+          </ContainerWrap>
         </SectionExpand>
+
         <SectionExpand bgAssing="#0f1520">
           <div className={styles.ctaBanner}>
             <div className={styles.contElmBanner}>
@@ -147,9 +145,10 @@ function Home() {
             />
           </div>
         </SectionExpand>
+
       </PublicationStd>
     </>
-  );
+  )
 }
 
-export default Home;
+export default Home

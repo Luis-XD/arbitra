@@ -4,7 +4,7 @@
   padding: 3.5rem 1.5rem;
 }
 .container {
-  max-width: 88rem;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
   /*grid-template-columns: minmax(12rem, 15rem) minmax(0, 1fr);*/
@@ -14,15 +14,8 @@
 .heading {
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
   gap: 0.8rem;
-}
-.slash {
-  width: 0.55rem;
-  height: 2.2rem;
-  flex: 0 0 auto;
-  transform: skew(-24deg);
-  background: #10b981;
-  margin-top: 0.2rem;
 }
 .heading h2 {
   margin: 0;
@@ -42,6 +35,23 @@
   color: #10b981;
   margin-left: 0.4rem;
 }
+.eyebrow {
+  margin: 0 0 0 8px;
+  color: #45e8ad;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.07em;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.eyebrow::before {
+  content: "/";
+  font-size: 1.6rem;
+  margin-right: 12px;
+  color: #00e5a2;
+}
 
 /* Flexbox: 6 por fila en escritorio y segunda fila centrada automáticamente */
 .grid {
@@ -53,19 +63,17 @@
 }
 
 .item {
-  flex: 0 0 calc(100% / 6);
-  max-width: calc(100% / 6);
+  flex: 0 0 calc(100% / 5);
+  max-width: calc(100% / 5);
   min-width: 0;
   padding: 0.4rem 0.8rem;
   text-align: center;
   border-left: 1px solid #10b98188;
-  
+  border-right: 1px solid #10b98188;
+   
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.itemInit{
-  border-left: 1px solid transparent;
 }
 .icon {
   width: 3.5rem;

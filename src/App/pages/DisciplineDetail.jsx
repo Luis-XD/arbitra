@@ -6,6 +6,8 @@ import Container from '../components/Container'
 import Loader from '../components/Loader'
 import TopButtons from '../components/TopButtons'
 import PageHero from '../components/PageHero'
+import styles from './css/DisciplineDetail.module.css'
+import { renderDescription } from "../utils/renderDescription"
 
 function DisciplineDetail() {
     const {id_discipline} = useParams()
@@ -35,12 +37,21 @@ function DisciplineDetail() {
         }
     }
 
-    if(loading) return <Loader />
-    if(error) return <p>Error en detalles: {error}</p>
+    if (loading) return <Loader />;
+    if (error) return <p>Error en detalles: {error}</p>;
+    if (!discipline) return <p>No se encontró la disciplina.</p>;
 
     return (
         <>
-        <PageHero title="Formación" image= {`${discipline.img_banner} ? ${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/banners/${discipline.img_banner} : "/assets/course.jpg"}`} />
+        {console.log(discipline)}
+        <PageHero
+            title={discipline.name_discip}
+            image={
+                discipline?.img_banner
+                ? `${CONFIG_BACKEND.API_DIR}/src/assets/disciplines/banners/${discipline.img_banner}`
+                : "/assets/course.jpg"
+            }
+        />
         <section className="section light">
             <div className="container">
                 <TopButtons>
@@ -50,20 +61,18 @@ function DisciplineDetail() {
                         text="Cursos"
                     />
                 </TopButtons>
-                    <span style={{height:'2rem'}}></span>
+                {/*}
             <div className="sectionTitle">
                 <div className="cursoTituloDestacado">
                     <h2>
                         <span className="slash"></span>Nuestras capacitaciones
                     </h2>
                 </div>
-                <p>
-                    Conocé nuestras propuestas de formación arbitral y consultá por
-                    los programas disponibles.
-                </p>
-            </div>
+            </div>*/}
             <Container hiddenStyle={true}>
-                <p>{discipline.descript_discip}</p>
+                <p className={styles.contDescript}>
+                    {renderDescription(discipline.descript_discip)}
+                </p>
             </Container>
                     
             </div>
