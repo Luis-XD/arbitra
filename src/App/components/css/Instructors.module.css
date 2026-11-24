@@ -9,6 +9,21 @@
   grid-template-columns: 1fr; /* Una columna por defecto */
   width: 100%;
 }
+.btn{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border-radius: 100px;
+  background: #00e5a2;
+  color: #031a1a;
+  text-decoration: none;
+  font-size: 0.83rem;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+}
 .cont {
   width: 100%;
   height: auto;

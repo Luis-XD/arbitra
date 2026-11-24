@@ -61,7 +61,7 @@ function TemplateCampus({ separator = false }) {
   }
 
   if (!user) {// 2. Si terminó de cargar y no hay usuario, mandamos al login al instante
-    return <Navigate to="/login" replace />
+    return <Navigate to="/iniciar-sesion" replace />
   }
 
   return (// 3. Si hay usuario y terminó de cargar, renderizamos el campus de inmediato sin trabas

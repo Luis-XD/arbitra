@@ -10,7 +10,7 @@ function FAQ() {
 
   return (
     <>
-      <PageHero title="Preguntas frecuentes" image="/assets/whistle.jpg" />
+      <PageHero title="Preguntas frecuentes" image="/assets/banners/faq.png" />
       <section className="section light">
         <div className={`container ${styles.wrap}`}>
           <p className="lead">

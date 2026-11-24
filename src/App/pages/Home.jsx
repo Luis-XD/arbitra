@@ -115,6 +115,12 @@ function Home() {
 
         <SectionExpand bgAssing="#0A101B">
           <ContainerWrap>
+            <TopTitle 
+              header="COLABORADORES"
+              wordOne="Nuestros"
+              wordTwo="partners"
+              paragraph="Te queremos presentar a nuestros colaboradores."
+            />
             <PartnerSlider />
           </ContainerWrap>
         </SectionExpand>

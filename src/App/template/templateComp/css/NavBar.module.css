@@ -637,7 +637,7 @@ span{
         position: absolute;
         z-index: -1;
         width: 20rem;
-        height: 100vh;
+        height: 100dvh;
         top: 3rem;
         right: -20rem;
         transition: all ease-in-out .3s;
@@ -697,9 +697,6 @@ span{
         justify-content: flex-start;
         flex-direction: column;
     }
-    .contNavbarContent > .navbarContent > .navbarLinks > .elmPanel{
-        width: 100%;
-    }
     .contNavbarContent > .navbarContent > .navbarLinks > a,
     .contNavbarContent > .navbarContent > .navbarLinks > .navbarLinksGroup > a,
     .contNavbarContent > .navbarContent > .navbarLinks > .elmPanel > a{
@@ -734,10 +731,11 @@ span{
     .contNavbarContent {
         position: absolute;
         width: 100dvw;
-        height: auto;
+        height: calc(100dvh - 4rem);
         left: 0;
         top: -100dvh; /* Estado cerrado por defecto */
         background: var(--background-solid);
+        overflow-y: auto;
         transition: top ease-in-out .3s; /* Transición limpia del slide */
 
         display: flex;

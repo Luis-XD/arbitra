@@ -38,7 +38,7 @@ function Instructors() {
                     <h4>{ins.role}</h4>
                     <p>{ins.bio}</p>
                     {ins.link && (
-                    <a href={ins.link} className="button">
+                    <a href={ins.link} className={styles.btn}>
                         Saber más <ArrowRight size={16} />
                     </a>
                     )}

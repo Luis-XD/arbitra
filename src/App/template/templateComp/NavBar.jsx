@@ -130,13 +130,13 @@ function NavBar() {
                 credentials: 'include'
             })
 
-            navigate('/login', { replace: true })
+            navigate('/iniciar-sesion', { replace: true })
 
         } catch (error) {
             if (import.meta.env.DEV) { 
                 console.error('Error al cerrar sesión:', error); 
             }
-            navigate('/login', { replace: true })
+            navigate('/iniciar-sesion', { replace: true })
         } finally {
             setCargando(false)
         }

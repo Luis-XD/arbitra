@@ -205,7 +205,7 @@ function FormRegister() {
 					>
 						{cargando ? <Loader mini={true}/> : "Registrarme"}
 					</Button>
-					<p className={styles.smallText}>Ya tengo una cuenta, ir a<Link to='/login'>inicio de sesión</Link></p>
+					<p className={styles.smallText}>Ya tengo una cuenta, ir a<Link to='/iniciar-sesion'>inicio de sesión</Link></p>
 				</form>
 				)}
 			</div>

@@ -211,7 +211,7 @@
 }
 @media (max-width:1280px){
   .slider{
-    height: 60dvh;
+    max-height: calc(100dvh - 4rem);
   }
   .slide{
     background-color: #000;
@@ -269,14 +269,14 @@
 }
 @media (max-width: 767px) {
   .slider {
-    margin-top: -2rem;
+    margin-top: -4rem;
     min-height: 480px;
   }
   .institutional .image {
     object-position: center bottom;
   }
   .brandLogo {
-    width: clamp(58px, 15vw, 100px);
+    width: clamp(8rem, 20vw, 15rem);
   }
   .brandTitle {
     font-size: clamp(1.5rem, 7vw, 2.5rem);

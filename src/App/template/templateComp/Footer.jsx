@@ -18,7 +18,7 @@ function Footer() {
                     <div>
                         <h3>Institucional</h3>
                         <Link to={CONFIG_PATHS.WHO_WE_ARE_PATH}>Quiénes somos</Link>
-                        <Link to={CONFIG_PATHS.PROFESSORS_PATH}>Nuestros profesores</Link>
+                        <Link to={CONFIG_PATHS.US_INSTRUCTORS}>Nuestros instructores</Link>
                     </div>
                     <div>
                         <h3>Formación</h3>

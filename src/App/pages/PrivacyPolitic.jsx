@@ -34,7 +34,7 @@ function PrivacyPolitic() {
 
   return (
     <>
-      <PageHero title="Política de privacidad" image="/assets/campus.jpg" />
+      <PageHero title="Política de privacidad" image="/assets/banners/privacy.png" />
       <section className="section light">
         <div className={`container ${styles.wrap}`}>
           <p className="lead">

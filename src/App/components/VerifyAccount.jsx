@@ -73,12 +73,12 @@ function VerifyAccount() {
                     {!cargando && (
                         <div className="contBtns" style={{ width: '100%', marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                             {isSuccess ? (
-                                <Link to="/login" className="submitBtn" style={{ textDecoration: 'none', display: 'block', textAlign: 'center', color:'#fff' }}>
+                                <Link to="/iniciar-sesion" className="submitBtn" style={{ textDecoration: 'none', display: 'block', textAlign: 'center', color:'#fff' }}>
                                     Ir a Iniciar Sesión
                                 </Link>
                             ) : (
                                 <>
-                                    <Link to="/login" className="submitBtn" style={{ textDecoration: 'none', padding:'1rem' , width:'auto', display: 'block', textAlign: 'center', color:'skyblue' }}>
+                                    <Link to="/iniciar-sesion" className="submitBtn" style={{ textDecoration: 'none', padding:'1rem' , width:'auto', display: 'block', textAlign: 'center', color:'skyblue' }}>
                                         Ir a Iniciar Sesión
                                     </Link>
 

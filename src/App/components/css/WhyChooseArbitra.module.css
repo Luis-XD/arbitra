@@ -81,6 +81,11 @@
   color: #10b981;
   margin-bottom: 0.75rem;
   flex: 0 0 auto;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.icon:hover{
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px rgba(8, 188, 134, 0.75));
 }
 .item h3 {
   font-size: clamp(0.85rem, 1.1vw, 1.1rem);
@@ -127,9 +132,13 @@
   .container {
     grid-template-columns: 1fr;
   }
+  .grid{
+    width: 100%;
+  }
   .item {
     flex: 0 0 calc(100% / 3);
     max-width: calc(100% / 3);
+    min-width: 10rem;
   }
   .item h3 {
     font-size: 1rem;

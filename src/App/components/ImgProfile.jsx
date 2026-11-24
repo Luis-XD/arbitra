@@ -27,7 +27,7 @@ function ImgProfile() {
     useEffect(() => {
         if (!loading && initialized && !user) {
             const timeoutId = setTimeout(() => {
-                navigate('/login', { state: { updated: true } })
+                navigate('/iniciar-sesion', { state: { updated: true } })
             }, 1000)
             return () => clearTimeout(timeoutId)
         }

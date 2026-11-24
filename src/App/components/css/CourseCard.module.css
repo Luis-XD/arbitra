@@ -134,8 +134,14 @@
     gap: 1rem;
   }
 }
+@media (max-width:1024px){
+  .course{
+    min-width: 22rem;
+  }
+}
 @media (max-width: 900px) {
   .course {
+    max-width: 20rem;
     flex-basis: calc((100% - 1rem) / 2);
   }
   .courseTitle {

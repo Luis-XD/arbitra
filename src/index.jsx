@@ -62,6 +62,7 @@ import ManageDownloadFile       from './App/pages/protected/campus/ManageDownloa
 import ManageGeneral            from './App/pages/protected/campus/ManageGeneral'
 import Inscription              from './App/pages/Inscription'
 import Contact                  from './App/pages/Contact'
+import UsInstructors from './App/pages/UsInstructors'
 
 const routes = [
   {
@@ -72,6 +73,7 @@ const routes = [
       { path: CONFIG_PATHS.COURSES_PATH,                                    element: <PublicRoute>       <Courses/>                    </PublicRoute> },
       { path: CONFIG_PATHS.COURSES_PATH+"/disciplina/:id_discipline",       element: <PublicRoute>       <DisciplineDetail/>           </PublicRoute> },
       { path: CONFIG_PATHS.FORMATION_PATH,                                  element: <PublicRoute>       <Formation/>                  </PublicRoute> },
+      { path: CONFIG_PATHS.US_INSTRUCTORS,                                  element: <PublicRoute>       <UsInstructors/>              </PublicRoute> },
       { path: CONFIG_PATHS.INSCRIPTION_PATH,                                element: <PublicRoute>       <Inscription />               </PublicRoute> },      
       { path: CONFIG_PATHS.FORGET_PASSW_PATH,                               element: <PublicRoute>       <ForgetPassw/>                </PublicRoute> },
       { path: CONFIG_PATHS.RESET_PASSW,                                     element: <PublicRoute>       <ResetPassw/>                 </PublicRoute> },

@@ -1,0 +1,309 @@
+.darkBg {
+  background: #081b26;
+  color: #ffffff;
+  padding: 4rem 0;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1728px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1280px) {
+  .wrap {
+    max-width: 1152px;
+  }
+}
+
+.titleIntst {
+  color: #ffffff !important;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 650px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #0c1921;
+  border: 1px solid #142731;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 1.25rem;
+  gap: 1rem;
+  box-sizing: border-box;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  border-color: #08bc86;
+  transform: translateY(-3px);
+}
+
+.imageContainer {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #15222b;
+  flex-shrink: 0;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.badgePill {
+  align-self: flex-start;
+  background: #08bc86;
+  color: #06131a;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.65rem;
+  border-radius: 0.4rem;
+  margin-bottom: 0.65rem;
+}
+
+.cardBody h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.cardBody h4 {
+  margin: 0.25rem 0 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #bdd0d5;
+}
+
+.cardSummary {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #bdd0d5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.verPerfilBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.7rem;
+  background: var(--green, #10b981);
+  color: #061b16;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  border:none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.verPerfilBtn:hover{
+  cursor: pointer;
+}
+
+/* Modal flotante centrado: las tarjetas de atrás quedan quietas */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(4, 12, 18, 0.78);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+.modalCard {
+  position: relative;
+  width: 100%;
+  max-width: 30rem;
+  max-height: 88dvh;
+  background: #0c1921;
+  border: 1.5px solid #08bc86;
+  border-radius: 1.1rem;
+  padding: 1.35rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.55rem;
+  border: 1px solid #1d3542;
+  background: rgba(8, 27, 38, 0.92);
+  color: #08bc86;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all ease-in-out .3s;
+}
+.closeBtn:hover{
+  color: rgba(8, 27, 38, 0.92);
+  background-color: #08bc86;
+}
+/* Encabezado fijo: foto, etiqueta, nombre y rol no se desplazan */
+.modalHeaderFixed {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalImageWrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: 24rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #15222b;
+  margin-bottom: 0.9rem;
+}
+
+.modalImageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.modalBadge {
+  align-self: flex-start;
+  background: #08bc86;
+  color: #06131a;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.4rem;
+  margin-bottom: 0.55rem;
+}
+
+.modalHeaderFixed h3 {
+  margin: 0;
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--color);
+  line-height: 1.15;
+}
+
+.modalRole {
+  margin: 0.25rem 0 0.85rem;
+  font-size: 0.92rem;
+  color: #ccc;
+  font-weight: 600;
+}
+
+/* Único bloque con scroll: desde la descripción hacia abajo */
+.modalScrollArea {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+  border-top: 1px solid #142731;
+  padding-top: 0.85rem;
+}
+
+.modalBio {
+  margin: 0 0 1.15rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #d6e4e8;
+  white-space: pre-line;
+}
+
+.specialtiesBlock h4 {
+  margin: 0 0 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #9fb4bc;
+  text-transform: uppercase;
+}
+
+/* Especialidades en una sola columna hacia abajo */
+.specialtiesList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.specialtyItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.specialtyItem svg {
+  color: #08bc86;
+  flex-shrink: 0;
+}
+
+.modalActions {
+  margin-top: 1.25rem;
+  padding-bottom: 0.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover {
+    transition: none;
+    transform: none;
+  }
+}

@@ -6,6 +6,7 @@ import Modal from '../components/Modal'
 import { useNavigate } from 'react-router-dom'
 import PageHero from '../components/PageHero'
 import styles from './css/Courses.module.css'
+import TopTitle from '../components/TopTitle'
 
 function Courses() {
     const [disciplines, setDisciplines] = useState([])
@@ -70,19 +71,16 @@ function Courses() {
                     </div>
                 </Modal>
             )}
-            <PageHero title="Cursos" image="/assets/course.jpg" />
+            <PageHero title="Cursos" image="/assets/banners/course.jpg" />
                 <section className="section light">
                     <div className="container">
-                        <div className="cursoTituloDestacado">
-                            <h2>
-                                <span className="slash"></span>Nuestras cursos habilitados
-                            </h2>
-                        </div>
-                        <p className="lead">
-                            Propuestas breves para seguir desarrollando conocimientos y
-                            herramientas en el ámbito arbitral. Consultá por fechas y
-                            disponibilidad.
-                        </p>
+                        <TopTitle 
+                            header="OFERTA FORMATIVA"
+                            wordOne="Nuestros"
+                            wordTwo="cursos habilitados"
+                            dark={true}
+                            paragraph="Explorá las especialidades de arbitraje de nuestras distintas disciplinas. Consultá los programas, requisitos y próximas fechas de cursada."
+                        />
                         <div className={styles.list}>
                             {loadingDisciplines ? (
                                 <p>Cargando cursos...</p>

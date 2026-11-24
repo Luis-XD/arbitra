@@ -19,6 +19,6 @@ export const HERO_SLIDES = [
     title: 'El deporte',
     highlight: 'también se dirige.',
     description: 'Formación arbitral para quienes quieren ser protagonistas del deporte.',
-    button: { label: 'Conocé nuestras formaciones', to: '/formacion' },
+    button: { label: 'Conocé nuestra metodología', to: '/formacion' },
   },
 ];

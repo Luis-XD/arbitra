@@ -1,11 +1,11 @@
 export const PARTNERS_DATA = [
   {
     id: 1,
-    eyebrow: "PARTNER - FUTBOL",
+    eyebrow: "FUTBOL",
     image: "/assets/partners/logoPartner.png",
     logo: "/assets/partners/fecha-lista-logo.png",
-    subtitle: "Conexiones que impulsan la formación arbitral.",
-    text: "FECHA LISTA acompaña a ARBITRA como partner. Conocé la organización que forma parte de nuestras capacitaciones.",
+    subtitle: "FECHA LISTA",
+    text: "Conexiones que impulsan la formación arbitral. Conocé la organización que forma parte de nuestras capacitaciones.",
   },
   // Cuando agregues un segundo objeto aquí, aparecerán automáticamente
   // los botones de navegación izquierda/derecha y los indicadores del slider:
