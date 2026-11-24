@@ -130,7 +130,7 @@
 }
 @media (max-width:1280px){
   .course{
-    width: 20rem;
+    max-width: 22rem;
     gap: 1rem;
   }
 }
@@ -145,7 +145,6 @@
 @media (max-width: 540px) {
   .course {
     flex-basis: 100%;
-    max-width: 20rem;
   }
   .courseBody {
     padding: 1.15rem;

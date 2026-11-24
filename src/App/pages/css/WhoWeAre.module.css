@@ -69,3 +69,12 @@
     border-bottom: 1px solid #a3d5c7;
   }
 }
+
+@media (max-width: 450px){
+  .cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -114,6 +114,9 @@
 }
 
 @media (max-width: 700px) {
+  .grid{
+    width: 22rem;
+  }
   h2 {
     display: flex;
     flex-wrap: wrap;

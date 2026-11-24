@@ -1,7 +1,7 @@
 .course {
   --card-accent: #10b981;
   max-width: 26rem;
-  min-width: 24rem;
+  min-width: 22rem;
   min-height: 42rem;
   width: 100%;
   height: 100%;
@@ -185,13 +185,19 @@
   --card-accent: #e8c82e;
 }
 @media (max-width:1024px){
-  .course,
-  .textLink {
-    transition: none;
+  .course{
+    max-width: 22rem;
   }
-  .course:hover,
-  .textLink:hover {
-    transition: none;
+  @media (prefers-reduced-motion: reduce) {
+    .course,
+    .textLink {
+      transition: none;
+    }
+    .course:hover,
+    .textLink:hover {
+      transition: none;
+      transform: none;
+    }
   }
 }
 @media (max-width: 600px) {

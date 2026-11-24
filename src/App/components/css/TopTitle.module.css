@@ -9,7 +9,11 @@
 }
 
 .formationTop h2 {
+  width: 100%;
   margin-bottom: 0;
+}
+.dark{
+  color: #000;
 }
 
 .eyebrow {
@@ -31,7 +35,7 @@
 }
 .subtitle {
   margin: 0;
-  color: #d2e2e4;
+  color: #ccc;
   font-size: clamp(0.95rem, 1.25vw, 1.15rem);
 }
 @media (max-width:1280px){

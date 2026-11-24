@@ -4,6 +4,7 @@ import { Target, Eye, Gem, Users } from "lucide-react";
 import styles from './css/WhoWeAre.module.css'
 import LoadData from '../components/LoadData'
 import PageHero from '../components/PageHero'
+import TopTitle from '../components/TopTitle';
 
 function WhoWeAre() {
   const [configData, setConfigData]  = useState(null)
@@ -24,22 +25,18 @@ function WhoWeAre() {
       />
       <section className="section light">
         <div className={`container ${styles.intro}`}>
-          <div>
-            <span className="eyebrow">ARBITRA</span>
-            <h2>
-              <span className="slash"></span>Centro de Formación Profesional
-            </h2>
-            <p>
+          <TopTitle 
+            header="ARBITRA"
+            wordOne="Centro de Formación"
+            wordTwo='Profesional'
+            paragraph={<>
               Somos un proyecto de formación profesional dedicado al arbitraje
               deportivo. Nuestro objetivo es acompañar el aprendizaje de reglas,
               criterios y responsabilidades que hacen posible el desarrollo del
-              juego.
-            </p>
-            <p>
-              Comenzamos con especialidades vinculadas al fútbol, con una visión
+              juego.<br /> Comenzamos con especialidades vinculadas al fútbol, con una visión
               de crecimiento hacia otras disciplinas.
-            </p>
-          </div>
+            </>}
+          />
           <div className={styles.photo}>
             <img
               src="/logo_arbitra.png"
@@ -72,16 +69,13 @@ function WhoWeAre() {
       <section className="section">
         <div className="container">
           <div className={styles.cont}>
-            <div>
-              <h2>
-                <span className="slash"></span>Nuestro enfoque
-              </h2>
-              <p>
-                Buscamos conectar los fundamentos teóricos con la preparación para
-                situaciones reales del arbitraje deportivo.
-              </p>
-            </div>
-          <Users color="#10B981" className={styles.users}/>
+            <TopTitle 
+              header="ARBITRA"
+              wordOne="Nuestro"
+              wordTwo='enfoque'
+              paragraph="Buscamos conectar los fundamentos teóricos con la preparación para situaciones reales del arbitraje deportivo."
+            />
+          <Users color="#10B981" className={styles.users}/> 
           </div>
         </div>
       </section>

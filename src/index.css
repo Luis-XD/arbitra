@@ -72,6 +72,7 @@ html {
   --box-shadow-inset-hover-dark: inset 0 -0.3em 0.7em rgba(39, 39, 39, 0.9);
   --box-shadow: 0 0.2rem 0.7rem #10B981;
   --box-shadow-2: 0 0.1rem 0.7rem rgba(27, 27, 27, 0.3);
+  --box-shadow-3: 0 0 0.1rem #868686;
   --box-shadow-strong: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
   --box-shadow-strong-top: 0 -0.1rem 1rem rgba(27, 27, 27, 0.4);
 

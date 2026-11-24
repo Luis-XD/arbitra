@@ -25,15 +25,15 @@
 
 @media (max-width: 600px) {
   .brand {
-    width: 7.5rem;
+    width: 6rem;
   }
   .large {
     width: 15rem;
     height: auto;
   }
   .large img {
-    width: 17rem;
-    height: 17rem;
+    width: 10rem;
+    height: 10rem;
   }
   .grid p{
     font-size: 2rem;

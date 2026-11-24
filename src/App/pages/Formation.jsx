@@ -7,6 +7,7 @@ import {
   FIELD_PRACTICE_NOTE,
   COURSE_DYNAMICS
 } from '../data/formationData'
+import TopTitle from "../components/TopTitle";
 
 function Formation() {
     return ( <>
@@ -14,17 +15,13 @@ function Formation() {
       <PageHero title="Formación" image="/assets/referee.jpg" />
       <section className="section light">
         <div className="container">
-          <div className="sectionTitle">
-            <div className="cursoTituloDestacado">
-              <h2>
-                <span className="slash"></span>Metodología de enseñanza
-              </h2>
-            </div>
-            <p>
-              Cómo enseñamos en la escuela: teoría aplicada, análisis real,
-              práctica en campo, preparación física y estudio autónomo.
-            </p>
-          </div>
+          <TopTitle
+            header="ARBITRA"
+            wordOne="Metodología de"
+            wordTwo='enseñanza'
+            dark={true}
+            paragraph="Cómo enseñamos en la escuela: teoría aplicada, análisis real, práctica en campo, preparación física y estudio autónomo."
+          />
 
           <div className={styles.methodologyGrid}>
             {METHODOLOGY_STEPS.map((item) => (
